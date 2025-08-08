@@ -34,18 +34,18 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-chatgpt">
+    <section className="relative py-24 md:py-32 lg:py-40 flex items-center justify-center overflow-hidden bg-n8n-bg-primary">
       {/* Animated Background */}
       <div className="absolute inset-0 animated-bg opacity-30"></div>
       
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/10 via-brand-secondary/10 to-brand-accent/10"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+      {/* Very subtle gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 via-brand-secondary/5 to-brand-accent/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10"></div>
 
-      {/* Floating elements */}
-      <div className="absolute top-20 left-20 w-20 h-20 bg-brand-primary/20 rounded-full blur-xl animate-float delay-100"></div>
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-brand-accent/20 rounded-full blur-xl animate-float delay-300"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-brand-secondary/20 rounded-full blur-xl animate-float delay-500"></div>
+      {/* Subtle floating elements */}
+      <div className="absolute top-20 left-20 w-20 h-20 bg-brand-primary/8 rounded-full blur-xl animate-float delay-100"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-brand-accent/8 rounded-full blur-xl animate-float delay-300"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-brand-secondary/8 rounded-full blur-xl animate-float delay-500"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <motion.div 

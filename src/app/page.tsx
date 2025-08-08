@@ -61,7 +61,7 @@ export default function HomePage() {
           
           <div className="text-center">
             <Link href="/services">
-              <Button size="lg" className="bg-gradient-to-r from-brand-primary to-brand-secondary hover:bg-gradient-to-r from-brand-primary to-brand-secondary/80">
+              <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/80 border border-brand-primary/20">
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -162,7 +162,7 @@ export default function HomePage() {
               ].map((solution, index) => (
                 <div key={index} className="flex space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-secondary/20 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-n8n-bg-secondary border border-n8n-border rounded-lg flex items-center justify-center">
                       <div className="text-brand-primary">{solution.icon}</div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ export default function HomePage() {
               ))}
             </div>
             
-            <div className="bg-gradient-to-br from-[#EE4F27]/10 to-[#6B21EF]/10 border border-[#EE4F27]/20 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 border border-n8n-border rounded-xl p-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-white mb-6">
                   Average Results in 90 Days
@@ -283,7 +283,10 @@ export default function HomePage() {
       <CaseStudies />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#EE4F27] via-[#6B21EF] to-[#EE4F27]">
+      <section className="py-20 bg-n8n-bg-secondary relative overflow-hidden">
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/8 via-brand-accent/6 to-brand-primary/8"></div>
+        <div className="relative z-10">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Automate Your Business?
@@ -319,6 +322,7 @@ export default function HomePage() {
               No obligation
             </div>
           </div>
+        </div>
         </div>
       </section>
       
