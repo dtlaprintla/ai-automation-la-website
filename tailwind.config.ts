@@ -12,13 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          primary: "#8B5A9F", // Deep Purple
-          secondary: "#2E4F7A", // Deep Blue  
-          accent: "#4A6FBF", // Medium Blue
+          primary: "#EF4444", // Salmon Red
+          secondary: "#DC2626", // Deep Red  
+          accent: "#3B82F6", // Blue accent
           gradient: {
-            from: "#5A4B7C", // ChatGPT start
-            via: "#4A5B8C", // ChatGPT middle
-            to: "#2E4F7A"   // ChatGPT end
+            from: "#EF4444", // Red start
+            via: "#DC2626", // Deep red middle
+            to: "#3B82F6"   // Blue end
           }
         },
         // N8N-inspired dark theme colors
@@ -57,9 +57,9 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(to right, #5A4B7C, #4A5B8C, #2E4F7A)",
-        "gradient-primary-reverse": "linear-gradient(to right, #2E4F7A, #4A5B8C, #5A4B7C)",
-        "gradient-chatgpt": "linear-gradient(135deg, #5A4B7C 0%, #4A5B8C 50%, #2E4F7A 100%)",
+        "gradient-primary": "linear-gradient(to right, #EF4444, #DC2626, #3B82F6)",
+        "gradient-primary-reverse": "linear-gradient(to right, #3B82F6, #DC2626, #EF4444)",
+        "gradient-chatgpt": "linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #3B82F6 100%)",
         // N8N-inspired gradients
         "gradient-n8n-primary": "linear-gradient(135deg, #EE4F27 0%, #6B21EF 100%)",
         "gradient-n8n-secondary": "linear-gradient(135deg, #4A9EFF 0%, #6B21EF 100%)",

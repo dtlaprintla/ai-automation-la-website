@@ -37,9 +37,9 @@ html.n8n-theme,
   --text-muted: #9B96A6;          /* Muted text */
   --text-disabled: #6B6B7D;       /* Disabled states */
   
-  --accent-primary: #EE4F27;      /* N8N's signature orange */
-  --accent-secondary: #6B21EF;    /* Purple accent */
-  --accent-tertiary: #4A9EFF;     /* Blue accent */
+  --accent-primary: #EF4444;      /* Salmon red primary */
+  --accent-secondary: #DC2626;    /* Deep red accent */
+  --accent-tertiary: #3B82F6;     /* Blue accent */
   
   --border-color: rgba(196, 187, 211, 0.1);
   --border-hover: rgba(196, 187, 211, 0.2);
@@ -47,11 +47,11 @@ html.n8n-theme,
   --shadow-card: 0 4px 16px rgba(14, 9, 24, 0.3);
   
   /* N8N Specific Variables */
-  --n8n-gradient-primary: linear-gradient(135deg, #EE4F27 0%, #6B21EF 100%);
-  --n8n-gradient-secondary: linear-gradient(135deg, #4A9EFF 0%, #6B21EF 100%);
+  --n8n-gradient-primary: linear-gradient(135deg, #EF4444 0%, #3B82F6 100%);
+  --n8n-gradient-secondary: linear-gradient(135deg, #DC2626 0%, #3B82F6 100%);
   --n8n-gradient-card: linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%);
-  --n8n-gradient-hero: radial-gradient(ellipse at top, rgba(107, 33, 239, 0.3) 0%, transparent 50%), 
-                       radial-gradient(ellipse at bottom, rgba(238, 79, 39, 0.3) 0%, transparent 50%), 
+  --n8n-gradient-hero: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.3) 0%, transparent 50%), 
+                       radial-gradient(ellipse at bottom, rgba(239, 68, 68, 0.3) 0%, transparent 50%), 
                        #0E0918;
 }
 
