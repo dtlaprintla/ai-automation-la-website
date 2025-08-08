@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="discordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7289DA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B6EAE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="url(#discordGrad)"/>
+  <!-- Discord logo shape -->
+  <path d="M25 35 Q25 25 35 25 L65 25 Q75 25 75 35 L75 65 Q75 75 65 75 L35 75 Q25 75 25 65 Z" fill="white"/>
+  <circle cx="40" cy="45" r="4" fill="#7289DA"/>
+  <circle cx="60" cy="45" r="4" fill="#7289DA"/>
+  <path d="M35 60 Q50 70 65 60" stroke="#7289DA" stroke-width="3" fill="none"/>
+</svg>

@@ -10,9 +10,10 @@ import IntegrationLogo from './IntegrationLogo';
 interface IntegrationCardProps {
   integration: Integration;
   onViewDetails: (integration: Integration) => void;
+  viewMode?: 'grid' | 'list';
 }
 
-export default function IntegrationCard({ integration, onViewDetails }: IntegrationCardProps) {
+export default function IntegrationCard({ integration, onViewDetails, viewMode = 'grid' }: IntegrationCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const popularityColors = {
@@ -21,6 +22,52 @@ export default function IntegrationCard({ integration, onViewDetails }: Integrat
     low: 'bg-gray-100 text-gray-800'
   };
 
+  // N8N-style compact grid view
+  if (viewMode === 'grid') {
+    return (
+      <motion.div
+        className="group bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 cursor-pointer p-4 flex flex-col items-center text-center"
+        whileHover={{ y: -2, scale: 1.02 }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        onClick={() => onViewDetails(integration)}
+      >
+        {/* Logo */}
+        <div className="mb-3 relative">
+          <IntegrationLogo integration={integration} size="lg" />
+          {integration.popularity === 'high' && (
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+          )}
+        </div>
+
+        {/* Name */}
+        <h3 className="text-sm font-semibold text-gray-900 mb-1 group-hover:text-brand-primary transition-colors">
+          {integration.name}
+        </h3>
+
+        {/* Category */}
+        <p className="text-xs text-gray-500 mb-2">
+          {integration.category}
+        </p>
+
+        {/* Primary tag */}
+        {integration.tags[0] && (
+          <div className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded group-hover:bg-brand-primary/10 group-hover:text-brand-primary transition-colors">
+            {integration.tags[0]}
+          </div>
+        )}
+
+        {/* Hover overlay */}
+        <motion.div 
+          className="absolute inset-0 bg-brand-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+        />
+      </motion.div>
+    );
+  }
+
+  // Detailed list view
   return (
     <motion.div
       className="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden cursor-pointer"
