@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function RealEstatePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0E0918] text-white">
       <Header />
       <div className="pt-32 text-center">
-        <h1 className="text-4xl font-bold mb-4">Real Estate AI Cold Calling</h1>
-        <p className="text-xl text-gray-600 mb-8">Coming soon - detailed service page</p>
+        <h1 className="text-4xl font-bold mb-4 text-white">Real Estate AI Cold Calling</h1>
+        <p className="text-xl text-[#C4BBD3] mb-8">Coming soon - detailed service page</p>
       </div>
       <Footer />
     </main>

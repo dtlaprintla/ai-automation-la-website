@@ -26,47 +26,47 @@ export default function VoiceAgentsPage() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden relative">
+    <main className="min-h-screen bg-[#0E0918] text-white overflow-hidden relative">
       <Header />
       
       {/* Optimized Background Blobs with CSS-only animations */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none will-change-transform">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob gpu-accelerated"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 gpu-accelerated"></div>
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 gpu-accelerated"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-6000 gpu-accelerated"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-[#EE4F27] via-[#6B21EF] to-[#EE4F27] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob gpu-accelerated"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-r from-[#6B21EF] via-[#EE4F27] to-[#6B21EF] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 gpu-accelerated"></div>
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-gradient-to-r from-[#EE4F27] via-[#6B21EF] to-[#EE4F27] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 gpu-accelerated"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-[#6B21EF] via-[#EE4F27] to-[#6B21EF] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-6000 gpu-accelerated"></div>
       </div>
 
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-400/20 backdrop-blur-md border border-purple-300/30 rounded-full px-6 py-3 mb-8">
-              <Phone className="w-5 h-5 mr-2 text-cyan-400" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 font-semibold">
+            <div className="inline-flex items-center bg-gradient-to-r from-[#EE4F27]/20 via-[#6B21EF]/20 to-[#EE4F27]/20 backdrop-blur-md border border-[#C4BBD3]/30 rounded-full px-6 py-3 mb-8">
+              <Phone className="w-5 h-5 mr-2 text-[#EE4F27]" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] font-semibold">
                 AI VOICE REVOLUTION
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-none">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF]">
                 NEVER MISS
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6B21EF] to-[#EE4F27]">
                 A CALL AGAIN
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed">
-              Your AI voice agent sounds <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">completely human</span>, 
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#C4BBD3] mb-12 max-w-5xl mx-auto leading-relaxed">
+              Your AI voice agent sounds <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] font-bold">completely human</span>, 
               handles complex conversations, books appointments, qualifies leads, and 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-bold"> grows your business 24/7</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6B21EF] to-[#EE4F27] font-bold"> grows your business 24/7</span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white font-bold text-lg px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-bold text-lg px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 <Zap className="w-6 h-6 mr-2" />
                 GET YOUR AI AGENT NOW
@@ -74,29 +74,29 @@ export default function VoiceAgentsPage() {
               <Button 
                 size="xl" 
                 variant="outline" 
-                className="border-2 border-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold text-lg px-12 py-6 rounded-full hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-cyan-400/10"
+                className="border-2 border-[#C4BBD3]/20 text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] font-bold text-lg px-12 py-6 rounded-full hover:bg-gradient-to-r hover:from-[#EE4F27]/10 hover:to-[#6B21EF]/10"
               >
-                <Phone className="w-6 h-6 mr-2 text-cyan-400" />
+                <Phone className="w-6 h-6 mr-2 text-[#EE4F27]" />
                 HEAR IT IN ACTION
               </Button>
             </div>
 
             {/* Massive Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-400/20 backdrop-blur-md border border-purple-300/30 rounded-2xl p-8">
-                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-2">95%</div>
-                <p className="text-gray-300 font-semibold text-lg">Calls Answered</p>
-                <p className="text-gray-400 text-sm">vs. 60% with humans only</p>
+              <div className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-2xl p-8">
+                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-2">95%</div>
+                <p className="text-[#C4BBD3] font-semibold text-lg">Calls Answered</p>
+                <p className="text-[#C4BBD3]/60 text-sm">vs. 60% with humans only</p>
               </div>
-              <div className="bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-500/20 backdrop-blur-md border border-cyan-300/30 rounded-2xl p-8">
-                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-500 mb-2">3X</div>
-                <p className="text-gray-300 font-semibold text-lg">More Bookings</p>
-                <p className="text-gray-400 text-sm">Instant responses convert</p>
+              <div className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-2xl p-8">
+                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#6B21EF] to-[#EE4F27] mb-2">3X</div>
+                <p className="text-[#C4BBD3] font-semibold text-lg">More Bookings</p>
+                <p className="text-[#C4BBD3]/60 text-sm">Instant responses convert</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-500/20 via-cyan-400/20 to-blue-500/20 backdrop-blur-md border border-purple-300/30 rounded-2xl p-8">
-                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-2">24/7</div>
-                <p className="text-gray-300 font-semibold text-lg">Always Available</p>
-                <p className="text-gray-400 text-sm">Even when you sleep</p>
+              <div className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-2xl p-8">
+                <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-2">24/7</div>
+                <p className="text-[#C4BBD3] font-semibold text-lg">Always Available</p>
+                <p className="text-[#C4BBD3]/60 text-sm">Even when you sleep</p>
               </div>
             </div>
           </div>
@@ -104,13 +104,13 @@ export default function VoiceAgentsPage() {
       </section>
 
       {/* Problem Agitation */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-red-900/20 via-red-800/20 to-orange-800/20">
+      <section className="relative z-10 py-24 bg-gradient-to-r from-[#1A1B26] to-[#242530]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-8">
               EVERY MISSED CALL = MONEY LOST
             </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto">
+            <p className="text-2xl text-[#C4BBD3] max-w-4xl mx-auto">
               While you're busy running your business, competitors with AI agents are capturing YOUR customers
             </p>
           </div>
@@ -122,12 +122,12 @@ export default function VoiceAgentsPage() {
               { icon: TrendingUp, stat: "$50k+", problem: "Average revenue lost per year from missed calls" },
               { icon: Phone, stat: "30 sec", problem: "How long customers wait before hanging up" }
             ].map((item, index) => (
-              <div key={index} className="bg-gradient-to-br from-red-500/20 via-orange-500/20 to-yellow-500/20 backdrop-blur-md border border-red-300/30 rounded-xl p-6 text-center">
-                <item.icon className="w-12 h-12 text-red-400 mx-auto mb-4" />
-                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 mb-2">
+              <div key={index} className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-xl p-6 text-center">
+                <item.icon className="w-12 h-12 text-[#EE4F27] mx-auto mb-4" />
+                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-2">
                   {item.stat}
                 </div>
-                <p className="text-gray-300 font-medium">{item.problem}</p>
+                <p className="text-[#C4BBD3] font-medium">{item.problem}</p>
               </div>
             ))}
           </div>
@@ -138,10 +138,10 @@ export default function VoiceAgentsPage() {
       <section className="relative z-10 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-8">
               THE AI SOLUTION THAT CHANGES EVERYTHING
             </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto">
+            <p className="text-2xl text-[#C4BBD3] max-w-4xl mx-auto">
               While your competition loses calls, you capture every opportunity with superhuman efficiency
             </p>
           </div>
@@ -178,16 +178,16 @@ export default function VoiceAgentsPage() {
                 >
                   <div className={`p-4 rounded-full transition-all duration-300 ${
                     hoveredFeature === index 
-                      ? 'bg-gradient-to-r from-purple-500 to-cyan-500 scale-110' 
-                      : 'bg-gradient-to-r from-purple-500/20 to-cyan-500/20'
+                      ? 'bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] scale-110' 
+                      : 'bg-gradient-to-r from-[#EE4F27]/20 to-[#6B21EF]/20'
                   }`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-300 text-lg leading-relaxed">
+                    <p className="text-[#C4BBD3] text-lg leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -196,23 +196,23 @@ export default function VoiceAgentsPage() {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-400/20 backdrop-blur-md border border-purple-300/30 rounded-3xl p-8">
+              <div className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-3xl p-8">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400 font-semibold">LIVE CALL IN PROGRESS</span>
+                    <div className="w-3 h-3 bg-[#EE4F27] rounded-full animate-pulse"></div>
+                    <span className="text-[#EE4F27] font-semibold">LIVE CALL IN PROGRESS</span>
                   </div>
-                  <div className="bg-black/40 rounded-xl p-6">
-                    <p className="text-gray-300 mb-4">
-                      <strong className="text-cyan-400">"Hi, thanks for calling [Your Business]. I'm Sarah, how can I help you today?"</strong>
+                  <div className="bg-[#0E0918]/40 rounded-xl p-6">
+                    <p className="text-[#C4BBD3] mb-4">
+                      <strong className="text-[#EE4F27]">"Hi, thanks for calling [Your Business]. I'm Sarah, how can I help you today?"</strong>
                     </p>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-[#C4BBD3]/80 mb-4">
                       "Hi, I need to schedule a service call for my HVAC system..."
                     </p>
-                    <p className="text-gray-300 mb-4">
-                      <strong className="text-cyan-400">"Of course! I can get that scheduled right now. What's the best day for you this week?"</strong>
+                    <p className="text-[#C4BBD3] mb-4">
+                      <strong className="text-[#EE4F27]">"Of course! I can get that scheduled right now. What's the best day for you this week?"</strong>
                     </p>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
+                    <div className="flex items-center space-x-2 text-sm text-[#C4BBD3]/60">
                       <Clock className="w-4 h-4" />
                       <span>Appointment being booked in real-time...</span>
                     </div>
@@ -225,10 +225,10 @@ export default function VoiceAgentsPage() {
       </section>
 
       {/* Results Section */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-green-900/20 via-blue-900/20 to-purple-900/20">
+      <section className="relative z-10 py-24 bg-gradient-to-r from-[#1A1B26] to-[#242530]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-8">
               REAL LA BUSINESSES, REAL RESULTS
             </h2>
           </div>
@@ -254,14 +254,14 @@ export default function VoiceAgentsPage() {
                 timeframe: "3 months"
               }
             ].map((story, index) => (
-              <div key={index} className="bg-gradient-to-br from-green-500/20 via-blue-500/20 to-purple-500/20 backdrop-blur-md border border-green-300/30 rounded-2xl p-8">
+              <div key={index} className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-2xl p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-4">{story.business}</h3>
-                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 mb-4">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-4">
                     {story.result}
                   </div>
-                  <p className="text-gray-300 mb-4 leading-relaxed">{story.detail}</p>
-                  <div className="text-sm text-gray-400">Results in {story.timeframe}</div>
+                  <p className="text-[#C4BBD3] mb-4 leading-relaxed">{story.detail}</p>
+                  <div className="text-sm text-[#C4BBD3]/60">Results in {story.timeframe}</div>
                 </div>
               </div>
             ))}
@@ -273,26 +273,26 @@ export default function VoiceAgentsPage() {
       <section className="relative z-10 py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-8">
               GET YOUR AI AGENT TODAY
             </h2>
-            <p className="text-2xl text-gray-300">
+            <p className="text-2xl text-[#C4BBD3]">
               Stop losing money to missed calls. Start capturing every opportunity.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-400/20 backdrop-blur-md border-2 border-purple-300/30 rounded-3xl p-12">
+          <div className="bg-gradient-to-br from-[#1A1B26] to-[#242530] backdrop-blur-md border-2 border-[#C4BBD3]/20 rounded-3xl p-12">
             <div className="text-center mb-8">
-              <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4">
+              <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-4">
                 $2,997
               </div>
-              <p className="text-2xl text-gray-300 mb-2">Complete Setup + First Month</p>
-              <p className="text-lg text-gray-400">Then $497/month (cancellable anytime)</p>
+              <p className="text-2xl text-[#C4BBD3] mb-2">Complete Setup + First Month</p>
+              <p className="text-lg text-[#C4BBD3]/80">Then $497/month (cancellable anytime)</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-4">
-                <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+                <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF]">
                   What You Get:
                 </h4>
                 {[
@@ -304,24 +304,24 @@ export default function VoiceAgentsPage() {
                   "Real-time dashboard and analytics"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="text-gray-300">{feature}</span>
+                    <CheckCircle className="w-6 h-6 text-[#EE4F27] flex-shrink-0" />
+                    <span className="text-[#C4BBD3]">{feature}</span>
                   </div>
                 ))}
               </div>
               
               <div className="space-y-4">
-                <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+                <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6B21EF] to-[#EE4F27]">
                   ROI Guarantee:
                 </h4>
-                <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-md border border-green-300/30 rounded-xl p-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    If your AI agent doesn't capture at least <strong className="text-green-400">10 additional appointments</strong> in the first 60 days, we'll refund your entire setup fee.
+                <div className="bg-gradient-to-r from-[#1A1B26] to-[#242530] backdrop-blur-md border border-[#C4BBD3]/20 rounded-xl p-6">
+                  <p className="text-[#C4BBD3] text-lg leading-relaxed">
+                    If your AI agent doesn't capture at least <strong className="text-[#EE4F27]">10 additional appointments</strong> in the first 60 days, we'll refund your entire setup fee.
                   </p>
                 </div>
                 <div className="text-center pt-4">
-                  <div className="text-sm text-gray-400 mb-2">Average ROI:</div>
-                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                  <div className="text-sm text-[#C4BBD3]/60 mb-2">Average ROI:</div>
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF]">
                     500%+ in first year
                   </div>
                 </div>
@@ -331,31 +331,31 @@ export default function VoiceAgentsPage() {
             <div className="text-center">
               <Button 
                 size="xl"
-                className="bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white font-black text-2xl px-16 py-8 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-4"
+                className="bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-2xl px-16 py-8 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-4"
               >
                 <Zap className="w-8 h-8 mr-3" />
                 START CAPTURING EVERY CALL
               </Button>
-              <p className="text-gray-400">Setup completed in 48 hours or less</p>
+              <p className="text-[#C4BBD3]/80">Setup completed in 48 hours or less</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Urgent CTA */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-red-900/30 via-orange-900/30 to-yellow-900/30">
+      <section className="relative z-10 py-24 bg-gradient-to-r from-[#1A1B26] to-[#242530]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 mb-8">
+          <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] mb-8">
             STOP LOSING CUSTOMERS TO COMPETITORS
           </h2>
-          <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p className="text-2xl text-[#C4BBD3] mb-12 max-w-3xl mx-auto">
             Every day you wait is money left on the table. While you're thinking, your competitors are installing AI agents and stealing your calls.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="xl"
-              className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 hover:from-red-600 hover:via-orange-600 hover:to-yellow-600 text-white font-black text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-[#EE4F27] to-[#6B21EF] hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               <ArrowRight className="w-6 h-6 mr-2" />
               CLAIM YOUR AI AGENT NOW
@@ -363,14 +363,14 @@ export default function VoiceAgentsPage() {
             <Button 
               size="xl" 
               variant="outline" 
-              className="border-2 border-white text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-n8n-bg-secondary hover:text-black"
+              className="border-2 border-[#C4BBD3]/20 text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-[#1A1B26] hover:text-white"
             >
               <Phone className="w-6 h-6 mr-2" />
               CALL {BRAND.phone}
             </Button>
           </div>
           
-          <div className="mt-8 text-gray-400">
+          <div className="mt-8 text-[#C4BBD3]/60">
             <p className="text-lg">Limited spots available • LA businesses only • 48-hour setup</p>
           </div>
         </div>
