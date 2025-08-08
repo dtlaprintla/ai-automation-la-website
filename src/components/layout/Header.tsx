@@ -23,6 +23,7 @@ export default function Header() {
   const navigation = [
     { name: 'Services', href: '/services' },
     { name: 'Integrations', href: '/integrations' },
+    { name: 'ROI Calculator', href: '/roi-calculator' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },

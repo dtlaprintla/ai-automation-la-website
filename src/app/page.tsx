@@ -4,7 +4,7 @@ import Hero from '@/components/sections/Hero';
 import CaseStudies from '@/components/sections/CaseStudies';
 import { BRAND } from '@/config/branding';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Star, Phone, Zap, Users, Clock, Shield, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Phone, Zap, Users, Clock, Shield, Target, TrendingUp, DollarSign, Calculator } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 export default function HomePage() {
@@ -240,6 +240,59 @@ export default function HomePage() {
               </div>
               <div className="text-n8n-text-secondary">Client Rating</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Calculator CTA */}
+      <section className="py-20 bg-n8n-bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 via-brand-accent/3 to-brand-primary/5"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center bg-brand-primary/10 backdrop-blur-sm border border-brand-primary/20 rounded-lg px-4 py-2 mb-6">
+              <Zap className="w-5 h-5 mr-2 text-brand-primary" />
+              <span className="text-brand-primary font-semibold">Free ROI Analysis Tool</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              See Your Exact Savings in
+              <span className="block text-brand-primary mt-2">60 Seconds</span>
+            </h2>
+            
+            <p className="text-xl text-n8n-text-secondary mb-8 max-w-3xl mx-auto">
+              Calculate how much time and money AI automation will save your business. 
+              Get a personalized ROI report based on your actual business metrics.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+              <div className="bg-n8n-bg-primary rounded-lg p-6 border border-n8n-border">
+                <DollarSign className="w-10 h-10 text-brand-primary mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Cost Savings</h3>
+                <p className="text-n8n-text-secondary text-sm">See exactly how much you'll save on labor costs</p>
+              </div>
+              <div className="bg-n8n-bg-primary rounded-lg p-6 border border-n8n-border">
+                <Clock className="w-10 h-10 text-brand-accent mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Time Recovered</h3>
+                <p className="text-n8n-text-secondary text-sm">Calculate hours saved from automation</p>
+              </div>
+              <div className="bg-n8n-bg-primary rounded-lg p-6 border border-n8n-border">
+                <TrendingUp className="w-10 h-10 text-brand-secondary mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Revenue Growth</h3>
+                <p className="text-n8n-text-secondary text-sm">Estimate revenue from captured opportunities</p>
+              </div>
+            </div>
+            
+            <Link href="/roi-calculator">
+              <Button size="xl" className="bg-brand-primary hover:bg-brand-primary/80 text-white font-bold shadow-xl transform hover:scale-105 transition-all duration-300">
+                <Calculator className="w-6 h-6 mr-2" />
+                Calculate Your ROI Now
+                <ArrowRight className="w-6 h-6 ml-2" />
+              </Button>
+            </Link>
+            
+            <p className="text-sm text-n8n-text-secondary mt-4">
+              No email required • Instant results • 100% free
+            </p>
           </div>
         </div>
       </section>

@@ -72,6 +72,13 @@ export default function ROICalculatorPage() {
   const [results, setResults] = useState<ROIResults | null>(null);
   const [showResults, setShowResults] = useState(false);
 
+  // Calculate initial results on page load
+  useEffect(() => {
+    const initialResults = calculateROIWithInputs(inputs);
+    setResults(initialResults);
+    setShowResults(true);
+  }, []);
+
   const industryMultipliers = {
     dental: { closeRate: 1.2, dealValue: 1.0, efficiency: 1.3 },
     realestate: { closeRate: 1.0, dealValue: 1.5, efficiency: 1.2 },
@@ -81,14 +88,38 @@ export default function ROICalculatorPage() {
     ecommerce: { closeRate: 1.0, dealValue: 0.8, efficiency: 1.6 }
   };
 
-  const calculateROI = (): ROIResults => {
-    const multiplier = industryMultipliers[inputs.industry as keyof typeof industryMultipliers] || industryMultipliers.dental;
+
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
+  const handleInputChange = (field: keyof CalculatorInputs, value: string | number) => {
+    const newInputs = {
+      ...inputs,
+      [field]: value
+    };
+    setInputs(newInputs);
+    
+    // Auto-calculate results on every change
+    const calculatedResults = calculateROIWithInputs(newInputs);
+    setResults(calculatedResults);
+    setShowResults(true);
+  };
+
+  const calculateROIWithInputs = (currentInputs: CalculatorInputs): ROIResults => {
+    const multiplier = industryMultipliers[currentInputs.industry as keyof typeof industryMultipliers] || industryMultipliers.dental;
     
     // Current Costs
-    const laborCost = inputs.employees * inputs.avgHourlyWage * inputs.hoursPerWeek * 52;
-    const missedCalls = inputs.missedCallsPerDay * 365;
-    const missedRevenue = missedCalls * (inputs.avgDealValue * (inputs.closeRate / 100)) * multiplier.closeRate;
-    const inefficiencyTime = inputs.manualTasksHours * inputs.avgHourlyWage * 52;
+    const laborCost = currentInputs.employees * currentInputs.avgHourlyWage * currentInputs.hoursPerWeek * 52;
+    const missedCalls = currentInputs.missedCallsPerDay * 365;
+    const missedRevenue = missedCalls * (currentInputs.avgDealValue * (currentInputs.closeRate / 100)) * multiplier.closeRate;
+    const inefficiencyTime = currentInputs.manualTasksHours * currentInputs.avgHourlyWage * 52;
     const totalAnnualCost = laborCost + missedRevenue + inefficiencyTime;
 
     // Automation Benefits
@@ -98,8 +129,8 @@ export default function ROICalculatorPage() {
     const totalAnnualSavings = timeSaved + revenueRecovered + efficiencyGains;
 
     // Investment Costs
-    const setupCost = inputs.employees <= 5 ? 2997 : inputs.employees <= 15 ? 6997 : 15997;
-    const monthlyFee = inputs.employees <= 5 ? 497 : inputs.employees <= 15 ? 997 : 1997;
+    const setupCost = currentInputs.employees <= 5 ? 2997 : currentInputs.employees <= 15 ? 6997 : 15997;
+    const monthlyFee = currentInputs.employees <= 5 ? 497 : currentInputs.employees <= 15 ? 997 : 1997;
     const annualInvestment = setupCost + (monthlyFee * 12);
 
     // ROI Calculations
@@ -133,29 +164,6 @@ export default function ROICalculatorPage() {
         fiveYearValue
       }
     };
-  };
-
-  const handleCalculate = () => {
-    const calculatedResults = calculateROI();
-    setResults(calculatedResults);
-    setShowResults(true);
-  };
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
-
-  const handleInputChange = (field: keyof CalculatorInputs, value: string | number) => {
-    setInputs(prev => ({
-      ...prev,
-      [field]: value
-    }));
-    setShowResults(false);
   };
 
   return (
@@ -218,45 +226,57 @@ export default function ROICalculatorPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                      Number of Employees
+                      Number of Employees: <span className="text-brand-primary font-bold">{inputs.employees}</span>
                     </label>
                     <input
-                      type="number"
-                      value={inputs.employees}
-                      onChange={(e) => handleInputChange('employees', parseInt(e.target.value) || 0)}
-                      className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                      type="range"
                       min="1"
-                      max="100"
+                      max="50"
+                      value={inputs.employees}
+                      onChange={(e) => handleInputChange('employees', parseInt(e.target.value))}
+                      className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                     />
+                    <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                      <span>1</span>
+                      <span>50</span>
+                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                      Average Hourly Wage ($)
+                      Avg Hourly Wage: <span className="text-brand-primary font-bold">${inputs.avgHourlyWage}</span>
                     </label>
                     <input
-                      type="number"
-                      value={inputs.avgHourlyWage}
-                      onChange={(e) => handleInputChange('avgHourlyWage', parseFloat(e.target.value) || 0)}
-                      className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-                      min="10"
+                      type="range"
+                      min="15"
                       max="100"
+                      value={inputs.avgHourlyWage}
+                      onChange={(e) => handleInputChange('avgHourlyWage', parseFloat(e.target.value))}
+                      className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                     />
+                    <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                      <span>$15</span>
+                      <span>$100</span>
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                    Hours per week spent on manual tasks
+                    Manual Tasks Hours/Week: <span className="text-brand-primary font-bold">{inputs.hoursPerWeek}</span>
                   </label>
                   <input
-                    type="number"
-                    value={inputs.hoursPerWeek}
-                    onChange={(e) => handleInputChange('hoursPerWeek', parseFloat(e.target.value) || 0)}
-                    className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-                    min="1"
+                    type="range"
+                    min="5"
                     max="80"
+                    value={inputs.hoursPerWeek}
+                    onChange={(e) => handleInputChange('hoursPerWeek', parseFloat(e.target.value))}
+                    className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                   />
+                  <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                    <span>5 hrs</span>
+                    <span>80 hrs</span>
+                  </div>
                   <p className="text-xs text-n8n-text-secondary mt-1">
                     Data entry, appointment booking, follow-ups, etc.
                   </p>
@@ -265,72 +285,75 @@ export default function ROICalculatorPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                      Missed Calls Per Day
+                      Missed Calls/Day: <span className="text-brand-primary font-bold">{inputs.missedCallsPerDay}</span>
                     </label>
                     <input
-                      type="number"
+                      type="range"
+                      min="2"
+                      max="25"
                       value={inputs.missedCallsPerDay}
-                      onChange={(e) => handleInputChange('missedCallsPerDay', parseInt(e.target.value) || 0)}
-                      className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-                      min="0"
-                      max="50"
+                      onChange={(e) => handleInputChange('missedCallsPerDay', parseInt(e.target.value))}
+                      className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                     />
+                    <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                      <span>2</span>
+                      <span>25+</span>
+                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                      Average Deal Value ($)
+                      Avg Deal Value: <span className="text-brand-primary font-bold">${inputs.avgDealValue.toLocaleString()}</span>
                     </label>
                     <input
-                      type="number"
+                      type="range"
+                      min="500"
+                      max="10000"
+                      step="100"
                       value={inputs.avgDealValue}
-                      onChange={(e) => handleInputChange('avgDealValue', parseFloat(e.target.value) || 0)}
-                      className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-                      min="100"
-                      max="50000"
+                      onChange={(e) => handleInputChange('avgDealValue', parseFloat(e.target.value))}
+                      className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                     />
+                    <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                      <span>$500</span>
+                      <span>$10k+</span>
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-n8n-text-primary mb-2">
-                    Lead to Customer Close Rate (%)
+                    Close Rate: <span className="text-brand-primary font-bold">{inputs.closeRate}%</span>
                   </label>
                   <input
-                    type="number"
+                    type="range"
+                    min="10"
+                    max="60"
                     value={inputs.closeRate}
-                    onChange={(e) => handleInputChange('closeRate', parseFloat(e.target.value) || 0)}
-                    className="w-full p-3 bg-n8n-bg-primary border border-gray-600 rounded-lg text-n8n-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-                    min="1"
-                    max="100"
+                    onChange={(e) => handleInputChange('closeRate', parseFloat(e.target.value))}
+                    className="w-full h-2 bg-n8n-bg-primary rounded-lg appearance-none cursor-pointer slider"
                   />
+                  <div className="flex justify-between text-xs text-n8n-text-secondary mt-1">
+                    <span>10%</span>
+                    <span>60%</span>
+                  </div>
                 </div>
 
-                <Button 
-                  onClick={handleCalculate}
-                  size="lg"
-                  fullWidth
-                  className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90"
-                >
-                  <Calculator className="w-5 h-5 mr-2" />
-                  Calculate My ROI
-                </Button>
+                <div className="bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 border border-brand-primary/20 rounded-lg p-4 text-center">
+                  <div className="flex items-center justify-center text-brand-primary mb-2">
+                    <Zap className="w-5 h-5 mr-2" />
+                    <span className="font-semibold">Real-Time Calculation</span>
+                  </div>
+                  <p className="text-n8n-text-secondary text-sm">
+                    Results update instantly as you adjust the sliders above
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Results Section */}
             <div className="bg-n8n-bg-secondary rounded-2xl shadow-xl p-8">
-              {!showResults ? (
-                <div className="text-center py-16">
-                  <Calculator className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-n8n-text-primary mb-2">
-                    Enter Your Information
-                  </h3>
-                  <p className="text-n8n-text-secondary">
-                    Fill out the form and click "Calculate My ROI" to see your personalized results
-                  </p>
-                </div>
-              ) : results && (
+              {results && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold text-n8n-text-primary mb-6 flex items-center">
                     <TrendingUp className="w-6 h-6 mr-3 text-green-500" />
