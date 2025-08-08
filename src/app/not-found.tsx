@@ -37,7 +37,7 @@ export default function NotFound() {
           {/* Quick Actions */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             <Link href="/">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
                 <Home className="w-8 h-8 text-brand-accent mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Home</h3>
                 <p className="text-gray-300 text-sm">Back to homepage</p>
@@ -45,7 +45,7 @@ export default function NotFound() {
             </Link>
             
             <Link href="/services">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
                 <Search className="w-8 h-8 text-brand-accent mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Services</h3>
                 <p className="text-gray-300 text-sm">Browse our AI automation services</p>
@@ -53,7 +53,7 @@ export default function NotFound() {
             </Link>
             
             <Link href="/integrations">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
                 <Search className="w-8 h-8 text-brand-accent mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Integrations</h3>
                 <p className="text-gray-300 text-sm">See app connections</p>
@@ -61,7 +61,7 @@ export default function NotFound() {
             </Link>
             
             <Link href="/contact">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 card-hover cursor-pointer">
                 <Phone className="w-8 h-8 text-brand-accent mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Contact</h3>
                 <p className="text-gray-300 text-sm">Get help from our team</p>
@@ -84,7 +84,7 @@ export default function NotFound() {
           </div>
           
           {/* Help Text */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-2xl mx-auto">
+          <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-2xl mx-auto">
             <h3 className="text-white font-semibold mb-3">
               Looking for something specific?
             </h3>

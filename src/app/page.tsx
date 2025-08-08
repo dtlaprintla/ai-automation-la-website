@@ -9,18 +9,18 @@ import Button from '@/components/ui/Button';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       <Hero />
       
       {/* Services Preview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-4">
               Complete Done-For-You AI Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               We handle everything so you don't have to. No technical knowledge required.
             </p>
           </div>
@@ -46,13 +46,13 @@ export default function HomePage() {
                 result: "80% fewer support calls"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-brand-primary mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className="bg-green-50 rounded-lg p-3">
-                  <p className="text-green-800 font-semibold text-sm">
-                    <span className="text-green-600">Result:</span> {service.result}
+                <h3 className="text-xl font-bold text-n8n-text-primary mb-3">{service.title}</h3>
+                <p className="text-n8n-text-secondary mb-4">{service.description}</p>
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
+                  <p className="text-green-400 font-semibold text-sm">
+                    <span className="text-green-300">Result:</span> {service.result}
                   </p>
                 </div>
               </div>
@@ -71,34 +71,34 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-4">
               Trusted by 100+ LA Businesses
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-primary mb-2">100+</div>
-              <div className="text-gray-600">Businesses Automated</div>
+              <div className="text-n8n-text-secondary">Businesses Automated</div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-primary mb-2">650%</div>
-              <div className="text-gray-600">Average ROI</div>
+              <div className="text-n8n-text-secondary">Average ROI</div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-primary mb-2">2-3</div>
-              <div className="text-gray-600">Weeks to Deploy</div>
+              <div className="text-n8n-text-secondary">Weeks to Deploy</div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-6 flex flex-col items-center">
+            <div className="bg-n8n-bg-secondary rounded-lg p-6 flex flex-col items-center">
               <div className="flex text-yellow-400 mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
-              <div className="text-gray-600">Client Rating</div>
+              <div className="text-n8n-text-secondary">Client Rating</div>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link href="/contact">
-              <Button size="xl" variant="secondary" className="bg-white text-brand-primary font-bold hover:bg-gray-100">
+              <Button size="xl" variant="secondary" className="bg-n8n-bg-secondary text-brand-primary font-bold hover:bg-gray-100">
                 <ArrowRight className="w-6 h-6 mr-2" />
                 Get Free AI Plan
               </Button>

@@ -107,7 +107,7 @@ const addOns = [
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
       {/* Hero Section */}
@@ -139,7 +139,7 @@ export default function PricingPage() {
             {packages.map((pkg, index) => (
               <div 
                 key={pkg.name} 
-                className={`bg-white rounded-2xl shadow-xl p-8 relative ${
+                className={`bg-n8n-bg-secondary rounded-2xl shadow-xl p-8 relative ${
                   pkg.popular ? 'border-4 border-brand-primary transform scale-105' : ''
                 }`}
               >
@@ -152,21 +152,21 @@ export default function PricingPage() {
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-                  <p className="text-gray-600 mb-6">{pkg.description}</p>
+                  <h3 className="text-2xl font-bold text-n8n-text-primary mb-2">{pkg.name}</h3>
+                  <p className="text-n8n-text-secondary mb-6">{pkg.description}</p>
                   
                   <div className="mb-4">
-                    <div className="text-4xl font-bold text-gray-900">
+                    <div className="text-4xl font-bold text-n8n-text-primary">
                       ${pkg.price}
-                      <span className="text-lg text-gray-600 font-normal"> setup</span>
+                      <span className="text-lg text-n8n-text-secondary font-normal"> setup</span>
                     </div>
                     <div className="text-2xl font-bold text-brand-primary mt-2">
                       ${pkg.monthly}
-                      <span className="text-lg text-gray-600 font-normal">/month</span>
+                      <span className="text-lg text-n8n-text-secondary font-normal">/month</span>
                     </div>
                   </div>
                   
-                  <div className="flex justify-between text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
+                  <div className="flex justify-between text-sm text-n8n-text-secondary bg-n8n-bg-primary rounded-lg p-3">
                     <span>Best for: {pkg.ideal}</span>
                     <span>Setup: {pkg.setup}</span>
                   </div>
@@ -176,7 +176,7 @@ export default function PricingPage() {
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-n8n-text-secondary">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -199,7 +199,7 @@ export default function PricingPage() {
       </section>
 
       {/* ROI Guarantee */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-12 text-center">
             <div className="flex justify-center mb-6">
@@ -208,10 +208,10 @@ export default function PricingPage() {
               ))}
             </div>
             
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               100% ROI Guarantee
             </h2>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary mb-8 max-w-3xl mx-auto">
               If your automation doesn't deliver measurable ROI within 90 days, 
               we'll work for free until it does or refund your setup fee. That's our promise.
             </p>
@@ -219,15 +219,15 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-brand-primary mb-2">650%</div>
-                <div className="text-gray-600">Average ROI in 6 months</div>
+                <div className="text-n8n-text-secondary">Average ROI in 6 months</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-brand-primary mb-2">2-3</div>
-                <div className="text-gray-600">Weeks to see results</div>
+                <div className="text-n8n-text-secondary">Weeks to see results</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-brand-primary mb-2">100%</div>
-                <div className="text-gray-600">Client satisfaction rate</div>
+                <div className="text-n8n-text-secondary">Client satisfaction rate</div>
               </div>
             </div>
           </div>
@@ -235,25 +235,25 @@ export default function PricingPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               Optional Add-Ons
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-n8n-text-secondary">
               Scale your automation with these additional services
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {addOns.map((addon, index) => (
-              <div key={index} className="bg-white rounded-lg p-8 shadow-lg">
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{addon.name}</h3>
+                  <h3 className="text-xl font-bold text-n8n-text-primary">{addon.name}</h3>
                   <div className="text-lg font-bold text-brand-primary">{addon.price}</div>
                 </div>
-                <p className="text-gray-600">{addon.description}</p>
+                <p className="text-n8n-text-secondary">{addon.description}</p>
               </div>
             ))}
           </div>
@@ -261,10 +261,10 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               Pricing Questions
             </h2>
           </div>
@@ -292,11 +292,11 @@ export default function PricingPage() {
                 answer: "We track specific KPIs agreed upon before implementation. If you don't hit targets in 90 days, we work for free until you do or refund setup costs."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <div key={index} className="bg-n8n-bg-primary rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-n8n-text-primary mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-n8n-text-secondary">
                   {faq.answer}
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function PricingPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="xl" variant="secondary" className="bg-white text-brand-primary font-bold hover:bg-gray-100">
+              <Button size="xl" variant="secondary" className="bg-n8n-bg-secondary text-brand-primary font-bold hover:bg-gray-100">
                 <ArrowRight className="w-6 h-6 mr-2" />
                 Get Free Consultation
               </Button>

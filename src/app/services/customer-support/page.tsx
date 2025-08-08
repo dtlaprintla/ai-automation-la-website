@@ -78,7 +78,7 @@ export default function CustomerSupportPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-2 text-white mb-6">
+              <div className="inline-flex items-center bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-2 text-white mb-6">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Customer Support Automation
               </div>
@@ -102,7 +102,7 @@ export default function CustomerSupportPage() {
                 </Button>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
                 <p className="text-white font-semibold">
                   ⚡ Result: <span className="text-brand-accent">80% fewer support calls to you</span>
                 </p>
@@ -110,7 +110,7 @@ export default function CustomerSupportPage() {
             </div>
             
             <div className="relative">
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-brand-accent rounded-full flex items-center justify-center">
@@ -175,7 +175,7 @@ export default function CustomerSupportPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -274,7 +274,7 @@ export default function CustomerSupportPage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

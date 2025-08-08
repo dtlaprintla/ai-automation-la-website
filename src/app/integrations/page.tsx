@@ -137,7 +137,7 @@ export default function IntegrationsPage() {
             </Button>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-2xl mx-auto">
+          <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-2xl mx-auto">
             <p className="text-white font-semibold mb-2">
               ⚡ Average Result:
             </p>
@@ -162,7 +162,7 @@ export default function IntegrationsPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-card text-center">
+              <div key={index} className="bg-n8n-bg-secondary p-8 rounded-xl shadow-card text-center">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {benefit.title}
                 </h3>

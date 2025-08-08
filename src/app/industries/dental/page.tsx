@@ -123,15 +123,15 @@ export default function DentalIndustryPage() {
             
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-blue-400 mb-2">35% → 5%</div>
                 <p className="text-white">Missed Calls Reduction</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-purple-400 mb-2">20% → 12%</div>
                 <p className="text-white">No-Show Rate Drop</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-green-400 mb-2">+180k</div>
                 <p className="text-white">Avg Annual Revenue Increase</p>
               </div>
@@ -306,7 +306,7 @@ export default function DentalIndustryPage() {
                 location: "West Los Angeles"
               }
             ].map((story, index) => (
-              <div key={index} className="bg-white rounded-lg p-8 shadow-lg">
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{story.practice}</h3>
                   <p className="text-sm text-gray-500 mb-4">{story.location}</p>
@@ -416,7 +416,7 @@ export default function DentalIndustryPage() {
                 answer: "Yes, we serve all of LA County including Beverly Hills, Westside, Downtown, Valley, Pasadena, Long Beach, and surrounding areas."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg shadow-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>

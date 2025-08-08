@@ -97,7 +97,7 @@ export default function ServicesPage() {
             Complete Done-For-You AI automation. No technical knowledge required. 
             We build it, we manage it, you profit.
           </p>
-          <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 text-white">
+          <div className="inline-flex items-center bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 text-white">
             <span className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></span>
             100% Managed Service - Zero Learning Required
           </div>
@@ -222,7 +222,7 @@ export default function ServicesPage() {
             <Button size="lg" variant="secondary">
               Get Free Consultation
             </Button>
-            <Button size="lg" variant="ghost" className="text-white border-white hover:bg-white hover:text-brand-primary">
+            <Button size="lg" variant="ghost" className="text-white border-white hover:bg-n8n-bg-secondary hover:text-brand-primary">
               Call {BRAND.phone}
             </Button>
           </div>

@@ -165,7 +165,7 @@ export default function AboutPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-8 shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
               <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mb-6">
                 <Target className="w-6 h-6 text-white" />
               </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-8 shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
               <div className="w-12 h-12 bg-brand-secondary rounded-lg flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-white" />
               </div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-8 shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
               <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center mb-6">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
@@ -262,7 +262,7 @@ export default function AboutPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
               <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-white" />
               </div>
@@ -276,7 +276,7 @@ export default function AboutPage() {
               <p className="text-gray-600 text-sm mt-1">Mon-Fri 9am-6pm PST</p>
             </div>
             
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
               <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-8 h-8 text-white" />
               </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
               <p className="text-gray-600 text-sm mt-1">24-hour response</p>
             </div>
             
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg">
+            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
               <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>

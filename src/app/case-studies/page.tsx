@@ -66,7 +66,7 @@ const caseStudiesJsonLd = {
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
       {/* JSON-LD Structured Data */}
@@ -91,15 +91,15 @@ export default function CaseStudiesPage() {
             
             {/* Quick Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-white mb-2">400-650%</div>
                 <div className="text-white/80">Average ROI</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-white mb-2">2-4 Weeks</div>
                 <div className="text-white/80">Implementation Time</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <div className="text-3xl font-bold text-white mb-2">100%</div>
                 <div className="text-white/80">Client Satisfaction</div>
               </div>
@@ -112,47 +112,47 @@ export default function CaseStudiesPage() {
       <CaseStudies />
       
       {/* Additional Value Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
               Why LA Businesses Choose Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               Local expertise, proven methodologies, and a track record of delivering 
               measurable results for businesses throughout Los Angeles County.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
+            <div className="bg-n8n-bg-primary rounded-lg p-8 text-center">
               <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">LA</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Local Market Expertise</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-n8n-text-primary mb-4">Local Market Expertise</h3>
+              <p className="text-n8n-text-secondary">
                 Deep understanding of LA business challenges, from bilingual requirements 
                 to industry-specific regulations and seasonal patterns.
               </p>
             </div>
             
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
+            <div className="bg-n8n-bg-primary rounded-lg p-8 text-center">
               <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">⚡</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Rapid Implementation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-n8n-text-primary mb-4">Rapid Implementation</h3>
+              <p className="text-n8n-text-secondary">
                 Quick wins in 2-3 weeks, full transformation in 4-8 weeks. 
                 No lengthy consulting phases - we deliver results fast.
               </p>
             </div>
             
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
+            <div className="bg-n8n-bg-primary rounded-lg p-8 text-center">
               <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">🎯</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Measurable ROI</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-n8n-text-primary mb-4">Measurable ROI</h3>
+              <p className="text-n8n-text-secondary">
                 Every project includes clear KPIs and performance guarantees. 
                 We track and report on real business impact.
               </p>

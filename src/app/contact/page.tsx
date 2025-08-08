@@ -54,7 +54,7 @@ const contactJsonLd = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
       {/* JSON-LD Structured Data */}
@@ -84,17 +84,17 @@ export default function ContactPage() {
             
             {/* Value Props */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-3" />
                 <div className="text-lg font-semibold mb-2">Free 24-Hour Response</div>
                 <p className="text-white/80">Custom automation plan delivered within 24 hours</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <Star className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
                 <div className="text-lg font-semibold mb-2">LA Business Focus</div>
                 <p className="text-white/80">Specialists in LA market with on-site visits available</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
                 <Zap className="w-8 h-8 text-blue-400 mx-auto mb-3" />
                 <div className="text-lg font-semibold mb-2">Done-For-You Service</div>
                 <p className="text-white/80">We handle everything - no technical knowledge required</p>
@@ -108,10 +108,10 @@ export default function ContactPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-4">
               Start Your Automation Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               Complete the form below and we'll analyze your business to identify the highest-impact 
               automation opportunities for immediate ROI.
             </p>
@@ -122,13 +122,13 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               Get In Touch Directly
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-n8n-text-secondary">
               Prefer to speak with us directly? We're here to help.
             </p>
           </div>
@@ -138,71 +138,71 @@ export default function ContactPage() {
               <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Phone</h3>
               <a 
                 href={`tel:${BRAND.phone}`}
                 className="text-brand-primary hover:text-brand-secondary font-medium text-lg"
               >
                 {BRAND.phone}
               </a>
-              <p className="text-gray-600 text-sm mt-1">Mon-Fri 9am-6pm PST</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">Mon-Fri 9am-6pm PST</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Email</h3>
               <a 
                 href={`mailto:${BRAND.email}`}
                 className="text-brand-primary hover:text-brand-secondary font-medium"
               >
                 {BRAND.email}
               </a>
-              <p className="text-gray-600 text-sm mt-1">24-hour response</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">24-hour response</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Location</h3>
-              <p className="text-gray-700 font-medium">Vernon, CA</p>
-              <p className="text-gray-600 text-sm mt-1">Serving all LA County</p>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Location</h3>
+              <p className="text-n8n-text-primary font-medium">Vernon, CA</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">Serving all LA County</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Response Time</h3>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Response Time</h3>
               <p className="text-green-600 font-semibold">Within 24 Hours</p>
-              <p className="text-gray-600 text-sm mt-1">Usually same day</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">Usually same day</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-n8n-text-primary mb-8">
             Proudly Serving Los Angeles Businesses
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {BRAND.serviceAreas.map((area, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-sm">
-                <p className="text-gray-700 font-medium">{area}</p>
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-4 shadow-sm">
+                <p className="text-n8n-text-primary font-medium">{area}</p>
               </div>
             ))}
           </div>
           
           <div className="mt-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <h3 className="text-xl font-semibold text-n8n-text-primary mb-4">
               On-Site Visits Available
             </h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-n8n-text-secondary max-w-3xl mx-auto">
               We offer on-site consultations throughout Los Angeles County. 
               Our team understands the unique challenges facing LA businesses and can 
               provide personalized automation solutions at your location.
@@ -212,10 +212,10 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-n8n-bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               Frequently Asked Questions
             </h2>
           </div>
@@ -243,11 +243,11 @@ export default function ContactPage() {
                 answer: "Most automation projects start showing results within 2-3 weeks. Complex integrations may take 4-8 weeks, but we always start with quick wins first."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <div key={index} className="bg-n8n-bg-primary rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-n8n-text-primary mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-n8n-text-secondary">
                   {faq.answer}
                 </p>
               </div>

@@ -363,7 +363,7 @@ export default function VoiceAgentsPage() {
             <Button 
               size="xl" 
               variant="outline" 
-              className="border-2 border-white text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-white hover:text-black"
+              className="border-2 border-white text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-n8n-bg-secondary hover:text-black"
             >
               <Phone className="w-6 h-6 mr-2" />
               CALL {BRAND.phone}

@@ -112,15 +112,15 @@ export default function AdvancedIntegrationsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-accent mb-2">{totalIntegrations}+</div>
               <p className="text-white">Total Integrations</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-accent mb-2">{Object.keys(integrationCategories).length}</div>
               <p className="text-white">Categories</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
+            <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
               <div className="text-3xl font-bold text-brand-accent mb-2">{popularIntegrationsCount}</div>
               <p className="text-white">Most Popular</p>
             </div>
