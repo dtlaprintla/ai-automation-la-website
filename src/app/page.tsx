@@ -9,18 +9,18 @@ import Button from '@/components/ui/Button';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0E0918] text-white">
+    <div className="min-h-screen bg-n8n-bg-primary text-n8n-text-primary">
       <Header />
       <Hero />
       
       {/* Services Preview */}
-      <section className="py-20 bg-[#1A1B26]">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Complete Done-For-You AI Solutions
             </h2>
-            <p className="text-xl text-[#C4BBD3] max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               We handle everything so you don't have to. No technical knowledge required.
             </p>
           </div>
@@ -46,10 +46,10 @@ export default function HomePage() {
                 result: "80% fewer support calls"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-[#1A1B26] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
-                <div className="text-[#EE4F27] mb-4">{service.icon}</div>
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-n8n-border">
+                <div className="text-brand-primary mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-[#C4BBD3] mb-4">{service.description}</p>
+                <p className="text-n8n-text-secondary mb-4">{service.description}</p>
                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
                   <p className="text-green-400 font-semibold text-sm">
                     <span className="text-green-300">Result:</span> {service.result}
@@ -61,7 +61,7 @@ export default function HomePage() {
           
           <div className="text-center">
             <Link href="/services">
-              <Button size="lg" className="bg-[#EE4F27] hover:bg-[#EE4F27]/80">
+              <Button size="lg" className="bg-gradient-to-r from-brand-primary to-brand-secondary hover:bg-gradient-to-r from-brand-primary to-brand-secondary/80">
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -71,13 +71,13 @@ export default function HomePage() {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 bg-[#0E0918]">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Stop Losing Money Every Day
             </h2>
-            <p className="text-xl text-[#C4BBD3] max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               LA businesses are hemorrhaging revenue due to manual processes and missed opportunities
             </p>
           </div>
@@ -109,11 +109,11 @@ export default function HomePage() {
                 cost: "Falling behind market"
               }
             ].map((pain, index) => (
-              <div key={index} className="bg-[#1A1B26] border border-red-500/20 rounded-lg p-6 text-center">
+              <div key={index} className="bg-n8n-bg-secondary border border-red-500/20 rounded-lg p-6 text-center">
                 <div className="text-red-400 mb-4 flex justify-center">{pain.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2">{pain.title}</h3>
                 <div className="text-red-400 font-bold mb-2">{pain.stat}</div>
-                <div className="text-[#C4BBD3] text-sm">{pain.cost}</div>
+                <div className="text-n8n-text-secondary text-sm">{pain.cost}</div>
               </div>
             ))}
           </div>
@@ -121,13 +121,13 @@ export default function HomePage() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-[#1A1B26]">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               How AI Automation Transforms Your Business
             </h2>
-            <p className="text-xl text-[#C4BBD3] max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               Turn your biggest operational challenges into competitive advantages
             </p>
           </div>
@@ -162,14 +162,14 @@ export default function HomePage() {
               ].map((solution, index) => (
                 <div key={index} className="flex space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#EE4F27]/20 rounded-lg flex items-center justify-center">
-                      <div className="text-[#EE4F27]">{solution.icon}</div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-secondary/20 rounded-lg flex items-center justify-center">
+                      <div className="text-brand-primary">{solution.icon}</div>
                     </div>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">{solution.title}</h3>
-                    <p className="text-[#C4BBD3] mb-2">{solution.description}</p>
-                    <p className="text-sm text-[#EE4F27] font-medium">{solution.benefit}</p>
+                    <p className="text-n8n-text-secondary mb-2">{solution.description}</p>
+                    <p className="text-sm text-brand-primary font-medium">{solution.benefit}</p>
                   </div>
                 </div>
               ))}
@@ -182,25 +182,25 @@ export default function HomePage() {
                 </h3>
                 <div className="space-y-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-[#EE4F27] mb-2">650%</div>
-                    <div className="text-[#C4BBD3]">Return on Investment</div>
+                    <div className="text-4xl font-bold text-brand-primary mb-2">650%</div>
+                    <div className="text-n8n-text-secondary">Return on Investment</div>
                   </div>
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
                       <div className="text-2xl font-bold text-green-400 mb-1">95%</div>
-                      <div className="text-sm text-[#C4BBD3]">Call Answer Rate</div>
+                      <div className="text-sm text-n8n-text-secondary">Call Answer Rate</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-blue-400 mb-1">30 sec</div>
-                      <div className="text-sm text-[#C4BBD3]">Response Time</div>
+                      <div className="text-sm text-n8n-text-secondary">Response Time</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-purple-400 mb-1">24/7</div>
-                      <div className="text-sm text-[#C4BBD3]">Availability</div>
+                      <div className="text-sm text-n8n-text-secondary">Availability</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-yellow-400 mb-1">20+</div>
-                      <div className="text-sm text-[#C4BBD3]">Hours Saved</div>
+                      <div className="text-sm text-n8n-text-secondary">Hours Saved</div>
                     </div>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 bg-[#0E0918]">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -220,38 +220,38 @@ export default function HomePage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-[#1A1B26] rounded-lg p-6">
-              <div className="text-3xl font-bold text-[#EE4F27] mb-2">100+</div>
-              <div className="text-[#C4BBD3]">Businesses Automated</div>
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
+              <div className="text-3xl font-bold text-brand-primary mb-2">100+</div>
+              <div className="text-n8n-text-secondary">Businesses Automated</div>
             </div>
-            <div className="bg-[#1A1B26] rounded-lg p-6">
-              <div className="text-3xl font-bold text-[#EE4F27] mb-2">650%</div>
-              <div className="text-[#C4BBD3]">Average ROI</div>
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
+              <div className="text-3xl font-bold text-brand-primary mb-2">650%</div>
+              <div className="text-n8n-text-secondary">Average ROI</div>
             </div>
-            <div className="bg-[#1A1B26] rounded-lg p-6">
-              <div className="text-3xl font-bold text-[#EE4F27] mb-2">2-3</div>
-              <div className="text-[#C4BBD3]">Weeks to Deploy</div>
+            <div className="bg-n8n-bg-secondary rounded-lg p-6">
+              <div className="text-3xl font-bold text-brand-primary mb-2">2-3</div>
+              <div className="text-n8n-text-secondary">Weeks to Deploy</div>
             </div>
-            <div className="bg-[#1A1B26] rounded-lg p-6 flex flex-col items-center">
+            <div className="bg-n8n-bg-secondary rounded-lg p-6 flex flex-col items-center">
               <div className="flex text-yellow-400 mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
-              <div className="text-[#C4BBD3]">Client Rating</div>
+              <div className="text-n8n-text-secondary">Client Rating</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-20 bg-[#1A1B26]">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Specialized for LA Industries
             </h2>
-            <p className="text-xl text-[#C4BBD3] max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               Custom AI solutions designed for your specific business challenges
             </p>
           </div>
@@ -268,10 +268,10 @@ export default function HomePage() {
               { name: "Hospitality", icon: "🏨", benefit: "24/7 booking" }
             ].map((industry, index) => (
               <Link key={index} href={`/industries/${industry.name.toLowerCase().replace(' ', '-')}`}>
-                <div className="bg-[#0E0918] border border-gray-700 hover:border-[#EE4F27]/50 rounded-lg p-6 text-center transition-all cursor-pointer group">
+                <div className="bg-n8n-bg-primary border border-n8n-border hover:border-[#EE4F27]/50 rounded-lg p-6 text-center transition-all cursor-pointer group">
                   <div className="text-4xl mb-3">{industry.icon}</div>
-                  <h3 className="font-semibold text-white mb-2 group-hover:text-[#EE4F27]">{industry.name}</h3>
-                  <div className="text-sm text-[#EE4F27]">{industry.benefit}</div>
+                  <h3 className="font-semibold text-white mb-2 group-hover:text-brand-primary">{industry.name}</h3>
+                  <div className="text-sm text-brand-primary">{industry.benefit}</div>
                 </div>
               </Link>
             ))}
@@ -294,7 +294,7 @@ export default function HomePage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link href="/contact">
-              <Button size="xl" className="bg-white text-[#EE4F27] font-bold hover:bg-gray-100">
+              <Button size="xl" className="bg-white text-brand-primary font-bold hover:bg-gray-100">
                 <ArrowRight className="w-6 h-6 mr-2" />
                 Get Free AI Plan
               </Button>

@@ -79,11 +79,11 @@ export default function AdvancedIntegrationsPage() {
   const popularIntegrationsCount = getPopularIntegrations(85).length;
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
         <div className="absolute inset-0 animated-bg opacity-30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 text-white mb-8">
@@ -96,7 +96,7 @@ export default function AdvancedIntegrationsPage() {
             <span className="block gradient-text">Business Uses</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
             We connect all your favorite business tools with intelligent automation. 
             <span className="text-white font-semibold"> Completely done-for-you</span> - 
             no technical setup required.

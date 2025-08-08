@@ -63,7 +63,7 @@ const aboutJsonLd = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
       {/* JSON-LD Structured Data */}
@@ -96,14 +96,14 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
                 Why We Started AI Automation LA
               </h2>
-              <div className="space-y-6 text-gray-700 text-lg">
+              <div className="space-y-6 text-n8n-text-secondary text-lg">
                 <p>
                   We saw too many LA business owners drowning in busywork—missing calls, 
                   juggling manual processes, and losing potential customers to competitors 
@@ -122,27 +122,27 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-n8n-bg-primary rounded-lg p-8 border border-n8n-border">
               <div className="space-y-6">
                 <div className="flex items-center">
                   <Award className="w-8 h-8 text-brand-primary mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">100+ Businesses Automated</h3>
-                    <p className="text-gray-600">Across every major LA industry</p>
+                    <h3 className="font-semibold text-n8n-text-primary">100+ Businesses Automated</h3>
+                    <p className="text-n8n-text-secondary">Across every major LA industry</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Star className="w-8 h-8 text-yellow-500 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">5.0 Star Rating</h3>
-                    <p className="text-gray-600">From satisfied LA business owners</p>
+                    <h3 className="font-semibold text-n8n-text-primary">5.0 Star Rating</h3>
+                    <p className="text-n8n-text-secondary">From satisfied LA business owners</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Clock className="w-8 h-8 text-green-500 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">2-3 Week Implementation</h3>
-                    <p className="text-gray-600">From consultation to live automation</p>
+                    <h3 className="font-semibold text-n8n-text-primary">2-3 Week Implementation</h3>
+                    <p className="text-n8n-text-secondary">From consultation to live automation</p>
                   </div>
                 </div>
               </div>
@@ -152,13 +152,13 @@ export default function AboutPage() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
               Our Done-For-You Approach
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               We don't just consult—we build, deploy, and manage your entire automation system 
               so you can focus on growing your business.
             </p>
@@ -169,8 +169,8 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mb-6">
                 <Target className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">We Listen First</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Listen First</h3>
+              <p className="text-n8n-text-secondary">
                 Every LA business is unique. We spend time understanding your specific 
                 challenges, workflows, and goals before building anything.
               </p>
@@ -180,8 +180,8 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-brand-secondary rounded-lg flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">We Build Everything</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Build Everything</h3>
+              <p className="text-n8n-text-secondary">
                 Our team handles all the technical work. AI training, system integrations, 
                 testing—you don't lift a finger during implementation.
               </p>
@@ -191,8 +191,8 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center mb-6">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">We Manage It All</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Manage It All</h3>
+              <p className="text-n8n-text-secondary">
                 Ongoing monitoring, updates, and improvements. Your automation keeps 
                 getting better while you focus on serving customers.
               </p>
@@ -202,13 +202,13 @@ export default function AboutPage() {
       </section>
 
       {/* Local LA Focus */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
               Deep Los Angeles Market Knowledge
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               We understand the unique challenges of running a business in LA—from bilingual 
               customer bases to industry-specific regulations.
             </p>
@@ -241,8 +241,8 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">{feature.title}</h3>
+                <p className="text-n8n-text-secondary">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -250,13 +250,13 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
               Ready to Work Together?
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-n8n-text-secondary">
               Let's discuss how AI automation can transform your LA business.
             </p>
           </div>
@@ -266,37 +266,37 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Call Us</h3>
               <a 
                 href={`tel:${BRAND.phone}`}
                 className="text-brand-primary hover:text-brand-secondary font-medium text-lg"
               >
                 {BRAND.phone}
               </a>
-              <p className="text-gray-600 text-sm mt-1">Mon-Fri 9am-6pm PST</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">Mon-Fri 9am-6pm PST</p>
             </div>
             
             <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
               <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Email Us</h3>
               <a 
                 href={`mailto:${BRAND.email}`}
                 className="text-brand-primary hover:text-brand-secondary font-medium"
               >
                 {BRAND.email}
               </a>
-              <p className="text-gray-600 text-sm mt-1">24-hour response</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">24-hour response</p>
             </div>
             
             <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
               <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
-              <p className="text-gray-700 font-medium">Vernon, CA</p>
-              <p className="text-gray-600 text-sm mt-1">Serving all LA County</p>
+              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Visit Us</h3>
+              <p className="text-n8n-text-primary font-medium">Vernon, CA</p>
+              <p className="text-n8n-text-secondary text-sm mt-1">Serving all LA County</p>
             </div>
           </div>
           
@@ -305,7 +305,7 @@ export default function AboutPage() {
               <ArrowRight className="w-6 h-6 mr-2" />
               Get Your Free AI Plan
             </Button>
-            <p className="text-gray-600 text-sm mt-4">
+            <p className="text-n8n-text-secondary text-sm mt-4">
               Free consultation • Custom automation roadmap • No obligation
             </p>
           </div>

@@ -65,11 +65,6 @@ export const integrationCategories = {
     color: '#ef4444',
     description: 'Track orders and sync product data with platforms like Shopify',
     subcategories: ['online-stores', 'payment-processing', 'inventory', 'analytics']
-  },
-  'Project Management': {
-    color: '#84cc16',
-    description: 'Stay on top of tasks with platforms like Trello, Asana, and Monday.com',
-    subcategories: ['task-management', 'collaboration', 'time-tracking', 'reporting']
   }
 };
 

@@ -1,7 +1,7 @@
 # AI Automation Agency - Project Status
 
 ## 🎯 Current Status: LIVE & DEPLOYED
-**Site URL**: [Production Deployment on Vercel]
+**Site URL**: https://ai-automation-la-website.vercel.app/
 
 ## ✅ COMPLETED (40+ Features)
 

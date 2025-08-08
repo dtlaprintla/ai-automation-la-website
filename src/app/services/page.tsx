@@ -82,7 +82,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0E0918] text-white">
+    <main className="min-h-screen bg-n8n-bg-primary text-n8n-text-primary">
       <Header />
       
       {/* Hero Section */}
@@ -91,13 +91,13 @@ export default function ServicesPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             We Handle Everything
-            <span className="block text-[#EE4F27]">You Get Results</span>
+            <span className="block text-brand-primary">You Get Results</span>
           </h1>
-          <p className="text-xl md:text-2xl text-[#C4BBD3] mb-8 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-n8n-text-secondary mb-8 max-w-4xl mx-auto">
             Complete Done-For-You AI automation. No technical knowledge required. 
             We build it, we manage it, you profit.
           </p>
-          <div className="inline-flex items-center bg-[#1A1B26] backdrop-blur-md border border-[#C4BBD3]/20 rounded-lg px-6 py-3 text-white">
+          <div className="inline-flex items-center bg-n8n-bg-secondary backdrop-blur-md border border-n8n-border rounded-lg px-6 py-3 text-white">
             <span className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></span>
             100% Managed Service - Zero Learning Required
           </div>
@@ -105,21 +105,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-[#0E0918]">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Done-For-You Services
             </h2>
-            <p className="text-xl text-[#C4BBD3] max-w-3xl mx-auto">
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
               Choose what you need. We handle the rest. All services include setup, training, and ongoing management.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={service.slug} className="bg-[#1A1B26] rounded-xl shadow-card p-8 hover:shadow-card-hover transition-all duration-300 border border-gray-700">
-                <div className="text-[#EE4F27] mb-4">
+              <div key={service.slug} className="bg-n8n-bg-secondary rounded-xl shadow-card p-8 hover:shadow-card-hover transition-all duration-300 border border-n8n-border">
+                <div className="text-brand-primary mb-4">
                   {service.icon}
                 </div>
                 
@@ -127,15 +127,15 @@ export default function ServicesPage() {
                   {service.title}
                 </h3>
                 
-                <p className="text-[#C4BBD3] mb-6 leading-relaxed">
+                <p className="text-n8n-text-secondary mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 
                 <div className="space-y-3 mb-6">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start">
-                      <div className="w-2 h-2 bg-[#EE4F27] rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span className="text-[#C4BBD3] text-sm">{feature}</span>
+                      <div className="w-2 h-2 bg-brand-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span className="text-n8n-text-secondary text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                 </div>
                 
                 <Link href={`/services/${service.slug}`}>
-                  <Button variant="outline" size="sm" className="w-full border-[#EE4F27] text-[#EE4F27] hover:bg-[#EE4F27] hover:text-white">
+                  <Button variant="outline" size="sm" className="w-full border-[#EE4F27] text-brand-primary hover:bg-brand-primary hover:text-white">
                     Learn More <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
@@ -158,13 +158,13 @@ export default function ServicesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-[#1A1B26]">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               How Our Done-For-You Process Works
             </h2>
-            <p className="text-xl text-[#C4BBD3]">
+            <p className="text-xl text-n8n-text-secondary">
               Simple 3-step process. No technical knowledge needed from your side.
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold text-white mb-4">
                 We Listen & Plan
               </h3>
-              <p className="text-[#C4BBD3]">
+              <p className="text-n8n-text-secondary">
                 Tell us what tasks take up your time. We create a custom automation plan that fits your business perfectly.
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold text-white mb-4">
                 We Build & Test
               </h3>
-              <p className="text-[#C4BBD3]">
+              <p className="text-n8n-text-secondary">
                 Our team builds your AI systems and tests everything thoroughly. You don't lift a finger - we handle all the technical work.
               </p>
             </div>
@@ -201,7 +201,7 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold text-white mb-4">
                 You Get Results
               </h3>
-              <p className="text-[#C4BBD3]">
+              <p className="text-n8n-text-secondary">
                 Your AI starts working immediately. We monitor, maintain, and improve everything. You just enjoy the time savings and increased profits.
               </p>
             </div>
@@ -220,7 +220,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-[#EE4F27] hover:bg-gray-100 font-bold">
+              <Button size="lg" className="bg-white text-brand-primary hover:bg-gray-100 font-bold">
                 Get Free Consultation
               </Button>
             </Link>

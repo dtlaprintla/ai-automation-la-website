@@ -36,7 +36,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
   const popularityColors = {
     high: 'bg-green-100 text-green-800',
     medium: 'bg-yellow-100 text-yellow-800',
-    low: 'bg-gray-100 text-gray-800'
+    low: 'bg-n8n-bg-secondary text-gray-800'
   };
 
   return (
@@ -65,13 +65,17 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                 <IntegrationLogo integration={integration} size="lg" />
                 
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-n8n-text-primary">
                     {integration.name}
                   </h2>
                   <div className="flex items-center space-x-3 mt-1">
-                    <span className="text-gray-600">{integration.category}</span>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${popularityColors[integration.popularity]}`}>
-                      {integration.popularity} popularity
+                    <span className="text-n8n-text-secondary">{integration.category}</span>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      integration.popularity >= 85 ? popularityColors.high :
+                      integration.popularity >= 50 ? popularityColors.medium :
+                      popularityColors.low
+                    }`}>
+                      {integration.popularity}% popular
                     </span>
                   </div>
                 </div>
@@ -79,9 +83,9 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
               
               <button
                 onClick={onClose}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-n8n-bg-secondary hover:bg-gray-200 flex items-center justify-center transition-colors"
               >
-                <X className="w-5 h-5 text-gray-600" />
+                <X className="w-5 h-5 text-n8n-text-secondary" />
               </button>
             </div>
 
@@ -90,7 +94,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
               <div className="p-6 space-y-8">
                 {/* Description */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-n8n-text-primary mb-3">
                     About {integration.name}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
@@ -105,7 +109,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h4 className="font-semibold text-n8n-text-primary mb-2">
                         How This Helps Your Business
                       </h4>
                       <p className="text-gray-800 leading-relaxed">
@@ -117,7 +121,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
 
                 {/* Automation Use Case */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-n8n-text-primary mb-3">
                     What We Automate For You
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
@@ -127,7 +131,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
 
                 {/* Features */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-n8n-text-primary mb-4">
                     Features We Set Up
                   </h3>
                   <div className="grid md:grid-cols-2 gap-3">
@@ -142,7 +146,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
 
                 {/* Common Integrations */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-n8n-text-primary mb-4">
                     Works Great With These Apps
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -156,7 +160,9 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                         category: '',
                         logo: '',
                         tags: [],
-                        popularity: 'medium' as const,
+                        popularity: 50,
+                        nodeType: 'trigger_action' as const,
+                        subcategory: '',
                         automationUseCase: '',
                         businessBenefit: '',
                         commonIntegrations: [],
@@ -164,7 +170,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                       };
                       
                       return (
-                        <div key={index} className="bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 transition-colors">
+                        <div key={index} className="bg-n8n-bg-primary rounded-lg p-3 text-center hover:bg-n8n-bg-secondary transition-colors">
                           <div className="mx-auto mb-2 flex justify-center">
                             <IntegrationLogo integration={commonIntegration} size="sm" />
                           </div>
@@ -179,7 +185,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
 
                 {/* Tags */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-n8n-text-primary mb-4">
                     Categories & Tags
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -197,7 +203,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
             </div>
 
             {/* Footer */}
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex-shrink-0">
+            <div className="bg-n8n-bg-primary px-6 py-4 border-t border-gray-200 flex-shrink-0">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
@@ -215,7 +221,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                 </Button>
               </div>
               
-              <p className="text-center text-sm text-gray-600 mt-4">
+              <p className="text-center text-sm text-n8n-text-secondary mt-4">
                 Complete done-for-you setup • No technical knowledge required • We handle everything
               </p>
             </div>

@@ -8,8 +8,10 @@ const nextConfig = {
     optimizeCss: true, // Enable CSS optimization
     webpackBuildWorker: true, // Faster builds
     gzipSize: true, // Show gzip sizes
-    serverComponentsExternalPackages: [], // Optimize server components
   },
+  
+  // Optimize server components
+  serverExternalPackages: [],
   
   // Image optimization for perfect performance
   images: {
