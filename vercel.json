@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "name": "ai-automation-la",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "COMPANY_NAME": "AI Automation LA",
+    "COMPANY_PHONE": "(323) 555-0123", 
+    "COMPANY_EMAIL": "hello@aiautomationla.com",
+    "COMPANY_ADDRESS": "4905 S Santa Fe Ave, Vernon, CA 90058"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options", 
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
