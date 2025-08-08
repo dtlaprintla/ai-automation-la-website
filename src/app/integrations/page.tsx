@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import { BRAND } from '@/config/branding';
 import { Zap, CheckCircle, ArrowRight } from 'lucide-react';
@@ -125,9 +126,11 @@ export default function IntegrationsPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="xl" variant="primary">
-              See Your Apps Connected
-            </Button>
+            <Link href="/integrations/advanced">
+              <Button size="xl" variant="primary">
+                Browse All 500+ Apps
+              </Button>
+            </Link>
             <Button size="xl" variant="secondary">
               Get Free Integration Plan
             </Button>
