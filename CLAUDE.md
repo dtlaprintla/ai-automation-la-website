@@ -1,4 +1,4 @@
-# Claude Project Context - AI Automation LA
+# AI Automation LA - Project Context
 
 ## 🎯 Project Overview
 This is the AI Automation LA website - a Done-For-You AI automation agency serving Los Angeles businesses. We specialize in voice agents, chatbots, workflow automation, and customer support AI.
@@ -26,11 +26,7 @@ This is the AI Automation LA website - a Done-For-You AI automation agency servi
 ### 3. Git Workflow
 - **ALWAYS** commit and push changes before ending a session
 - **USE** descriptive commit messages
-- **INCLUDE** the Claude signature in commits:
-  ```
-  🤖 Generated with Claude Code
-  Co-Authored-By: Claude <noreply@anthropic.com>
-  ```
+- **INCLUDE** professional commit signatures for tracking
 
 ### 4. Documentation Updates
 - **ALWAYS** update `PROJECT_STATUS.md` after completing tasks
