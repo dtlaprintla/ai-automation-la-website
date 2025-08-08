@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Integration } from '@/data/integrations';
 import { X, Zap, CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
 import Button from '@/components/ui/Button';
+import IntegrationLogo from './IntegrationLogo';
 
 interface IntegrationModalProps {
   integration: Integration | null;
@@ -61,12 +62,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
             {/* Header */}
             <div className="bg-gradient-to-r from-gray-50 to-white px-6 py-4 border-b border-gray-200 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center space-x-4">
-                {/* Logo */}
-                <div className="w-16 h-16 bg-gradient-to-r from-brand-primary to-brand-accent rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">
-                    {integration.name.charAt(0)}
-                  </span>
-                </div>
+                <IntegrationLogo integration={integration} size="lg" />
                 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">
@@ -150,18 +146,34 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                     Works Great With These Apps
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {integration.commonIntegrations.map((common, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 transition-colors">
-                        <div className="w-8 h-8 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mx-auto mb-2">
-                          <span className="text-white font-bold text-sm">
-                            {common.charAt(0)}
+                    {integration.commonIntegrations.map((common, index) => {
+                      // Find the integration for this common app to get proper logo
+                      const commonIntegration = {
+                        id: common.toLowerCase().replace(/\s+/g, ''),
+                        name: common,
+                        slug: common.toLowerCase().replace(/\s+/g, ''),
+                        description: '',
+                        category: '',
+                        logo: '',
+                        tags: [],
+                        popularity: 'medium' as const,
+                        automationUseCase: '',
+                        businessBenefit: '',
+                        commonIntegrations: [],
+                        features: []
+                      };
+                      
+                      return (
+                        <div key={index} className="bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 transition-colors">
+                          <div className="mx-auto mb-2 flex justify-center">
+                            <IntegrationLogo integration={commonIntegration} size="sm" />
+                          </div>
+                          <span className="text-sm font-medium text-gray-800">
+                            {common}
                           </span>
                         </div>
-                        <span className="text-sm font-medium text-gray-800">
-                          {common}
-                        </span>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
 

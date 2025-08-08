@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Integration } from '@/data/integrations';
 import { ExternalLink, Zap, CheckCircle } from 'lucide-react';
 import Button from '@/components/ui/Button';
+import IntegrationLogo from './IntegrationLogo';
 
 interface IntegrationCardProps {
   integration: Integration;
@@ -32,12 +33,7 @@ export default function IntegrationCard({ integration, onViewDetails }: Integrat
       <div className="p-6 pb-4">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
-            {/* Logo placeholder - in real implementation, use actual logos */}
-            <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">
-                {integration.name.charAt(0)}
-              </span>
-            </div>
+            <IntegrationLogo integration={integration} size="md" />
             <div>
               <h3 className="text-lg font-bold text-gray-900">
                 {integration.name}
