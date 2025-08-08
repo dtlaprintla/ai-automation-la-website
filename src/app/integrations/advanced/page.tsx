@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
 import { 
   integrations, 
@@ -21,6 +22,8 @@ export default function AdvancedIntegrationsPage() {
   const [selectedIntegration, setSelectedIntegration] = useState<Integration | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('All');
+  const [selectedNodeType, setSelectedNodeType] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showOnlyPopular, setShowOnlyPopular] = useState(false);
@@ -39,13 +42,23 @@ export default function AdvancedIntegrationsPage() {
       filtered = filtered.filter(integration => integration.category === selectedCategory);
     }
 
+    // Apply subcategory filter
+    if (selectedSubcategory !== 'All') {
+      filtered = filtered.filter(integration => integration.subcategory === selectedSubcategory);
+    }
+
+    // Apply node type filter
+    if (selectedNodeType !== 'All') {
+      filtered = filtered.filter(integration => integration.nodeType === selectedNodeType);
+    }
+
     // Apply popularity filter
     if (showOnlyPopular) {
       filtered = filtered.filter(integration => integration.popularity >= 85);
     }
 
     return filtered;
-  }, [searchQuery, selectedCategory, showOnlyPopular]);
+  }, [searchQuery, selectedCategory, selectedSubcategory, selectedNodeType, showOnlyPopular]);
 
   const handleViewDetails = (integration: Integration) => {
     setSelectedIntegration(integration);
@@ -58,6 +71,10 @@ export default function AdvancedIntegrationsPage() {
   };
 
   const categories = ['All', ...Object.keys(integrationCategories)];
+  const subcategories = selectedCategory !== 'All' && selectedCategory in integrationCategories 
+    ? ['All', ...(integrationCategories[selectedCategory as keyof typeof integrationCategories].subcategories || [])]
+    : ['All'];
+  const nodeTypes = ['All', 'trigger', 'action', 'trigger_action', 'cluster_node'];
   const totalIntegrations = integrations.length;
   const popularIntegrationsCount = getPopularIntegrations(85).length;
 
@@ -132,12 +149,48 @@ export default function AdvancedIntegrationsPage() {
               <Filter className="w-5 h-5 text-gray-600" />
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => {
+                  setSelectedCategory(e.target.value);
+                  setSelectedSubcategory('All'); // Reset subcategory when category changes
+                }}
                 className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent"
               >
                 {categories.map(category => (
                   <option key={category} value={category}>
                     {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Subcategory Filter */}
+            {selectedCategory !== 'All' && subcategories.length > 1 && (
+              <div className="flex items-center space-x-2">
+                <select
+                  value={selectedSubcategory}
+                  onChange={(e) => setSelectedSubcategory(e.target.value)}
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                >
+                  {subcategories.map(subcategory => (
+                    <option key={subcategory} value={subcategory}>
+                      {subcategory === 'All' ? 'All Subcategories' : subcategory.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            {/* Node Type Filter */}
+            <div className="flex items-center space-x-2">
+              <span className="text-sm text-gray-600">Type:</span>
+              <select
+                value={selectedNodeType}
+                onChange={(e) => setSelectedNodeType(e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+              >
+                {nodeTypes.map(nodeType => (
+                  <option key={nodeType} value={nodeType}>
+                    {nodeType === 'All' ? 'All Types' : nodeType.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
                   </option>
                 ))}
               </select>
@@ -185,6 +238,9 @@ export default function AdvancedIntegrationsPage() {
             Showing {filteredIntegrations.length} of {totalIntegrations} integrations
             {searchQuery && ` for "${searchQuery}"`}
             {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+            {selectedSubcategory !== 'All' && ` → ${selectedSubcategory.replace('-', ' ')}`}
+            {selectedNodeType !== 'All' && ` (${selectedNodeType.replace('_', ' ')} type)`}
+            {showOnlyPopular && ` (popular only)`}
           </div>
         </div>
       </section>
@@ -222,6 +278,8 @@ export default function AdvancedIntegrationsPage() {
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('All');
+                  setSelectedSubcategory('All');
+                  setSelectedNodeType('All');
                   setShowOnlyPopular(false);
                 }}
                 variant="outline"
@@ -260,6 +318,7 @@ export default function AdvancedIntegrationsPage() {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
+      <Footer />
     </main>
   );
 }

@@ -21,6 +21,28 @@ const config: Config = {
             to: "#2E4F7A"   // ChatGPT end
           }
         },
+        // N8N-inspired dark theme colors
+        n8n: {
+          bg: {
+            primary: "#0E0918",    // Deep navy background
+            secondary: "#1A1B26",  // Slightly lighter for cards
+            tertiary: "#242530",   // Inputs/elevated elements
+            accent: "#2A2D3E",     // Hover states
+          },
+          text: {
+            primary: "#FFFFFF",    // Pure white for headings
+            secondary: "#C4BBD3",  // Lavender gray for body text
+            muted: "#9B96A6",      // Muted text
+            disabled: "#6B6B7D",   // Disabled states
+          },
+          accent: {
+            orange: "#EE4F27",     // N8N's signature orange
+            purple: "#6B21EF",     // Purple accent
+            blue: "#4A9EFF",       // Blue accent
+          },
+          border: "rgba(196, 187, 211, 0.1)",
+          "border-hover": "rgba(196, 187, 211, 0.2)",
+        },
         gray: {
           50: "#f9fafb",
           100: "#f3f4f6",
@@ -38,6 +60,11 @@ const config: Config = {
         "gradient-primary": "linear-gradient(to right, #5A4B7C, #4A5B8C, #2E4F7A)",
         "gradient-primary-reverse": "linear-gradient(to right, #2E4F7A, #4A5B8C, #5A4B7C)",
         "gradient-chatgpt": "linear-gradient(135deg, #5A4B7C 0%, #4A5B8C 50%, #2E4F7A 100%)",
+        // N8N-inspired gradients
+        "gradient-n8n-primary": "linear-gradient(135deg, #EE4F27 0%, #6B21EF 100%)",
+        "gradient-n8n-secondary": "linear-gradient(135deg, #4A9EFF 0%, #6B21EF 100%)",
+        "gradient-n8n-card": "linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%)",
+        "gradient-n8n-hero": "radial-gradient(ellipse at top, rgba(107, 33, 239, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom, rgba(238, 79, 39, 0.3) 0%, transparent 50%), #0E0918",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },

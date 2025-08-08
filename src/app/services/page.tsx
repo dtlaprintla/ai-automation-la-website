@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
 import Link from 'next/link';
 import { ArrowRight, Bot, Phone, Workflow, MessageCircle, Building } from 'lucide-react';
@@ -117,7 +118,7 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={service.slug} className="bg-white rounded-xl shadow-card p-8 hover:shadow-card-hover transition-all duration-300">
+              <div key={service.slug} className="bg-n8n-bg-secondary rounded-xl shadow-card p-8 hover:shadow-card-hover transition-all duration-300 border border-n8n-border">
                 <div className="text-brand-primary mb-4">
                   {service.icon}
                 </div>
@@ -157,7 +158,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -227,6 +228,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }

@@ -5,26 +5,58 @@ const nextConfig = {
   
   // Performance optimizations for perfect PageSpeed scores
   experimental: {
-    optimizeCss: false, // Disable to fix critters error
+    optimizeCss: true, // Enable CSS optimization
+    webpackBuildWorker: true, // Faster builds
+    gzipSize: true, // Show gzip sizes
+    serverComponentsExternalPackages: [], // Optimize server components
   },
   
-  // Image optimization
+  // Image optimization for perfect performance
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ['image/avif', 'image/webp'], // AVIF first for better compression
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year cache
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
-  // Compression
+  // Compression and caching
   compress: true,
+  poweredByHeader: false, // Remove X-Powered-By header
   
-  // Security headers
+  // Bundle optimization
+  webpack: (config, { isServer }) => {
+    // Optimize bundle size
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
+    };
+    
+    // Tree shaking improvements
+    config.optimization.usedExports = true;
+    config.optimization.sideEffects = false;
+    
+    return config;
+  },
+  
+  // Performance and security headers
   async headers() {
     return [
       {
+        // Apply to all routes
         source: '/(.*)',
         headers: [
+          // Security headers
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
@@ -40,6 +72,45 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          // Performance headers
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+        ],
+      },
+      {
+        // Static assets caching
+        source: '/(.*)\\.(js|css|woff2|woff|ttf|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Image caching
+        source: '/(.*)\\.(png|jpg|jpeg|gif|webp|avif|ico|svg)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // HTML pages caching
+        source: '/((?!api/).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=86400, stale-while-revalidate=86400',
           },
         ],
       },

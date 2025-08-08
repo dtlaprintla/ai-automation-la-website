@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
 import { Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: `App Integrations | ${BRAND.name}`,
-  description: "We connect your favorite business apps with AI automation. Salesforce, HubSpot, Gmail, Slack, QuickBooks and 500+ more. All done-for-you.",
+  description: "We connect your favorite business apps with AI automation. Salesforce, HubSpot, Gmail, Slack, QuickBooks and 100+ more. All done-for-you.",
   keywords: "business app integrations, Salesforce automation, HubSpot integration, CRM automation, done for you integrations Los Angeles"
 };
 
@@ -340,6 +341,8 @@ export default function IntegrationsPage() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }

@@ -1,0 +1,260 @@
+/* GLOBAL N8N DARK THEME - Site-wide Rollout Ready */
+/* Toggle with: html.n8n-theme or data-theme="n8n" */
+
+:root {
+  /* Default/Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-accent: #e2e8f0;
+  
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-disabled: #94a3b8;
+  
+  --accent-primary: #8B5A9F;
+  --accent-secondary: #2E4F7A;
+  --accent-tertiary: #4A6FBF;
+  
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.2);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* N8N DARK THEME - Applied when html.n8n-theme or [data-theme="n8n"] */
+html.n8n-theme,
+[data-theme="n8n"] {
+  /* N8N Color Overrides */
+  --bg-primary: #0E0918;          /* Deep navy background */
+  --bg-secondary: #1A1B26;        /* Cards and elevated surfaces */
+  --bg-tertiary: #242530;         /* Inputs and tertiary surfaces */
+  --bg-accent: #2A2D3E;           /* Hover states and accents */
+  
+  --text-primary: #FFFFFF;        /* Pure white for headings */
+  --text-secondary: #C4BBD3;      /* Lavender gray for body text */
+  --text-muted: #9B96A6;          /* Muted text */
+  --text-disabled: #6B6B7D;       /* Disabled states */
+  
+  --accent-primary: #EE4F27;      /* N8N's signature orange */
+  --accent-secondary: #6B21EF;    /* Purple accent */
+  --accent-tertiary: #4A9EFF;     /* Blue accent */
+  
+  --border-color: rgba(196, 187, 211, 0.1);
+  --border-hover: rgba(196, 187, 211, 0.2);
+  --shadow: 0 8px 32px rgba(14, 9, 24, 0.4);
+  --shadow-card: 0 4px 16px rgba(14, 9, 24, 0.3);
+  
+  /* N8N Specific Variables */
+  --n8n-gradient-primary: linear-gradient(135deg, #EE4F27 0%, #6B21EF 100%);
+  --n8n-gradient-secondary: linear-gradient(135deg, #4A9EFF 0%, #6B21EF 100%);
+  --n8n-gradient-card: linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%);
+  --n8n-gradient-hero: radial-gradient(ellipse at top, rgba(107, 33, 239, 0.3) 0%, transparent 50%), 
+                       radial-gradient(ellipse at bottom, rgba(238, 79, 39, 0.3) 0%, transparent 50%), 
+                       #0E0918;
+}
+
+/* GLOBAL STYLES - Use CSS variables for easy theme switching */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headers automatically adapt */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+/* Cards use theme variables */
+.card, 
+.integration-card,
+.bg-white {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.integration-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow);
+}
+
+/* Inputs adapt to theme */
+input, 
+textarea, 
+select {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px rgba(238, 79, 39, 0.1) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Navigation adapts */
+header,
+nav,
+.header {
+  background: rgba(26, 27, 38, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Buttons get N8N styling */
+.btn-primary,
+.bg-gradient-primary,
+button[type="submit"] {
+  background: var(--n8n-gradient-primary) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  background: rgba(238, 79, 39, 0.1) !important;
+}
+
+/* Text colors adapt globally */
+.text-gray-900 { color: var(--text-primary) !important; }
+.text-gray-800 { color: var(--text-primary) !important; }
+.text-gray-700 { color: var(--text-secondary) !important; }
+.text-gray-600 { color: var(--text-secondary) !important; }
+.text-gray-500 { color: var(--text-muted) !important; }
+.text-gray-400 { color: var(--text-muted) !important; }
+
+/* Background classes adapt */
+.bg-gray-50 { background: var(--bg-secondary) !important; }
+.bg-gray-100 { background: var(--bg-secondary) !important; }
+.bg-gray-200 { background: var(--bg-tertiary) !important; }
+
+/* Integration page specific */
+.integration-grid .integration-card {
+  background: var(--n8n-gradient-card);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.integration-grid .integration-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--n8n-gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.integration-grid .integration-card:hover::before {
+  opacity: 0.1;
+}
+
+.integration-grid .integration-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 40px rgba(238, 79, 39, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Modal/Overlay styling */
+.modal,
+.overlay {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+}
+
+.modal-backdrop {
+  background: rgba(14, 9, 24, 0.8) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar for N8N theme */
+html.n8n-theme ::-webkit-scrollbar {
+  width: 6px;
+}
+
+html.n8n-theme ::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+}
+
+html.n8n-theme ::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+html.n8n-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Special gradient utilities for N8N theme */
+html.n8n-theme .gradient-text,
+html.n8n-theme .n8n-gradient-text {
+  background: var(--n8n-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.n8n-theme .hero-section {
+  background: var(--n8n-gradient-hero);
+}
+
+/* Animation for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus states for N8N theme */
+html.n8n-theme button:focus-visible,
+html.n8n-theme a:focus-visible,
+html.n8n-theme input:focus-visible,
+html.n8n-theme textarea:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Ensure proper contrast for links */
+html.n8n-theme a {
+  color: var(--accent-primary);
+}
+
+html.n8n-theme a:hover {
+  color: var(--accent-secondary);
+}
+
+/* Tag/Badge styling */
+html.n8n-theme .tag,
+html.n8n-theme .badge {
+  background: rgba(107, 33, 239, 0.2);
+  color: #9B8EFF;
+  border: 1px solid rgba(107, 33, 239, 0.3);
+}
+
+html.n8n-theme .tag.high-priority,
+html.n8n-theme .badge.high-priority {
+  background: rgba(238, 79, 39, 0.2);
+  color: #FF8A6B;
+  border-color: rgba(238, 79, 39, 0.3);
+}

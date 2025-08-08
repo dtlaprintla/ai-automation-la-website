@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function ChatbotsPage() {
         <h1 className="text-4xl font-bold mb-4">AI Chatbots</h1>
         <p className="text-xl text-gray-600 mb-8">Coming soon - detailed service page</p>
       </div>
+      <Footer />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
 import { MessageCircle, Clock, Users, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
@@ -313,6 +314,8 @@ export default function CustomerSupportPage() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }
