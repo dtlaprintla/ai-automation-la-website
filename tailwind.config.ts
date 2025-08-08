@@ -12,13 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          primary: "#6366f1", // Indigo
-          secondary: "#8b5cf6", // Purple  
-          accent: "#06b6d4", // Cyan
+          primary: "#8B5A9F", // Deep Purple
+          secondary: "#2E4F7A", // Deep Blue  
+          accent: "#4A6FBF", // Medium Blue
           gradient: {
-            from: "#6366f1",
-            via: "#8b5cf6", 
-            to: "#06b6d4"
+            from: "#5A4B7C", // ChatGPT start
+            via: "#4A5B8C", // ChatGPT middle
+            to: "#2E4F7A"   // ChatGPT end
           }
         },
         gray: {
@@ -35,8 +35,9 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4)",
-        "gradient-primary-reverse": "linear-gradient(to right, #06b6d4, #8b5cf6, #6366f1)",
+        "gradient-primary": "linear-gradient(to right, #5A4B7C, #4A5B8C, #2E4F7A)",
+        "gradient-primary-reverse": "linear-gradient(to right, #2E4F7A, #4A5B8C, #5A4B7C)",
+        "gradient-chatgpt": "linear-gradient(135deg, #5A4B7C 0%, #4A5B8C 50%, #2E4F7A 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },

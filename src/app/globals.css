@@ -9,9 +9,12 @@
   --background-start-rgb: 249, 250, 251;
   --background-end-rgb: 255, 255, 255;
   
-  --brand-primary: 99, 102, 241;
-  --brand-secondary: 139, 92, 246;
-  --brand-accent: 6, 182, 212;
+  --brand-primary: 139, 90, 159;
+  --brand-secondary: 46, 79, 122;
+  --brand-accent: 74, 91, 140;
+  --chatgpt-start: 90, 75, 124;
+  --chatgpt-middle: 74, 91, 140;
+  --chatgpt-end: 46, 79, 122;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,17 +59,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, rgb(var(--brand-primary)) 0%, rgb(var(--brand-secondary)) 100%);
+  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, rgb(var(--brand-secondary)) 0%, rgb(var(--brand-accent)) 100%);
+  background: linear-gradient(135deg, rgb(var(--chatgpt-middle)) 0%, rgb(var(--chatgpt-end)) 100%);
 }
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, rgb(var(--brand-primary)) 0%, rgb(var(--brand-secondary)) 50%, rgb(var(--brand-accent)) 100%);
+  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -82,9 +85,9 @@ body {
 /* Animated background patterns */
 .animated-bg {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(var(--chatgpt-start), 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 75% 75%, rgba(var(--chatgpt-middle), 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(var(--chatgpt-end), 0.05) 0%, transparent 50%);
   background-size: 400px 400px, 300px 300px, 200px 200px;
   animation: float-pattern 20s ease-in-out infinite;
 }
@@ -100,7 +103,7 @@ body {
 
 /* Button hover effects */
 .btn-primary {
-  background: linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
   @apply text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-glow-lg;
 }
 
@@ -110,7 +113,11 @@ body {
 
 /* Utility classes */
 .bg-gradient-primary {
-  background: linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
+}
+
+.bg-gradient-chatgpt {
+  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
 }
 
 /* Card hover effects */
@@ -122,8 +129,8 @@ body {
 .spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(99, 102, 241, 0.3);
-  border-top: 2px solid rgb(99, 102, 241);
+  border: 2px solid rgba(var(--chatgpt-start), 0.3);
+  border-top: 2px solid rgb(var(--chatgpt-start));
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -151,7 +158,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid rgb(var(--brand-primary));
+  outline: 2px solid rgb(var(--chatgpt-start));
   outline-offset: 2px;
 }
 

@@ -101,7 +101,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                 {/* Business Benefit */}
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border border-green-100">
                   <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-gradient-chatgpt rounded-lg flex items-center justify-center flex-shrink-0">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <div>

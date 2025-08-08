@@ -107,13 +107,14 @@ export const BRAND = {
     instagram: "aiautomationla"
   },
   
-  // Visual Branding
+  // Visual Branding - ChatGPT Inspired Gradient
   colors: {
-    primary: "#6366f1", // Indigo
-    secondary: "#8b5cf6", // Purple  
-    accent: "#06b6d4", // Cyan
-    gradient: "from-indigo-600 via-purple-600 to-cyan-500",
-    gradientReverse: "from-cyan-500 via-purple-600 to-indigo-600",
+    primary: "#8B5A9F", // Deep Purple
+    secondary: "#2E4F7A", // Deep Blue  
+    accent: "#4A6FBF", // Medium Blue
+    gradient: "from-purple-900 via-purple-700 to-blue-800",
+    gradientReverse: "from-blue-800 via-purple-700 to-purple-900",
+    chatgptGradient: "from-[#5A4B7C] via-[#4A5B8C] to-[#2E4F7A]", // Exact ChatGPT colors
     text: {
       primary: "#1f2937", // Gray-800
       secondary: "#6b7280", // Gray-500

@@ -34,13 +34,13 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-chatgpt">
       {/* Animated Background */}
       <div className="absolute inset-0 animated-bg opacity-30"></div>
       
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/20 via-brand-secondary/20 to-brand-accent/20"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/10 via-brand-secondary/10 to-brand-accent/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
 
       {/* Floating elements */}
       <div className="absolute top-20 left-20 w-20 h-20 bg-brand-primary/20 rounded-full blur-xl animate-float delay-100"></div>
