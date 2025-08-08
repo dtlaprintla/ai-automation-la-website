@@ -9,18 +9,18 @@ import Button from '@/components/ui/Button';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-n8n-bg-primary text-n8n-text-primary">
+    <div className="min-h-screen bg-[#0E0E13] text-white">
       <Header />
       <Hero />
       
       {/* Services Preview */}
-      <section className="py-20 bg-n8n-bg-secondary">
+      <section className="py-20 bg-[#111117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Complete Done-For-You AI Solutions
             </h2>
-            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We handle everything so you don't have to. No technical knowledge required.
             </p>
           </div>
@@ -46,10 +46,10 @@ export default function HomePage() {
                 result: "80% fewer support calls"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-n8n-border">
-                <div className="text-brand-primary mb-4">{service.icon}</div>
+              <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 hover:border-blue-600/50 hover:bg-gray-800/50 transition-all duration-200">
+                <div className="text-blue-400 mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-n8n-text-secondary mb-4">{service.description}</p>
+                <p className="text-gray-400 mb-4">{service.description}</p>
                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
                   <p className="text-green-400 font-semibold text-sm">
                     <span className="text-green-300">Result:</span> {service.result}
@@ -61,10 +61,10 @@ export default function HomePage() {
           
           <div className="text-center">
             <Link href="/services">
-              <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/80 border border-brand-primary/20">
+              <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center">
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              </button>
             </Link>
           </div>
         </div>
