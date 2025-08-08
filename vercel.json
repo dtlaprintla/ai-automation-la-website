@@ -1,18 +1,5 @@
 {
-  "version": 2,
   "name": "ai-automation-la",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
   "env": {
     "NODE_ENV": "production",
     "COMPANY_NAME": "AI Automation LA",
