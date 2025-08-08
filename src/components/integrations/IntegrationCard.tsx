@@ -16,10 +16,10 @@ interface IntegrationCardProps {
 export default function IntegrationCard({ integration, onViewDetails, viewMode = 'grid' }: IntegrationCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const popularityColors = {
-    high: 'bg-green-100 text-green-800',
-    medium: 'bg-yellow-100 text-yellow-800', 
-    low: 'bg-gray-100 text-gray-800'
+  const getPopularityInfo = (popularity: number) => {
+    if (popularity >= 90) return { label: 'Popular', color: 'bg-green-100 text-green-800' };
+    if (popularity >= 80) return { label: 'Rising', color: 'bg-yellow-100 text-yellow-800' };
+    return { label: 'New', color: 'bg-gray-100 text-gray-800' };
   };
 
   // N8N-style compact grid view
@@ -35,7 +35,7 @@ export default function IntegrationCard({ integration, onViewDetails, viewMode =
         {/* Logo */}
         <div className="mb-3 relative">
           <IntegrationLogo integration={integration} size="lg" />
-          {integration.popularity === 'high' && (
+          {integration.popularity >= 90 && (
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
           )}
         </div>
@@ -87,8 +87,8 @@ export default function IntegrationCard({ integration, onViewDetails, viewMode =
               </h3>
               <div className="flex items-center space-x-2 mt-1">
                 <span className="text-sm text-gray-600">{integration.category}</span>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${popularityColors[integration.popularity]}`}>
-                  {integration.popularity}
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPopularityInfo(integration.popularity).color}`}>
+                  {getPopularityInfo(integration.popularity).label}
                 </span>
               </div>
             </div>

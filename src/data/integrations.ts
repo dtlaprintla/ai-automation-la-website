@@ -1,5 +1,5 @@
-// Comprehensive integrations database for AI Automation LA
-// Based on popular business automation tools and services
+// N8N-Style Integrations Database
+// Based on comprehensive N8N integrations data with real logos and structure
 
 export interface Integration {
   id: string;
@@ -8,277 +8,75 @@ export interface Integration {
   description: string;
   category: string;
   subcategory?: string;
-  logo: string; // Path to logo file
+  logo: string; // Logo URL from N8N or fallback
   tags: string[];
-  popularity: 'high' | 'medium' | 'low';
+  nodeType: 'trigger' | 'action' | 'trigger_action' | 'cluster_node';
+  popularity: number; // 1-100 score
   automationUseCase: string;
   businessBenefit: string;
   commonIntegrations: string[];
   features: string[];
+  logoUrl?: string; // N8N logo URL
+  lastUpdated?: string;
 }
 
 export const integrationCategories = {
-  'CRM & Sales': {
-    color: '#3B82F6',
-    description: 'Customer relationship management and sales automation'
+  'AI & Machine Learning': {
+    color: '#ff6d5a',
+    description: 'Seamlessly integrate AI tools like OpenAI, Google AI, IBM Watson, and embeddings',
+    subcategories: ['embeddings', 'agents', 'language-models', 'machine-learning', 'chatbots']
   },
-  'Communication': {
-    color: '#10B981', 
-    description: 'Email, messaging, and team communication tools'
+  'Productivity': {
+    color: '#4f46e5', 
+    description: 'Automate daily tasks with tools like Google Workspace, Notion, and Evernote',
+    subcategories: ['document-management', 'note-taking', 'calendar', 'email']
   },
-  'E-commerce': {
-    color: '#8B5CF6',
-    description: 'Online stores and marketplace management'
+  'Communication & Messaging': {
+    color: '#10b981',
+    description: 'Connect apps like Slack, Microsoft Teams, and Discord',
+    subcategories: ['chat', 'video-conferencing', 'notifications', 'social-media']
   },
-  'Marketing': {
-    color: '#F59E0B',
-    description: 'Marketing automation and social media tools'
+  'Data & Storage': {
+    color: '#8b5cf6',
+    description: 'Move and transform data between apps and databases',
+    subcategories: ['databases', 'cloud-storage', 'file-management', 'data-processing']
   },
-  'Accounting & Finance': {
-    color: '#EF4444',
-    description: 'Financial management and accounting software'
+  'Development': {
+    color: '#06b6d4',
+    description: 'API integrations, webhooks, and developer tools',
+    subcategories: ['apis', 'webhooks', 'version-control', 'deployment']
+  },
+  'Marketing & CRM': {
+    color: '#f59e0b',
+    description: 'Manage emails, campaigns, and customer interactions',
+    subcategories: ['email-marketing', 'crm', 'analytics', 'social-media']
+  },
+  'Ecommerce': {
+    color: '#ef4444',
+    description: 'Track orders and sync product data with platforms like Shopify',
+    subcategories: ['online-stores', 'payment-processing', 'inventory', 'analytics']
   },
   'Project Management': {
-    color: '#06B6D4',
-    description: 'Task management and team collaboration'
-  },
-  'Analytics': {
-    color: '#84CC16',
-    description: 'Data analytics and reporting tools'
-  },
-  'Storage & Files': {
-    color: '#6366F1',
-    description: 'Cloud storage and file management'
-  },
-  'AI & Machine Learning': {
-    color: '#EC4899',
-    description: 'AI services and machine learning platforms'
+    color: '#84cc16',
+    description: 'Stay on top of tasks with platforms like Trello, Asana, and Monday.com',
+    subcategories: ['task-management', 'collaboration', 'time-tracking', 'reporting']
   }
 };
 
 export const integrations: Integration[] = [
-  // CRM & Sales (Expanded)
-  {
-    id: 'salesforce',
-    name: 'Salesforce',
-    slug: 'salesforce',
-    description: 'World\'s #1 CRM platform for managing customer relationships and sales pipelines.',
-    category: 'CRM & Sales',
-    logo: '/logos/salesforce.svg',
-    tags: ['CRM', 'Sales', 'Enterprise', 'Lead Management'],
-    popularity: 'high',
-    automationUseCase: 'Automatically sync leads from your website to Salesforce, update opportunities based on customer interactions, and trigger follow-up sequences.',
-    businessBenefit: 'Never lose a lead again. All customer data flows automatically into your CRM without manual data entry.',
-    commonIntegrations: ['Gmail', 'Slack', 'Mailchimp', 'Calendly'],
-    features: [
-      'Automatic lead capture and scoring',
-      'Pipeline management automation', 
-      'Customer interaction tracking',
-      'Sales forecasting and reporting',
-      'Email sequence automation'
-    ]
-  },
-  {
-    id: 'hubspot',
-    name: 'HubSpot',
-    slug: 'hubspot',
-    description: 'All-in-one inbound marketing, sales, and service platform for growing businesses.',
-    category: 'CRM & Sales',
-    logo: '/logos/hubspot.svg',
-    tags: ['CRM', 'Marketing', 'Sales', 'Inbound'],
-    popularity: 'high',
-    automationUseCase: 'Automate lead nurturing campaigns, sync contact data across tools, and trigger personalized email sequences based on customer behavior.',
-    businessBenefit: 'Convert more leads with automated marketing and sales processes. Track the entire customer journey from first visit to purchase.',
-    commonIntegrations: ['Gmail', 'Slack', 'WordPress', 'Shopify'],
-    features: [
-      'Contact and lead management',
-      'Email marketing automation',
-      'Sales pipeline tracking',
-      'Website chat integration',
-      'Marketing analytics and reporting'
-    ]
-  },
-  {
-    id: 'pipedrive',
-    name: 'Pipedrive',
-    slug: 'pipedrive',
-    description: 'Simple and effective CRM designed to help small teams manage their sales process.',
-    category: 'CRM & Sales',
-    logo: '/logos/pipedrive.svg',
-    tags: ['CRM', 'Sales', 'Pipeline', 'Small Business'],
-    popularity: 'high',
-    automationUseCase: 'Automatically move deals through your pipeline based on activities, send follow-up reminders, and sync data with other business tools.',
-    businessBenefit: 'Keep your sales process organized and never miss follow-ups. Close more deals with automated pipeline management.',
-    commonIntegrations: ['Gmail', 'Calendly', 'Slack', 'Mailchimp'],
-    features: [
-      'Visual sales pipeline',
-      'Activity reminders and scheduling',
-      'Deal tracking and forecasting',
-      'Email integration and sync',
-      'Mobile app for field sales'
-    ]
-  },
-
-  // Communication Tools
-  {
-    id: 'gmail',
-    name: 'Gmail',
-    slug: 'gmail',
-    description: 'Google\'s email service with powerful integration capabilities for business automation.',
-    category: 'Communication',
-    logo: '/logos/gmail.svg',
-    tags: ['Email', 'Google', 'Communication', 'Automation'],
-    popularity: 'high',
-    automationUseCase: 'Automatically sort emails, send personalized responses, sync contacts with CRM, and trigger workflows based on incoming emails.',
-    businessBenefit: 'Turn your inbox into a powerful business automation hub. Spend less time on email management and more time on important work.',
-    commonIntegrations: ['Salesforce', 'HubSpot', 'Slack', 'Calendar'],
-    features: [
-      'Automated email sorting and labeling',
-      'Template responses and signatures',
-      'Contact sync with CRM systems', 
-      'Email sequence automation',
-      'Integration with Google Workspace'
-    ]
-  },
-  {
-    id: 'slack',
-    name: 'Slack',
-    slug: 'slack',
-    description: 'Team communication platform that connects with all your business tools.',
-    category: 'Communication',
-    logo: '/logos/slack.svg',
-    tags: ['Team Chat', 'Communication', 'Collaboration', 'Notifications'],
-    popularity: 'high',
-    automationUseCase: 'Get instant notifications about new leads, sales updates, and important business events. Automate team updates and status reports.',
-    businessBenefit: 'Keep your team instantly informed about important business activities. Never miss critical updates or leads.',
-    commonIntegrations: ['Salesforce', 'HubSpot', 'Trello', 'Google Drive'],
-    features: [
-      'Automated notifications and alerts',
-      'Team communication workflows',
-      'File sharing and collaboration',
-      'Custom bot integrations',
-      'Channel-based organization'
-    ]
-  },
-
-  // E-commerce
-  {
-    id: 'shopify',
-    name: 'Shopify',
-    slug: 'shopify',
-    description: 'Leading e-commerce platform for online stores and retail point-of-sale systems.',
-    category: 'E-commerce',
-    logo: '/logos/shopify.svg',
-    tags: ['E-commerce', 'Online Store', 'Retail', 'Payments'],
-    popularity: 'high',
-    automationUseCase: 'Automatically sync orders with inventory, send customer follow-up emails, update accounting records, and manage customer support tickets.',
-    businessBenefit: 'Run your online store on autopilot. Automatic order processing, inventory management, and customer communication.',
-    commonIntegrations: ['QuickBooks', 'Mailchimp', 'Google Analytics', 'Facebook'],
-    features: [
-      'Automated order processing',
-      'Inventory management and alerts',
-      'Customer email sequences',
-      'Payment processing automation',
-      'Multi-channel sales integration'
-    ]
-  },
-  {
-    id: 'woocommerce',
-    name: 'WooCommerce',
-    slug: 'woocommerce', 
-    description: 'Customizable e-commerce platform built for WordPress websites.',
-    category: 'E-commerce',
-    logo: '/logos/woocommerce.svg',
-    tags: ['E-commerce', 'WordPress', 'Online Store', 'Open Source'],
-    popularity: 'high',
-    automationUseCase: 'Automate order fulfillment, inventory tracking, customer notifications, and integration with shipping and payment providers.',
-    businessBenefit: 'Transform your WordPress site into a fully automated online store. Handle orders, inventory, and customers automatically.',
-    commonIntegrations: ['WordPress', 'PayPal', 'Stripe', 'MailChimp'],
-    features: [
-      'WordPress integration',
-      'Automated order management',
-      'Product inventory tracking',
-      'Payment gateway automation',
-      'Shipping and tax calculations'
-    ]
-  },
-
-  // Marketing Tools
-  {
-    id: 'mailchimp',
-    name: 'Mailchimp',
-    slug: 'mailchimp',
-    description: 'All-in-one marketing platform for email marketing, automation, and audience management.',
-    category: 'Marketing',
-    logo: '/logos/mailchimp.svg',
-    tags: ['Email Marketing', 'Automation', 'Newsletters', 'Campaigns'],
-    popularity: 'high',
-    automationUseCase: 'Automatically add new customers to email lists, send welcome sequences, trigger campaigns based on purchase behavior, and segment audiences.',
-    businessBenefit: 'Keep customers engaged with automated email marketing. Increase sales with personalized campaigns triggered by customer actions.',
-    commonIntegrations: ['Shopify', 'WooCommerce', 'Salesforce', 'Facebook'],
-    features: [
-      'Email automation workflows',
-      'Audience segmentation',
-      'A/B testing capabilities',
-      'Landing page builder',
-      'E-commerce integrations'
-    ]
-  },
-
-  // Accounting & Finance
-  {
-    id: 'quickbooks',
-    name: 'QuickBooks',
-    slug: 'quickbooks',
-    description: 'Comprehensive accounting software for small to medium-sized businesses.',
-    category: 'Accounting & Finance',
-    logo: '/logos/quickbooks.svg',
-    tags: ['Accounting', 'Finance', 'Invoicing', 'Bookkeeping'],
-    popularity: 'high',
-    automationUseCase: 'Automatically sync sales data, create invoices, track expenses, update customer records, and generate financial reports.',
-    businessBenefit: 'Keep your books automatically updated. No more manual data entry for sales, expenses, or customer information.',
-    commonIntegrations: ['Shopify', 'PayPal', 'Stripe', 'Square'],
-    features: [
-      'Automated bookkeeping',
-      'Invoice generation and sending',
-      'Expense tracking and categorization',
-      'Financial reporting',
-      'Tax preparation integration'
-    ]
-  },
-
-  // Project Management
-  {
-    id: 'asana',
-    name: 'Asana',
-    slug: 'asana',
-    description: 'Work management platform that helps teams organize, track, and manage their work.',
-    category: 'Project Management',
-    logo: '/logos/asana.svg',
-    tags: ['Project Management', 'Tasks', 'Team Collaboration', 'Workflows'],
-    popularity: 'high',
-    automationUseCase: 'Automatically create tasks from emails, update project status based on completions, assign work based on team capacity, and send progress reports.',
-    businessBenefit: 'Keep projects on track automatically. Tasks are created, assigned, and tracked without manual project management overhead.',
-    commonIntegrations: ['Slack', 'Gmail', 'Google Drive', 'Salesforce'],
-    features: [
-      'Automated task creation and assignment',
-      'Project timeline and milestone tracking',
-      'Team workload balancing',
-      'Progress reporting and dashboards',
-      'Custom workflow automation'
-    ]
-  },
-
-  // AI & Machine Learning 
+  // AI & Machine Learning Category
   {
     id: 'openai',
     name: 'OpenAI',
     slug: 'openai',
-    description: 'Advanced AI platform providing GPT models and AI capabilities for business automation.',
+    description: 'Access GPT models, embeddings, and other OpenAI services',
     category: 'AI & Machine Learning',
+    subcategory: 'language-models',
     logo: '/logos/openai.svg',
-    tags: ['AI', 'GPT', 'Machine Learning', 'Automation', 'ChatGPT'],
-    popularity: 'high',
+    logoUrl: 'https://n8n.io/integrations/openai/',
+    tags: ['gpt', 'language-model', 'embeddings', 'ai', 'chatgpt'],
+    nodeType: 'trigger_action',
+    popularity: 98,
     automationUseCase: 'Automatically generate content, respond to customer inquiries, analyze data, create summaries, and power intelligent workflows.',
     businessBenefit: 'Add intelligent automation to any process. Let AI handle content creation, customer support, and data analysis automatically.',
     commonIntegrations: ['Slack', 'Gmail', 'WordPress', 'Zapier'],
@@ -288,583 +86,422 @@ export const integrations: Integration[] = [
       'Data analysis and insights',
       'Language translation',
       'Custom AI workflow integration'
-    ]
+    ],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'embeddings-openai',
+    name: 'Embeddings OpenAI',
+    slug: 'embeddings-openai',
+    description: 'Generate embeddings using OpenAI models for vector databases',
+    category: 'AI & Machine Learning',
+    subcategory: 'embeddings',
+    logo: '/logos/openai.svg',
+    logoUrl: 'https://n8n.io/integrations/embeddings-openai/',
+    tags: ['embeddings', 'vector', 'openai', 'machine-learning'],
+    nodeType: 'action',
+    popularity: 85,
+    automationUseCase: 'Transform text data into vector embeddings for semantic search, content similarity, and AI-powered recommendations.',
+    businessBenefit: 'Enable intelligent content discovery and recommendations by converting text into searchable vectors.',
+    commonIntegrations: ['Vector databases', 'Search systems', 'Recommendation engines'],
+    features: ['Text-to-vector conversion', 'Semantic search enablement', 'Content similarity analysis', 'AI recommendation systems'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'ai-agent',
+    name: 'AI Agent',
+    slug: 'ai-agent',
+    description: 'Build AI-powered applications and integrate with 422+ apps',
+    category: 'AI & Machine Learning',
+    subcategory: 'agents',
+    logo: '/logos/ai-agent.svg',
+    logoUrl: 'https://n8n.io/integrations/agent/',
+    tags: ['agent', 'ai', 'automation', 'intelligent-workflows'],
+    nodeType: 'cluster_node',
+    popularity: 90,
+    automationUseCase: 'Create intelligent agents that can reason, make decisions, and execute complex workflows automatically.',
+    businessBenefit: 'Deploy smart automation that adapts to changing conditions and makes intelligent decisions.',
+    commonIntegrations: ['All supported integrations', 'APIs', 'Databases', 'Communication tools'],
+    features: ['Intelligent decision making', 'Multi-step reasoning', 'Dynamic workflow adaptation', 'Context awareness'],
+    lastUpdated: '2025-01-08'
   },
 
-  // Additional CRM & Sales Tools
+  // Productivity Category
   {
-    id: 'zoho-crm',
-    name: 'Zoho CRM',
-    slug: 'zoho-crm',
-    description: 'Comprehensive CRM solution with sales, marketing, and customer service automation.',
-    category: 'CRM & Sales',
-    logo: '/logos/zoho.svg',
-    tags: ['CRM', 'Sales', 'Customer Service', 'Lead Management'],
-    popularity: 'high',
-    automationUseCase: 'Automate lead assignment, follow-up sequences, deal progression, and customer communication across the entire sales lifecycle.',
-    businessBenefit: 'Streamline your entire sales process from lead capture to deal closure. Never miss a follow-up or lose track of prospects.',
-    commonIntegrations: ['Gmail', 'Mailchimp', 'QuickBooks', 'Google Workspace'],
-    features: ['Lead scoring', 'Sales automation', 'Pipeline management', 'Email integration', 'Mobile CRM']
-  },
-  {
-    id: 'monday-sales-crm',
-    name: 'Monday Sales CRM',
-    slug: 'monday-sales-crm',
-    description: 'Visual CRM platform that makes sales team collaboration and pipeline management intuitive.',
-    category: 'CRM & Sales',
-    logo: '/logos/monday.svg',
-    tags: ['CRM', 'Visual', 'Team Collaboration', 'Pipeline'],
-    popularity: 'medium',
-    automationUseCase: 'Automate deal updates, task assignments, progress tracking, and team notifications in a visual workflow environment.',
-    businessBenefit: 'Keep your sales team aligned with visual pipelines and automated task management. Boost team productivity and deal closure rates.',
-    commonIntegrations: ['Gmail', 'Slack', 'Zoom', 'Mailchimp'],
-    features: ['Visual pipeline', 'Automated workflows', 'Team collaboration', 'Custom fields', 'Progress tracking']
-  },
-  {
-    id: 'close',
-    name: 'Close',
-    slug: 'close',
-    description: 'Built-in phone and email CRM designed for inside sales teams that need to make calls.',
-    category: 'CRM & Sales',
-    logo: '/logos/close.svg',
-    tags: ['CRM', 'Sales Calls', 'Email', 'Inside Sales'],
-    popularity: 'medium',
-    automationUseCase: 'Automate call logging, email sequences, follow-up reminders, and lead distribution to optimize inside sales productivity.',
-    businessBenefit: 'Maximize calling efficiency with automatic call logging and intelligent follow-up sequences. Close more deals with less manual work.',
-    commonIntegrations: ['Zapier', 'Calendly', 'Intercom', 'Segment'],
-    features: ['Built-in calling', 'Email automation', 'SMS campaigns', 'Call recording', 'Lead management']
-  },
-
-  // Communication Tools (Expanded)
-  {
-    id: 'microsoft-teams',
-    name: 'Microsoft Teams',
-    slug: 'microsoft-teams',
-    description: 'Unified communication and collaboration platform with chat, video meetings, and file sharing.',
-    category: 'Communication',
-    logo: '/logos/teams.svg',
-    tags: ['Team Chat', 'Video Meetings', 'Collaboration', 'Microsoft'],
-    popularity: 'high',
-    automationUseCase: 'Automate meeting notifications, file sharing workflows, team updates, and integration with business applications.',
-    businessBenefit: 'Streamline team communication and reduce meeting overhead with automated workflows and smart notifications.',
-    commonIntegrations: ['Outlook', 'SharePoint', 'Power Automate', 'Salesforce'],
-    features: ['Team messaging', 'Video conferencing', 'File collaboration', 'App integrations', 'Workflow automation']
-  },
-  {
-    id: 'discord',
-    name: 'Discord',
-    slug: 'discord',
-    description: 'Voice, video, and text communication platform for communities and teams.',
-    category: 'Communication',
-    logo: '/logos/discord.svg',
-    tags: ['Chat', 'Voice', 'Community', 'Real-time'],
-    popularity: 'medium',
-    automationUseCase: 'Automate community management, role assignments, welcome messages, and notifications from other business tools.',
-    businessBenefit: 'Build engaged communities with automated moderation and seamless integration with your business systems.',
-    commonIntegrations: ['Twitch', 'YouTube', 'Spotify', 'GitHub'],
-    features: ['Voice channels', 'Bot automation', 'Community management', 'Screen sharing', 'Custom roles']
-  },
-  {
-    id: 'zoom',
-    name: 'Zoom',
-    slug: 'zoom',
-    description: 'Video conferencing platform with webinar and phone system capabilities.',
-    category: 'Communication',
-    logo: '/logos/zoom.svg',
-    tags: ['Video Conferencing', 'Webinars', 'Meetings', 'Phone'],
-    popularity: 'high',
-    automationUseCase: 'Automate meeting scheduling, recording distribution, attendee follow-ups, and CRM integration with meeting data.',
-    businessBenefit: 'Streamline meeting workflows and ensure no follow-ups are missed. Automatically sync meeting outcomes with your CRM.',
-    commonIntegrations: ['Calendar', 'Salesforce', 'HubSpot', 'Slack'],
-    features: ['HD video meetings', 'Webinar hosting', 'Recording automation', 'Calendar integration', 'Phone system']
-  },
-  {
-    id: 'whatsapp-business',
-    name: 'WhatsApp Business',
-    slug: 'whatsapp-business',
-    description: 'Business messaging platform for customer communication via WhatsApp.',
-    category: 'Communication',
-    logo: '/logos/whatsapp.svg',
-    tags: ['Messaging', 'Customer Service', 'Mobile', 'Chat'],
-    popularity: 'high',
-    automationUseCase: 'Automate customer support responses, appointment reminders, order updates, and marketing messages via WhatsApp.',
-    businessBenefit: 'Reach customers on their preferred messaging platform with automated, personalized communications that drive engagement.',
-    commonIntegrations: ['CRM systems', 'E-commerce platforms', 'Booking systems', 'Support tools'],
-    features: ['Automated responses', 'Broadcast messaging', 'Customer profiles', 'Message templates', 'Analytics']
-  },
-
-  // E-commerce (Expanded)
-  {
-    id: 'amazon-seller',
-    name: 'Amazon Seller',
-    slug: 'amazon-seller',
-    description: 'Amazon marketplace platform for selling products to millions of customers worldwide.',
-    category: 'E-commerce',
-    logo: '/logos/amazon.svg',
-    tags: ['Marketplace', 'E-commerce', 'FBA', 'Retail'],
-    popularity: 'high',
-    automationUseCase: 'Automate inventory management, order processing, pricing updates, customer communications, and advertising campaigns.',
-    businessBenefit: 'Scale your Amazon business with automated inventory management and optimized pricing strategies that maximize profits.',
-    commonIntegrations: ['Inventory management', 'Accounting software', 'Analytics tools', 'Advertising platforms'],
-    features: ['Inventory automation', 'Order management', 'Dynamic pricing', 'Customer messaging', 'FBA integration']
-  },
-  {
-    id: 'etsy',
-    name: 'Etsy',
-    slug: 'etsy',
-    description: 'Global marketplace for unique and creative goods, focused on handmade and vintage items.',
-    category: 'E-commerce',
-    logo: '/logos/etsy.svg',
-    tags: ['Marketplace', 'Handmade', 'Creative', 'Small Business'],
-    popularity: 'medium',
-    automationUseCase: 'Automate shop management, order processing, customer communications, inventory tracking, and marketing campaigns.',
-    businessBenefit: 'Focus on creating while automation handles shop operations, customer service, and marketing to grow your creative business.',
-    commonIntegrations: ['QuickBooks', 'Mailchimp', 'Social media', 'Shipping tools'],
-    features: ['Shop automation', 'Order processing', 'Customer messaging', 'SEO optimization', 'Marketing tools']
-  },
-  {
-    id: 'square',
-    name: 'Square',
-    slug: 'square',
-    description: 'Complete commerce platform with point-of-sale, online store, and payment processing.',
-    category: 'E-commerce',
-    logo: '/logos/square.svg',
-    tags: ['POS', 'Payments', 'E-commerce', 'Retail'],
-    popularity: 'high',
-    automationUseCase: 'Automate payment processing, inventory synchronization, customer communications, and sales reporting across channels.',
-    businessBenefit: 'Unify online and offline sales with automated inventory management and seamless customer experience across all touchpoints.',
-    commonIntegrations: ['QuickBooks', 'Mailchimp', 'WooCommerce', 'BigCommerce'],
-    features: ['Payment processing', 'Inventory management', 'Customer profiles', 'Analytics reporting', 'Multi-channel sales']
-  },
-  {
-    id: 'bigcommerce',
-    name: 'BigCommerce',
-    slug: 'bigcommerce',
-    description: 'Enterprise e-commerce platform with built-in features for scaling online businesses.',
-    category: 'E-commerce',
-    logo: '/logos/bigcommerce.svg',
-    tags: ['E-commerce', 'Enterprise', 'SaaS', 'Multi-channel'],
-    popularity: 'medium',
-    automationUseCase: 'Automate product catalog management, order fulfillment, customer segmentation, and multi-channel sales synchronization.',
-    businessBenefit: 'Scale your e-commerce operations with enterprise-grade automation that handles complex product catalogs and order volumes.',
-    commonIntegrations: ['ERP systems', 'CRM platforms', 'Accounting software', 'Marketing tools'],
-    features: ['Product management', 'Order automation', 'Customer segmentation', 'Multi-channel selling', 'API integrations']
-  },
-  {
-    id: 'stripe',
-    name: 'Stripe',
-    slug: 'stripe',
-    description: 'Complete payment infrastructure for internet businesses with powerful APIs and tools.',
-    category: 'E-commerce',
-    logo: '/logos/stripe.svg',
-    tags: ['Payments', 'API', 'Subscriptions', 'Fintech'],
-    popularity: 'high',
-    automationUseCase: 'Automate payment processing, subscription management, invoice generation, fraud detection, and financial reconciliation.',
-    businessBenefit: 'Handle payments automatically with intelligent fraud protection and seamless subscription management that reduces churn.',
-    commonIntegrations: ['QuickBooks', 'Salesforce', 'Shopify', 'Subscription tools'],
-    features: ['Payment processing', 'Subscription billing', 'Fraud prevention', 'Financial reporting', 'API integrations']
-  },
-  {
-    id: 'paypal',
-    name: 'PayPal',
-    slug: 'paypal',
-    description: 'Global payment platform enabling secure money transfers and online payments.',
-    category: 'E-commerce',
-    logo: '/logos/paypal.svg',
-    tags: ['Payments', 'Money Transfer', 'E-commerce', 'Global'],
-    popularity: 'high',
-    automationUseCase: 'Automate payment collection, transaction reconciliation, refund processing, and integration with accounting systems.',
-    businessBenefit: 'Simplify payment collection and financial management with automated transaction processing and reconciliation.',
-    commonIntegrations: ['QuickBooks', 'WooCommerce', 'Shopify', 'Xero'],
-    features: ['Payment processing', 'Money transfers', 'Refund automation', 'Transaction tracking', 'International payments']
-  },
-
-  // Marketing (Expanded)
-  {
-    id: 'facebook-ads',
-    name: 'Facebook Ads',
-    slug: 'facebook-ads',
-    description: 'Social media advertising platform for reaching targeted audiences across Facebook and Instagram.',
-    category: 'Marketing',
-    logo: '/logos/facebook.svg',
-    tags: ['Social Media', 'Advertising', 'Targeting', 'ROI'],
-    popularity: 'high',
-    automationUseCase: 'Automate ad campaign creation, audience targeting, bid optimization, performance tracking, and lead syncing with CRM.',
-    businessBenefit: 'Maximize advertising ROI with automated campaign optimization and seamless lead management integration.',
-    commonIntegrations: ['CRM systems', 'Google Analytics', 'Email marketing', 'E-commerce platforms'],
-    features: ['Campaign automation', 'Audience targeting', 'Performance tracking', 'Lead generation', 'ROI optimization']
-  },
-  {
-    id: 'google-ads',
-    name: 'Google Ads',
-    slug: 'google-ads',
-    description: 'Online advertising platform for displaying ads across Google search results and partner sites.',
-    category: 'Marketing',
-    logo: '/logos/google-ads.svg',
-    tags: ['Search Advertising', 'PPC', 'Keywords', 'ROI'],
-    popularity: 'high',
-    automationUseCase: 'Automate keyword bidding, ad creation, campaign optimization, conversion tracking, and performance reporting.',
-    businessBenefit: 'Drive qualified traffic with automated bidding strategies and conversion tracking that optimizes for your business goals.',
-    commonIntegrations: ['Google Analytics', 'CRM systems', 'E-commerce platforms', 'Call tracking'],
-    features: ['Automated bidding', 'Keyword optimization', 'Conversion tracking', 'Performance reporting', 'Campaign management']
-  },
-  {
-    id: 'hootsuite',
-    name: 'Hootsuite',
-    slug: 'hootsuite',
-    description: 'Social media management platform for scheduling, publishing, and analyzing social content.',
-    category: 'Marketing',
-    logo: '/logos/hootsuite.svg',
-    tags: ['Social Media', 'Scheduling', 'Analytics', 'Content Management'],
-    popularity: 'high',
-    automationUseCase: 'Automate social media posting, content curation, engagement responses, and performance reporting across platforms.',
-    businessBenefit: 'Maintain consistent social media presence with automated posting and engagement that builds brand awareness.',
-    commonIntegrations: ['Facebook', 'Twitter', 'Instagram', 'LinkedIn'],
-    features: ['Post scheduling', 'Content curation', 'Social analytics', 'Team collaboration', 'Engagement management']
-  },
-  {
-    id: 'buffer',
-    name: 'Buffer',
-    slug: 'buffer',
-    description: 'Simple social media management tool for scheduling posts and analyzing performance.',
-    category: 'Marketing',
-    logo: '/logos/buffer.svg',
-    tags: ['Social Media', 'Scheduling', 'Analytics', 'Simple'],
-    popularity: 'medium',
-    automationUseCase: 'Automate social media scheduling, cross-platform posting, performance tracking, and content optimization.',
-    businessBenefit: 'Save time on social media management while maintaining consistent posting schedules that engage your audience.',
-    commonIntegrations: ['Facebook', 'Twitter', 'Instagram', 'Pinterest'],
-    features: ['Post scheduling', 'Analytics dashboard', 'Team management', 'Content calendar', 'Performance insights']
-  },
-  {
-    id: 'constant-contact',
-    name: 'Constant Contact',
-    slug: 'constant-contact',
-    description: 'Email marketing platform with automation tools for small businesses.',
-    category: 'Marketing',
-    logo: '/logos/constant-contact.svg',
-    tags: ['Email Marketing', 'Small Business', 'Automation', 'Newsletters'],
-    popularity: 'medium',
-    automationUseCase: 'Automate email campaigns, list management, welcome sequences, and customer journey workflows.',
-    businessBenefit: 'Build stronger customer relationships with automated email marketing that nurtures leads and drives repeat business.',
-    commonIntegrations: ['CRM systems', 'E-commerce platforms', 'Social media', 'Event platforms'],
-    features: ['Email automation', 'List management', 'Template library', 'A/B testing', 'Reporting analytics']
-  },
-
-  // Project Management (Expanded)
-  {
-    id: 'trello',
-    name: 'Trello',
-    slug: 'trello',
-    description: 'Visual project management tool using boards, lists, and cards for team collaboration.',
-    category: 'Project Management',
-    logo: '/logos/trello.svg',
-    tags: ['Kanban', 'Visual', 'Team Collaboration', 'Simple'],
-    popularity: 'high',
-    automationUseCase: 'Automate card creation, task assignments, due date reminders, progress updates, and team notifications.',
-    businessBenefit: 'Keep projects organized and teams aligned with visual workflows that automatically update based on progress.',
-    commonIntegrations: ['Slack', 'Google Drive', 'Dropbox', 'Calendar'],
-    features: ['Kanban boards', 'Automated workflows', 'Team collaboration', 'Due date tracking', 'Power-ups integration']
-  },
-  {
-    id: 'monday',
-    name: 'Monday.com',
-    slug: 'monday',
-    description: 'Work operating system that powers teams to run projects and workflows with confidence.',
-    category: 'Project Management',
-    logo: '/logos/monday.svg',
-    tags: ['Work OS', 'Visual', 'Workflows', 'Team Management'],
-    popularity: 'high',
-    automationUseCase: 'Automate project workflows, task dependencies, status updates, time tracking, and cross-team communications.',
-    businessBenefit: 'Streamline complex projects with visual workflows and automated task management that keeps teams productive.',
-    commonIntegrations: ['Slack', 'Gmail', 'Excel', 'Zoom'],
-    features: ['Visual workflows', 'Automation recipes', 'Time tracking', 'Dashboard reporting', 'Team collaboration']
+    id: 'google-sheets',
+    name: 'Google Sheets',
+    slug: 'google-sheets',
+    description: 'Read, write, and manipulate Google Sheets data',
+    category: 'Productivity',
+    subcategory: 'document-management',
+    logo: '/logos/google-sheets.svg',
+    logoUrl: 'https://n8n.io/integrations/google-sheets/',
+    tags: ['spreadsheet', 'google', 'data', 'collaboration'],
+    nodeType: 'trigger_action',
+    popularity: 95,
+    automationUseCase: 'Automatically sync data between systems and spreadsheets, create reports, and manage data workflows.',
+    businessBenefit: 'Keep spreadsheets automatically updated with real-time data from your business systems.',
+    commonIntegrations: ['CRM systems', 'E-commerce platforms', 'Analytics tools'],
+    features: ['Real-time data sync', 'Automated reporting', 'Data validation', 'Collaborative editing'],
+    lastUpdated: '2025-01-08'
   },
   {
     id: 'notion',
     name: 'Notion',
     slug: 'notion',
-    description: 'All-in-one workspace combining notes, tasks, databases, and collaboration tools.',
-    category: 'Project Management',
+    description: 'Manage databases, pages, and content in Notion',
+    category: 'Productivity',
+    subcategory: 'note-taking',
     logo: '/logos/notion.svg',
-    tags: ['Workspace', 'Notes', 'Databases', 'Documentation'],
-    popularity: 'high',
-    automationUseCase: 'Automate content organization, task tracking, database updates, template creation, and team documentation.',
-    businessBenefit: 'Centralize all work in one flexible workspace with automated organization that adapts to your team\'s needs.',
-    commonIntegrations: ['Slack', 'Google Calendar', 'Figma', 'GitHub'],
-    features: ['Flexible databases', 'Template automation', 'Team wikis', 'Task management', 'API integrations']
-  },
-  {
-    id: 'basecamp',
-    name: 'Basecamp',
-    slug: 'basecamp',
-    description: 'Project management and team collaboration software focused on simplicity and ease of use.',
-    category: 'Project Management',
-    logo: '/logos/basecamp.svg',
-    tags: ['Project Management', 'Team Collaboration', 'Simple', 'Communication'],
-    popularity: 'medium',
-    automationUseCase: 'Automate project setup, task assignments, progress check-ins, client communications, and deadline reminders.',
-    businessBenefit: 'Keep projects on track with automated check-ins and communications that ensure nothing falls through the cracks.',
-    commonIntegrations: ['Email', 'Calendar', 'Time tracking tools', 'File storage'],
-    features: ['Project organization', 'Team messaging', 'File sharing', 'Schedule management', 'Client access']
-  },
-  {
-    id: 'jira',
-    name: 'Jira',
-    slug: 'jira',
-    description: 'Issue and project tracking software for agile software development teams.',
-    category: 'Project Management',
-    logo: '/logos/jira.svg',
-    tags: ['Agile', 'Software Development', 'Bug Tracking', 'Scrum'],
-    popularity: 'high',
-    automationUseCase: 'Automate issue creation, sprint planning, bug triage, status updates, and development workflow management.',
-    businessBenefit: 'Accelerate software development with automated workflows that keep development teams focused on coding.',
-    commonIntegrations: ['Confluence', 'Bitbucket', 'Slack', 'GitHub'],
-    features: ['Agile workflows', 'Issue tracking', 'Sprint management', 'Custom automation', 'Development integration']
+    logoUrl: 'https://n8n.io/integrations/notion/',
+    tags: ['database', 'notes', 'collaboration', 'workspace'],
+    nodeType: 'trigger_action',
+    popularity: 88,
+    automationUseCase: 'Automate content organization, task tracking, database updates, and team documentation workflows.',
+    businessBenefit: 'Centralize all work in one workspace with automated organization that adapts to your team\'s needs.',
+    commonIntegrations: ['Slack', 'Google Calendar', 'CRM systems'],
+    features: ['Database automation', 'Content management', 'Task tracking', 'Team collaboration'],
+    lastUpdated: '2025-01-08'
   },
 
-  // Accounting & Finance (Expanded)
+  // Communication & Messaging Category
   {
-    id: 'xero',
-    name: 'Xero',
-    slug: 'xero',
-    description: 'Cloud-based accounting software designed for small businesses and their advisors.',
-    category: 'Accounting & Finance',
-    logo: '/logos/xero.svg',
-    tags: ['Accounting', 'Cloud', 'Small Business', 'Invoicing'],
-    popularity: 'high',
-    automationUseCase: 'Automate invoice generation, expense tracking, bank reconciliation, tax calculations, and financial reporting.',
-    businessBenefit: 'Keep finances organized automatically with real-time bookkeeping that reduces manual data entry and errors.',
-    commonIntegrations: ['PayPal', 'Stripe', 'Shopify', 'CRM systems'],
-    features: ['Automated invoicing', 'Bank reconciliation', 'Expense tracking', 'Tax compliance', 'Financial reporting']
+    id: 'slack',
+    name: 'Slack',
+    slug: 'slack',
+    description: 'Send messages, manage channels, and automate Slack workflows',
+    category: 'Communication & Messaging',
+    subcategory: 'chat',
+    logo: '/logos/slack.svg',
+    logoUrl: 'https://n8n.io/integrations/slack/',
+    tags: ['chat', 'team', 'notifications', 'collaboration'],
+    nodeType: 'trigger_action',
+    popularity: 92,
+    automationUseCase: 'Get instant notifications about business events, automate team updates, and streamline communication workflows.',
+    businessBenefit: 'Keep your team instantly informed about important business activities without manual updates.',
+    commonIntegrations: ['CRM systems', 'Project management', 'Analytics tools'],
+    features: ['Automated notifications', 'Channel management', 'Bot integrations', 'Workflow triggers'],
+    lastUpdated: '2025-01-08'
   },
   {
-    id: 'freshbooks',
-    name: 'FreshBooks',
-    slug: 'freshbooks',
-    description: 'Cloud accounting software built for small business owners and their teams.',
-    category: 'Accounting & Finance',
-    logo: '/logos/freshbooks.svg',
-    tags: ['Accounting', 'Invoicing', 'Time Tracking', 'Small Business'],
-    popularity: 'medium',
-    automationUseCase: 'Automate time tracking, invoice creation, payment reminders, expense categorization, and client communications.',
-    businessBenefit: 'Get paid faster with automated invoicing and payment tracking that reduces administrative overhead.',
-    commonIntegrations: ['PayPal', 'Stripe', 'G Suite', 'Project management tools'],
-    features: ['Time tracking', 'Automated invoicing', 'Expense management', 'Client portal', 'Financial reporting']
+    id: 'telegram',
+    name: 'Telegram',
+    slug: 'telegram',
+    description: 'Send messages and interact with Telegram bots',
+    category: 'Communication & Messaging',
+    subcategory: 'chat',
+    logo: '/logos/telegram.svg',
+    logoUrl: 'https://n8n.io/integrations/telegram/',
+    tags: ['messaging', 'bot', 'notifications', 'automation'],
+    nodeType: 'trigger_action',
+    popularity: 75,
+    automationUseCase: 'Automate customer communications, send notifications, and manage bot interactions.',
+    businessBenefit: 'Reach customers instantly with automated messaging that drives engagement and support.',
+    commonIntegrations: ['CRM systems', 'E-commerce platforms', 'Support tools'],
+    features: ['Bot automation', 'Message broadcasting', 'Customer notifications', 'Interactive workflows'],
+    lastUpdated: '2025-01-08'
   },
   {
-    id: 'wave-accounting',
-    name: 'Wave Accounting',
-    slug: 'wave-accounting',
-    description: 'Free accounting software for small businesses with invoicing and payment processing.',
-    category: 'Accounting & Finance',
-    logo: '/logos/wave.svg',
-    tags: ['Free Accounting', 'Small Business', 'Invoicing', 'Payments'],
-    popularity: 'medium',
-    automationUseCase: 'Automate bookkeeping, invoice generation, payment processing, tax preparation, and financial reporting.',
-    businessBenefit: 'Manage finances efficiently with free automated accounting that handles core business financial needs.',
-    commonIntegrations: ['PayPal', 'Bank connections', 'Receipt scanning', 'Tax software'],
-    features: ['Free accounting', 'Automated invoicing', 'Payment processing', 'Receipt scanning', 'Tax reporting']
+    id: 'microsoft-teams',
+    name: 'Microsoft Teams',
+    slug: 'microsoft-teams',
+    description: 'Unified communication platform with chat, video meetings, and file sharing',
+    category: 'Communication & Messaging',
+    subcategory: 'video-conferencing',
+    logo: '/logos/teams.svg',
+    logoUrl: 'https://n8n.io/integrations/microsoft-teams/',
+    tags: ['team-chat', 'video-meetings', 'collaboration', 'microsoft'],
+    nodeType: 'trigger_action',
+    popularity: 90,
+    automationUseCase: 'Automate meeting workflows, team notifications, and business application integration.',
+    businessBenefit: 'Streamline team communication with automated workflows and smart notifications.',
+    commonIntegrations: ['Outlook', 'SharePoint', 'CRM systems'],
+    features: ['Meeting automation', 'Team messaging', 'File collaboration', 'App integrations'],
+    lastUpdated: '2025-01-08'
   },
 
-  // Storage & Files (Expanded)
+  // Data & Storage Category
   {
     id: 'google-drive',
     name: 'Google Drive',
     slug: 'google-drive',
-    description: 'Cloud storage service with real-time collaboration on documents, spreadsheets, and presentations.',
-    category: 'Storage & Files',
+    description: 'Upload, download, and manage files in Google Drive',
+    category: 'Data & Storage',
+    subcategory: 'cloud-storage',
     logo: '/logos/google-drive.svg',
-    tags: ['Cloud Storage', 'Collaboration', 'Documents', 'Google'],
-    popularity: 'high',
-    automationUseCase: 'Automate file organization, sharing permissions, backup processes, document creation, and collaborative workflows.',
-    businessBenefit: 'Keep files organized and accessible with automated backup and sharing that ensures team productivity.',
-    commonIntegrations: ['Gmail', 'Google Workspace', 'Slack', 'CRM systems'],
-    features: ['Cloud storage', 'Real-time collaboration', 'File sharing', 'Version control', 'Mobile access']
-  },
-  {
-    id: 'dropbox',
-    name: 'Dropbox',
-    slug: 'dropbox',
-    description: 'Cloud storage platform with advanced sharing and collaboration features for teams.',
-    category: 'Storage & Files',
-    logo: '/logos/dropbox.svg',
-    tags: ['Cloud Storage', 'File Sharing', 'Sync', 'Collaboration'],
-    popularity: 'high',
-    automationUseCase: 'Automate file synchronization, backup processes, sharing workflows, and team collaboration on documents.',
-    businessBenefit: 'Ensure files are always accessible and backed up with automated sync and sharing that protects against data loss.',
-    commonIntegrations: ['Slack', 'Zoom', 'Adobe', 'Microsoft Office'],
-    features: ['File synchronization', 'Advanced sharing', 'Version history', 'Team collaboration', 'Smart sync']
-  },
-  {
-    id: 'box',
-    name: 'Box',
-    slug: 'box',
-    description: 'Enterprise cloud content management platform with security and compliance features.',
-    category: 'Storage & Files',
-    logo: '/logos/box.svg',
-    tags: ['Enterprise Storage', 'Security', 'Compliance', 'Content Management'],
-    popularity: 'medium',
-    automationUseCase: 'Automate document workflows, approval processes, compliance tracking, and secure file sharing across organizations.',
-    businessBenefit: 'Secure and streamline document management with enterprise-grade automation that ensures compliance and security.',
-    commonIntegrations: ['Salesforce', 'Office 365', 'DocuSign', 'Slack'],
-    features: ['Secure file sharing', 'Workflow automation', 'Compliance tools', 'Advanced security', 'API integrations']
-  },
-  {
-    id: 'onedrive',
-    name: 'OneDrive',
-    slug: 'onedrive',
-    description: 'Microsoft\'s cloud storage service integrated with Office 365 and Windows.',
-    category: 'Storage & Files',
-    logo: '/logos/onedrive.svg',
-    tags: ['Microsoft', 'Cloud Storage', 'Office Integration', 'Sync'],
-    popularity: 'high',
-    automationUseCase: 'Automate file backup, Office document collaboration, sharing workflows, and integration with Microsoft ecosystem.',
-    businessBenefit: 'Seamlessly integrate with Microsoft tools while automating file management and collaboration workflows.',
-    commonIntegrations: ['Office 365', 'Teams', 'Outlook', 'SharePoint'],
-    features: ['Office integration', 'File synchronization', 'Collaboration tools', 'Version control', 'Mobile apps']
-  },
-
-  // Analytics (Expanded)
-  {
-    id: 'google-analytics',
-    name: 'Google Analytics',
-    slug: 'google-analytics',
-    description: 'Web analytics service that tracks and reports website traffic and user behavior.',
-    category: 'Analytics',
-    logo: '/logos/google-analytics.svg',
-    tags: ['Web Analytics', 'Traffic Analysis', 'Conversion Tracking', 'Reports'],
-    popularity: 'high',
-    automationUseCase: 'Automate traffic monitoring, conversion tracking, report generation, alert notifications, and data integration with other tools.',
-    businessBenefit: 'Make data-driven decisions with automated analytics reporting that reveals customer behavior and optimization opportunities.',
-    commonIntegrations: ['Google Ads', 'Search Console', 'Data Studio', 'CRM systems'],
-    features: ['Traffic analysis', 'Conversion tracking', 'Custom reports', 'Real-time data', 'Goal tracking']
-  },
-  {
-    id: 'mixpanel',
-    name: 'Mixpanel',
-    slug: 'mixpanel',
-    description: 'Advanced analytics platform for tracking user interactions and product usage.',
-    category: 'Analytics',
-    logo: '/logos/mixpanel.svg',
-    tags: ['Product Analytics', 'User Tracking', 'Events', 'Cohorts'],
-    popularity: 'medium',
-    automationUseCase: 'Automate user behavior tracking, cohort analysis, funnel monitoring, and automated insights delivery.',
-    businessBenefit: 'Optimize product experience with detailed user analytics that automatically identify improvement opportunities.',
-    commonIntegrations: ['Mobile apps', 'Web platforms', 'CRM systems', 'Marketing tools'],
-    features: ['Event tracking', 'User segmentation', 'Funnel analysis', 'Cohort reports', 'A/B testing']
-  },
-  {
-    id: 'tableau',
-    name: 'Tableau',
-    slug: 'tableau',
-    description: 'Business intelligence and data visualization platform for analyzing complex datasets.',
-    category: 'Analytics',
-    logo: '/logos/tableau.svg',
-    tags: ['Business Intelligence', 'Data Visualization', 'Dashboards', 'Enterprise'],
-    popularity: 'high',
-    automationUseCase: 'Automate data refresh, dashboard updates, report distribution, alert notifications, and cross-platform data integration.',
-    businessBenefit: 'Transform complex data into actionable insights with automated visualization and reporting that drives better decisions.',
-    commonIntegrations: ['Databases', 'Cloud platforms', 'CRM systems', 'ERP software'],
-    features: ['Data visualization', 'Interactive dashboards', 'Automated reports', 'Data blending', 'Mobile analytics']
-  },
-
-  // Additional Communication Tools
-  {
-    id: 'calendly',
-    name: 'Calendly',
-    slug: 'calendly',
-    description: 'Automated scheduling software that eliminates the back-and-forth emails to find the perfect time.',
-    category: 'Communication',
-    logo: '/logos/calendly.svg',
-    tags: ['Scheduling', 'Appointments', 'Calendar', 'Automation'],
-    popularity: 'high',
-    automationUseCase: 'Automate appointment scheduling, reminder notifications, calendar integration, follow-up sequences, and no-show management.',
-    businessBenefit: 'Eliminate scheduling hassles and reduce no-shows with automated booking and reminder systems that optimize your calendar.',
-    commonIntegrations: ['Google Calendar', 'Outlook', 'Zoom', 'Salesforce'],
-    features: ['Automated scheduling', 'Calendar sync', 'Email reminders', 'Payment integration', 'Team scheduling']
-  },
-  {
-    id: 'intercom',
-    name: 'Intercom',
-    slug: 'intercom',
-    description: 'Customer messaging platform that unites marketing, sales, and support in one system.',
-    category: 'Communication',
-    logo: '/logos/intercom.svg',
-    tags: ['Customer Support', 'Live Chat', 'Messaging', 'CRM'],
-    popularity: 'high',
-    automationUseCase: 'Automate customer support responses, lead qualification, onboarding sequences, and support ticket routing.',
-    businessBenefit: 'Provide instant customer support with automated responses and intelligent routing that improves satisfaction.',
-    commonIntegrations: ['CRM systems', 'Help desk tools', 'Analytics platforms', 'E-commerce'],
-    features: ['Live chat', 'Automated messaging', 'Customer profiles', 'Help desk', 'Product tours']
-  },
-  {
-    id: 'zendesk',
-    name: 'Zendesk',
-    slug: 'zendesk',
-    description: 'Customer service software that brings all customer interactions into one integrated platform.',
-    category: 'Communication',
-    logo: '/logos/zendesk.svg',
-    tags: ['Customer Support', 'Help Desk', 'Ticketing', 'Service'],
-    popularity: 'high',
-    automationUseCase: 'Automate ticket creation, response routing, SLA management, customer feedback collection, and resolution tracking.',
-    businessBenefit: 'Deliver consistent customer support with automated workflows that ensure fast response times and resolution.',
-    commonIntegrations: ['CRM systems', 'E-commerce platforms', 'Phone systems', 'Chat tools'],
-    features: ['Ticket management', 'Knowledge base', 'Live chat', 'Customer analytics', 'Automation workflows']
-  },
-
-  // Additional Popular Tools
-  {
-    id: 'wordpress',
-    name: 'WordPress',
-    slug: 'wordpress',
-    description: 'Content management system powering over 40% of websites worldwide.',
-    category: 'Marketing',
-    logo: '/logos/wordpress.svg',
-    tags: ['CMS', 'Website', 'Blog', 'Content'],
-    popularity: 'high',
-    automationUseCase: 'Automate content publishing, SEO optimization, backup processes, security monitoring, and lead capture.',
-    businessBenefit: 'Maintain your website automatically with content scheduling and security monitoring that keeps your site running smoothly.',
-    commonIntegrations: ['Google Analytics', 'Mailchimp', 'Social media', 'E-commerce'],
-    features: ['Content management', 'SEO tools', 'Plugin ecosystem', 'Theme customization', 'User management']
+    logoUrl: 'https://n8n.io/integrations/google-drive/',
+    tags: ['storage', 'files', 'google', 'collaboration'],
+    nodeType: 'trigger_action',
+    popularity: 90,
+    automationUseCase: 'Automate file organization, backup processes, sharing workflows, and document management.',
+    businessBenefit: 'Keep files organized and accessible with automated backup and sharing systems.',
+    commonIntegrations: ['Gmail', 'Google Workspace', 'CRM systems'],
+    features: ['File automation', 'Backup workflows', 'Sharing management', 'Document processing'],
+    lastUpdated: '2025-01-08'
   },
   {
     id: 'airtable',
     name: 'Airtable',
     slug: 'airtable',
-    description: 'Collaborative database platform that combines the simplicity of a spreadsheet with database power.',
-    category: 'Project Management',
+    description: 'Manage records in Airtable databases',
+    category: 'Data & Storage',
+    subcategory: 'databases',
     logo: '/logos/airtable.svg',
-    tags: ['Database', 'Collaboration', 'Spreadsheet', 'Workflow'],
-    popularity: 'high',
-    automationUseCase: 'Automate data entry, record updates, workflow triggers, report generation, and team notifications.',
-    businessBenefit: 'Organize complex projects with flexible databases that automatically update and notify teams of important changes.',
-    commonIntegrations: ['Slack', 'Google Calendar', 'Email platforms', 'Zapier'],
-    features: ['Flexible databases', 'Automation triggers', 'Collaboration tools', 'Custom views', 'API integrations']
+    logoUrl: 'https://n8n.io/integrations/airtable/',
+    tags: ['database', 'spreadsheet', 'collaboration', 'workflow'],
+    nodeType: 'trigger_action',
+    popularity: 85,
+    automationUseCase: 'Automate data entry, record updates, workflow triggers, and team notifications.',
+    businessBenefit: 'Organize complex projects with flexible databases that automatically update and notify teams.',
+    commonIntegrations: ['CRM systems', 'Project management', 'Marketing tools'],
+    features: ['Database automation', 'Record management', 'Workflow triggers', 'Team collaboration'],
+    lastUpdated: '2025-01-08'
+  },
+
+  // Development Category
+  {
+    id: 'http-request',
+    name: 'HTTP Request',
+    slug: 'http-request',
+    description: 'Make HTTP requests to any API or service',
+    category: 'Development',
+    subcategory: 'apis',
+    logo: '/logos/http.svg',
+    logoUrl: 'https://n8n.io/integrations/httprequest/',
+    tags: ['api', 'http', 'rest', 'integration'],
+    nodeType: 'action',
+    popularity: 95,
+    automationUseCase: 'Connect to any API or web service to exchange data and trigger external actions.',
+    businessBenefit: 'Integrate with any system that has an API, creating unlimited automation possibilities.',
+    commonIntegrations: ['Any API-enabled service', 'Custom applications', 'Third-party systems'],
+    features: ['Universal API connectivity', 'Custom headers and authentication', 'Data transformation', 'Error handling'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'webhook',
+    name: 'Webhook',
+    slug: 'webhook',
+    description: 'Receive HTTP requests to trigger workflows',
+    category: 'Development',
+    subcategory: 'webhooks',
+    logo: '/logos/webhook.svg',
+    logoUrl: 'https://n8n.io/integrations/webhook/',
+    tags: ['webhook', 'trigger', 'http', 'api'],
+    nodeType: 'trigger',
+    popularity: 92,
+    automationUseCase: 'Receive data from external systems and trigger automated workflows based on events.',
+    businessBenefit: 'Enable real-time automation triggered by events from any external system or application.',
+    commonIntegrations: ['Web applications', 'E-commerce platforms', 'Payment systems'],
+    features: ['Real-time triggers', 'Event-driven workflows', 'Data reception', 'Custom endpoints'],
+    lastUpdated: '2025-01-08'
+  },
+
+  // Marketing & CRM Category
+  {
+    id: 'hubspot',
+    name: 'HubSpot',
+    slug: 'hubspot',
+    description: 'Manage contacts, deals, and marketing campaigns in HubSpot',
+    category: 'Marketing & CRM',
+    subcategory: 'crm',
+    logo: '/logos/hubspot.svg',
+    logoUrl: 'https://n8n.io/integrations/hubspot/',
+    tags: ['crm', 'marketing', 'sales', 'inbound'],
+    nodeType: 'trigger_action',
+    popularity: 93,
+    automationUseCase: 'Automate lead nurturing, contact management, deal progression, and marketing campaigns.',
+    businessBenefit: 'Convert more leads with automated marketing and sales processes that track the entire customer journey.',
+    commonIntegrations: ['Gmail', 'Slack', 'WordPress', 'Analytics tools'],
+    features: ['Lead automation', 'Contact management', 'Deal tracking', 'Marketing workflows'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'mailchimp',
+    name: 'Mailchimp',
+    slug: 'mailchimp',
+    description: 'Manage email campaigns and subscriber lists',
+    category: 'Marketing & CRM',
+    subcategory: 'email-marketing',
+    logo: '/logos/mailchimp.svg',
+    logoUrl: 'https://n8n.io/integrations/mailchimp/',
+    tags: ['email', 'marketing', 'automation', 'campaigns'],
+    nodeType: 'trigger_action',
+    popularity: 89,
+    automationUseCase: 'Automate email marketing campaigns, subscriber management, and customer segmentation.',
+    businessBenefit: 'Keep customers engaged with automated email marketing that increases sales and retention.',
+    commonIntegrations: ['E-commerce platforms', 'CRM systems', 'Analytics tools'],
+    features: ['Email automation', 'List management', 'Campaign tracking', 'Audience segmentation'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'salesforce',
+    name: 'Salesforce',
+    slug: 'salesforce',
+    description: 'World\'s #1 CRM platform for managing customer relationships',
+    category: 'Marketing & CRM',
+    subcategory: 'crm',
+    logo: '/logos/salesforce.svg',
+    logoUrl: 'https://n8n.io/integrations/salesforce/',
+    tags: ['crm', 'sales', 'enterprise', 'lead-management'],
+    nodeType: 'trigger_action',
+    popularity: 96,
+    automationUseCase: 'Automate lead capture, opportunity management, customer tracking, and sales pipeline workflows.',
+    businessBenefit: 'Never lose a lead with automated CRM workflows that track every customer interaction.',
+    commonIntegrations: ['Gmail', 'Slack', 'Marketing tools'],
+    features: ['Lead automation', 'Sales pipeline', 'Customer tracking', 'Opportunity management'],
+    lastUpdated: '2025-01-08'
+  },
+
+  // Ecommerce Category
+  {
+    id: 'shopify',
+    name: 'Shopify',
+    slug: 'shopify',
+    description: 'Manage products, orders, and customers in Shopify',
+    category: 'Ecommerce',
+    subcategory: 'online-stores',
+    logo: '/logos/shopify.svg',
+    logoUrl: 'https://n8n.io/integrations/shopify/',
+    tags: ['ecommerce', 'store', 'products', 'orders'],
+    nodeType: 'trigger_action',
+    popularity: 94,
+    automationUseCase: 'Automate order processing, inventory management, customer communications, and fulfillment workflows.',
+    businessBenefit: 'Run your online store automatically with seamless order processing and customer management.',
+    commonIntegrations: ['Payment processors', 'Accounting software', 'Marketing tools'],
+    features: ['Order automation', 'Inventory management', 'Customer tracking', 'Product synchronization'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'stripe',
+    name: 'Stripe',
+    slug: 'stripe',
+    description: 'Process payments and manage customer transactions',
+    category: 'Ecommerce',
+    subcategory: 'payment-processing',
+    logo: '/logos/stripe.svg',
+    logoUrl: 'https://n8n.io/integrations/stripe/',
+    tags: ['payments', 'billing', 'subscriptions', 'transactions'],
+    nodeType: 'trigger_action',
+    popularity: 91,
+    automationUseCase: 'Automate payment processing, subscription management, invoice generation, and financial workflows.',
+    businessBenefit: 'Handle payments automatically with intelligent fraud protection and seamless billing management.',
+    commonIntegrations: ['E-commerce platforms', 'Accounting software', 'CRM systems'],
+    features: ['Payment automation', 'Subscription billing', 'Fraud protection', 'Financial reporting'],
+    lastUpdated: '2025-01-08'
+  },
+
+  // Project Management Category
+  {
+    id: 'trello',
+    name: 'Trello',
+    slug: 'trello',
+    description: 'Manage boards, cards, and lists in Trello',
+    category: 'Project Management',
+    subcategory: 'task-management',
+    logo: '/logos/trello.svg',
+    logoUrl: 'https://n8n.io/integrations/trello/',
+    tags: ['kanban', 'tasks', 'collaboration', 'boards'],
+    nodeType: 'trigger_action',
+    popularity: 87,
+    automationUseCase: 'Automate task creation, card movements, team assignments, and project tracking workflows.',
+    businessBenefit: 'Keep projects organized with automated task management and team coordination.',
+    commonIntegrations: ['Slack', 'Google Drive', 'Time tracking tools'],
+    features: ['Task automation', 'Board management', 'Team collaboration', 'Progress tracking'],
+    lastUpdated: '2025-01-08'
+  },
+  {
+    id: 'asana',
+    name: 'Asana',
+    slug: 'asana',
+    description: 'Manage projects, tasks, and team collaboration',
+    category: 'Project Management',
+    subcategory: 'task-management',
+    logo: '/logos/asana.svg',
+    logoUrl: 'https://n8n.io/integrations/asana/',
+    tags: ['tasks', 'projects', 'team', 'collaboration'],
+    nodeType: 'trigger_action',
+    popularity: 86,
+    automationUseCase: 'Automate project workflows, task assignments, progress tracking, and team communications.',
+    businessBenefit: 'Keep projects on track with automated task management and team coordination.',
+    commonIntegrations: ['Slack', 'Gmail', 'Google Drive'],
+    features: ['Project automation', 'Task management', 'Team collaboration', 'Progress reporting'],
+    lastUpdated: '2025-01-08'
+  },
+
+  // Additional high-priority integrations
+  {
+    id: 'gmail',
+    name: 'Gmail',
+    slug: 'gmail',
+    description: 'Google\'s email service with powerful automation capabilities',
+    category: 'Communication & Messaging',
+    subcategory: 'email',
+    logo: '/logos/gmail.svg',
+    logoUrl: 'https://n8n.io/integrations/gmail/',
+    tags: ['email', 'google', 'communication', 'automation'],
+    nodeType: 'trigger_action',
+    popularity: 97,
+    automationUseCase: 'Automate email processing, contact management, and communication workflows with powerful Gmail integration.',
+    businessBenefit: 'Transform your inbox into an automation hub that handles emails intelligently and efficiently.',
+    commonIntegrations: ['CRM systems', 'Calendar apps', 'Project management tools'],
+    features: ['Email automation', 'Contact sync', 'Template responses', 'Smart filtering'],
+    lastUpdated: '2025-01-08'
   },
   {
     id: 'zapier',
     name: 'Zapier',
     slug: 'zapier',
-    description: 'Automation platform that connects over 5,000 apps to automate workflows without coding.',
-    category: 'AI & Machine Learning',
+    description: 'Automation platform that connects 5000+ apps without coding',
+    category: 'Development',
+    subcategory: 'apis',
     logo: '/logos/zapier.svg',
-    tags: ['Automation', 'Integration', 'Workflow', 'No-code'],
-    popularity: 'high',
-    automationUseCase: 'Create custom automations between any combination of business tools, triggering actions across platforms automatically.',
-    businessBenefit: 'Connect all your business tools with custom automation workflows that eliminate manual tasks and data silos.',
-    commonIntegrations: ['All major business apps', 'CRM systems', 'E-commerce platforms', 'Marketing tools'],
-    features: ['5000+ app integrations', 'Custom workflows', 'Multi-step automation', 'Conditional logic', 'Team collaboration']
+    logoUrl: 'https://n8n.io/integrations/zapier/',
+    tags: ['automation', 'integration', 'workflow', 'no-code'],
+    nodeType: 'trigger_action',
+    popularity: 89,
+    automationUseCase: 'Create custom automations between any combination of business tools and platforms.',
+    businessBenefit: 'Connect all your business tools with no-code automation workflows.',
+    commonIntegrations: ['All major business apps', 'CRM systems', 'E-commerce platforms'],
+    features: ['5000+ integrations', 'Custom workflows', 'Multi-step automation', 'Conditional logic'],
+    lastUpdated: '2025-01-08'
   }
 ];
+
+// Node type definitions
+export const nodeTypes = {
+  trigger: {
+    description: 'Start workflows in response to specific events or conditions',
+    examples: ['Webhook', 'Schedule Trigger', 'Email Trigger']
+  },
+  action: {
+    description: 'Perform operations on external systems and manipulate data',
+    examples: ['HTTP Request', 'Send Email', 'Create Record']
+  },
+  trigger_action: {
+    description: 'Can both trigger workflows and perform actions',
+    examples: ['Gmail', 'Slack', 'HubSpot']
+  },
+  cluster_node: {
+    description: 'Complex nodes that combine multiple operations',
+    examples: ['AI Agent', 'Vector Store', 'Chat Model']
+  }
+};
 
 // Helper functions
 export const getIntegrationsByCategory = (category: string): Integration[] => {
   return integrations.filter(integration => integration.category === category);
 };
 
-export const getPopularIntegrations = (): Integration[] => {
-  return integrations.filter(integration => integration.popularity === 'high');
+export const getIntegrationsBySubcategory = (subcategory: string): Integration[] => {
+  return integrations.filter(integration => integration.subcategory === subcategory);
+};
+
+export const getPopularIntegrations = (threshold: number = 85): Integration[] => {
+  return integrations.filter(integration => integration.popularity >= threshold);
+};
+
+export const getIntegrationsByNodeType = (nodeType: string): Integration[] => {
+  return integrations.filter(integration => integration.nodeType === nodeType);
 };
 
 export const searchIntegrations = (query: string): Integration[] => {
@@ -872,10 +509,37 @@ export const searchIntegrations = (query: string): Integration[] => {
   return integrations.filter(integration => 
     integration.name.toLowerCase().includes(lowercaseQuery) ||
     integration.description.toLowerCase().includes(lowercaseQuery) ||
-    integration.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+    integration.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery)) ||
+    (integration.subcategory && integration.subcategory.toLowerCase().includes(lowercaseQuery))
   );
 };
 
 export const getIntegrationBySlug = (slug: string): Integration | undefined => {
   return integrations.find(integration => integration.slug === slug);
+};
+
+export const getFeaturedIntegrations = (): Integration[] => {
+  // Return top integrations from each category
+  const categories = Object.keys(integrationCategories);
+  const featured: Integration[] = [];
+  
+  categories.forEach(category => {
+    const categoryIntegrations = getIntegrationsByCategory(category)
+      .sort((a, b) => b.popularity - a.popularity)
+      .slice(0, 2); // Top 2 from each category
+    featured.push(...categoryIntegrations);
+  });
+  
+  return featured.sort((a, b) => b.popularity - a.popularity);
+};
+
+// Statistics
+export const getIntegrationStats = () => {
+  return {
+    total: integrations.length,
+    categories: Object.keys(integrationCategories).length,
+    aiReady: integrations.filter(i => i.category === 'AI & Machine Learning').length,
+    highPopularity: integrations.filter(i => i.popularity >= 90).length,
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
 };

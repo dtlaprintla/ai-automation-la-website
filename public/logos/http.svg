@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="httpGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a73e8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="15" y="15" width="70" height="70" rx="10" fill="url(#httpGradient)" stroke="#fff" stroke-width="3"/>
+  <text x="50" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">HTTP</text>
+  <circle cx="30" cy="60" r="3" fill="white" opacity="0.8"/>
+  <circle cx="40" cy="60" r="3" fill="white" opacity="0.6"/>
+  <circle cx="50" cy="60" r="3" fill="white" opacity="0.4"/>
+  <path d="M60 55 L75 60 L60 65" fill="white" opacity="0.8"/>
+</svg>

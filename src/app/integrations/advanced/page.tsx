@@ -41,7 +41,7 @@ export default function AdvancedIntegrationsPage() {
 
     // Apply popularity filter
     if (showOnlyPopular) {
-      filtered = filtered.filter(integration => integration.popularity === 'high');
+      filtered = filtered.filter(integration => integration.popularity >= 85);
     }
 
     return filtered;
@@ -59,7 +59,7 @@ export default function AdvancedIntegrationsPage() {
 
   const categories = ['All', ...Object.keys(integrationCategories)];
   const totalIntegrations = integrations.length;
-  const popularIntegrationsCount = getPopularIntegrations().length;
+  const popularIntegrationsCount = getPopularIntegrations(85).length;
 
   return (
     <main className="min-h-screen bg-gray-50">
