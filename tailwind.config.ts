@@ -12,13 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          primary: "#EF4444", // Salmon Red
-          secondary: "#DC2626", // Deep Red  
-          accent: "#3B82F6", // Blue accent
+          primary: "#B43737", // Muted red
+          secondary: "#A02D50", // Muted deep red  
+          accent: "#4664B4", // Muted blue accent
           gradient: {
-            from: "#EF4444", // Red start
-            via: "#DC2626", // Deep red middle
-            to: "#3B82F6"   // Blue end
+            from: "rgba(180, 55, 55, 0.8)", // Subtle red start
+            via: "rgba(160, 45, 80, 0.7)", // Subtle red middle
+            to: "rgba(70, 100, 180, 0.6)"   // Subtle blue end
           }
         },
         // N8N-inspired dark theme colors
@@ -57,14 +57,14 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(to right, #EF4444, #DC2626, #3B82F6)",
-        "gradient-primary-reverse": "linear-gradient(to right, #3B82F6, #DC2626, #EF4444)",
-        "gradient-chatgpt": "linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #3B82F6 100%)",
-        // N8N-inspired gradients
-        "gradient-n8n-primary": "linear-gradient(135deg, #EE4F27 0%, #6B21EF 100%)",
-        "gradient-n8n-secondary": "linear-gradient(135deg, #4A9EFF 0%, #6B21EF 100%)",
+        "gradient-primary": "linear-gradient(to right, rgba(180, 55, 55, 0.8), rgba(160, 45, 80, 0.7), rgba(70, 100, 180, 0.6))",
+        "gradient-primary-reverse": "linear-gradient(to right, rgba(70, 100, 180, 0.6), rgba(160, 45, 80, 0.7), rgba(180, 55, 55, 0.8))",
+        "gradient-chatgpt": "linear-gradient(135deg, rgba(180, 55, 55, 0.8) 0%, rgba(160, 45, 80, 0.7) 50%, rgba(70, 100, 180, 0.6) 100%)",
+        // N8N-inspired gradients - subtle and elegant
+        "gradient-n8n-primary": "linear-gradient(135deg, rgba(180, 55, 55, 0.8) 0%, rgba(70, 100, 180, 0.6) 100%)",
+        "gradient-n8n-secondary": "linear-gradient(135deg, rgba(160, 45, 80, 0.7) 0%, rgba(70, 100, 180, 0.5) 100%)",
         "gradient-n8n-card": "linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%)",
-        "gradient-n8n-hero": "radial-gradient(ellipse at top, rgba(107, 33, 239, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom, rgba(238, 79, 39, 0.3) 0%, transparent 50%), #0E0918",
+        "gradient-n8n-hero": "radial-gradient(ellipse at top, rgba(70, 100, 180, 0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom, rgba(180, 55, 55, 0.15) 0%, transparent 60%), #0E0918",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },

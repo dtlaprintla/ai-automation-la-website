@@ -52,12 +52,12 @@
   --background-start-rgb: 249, 250, 251;
   --background-end-rgb: 255, 255, 255;
   
-  --brand-primary: 239, 68, 68;
-  --brand-secondary: 220, 38, 127;
-  --brand-accent: 59, 130, 246;
-  --chatgpt-start: 239, 68, 68;
-  --chatgpt-middle: 220, 38, 127;
-  --chatgpt-end: 59, 130, 246;
+  --brand-primary: 180, 55, 55;
+  --brand-secondary: 160, 45, 80;
+  --brand-accent: 70, 100, 180;
+  --chatgpt-start: 180, 55, 55;
+  --chatgpt-middle: 160, 45, 80;
+  --chatgpt-end: 70, 100, 180;
 }
 
 @media (prefers-color-scheme: dark) {
