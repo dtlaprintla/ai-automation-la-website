@@ -25,6 +25,7 @@ export default function Header() {
     { name: 'Integrations', href: '/integrations' },
     { name: 'ROI Calculator', href: '/roi-calculator' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];

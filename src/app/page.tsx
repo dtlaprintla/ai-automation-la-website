@@ -335,6 +335,87 @@ export default function HomePage() {
       {/* Case Studies Preview */}
       <CaseStudies />
 
+      {/* Blog Preview */}
+      <section className="py-20 bg-n8n-bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              AI Automation Insights
+            </h2>
+            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
+              Real case studies, expert insights, and practical guides for Los Angeles businesses
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Link href="/blog/ai-phone-agents-transform-dtla-dental-practice">
+              <article className="bg-n8n-bg-secondary rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="h-48 bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 flex items-center justify-center">
+                  <span className="text-n8n-text-secondary">Featured Case Study</span>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full text-sm font-semibold">
+                      Case Study
+                    </span>
+                    <span className="text-n8n-text-secondary text-sm">7 min read</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                    How AI Phone Agents Transformed a DTLA Dental Practice: +$180K Revenue
+                  </h3>
+                  <p className="text-n8n-text-secondary mb-4 leading-relaxed">
+                    A downtown Los Angeles dental practice went from missing 40% of calls to answering 98% with AI automation.
+                  </p>
+                  
+                  <div className="flex items-center text-brand-primary font-semibold">
+                    Read Case Study
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </div>
+                </div>
+              </article>
+            </Link>
+
+            <Link href="/blog/stop-missing-calls-la-business-automation">
+              <article className="bg-n8n-bg-secondary rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="h-48 bg-gradient-to-r from-brand-secondary/20 to-brand-primary/20 flex items-center justify-center">
+                  <span className="text-n8n-text-secondary">Strategy Guide</span>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="bg-brand-accent/10 text-brand-accent px-3 py-1 rounded-full text-sm font-semibold">
+                      AI Strategy
+                    </span>
+                    <span className="text-n8n-text-secondary text-sm">5 min read</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                    Stop Missing Calls: How LA Businesses Capture Every Lead with AI
+                  </h3>
+                  <p className="text-n8n-text-secondary mb-4 leading-relaxed">
+                    Los Angeles businesses lose $50K+ annually to missed calls. Learn how AI phone agents ensure you never miss another opportunity.
+                  </p>
+                  
+                  <div className="flex items-center text-brand-primary font-semibold">
+                    Read Guide
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </div>
+          
+          <div className="text-center">
+            <Link href="/blog">
+              <Button size="lg" variant="outline" className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white">
+                View All Articles
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-n8n-bg-secondary relative overflow-hidden">
         {/* Subtle gradient overlay */}

@@ -164,13 +164,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: 0.6,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/roi-calculator`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/case-studies`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    },
+  ]
+
+  // Blog posts (high priority for SEO)
+  const blogPosts = [
+    {
+      url: `${baseUrl}/blog/ai-phone-agents-transform-dtla-dental-practice`,
+      lastModified: new Date('2024-12-01'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/stop-missing-calls-la-business-automation`,
+      lastModified: new Date('2024-11-28'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     },
   ]
 
@@ -181,5 +203,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryPages,
     ...locationPages,
     ...resourcePages,
+    ...blogPosts,
   ]
 }
