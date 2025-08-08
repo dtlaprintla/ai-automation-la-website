@@ -6,6 +6,7 @@ import { BRAND } from "@/config/branding";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${BRAND.domain}`),
   title: `${BRAND.name} | ${BRAND.tagline}`,
   description: BRAND.description,
   keywords: [

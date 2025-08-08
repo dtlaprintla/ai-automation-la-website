@@ -100,11 +100,17 @@ body {
 
 /* Button hover effects */
 .btn-primary {
-  @apply bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-glow-lg;
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4);
+  @apply text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-glow-lg;
 }
 
 .btn-secondary {
   @apply bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/20 hover:scale-105;
+}
+
+/* Utility classes */
+.bg-gradient-primary {
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4);
 }
 
 /* Card hover effects */
