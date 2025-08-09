@@ -79,3 +79,103 @@ a > button:hover {
   background-color: #111827 !important;
   color: #FFFFFF !important;
 }
+
+/* ===== VAPI SPACING - ADD BREATHING ROOM ===== */
+
+/* Section spacing - more breathing room */
+section {
+  padding: 4rem 1rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Heading spacing */
+h1 {
+  margin-bottom: 2rem !important;
+  margin-top: 1rem !important;
+}
+
+h2 {
+  margin-bottom: 1.5rem !important;
+  margin-top: 2rem !important;
+}
+
+h3, h4, h5, h6 {
+  margin-bottom: 1rem !important;
+  margin-top: 1.5rem !important;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7 !important;
+}
+
+/* List spacing */
+ul, ol {
+  margin-bottom: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Card and content box spacing */
+.card,
+[class*="bg-gray-"],
+.bg-white {
+  padding: 2rem !important;
+  margin-bottom: 1.5rem !important;
+  border-radius: 0.75rem !important;
+}
+
+/* Button spacing */
+button,
+.btn,
+a > button {
+  padding: 0.75rem 2rem !important;
+  margin: 0.5rem 0.25rem !important;
+}
+
+/* Grid and flex spacing */
+[class*="grid"],
+[class*="flex"] {
+  gap: 2rem !important;
+}
+
+/* Form spacing */
+input,
+textarea,
+select {
+  margin-bottom: 1rem !important;
+  padding: 1rem !important;
+}
+
+/* Navigation spacing */
+nav {
+  padding: 1rem 2rem !important;
+}
+
+nav ul {
+  gap: 2rem !important;
+}
+
+/* Container spacing */
+.container,
+[class*="max-w"] {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Hero section extra spacing */
+[class*="hero"],
+[class*="pt-32"] {
+  padding-top: 6rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Footer spacing */
+footer {
+  padding: 3rem 2rem !important;
+  margin-top: 4rem !important;
+}
