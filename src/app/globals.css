@@ -4,11 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* N8N Dark Theme Import */
-@import '../styles/n8n-dark-theme.css';
-
-/* Global N8N Theme System - Site-wide rollout ready */
-@import '../styles/global-n8n-theme.css';
+/* Vapi exact color scheme - no gradients */
+:root {
+  --vapi-black: #0E0E13;
+  --vapi-green: #10B981;
+  --vapi-green-hover: #059669;
+  --vapi-cream: #F5F3F0;
+  --vapi-cream-dark: #E8E5E0;
+  --vapi-text-primary: #FFFFFF;
+  --vapi-text-secondary: #9CA3AF;
+  --vapi-text-muted: #6B7280;
+  --vapi-border: #374151;
+  --vapi-card-bg: #111827;
+  --vapi-card-border: #1F2937;
+}
 
 /* Critical CSS - Above the fold optimizations */
 @layer base {
@@ -23,6 +32,8 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     font-display: swap;
+    background-color: var(--vapi-black);
+    color: var(--vapi-text-primary);
   }
   
   /* Prevent layout shift with font loading */
@@ -47,136 +58,76 @@
   }
 }
 
-/* Custom slider styles for ROI Calculator */
-@layer components {
-  .slider {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .slider::-webkit-slider-track {
-    background: rgb(var(--brand-primary) / 0.1);
-    height: 8px;
-    border-radius: 4px;
-    border: 1px solid rgb(var(--brand-primary) / 0.2);
-  }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    background: linear-gradient(135deg, rgb(var(--brand-primary)), rgb(var(--brand-accent)));
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .slider::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .slider::-moz-range-track {
-    background: rgb(var(--brand-primary) / 0.1);
-    height: 8px;
-    border-radius: 4px;
-    border: 1px solid rgb(var(--brand-primary) / 0.2);
-  }
-
-  .slider::-moz-range-thumb {
-    background: linear-gradient(135deg, rgb(var(--brand-primary)), rgb(var(--brand-accent)));
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .slider::-moz-range-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .slider:focus {
-    outline: none;
-  }
-
-  .slider:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 3px rgb(var(--brand-primary) / 0.2);
-  }
-
-  .slider:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 3px rgb(var(--brand-primary) / 0.2);
-  }
-}
-
-:root {
-  /* Vapi exact color scheme */
-  --vapi-black: 14, 14, 19; /* #0E0E13 */
-  --vapi-green: 16, 185, 129; /* #10B981 - Primary CTA */
-  --vapi-text-primary: 255, 255, 255;
-  --vapi-text-secondary: 156, 163, 175; /* #9CA3AF */
-  --vapi-border: 55, 65, 81; /* #374151 */
-  --vapi-card-bg: 17, 24, 39; /* #111827 */
-  
-  /* Legacy variables for compatibility */
-  --foreground-rgb: 255, 255, 255;
-  --background-primary: 14, 14, 19;
-  --brand-primary: 16, 185, 129;
-  --text-primary: 255, 255, 255;
-  --text-secondary: 156, 163, 175;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 249, 250, 251;
-    --background-start-rgb: 17, 24, 39;
-    --background-end-rgb: 31, 41, 55;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-primary));
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* Vapi-inspired background patterns */
 .dotted-bg {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-.gradient-text-vapi {
-  background: linear-gradient(135deg, rgb(var(--brand-primary)), rgb(var(--brand-secondary)));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Vapi cream text sections - like their "TALK TO VAPI" button */
+.vapi-cream-text {
+  background: var(--vapi-cream);
+  color: #1F2937;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.vapi-cream-button {
+  background: var(--vapi-cream);
+  color: #1F2937;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.vapi-cream-button:hover {
+  background: var(--vapi-cream-dark);
+  transform: translateY(-1px);
+}
+
+/* Vapi green button - primary CTA */
+.vapi-green-button {
+  background: var(--vapi-green);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.vapi-green-button:hover {
+  background: var(--vapi-green-hover);
+}
+
+/* Vapi text utilities - no gradients */
+.vapi-text-highlight {
+  color: var(--vapi-green);
+  font-weight: 600;
+}
+
+.vapi-text-cream {
+  color: var(--vapi-cream);
+  font-weight: 600;
+}
+
+.vapi-text-white {
+  color: var(--vapi-text-primary);
+}
+
+.vapi-text-muted {
+  color: var(--vapi-text-secondary);
 }
 
 .border-glow {
-  border: 1px solid rgb(var(--border-color));
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--vapi-border);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.1);
 }
 
 /* Logo marquee animations */
@@ -193,38 +144,22 @@ body {
   animation: marquee 30s linear infinite;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Vapi colors */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--vapi-black);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 100%);
+  background: var(--vapi-green);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-middle)) 0%, rgb(var(--chatgpt-end)) 100%);
-}
-
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Gradient text for light backgrounds - white version */
-.gradient-text-white {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: var(--vapi-green-hover);
 }
 
 /* Glass morphism effect */
@@ -234,55 +169,57 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Animated background patterns */
-.animated-bg {
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(var(--chatgpt-start), 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 75% 75%, rgba(var(--chatgpt-middle), 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 50% 50%, rgba(var(--chatgpt-end), 0.05) 0%, transparent 50%);
-  background-size: 400px 400px, 300px 300px, 200px 200px;
-  animation: float-pattern 20s ease-in-out infinite;
-}
-
-@keyframes float-pattern {
-  0%, 100% {
-    background-position: 0% 0%, 100% 100%, 50% 50%;
-  }
-  50% {
-    background-position: 100% 0%, 0% 100%, 25% 75%;
-  }
-}
-
-/* Button hover effects */
+/* Button hover effects - no gradients */
 .btn-primary {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
-  @apply text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-glow-lg;
+  background: var(--vapi-green);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--vapi-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
 }
 
 .btn-secondary {
-  @apply bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/20 hover:scale-105;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Utility classes */
-.bg-gradient-primary {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
-}
-
-.bg-gradient-chatgpt {
-  background: linear-gradient(135deg, rgb(var(--chatgpt-start)) 0%, rgb(var(--chatgpt-middle)) 50%, rgb(var(--chatgpt-end)) 100%);
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 /* Card hover effects */
 .card-hover {
-  @apply transition-all duration-300 hover:scale-105 hover:shadow-card-hover;
+  transition: all 0.3s ease;
 }
 
-/* Loading spinner */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading spinner - Vapi green */
 .spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(var(--chatgpt-start), 0.3);
-  border-top: 2px solid rgb(var(--chatgpt-start));
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-top: 2px solid var(--vapi-green);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -306,49 +243,28 @@ body {
 }
 
 /* Focus styles */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid rgb(var(--chatgpt-start));
+.focus-ring {
+  outline: 2px solid var(--vapi-green);
   outline-offset: 2px;
 }
 
-/* Animation delays for staggered effects */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-
-/* Epic blob animations for service pages */
-.animate-blob {
-  animation: blob 7s infinite;
+/* Vapi stats section styling */
+.vapi-stats-section {
+  background: var(--vapi-black);
+  border-top: 1px solid var(--vapi-border);
+  padding: 3rem 0;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+/* Vapi card styling */
+.vapi-card {
+  background: var(--vapi-card-bg);
+  border: 1px solid var(--vapi-card-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animation-delay-6000 {
-  animation-delay: 6s;
-}
-
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+.vapi-card:hover {
+  border-color: var(--vapi-green);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }

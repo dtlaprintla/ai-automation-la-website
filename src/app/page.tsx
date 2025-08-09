@@ -38,12 +38,25 @@ export default function HomePageVapi() {
       <section className="py-20 bg-[#0E0E13]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-2">
-            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">API</p>
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-16">
-              Making voice AI simple
+            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">AUTOMATION</p>
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+              Making business automation
               <br />
-              and accessible.
+              simple and accessible.
             </h2>
+            
+            {/* Cream highlight sections like Vapi */}
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+              <div className="vapi-cream-text">
+                Teams at LA startups to Fortune 500 companies deploy automation workflows on the AI Automation LA platform.
+              </div>
+            </div>
+            
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
+              <div className="vapi-cream-text">
+                The most configurable API to build leading automation products and scale business operations.
+              </div>
+            </div>
           </div>
 
           {/* Security Badges */}

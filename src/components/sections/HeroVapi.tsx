@@ -23,9 +23,9 @@ export default function HeroVapi() {
           {/* Hero Text */}
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-8 tracking-tight">
-              Voice AI agents
+              AI automation agents
               <br />
-              for developers
+              for businesses
             </h1>
             
             {/* CTA Buttons */}
@@ -78,10 +78,10 @@ export default function HeroVapi() {
                 })}
               </div>
               
-              {/* Talk to Vapi button */}
+              {/* Talk to AI button - cream colored like Vapi */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <button className="bg-white text-black px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors duration-200 flex items-center gap-3">
-                  TALK TO VAPI
+                <button className="vapi-cream-button text-lg flex items-center gap-3 px-8 py-4">
+                  TALK TO AI AUTOMATION LA
                   <span className="text-2xl">🎙️</span>
                 </button>
               </div>
