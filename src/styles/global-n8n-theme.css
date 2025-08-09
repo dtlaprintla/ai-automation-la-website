@@ -350,22 +350,29 @@ html.n8n-theme [class*="pb-16"] {
   background-color: var(--bg-primary) !important;
 }
 
-/* NUCLEAR OPTION: Override ALL possible green backgrounds on sections */
-html.n8n-theme section[style*="#10B981"],
-html.n8n-theme section[class*="bg-[#10B981]"],
-html.n8n-theme *[class*="pt-32"][class*="bg-[#10B981]"],
-html.n8n-theme *[class*="py-"][class*="bg-[#10B981]"],
-html.n8n-theme *[class*="pb-16"][class*="bg-[#10B981]"],
-html.n8n-theme div[class*="bg-[#10B981]"]:not([class*="w-10"]):not([class*="h-10"]),
-html.n8n-theme section:has([class*="bg-[#10B981]"]) {
-  background: var(--bg-primary) !important;
-  background-color: var(--bg-primary) !important;
+/* BRUTE FORCE: Override ALL green backgrounds with proper CSS syntax */
+section,
+.pt-32,
+.py-20,
+.py-16,
+.pb-16 {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
 }
 
-/* Force any large container with green background to be dark */
-html.n8n-theme *[class*="bg-[#10B981]"]:not(button):not([class*="w-10"]):not([class*="h-10"]):not(a) {
-  background: var(--bg-primary) !important;
-  background-color: var(--bg-primary) !important;
+/* Target Tailwind's compiled green background class */
+[style*="#10B981"],
+[class*="10B981"] {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
+}
+
+/* But keep buttons and small elements green */
+button,
+.btn-primary,
+a button,
+input[type="submit"] {
+  background-color: #10B981 !important;
 }
 
 /* ONLY buttons and small elements should be green */
