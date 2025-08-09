@@ -350,9 +350,20 @@ html.n8n-theme [class*="pb-16"] {
   background-color: var(--bg-primary) !important;
 }
 
-/* Override ANY hardcoded green backgrounds on sections */
+/* NUCLEAR OPTION: Override ALL possible green backgrounds on sections */
 html.n8n-theme section[style*="#10B981"],
-html.n8n-theme section[class*="bg-[#10B981]"] {
+html.n8n-theme section[class*="bg-[#10B981]"],
+html.n8n-theme *[class*="pt-32"][class*="bg-[#10B981]"],
+html.n8n-theme *[class*="py-"][class*="bg-[#10B981]"],
+html.n8n-theme *[class*="pb-16"][class*="bg-[#10B981]"],
+html.n8n-theme div[class*="bg-[#10B981]"]:not([class*="w-10"]):not([class*="h-10"]),
+html.n8n-theme section:has([class*="bg-[#10B981]"]) {
+  background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Force any large container with green background to be dark */
+html.n8n-theme *[class*="bg-[#10B981]"]:not(button):not([class*="w-10"]):not([class*="h-10"]):not(a) {
   background: var(--bg-primary) !important;
   background-color: var(--bg-primary) !important;
 }
