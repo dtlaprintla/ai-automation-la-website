@@ -1,10 +1,11 @@
-/* VAPI OVERRIDE - NUCLEAR OPTION */
-/* This file should load LAST to override everything */
+/* VAPI COMPLETE OVERRIDE - EXACT COLOR SCHEME */
 
-/* Kill ALL possible green backgrounds */
+/* Force Vapi black background everywhere */
+body,
+html,
+main,
 section,
 div,
-main,
 header,
 footer,
 article,
@@ -12,42 +13,69 @@ aside,
 nav {
   background: #0E0E13 !important;
   background-color: #0E0E13 !important;
+  color: #FFFFFF !important;
 }
 
-/* Target all Tailwind compiled classes */
-.bg-emerald-500,
-.bg-green-500,
-[class*="bg-emerald"],
-[class*="bg-green"],
-[style*="background: rgb(16, 185, 129)"],
-[style*="background-color: rgb(16, 185, 129)"],
-[style*="background: #10B981"],
-[style*="background-color: #10B981"] {
+/* Kill ALL green backgrounds except buttons */
+*:not(button):not([role="button"]):not(a > button):not(input[type="submit"]) {
+  background-color: #0E0E13 !important;
+}
+
+/* Specific green class killers */
+.bg-emerald-500:not(button),
+.bg-green-500:not(button),
+[class*="bg-emerald"]:not(button),
+[class*="bg-green"]:not(button),
+[style*="background: rgb(16, 185, 129)"]:not(button),
+[style*="background-color: rgb(16, 185, 129)"]:not(button),
+[style*="background: #10B981"]:not(button),
+[style*="background-color: #10B981"]:not(button) {
   background: #0E0E13 !important;
   background-color: #0E0E13 !important;
 }
 
-/* Tailwind utility overrides */
-.pt-32 { background: #0E0E13 !important; }
-.py-20 { background: #0E0E13 !important; }
-.py-16 { background: #0E0E13 !important; }
-.pb-16 { background: #0E0E13 !important; }
+/* Fix text colors - white on dark background */
+h1, h2, h3, h4, h5, h6,
+p, span, div, section,
+.text-black,
+[class*="text-gray"] {
+  color: #FFFFFF !important;
+}
 
-/* But keep buttons green */
+/* Cream sections for highlights (like Vapi) */
+.vapi-cream-section {
+  background: #F5F3F0 !important;
+  color: #1F2937 !important;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/* Only buttons should be green */
 button,
 input[type="submit"],
 [role="button"],
-a > button {
+a > button,
+.btn,
+.btn-primary {
   background: #10B981 !important;
   background-color: #10B981 !important;
+  color: #FFFFFF !important;
+  border: none !important;
 }
 
-/* Ultra nuclear - override CSS custom properties */
-:root {
-  --tw-bg-opacity: 1;
+button:hover,
+input[type="submit"]:hover,
+[role="button"]:hover,
+a > button:hover {
+  background: #059669 !important;
+  background-color: #059669 !important;
 }
 
-* {
-  --emerald-500: 14, 14, 19; /* Force emerald-500 to be dark */
-  --green-500: 14, 14, 19;   /* Force green-500 to be dark */
+/* Card backgrounds should be slightly lighter */
+.bg-white,
+[class*="bg-gray-"],
+.card {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  color: #FFFFFF !important;
 }
