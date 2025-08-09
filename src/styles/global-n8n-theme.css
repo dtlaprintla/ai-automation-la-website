@@ -23,35 +23,35 @@
   --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* N8N DARK THEME - Applied when html.n8n-theme or [data-theme="n8n"] */
+/* VAPI THEME - Applied when html.n8n-theme or [data-theme="n8n"] */
 html.n8n-theme,
 [data-theme="n8n"] {
-  /* N8N Color Overrides */
-  --bg-primary: #0E0918;          /* Deep navy background */
-  --bg-secondary: #1A1B26;        /* Cards and elevated surfaces */
-  --bg-tertiary: #242530;         /* Inputs and tertiary surfaces */
-  --bg-accent: #2A2D3E;           /* Hover states and accents */
+  /* Vapi Color Overrides - Exact Match */
+  --bg-primary: #0E0E13;          /* Vapi exact black background */
+  --bg-secondary: #111827;        /* Cards and elevated surfaces */
+  --bg-tertiary: #1F2937;         /* Inputs and tertiary surfaces */
+  --bg-accent: #374151;           /* Hover states and accents */
   
   --text-primary: #FFFFFF;        /* Pure white for headings */
-  --text-secondary: #C4BBD3;      /* Lavender gray for body text */
-  --text-muted: #9B96A6;          /* Muted text */
-  --text-disabled: #6B6B7D;       /* Disabled states */
+  --text-secondary: #9CA3AF;      /* Vapi gray for body text */
+  --text-muted: #6B7280;          /* Muted text */
+  --text-disabled: #4B5563;       /* Disabled states */
   
-  --accent-primary: #B43737;      /* Subtle muted red */
-  --accent-secondary: #A02D50;    /* Muted deep red */
-  --accent-tertiary: #4664B4;     /* Muted blue accent */
+  --accent-primary: #10B981;      /* Vapi exact green */
+  --accent-secondary: #059669;    /* Vapi green hover */
+  --accent-tertiary: #F5F3F0;     /* Vapi cream color */
   
   --border-color: rgba(196, 187, 211, 0.1);
   --border-hover: rgba(196, 187, 211, 0.2);
   --shadow: 0 8px 32px rgba(14, 9, 24, 0.4);
   --shadow-card: 0 4px 16px rgba(14, 9, 24, 0.3);
   
-  /* N8N Specific Variables */
-  --n8n-gradient-primary: linear-gradient(135deg, rgba(180, 55, 55, 0.8) 0%, rgba(70, 100, 180, 0.6) 100%);
-  --n8n-gradient-secondary: linear-gradient(135deg, rgba(160, 45, 80, 0.7) 0%, rgba(70, 100, 180, 0.5) 100%);
-  --n8n-gradient-card: linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%);
-  --n8n-gradient-hero: radial-gradient(ellipse at top, rgba(70, 100, 180, 0.15) 0%, transparent 60%), 
-                       radial-gradient(ellipse at bottom, rgba(180, 55, 55, 0.15) 0%, transparent 60%), 
+  /* Vapi Specific Variables - NO GRADIENTS */
+  --vapi-green: #10B981;          /* Primary green */
+  --vapi-green-hover: #059669;    /* Green hover state */
+  --vapi-cream: #F5F3F0;          /* Cream highlight sections */
+  --vapi-cream-dark: #E8E5E0;     /* Cream hover state */
+  --vapi-black: #0E0E13;          /* Exact background */ 
                        #0E0918;
 }
 
@@ -96,7 +96,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 0 3px rgba(238, 79, 39, 0.1) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
 }
 
 input::placeholder,
@@ -108,18 +108,24 @@ textarea::placeholder {
 header,
 nav,
 .header {
-  background: rgba(26, 27, 38, 0.9) !important;
+  background: rgba(14, 14, 19, 0.9) !important;
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Buttons get N8N styling */
+/* Buttons get Vapi styling - NO GRADIENTS */
 .btn-primary,
 .bg-gradient-primary,
 button[type="submit"] {
-  background: var(--n8n-gradient-primary) !important;
+  background: var(--vapi-green) !important;
   color: white !important;
   border: none !important;
+}
+
+.btn-primary:hover,
+.bg-gradient-primary:hover,
+button[type="submit"]:hover {
+  background: var(--vapi-green-hover) !important;
 }
 
 .btn-secondary {
@@ -131,7 +137,7 @@ button[type="submit"] {
 .btn-secondary:hover {
   border-color: var(--accent-primary) !important;
   color: var(--accent-primary) !important;
-  background: rgba(238, 79, 39, 0.1) !important;
+  background: rgba(16, 185, 129, 0.1) !important;
 }
 
 /* Text colors adapt globally */
@@ -147,9 +153,9 @@ button[type="submit"] {
 .bg-gray-100 { background: var(--bg-secondary) !important; }
 .bg-gray-200 { background: var(--bg-tertiary) !important; }
 
-/* Integration page specific */
+/* Integration page specific - NO GRADIENTS */
 .integration-grid .integration-card {
-  background: var(--n8n-gradient-card);
+  background: var(--bg-secondary);
   backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
@@ -159,7 +165,7 @@ button[type="submit"] {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--n8n-gradient-primary);
+  background: var(--vapi-green);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: inherit;
@@ -171,7 +177,7 @@ button[type="submit"] {
 
 .integration-grid .integration-card:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 12px 40px rgba(238, 79, 39, 0.2);
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.2);
   transform: translateY(-4px);
 }
 
@@ -208,17 +214,25 @@ html.n8n-theme ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
 
-/* Special gradient utilities for N8N theme */
+/* Special text utilities for Vapi theme - NO GRADIENTS */
 html.n8n-theme .gradient-text,
-html.n8n-theme .n8n-gradient-text {
-  background: var(--n8n-gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+html.n8n-theme .n8n-gradient-text,
+html.n8n-theme .vapi-text-highlight {
+  color: var(--vapi-green) !important;
+  font-weight: 600;
+}
+
+html.n8n-theme .vapi-cream-text {
+  background: var(--vapi-cream);
+  color: #1F2937;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  display: inline-block;
 }
 
 html.n8n-theme .hero-section {
-  background: var(--n8n-gradient-hero);
+  background: var(--vapi-black);
 }
 
 /* Animation for theme switching */
@@ -242,6 +256,106 @@ html.n8n-theme a {
 
 html.n8n-theme a:hover {
   color: var(--accent-secondary);
+}
+
+/* ===== VAPI COMPREHENSIVE STYLING - SITE WIDE ===== */
+
+/* Apply Vapi colors to ALL gradient classes */
+html.n8n-theme .bg-gradient-primary,
+html.n8n-theme .bg-gradient-to-r,
+html.n8n-theme .bg-gradient-to-br,
+html.n8n-theme .bg-gradient-chatgpt,
+html.n8n-theme .bg-gradient-n8n-primary {
+  background: var(--vapi-green) !important;
+}
+
+/* Primary buttons - Vapi green */
+html.n8n-theme .btn-primary,
+html.n8n-theme button[class*="bg-gradient"],
+html.n8n-theme .vapi-green-button {
+  background: var(--vapi-green) !important;
+  color: white !important;
+  border: none !important;
+  transition: all 0.2s ease;
+}
+
+html.n8n-theme .btn-primary:hover,
+html.n8n-theme button[class*="bg-gradient"]:hover,
+html.n8n-theme .vapi-green-button:hover {
+  background: var(--vapi-green-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Cream buttons and sections */
+html.n8n-theme .vapi-cream-button {
+  background: var(--vapi-cream) !important;
+  color: #1F2937 !important;
+  border: none !important;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+html.n8n-theme .vapi-cream-button:hover {
+  background: var(--vapi-cream-dark) !important;
+  transform: translateY(-1px);
+}
+
+/* Text utilities */
+html.n8n-theme .text-brand-primary,
+html.n8n-theme .gradient-text-white {
+  color: var(--vapi-green) !important;
+}
+
+/* Card styling */
+html.n8n-theme .vapi-card {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+html.n8n-theme .vapi-card:hover {
+  border-color: var(--vapi-green) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
+}
+
+/* Force all hardcoded colors to use Vapi palette */
+html.n8n-theme [class*="from-brand-primary"],
+html.n8n-theme [class*="to-brand-accent"],
+html.n8n-theme [class*="via-brand-secondary"] {
+  background: var(--vapi-green) !important;
+}
+
+/* Stats sections and highlighted areas */
+html.n8n-theme .vapi-stats-section {
+  background: var(--vapi-black) !important;
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 0;
+}
+
+/* Ensure all logos and icons use proper contrast */
+html.n8n-theme .w-10.h-10[class*="bg-gradient"] {
+  background: var(--vapi-green) !important;
+}
+
+/* CTA sections */
+html.n8n-theme section[class*="bg-gradient"] {
+  background: var(--vapi-green) !important;
+}
+
+/* Form styling */
+html.n8n-theme .contact-form button[type="submit"] {
+  background: var(--vapi-green) !important;
+  color: white !important;
+}
+
+html.n8n-theme .contact-form button[type="submit"]:hover {
+  background: var(--vapi-green-hover) !important;
 }
 
 /* Tag/Badge styling */
