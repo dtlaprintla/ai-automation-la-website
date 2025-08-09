@@ -1,0 +1,53 @@
+/* VAPI OVERRIDE - NUCLEAR OPTION */
+/* This file should load LAST to override everything */
+
+/* Kill ALL possible green backgrounds */
+section,
+div,
+main,
+header,
+footer,
+article,
+aside,
+nav {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
+}
+
+/* Target all Tailwind compiled classes */
+.bg-emerald-500,
+.bg-green-500,
+[class*="bg-emerald"],
+[class*="bg-green"],
+[style*="background: rgb(16, 185, 129)"],
+[style*="background-color: rgb(16, 185, 129)"],
+[style*="background: #10B981"],
+[style*="background-color: #10B981"] {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
+}
+
+/* Tailwind utility overrides */
+.pt-32 { background: #0E0E13 !important; }
+.py-20 { background: #0E0E13 !important; }
+.py-16 { background: #0E0E13 !important; }
+.pb-16 { background: #0E0E13 !important; }
+
+/* But keep buttons green */
+button,
+input[type="submit"],
+[role="button"],
+a > button {
+  background: #10B981 !important;
+  background-color: #10B981 !important;
+}
+
+/* Ultra nuclear - override CSS custom properties */
+:root {
+  --tw-bg-opacity: 1;
+}
+
+* {
+  --emerald-500: 14, 14, 19; /* Force emerald-500 to be dark */
+  --green-500: 14, 14, 19;   /* Force green-500 to be dark */
+}
