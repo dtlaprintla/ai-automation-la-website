@@ -118,19 +118,20 @@
 }
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 14, 14, 19;
-  --background-end-rgb: 14, 14, 19;
+  /* Vapi exact color scheme */
+  --vapi-black: 14, 14, 19; /* #0E0E13 */
+  --vapi-green: 16, 185, 129; /* #10B981 - Primary CTA */
+  --vapi-text-primary: 255, 255, 255;
+  --vapi-text-secondary: 156, 163, 175; /* #9CA3AF */
+  --vapi-border: 55, 65, 81; /* #374151 */
+  --vapi-card-bg: 17, 24, 39; /* #111827 */
   
-  /* Vapi-inspired professional color scheme */
-  --brand-primary: 99, 102, 241; /* Clean blue */
-  --brand-secondary: 139, 92, 246; /* Purple accent */
-  --brand-accent: 34, 197, 94; /* Success green */
+  /* Legacy variables for compatibility */
+  --foreground-rgb: 255, 255, 255;
+  --background-primary: 14, 14, 19;
+  --brand-primary: 16, 185, 129;
   --text-primary: 255, 255, 255;
   --text-secondary: 156, 163, 175;
-  --background-primary: 14, 14, 19; /* #0E0E13 */
-  --background-secondary: 17, 17, 23;
-  --border-color: 31, 41, 55;
 }
 
 @media (prefers-color-scheme: dark) {
