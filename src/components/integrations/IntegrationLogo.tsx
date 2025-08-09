@@ -66,7 +66,8 @@ export default function IntegrationLogo({ integration, size = 'md', className = 
   };
 
   // Try to load the actual logo image first, fallback to generated logo
-  const logoUrl = `/logos/${integration.id}.svg`;
+  // Use the logo field from integration data, or fallback to id-based path
+  const logoUrl = integration.logo || `/logos/${integration.id}.svg`;
   
   if (imageError) {
     // Fallback to generated logo
