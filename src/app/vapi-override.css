@@ -151,8 +151,13 @@ select {
   padding: 1rem !important;
 }
 
-/* Navigation spacing */
+/* Navigation spacing - reduced from excessive padding */
 nav {
+  padding: 0.75rem 2rem !important;
+}
+
+/* Header specific - prevent excessive padding */
+header {
   padding: 1rem 2rem !important;
 }
 

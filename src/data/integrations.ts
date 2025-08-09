@@ -346,7 +346,7 @@ export const integrations: Integration[] = [
     description: 'World\'s #1 CRM platform for managing customer relationships',
     category: 'Marketing & CRM',
     subcategory: 'crm',
-    logo: '/logos/salesforce.svg',
+    logo: '/logos/salesforce-new.svg',
     logoUrl: 'https://n8n.io/integrations/salesforce/',
     tags: ['crm', 'sales', 'enterprise', 'lead-management'],
     nodeType: 'trigger_action',
