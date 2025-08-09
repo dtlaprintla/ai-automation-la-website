@@ -436,10 +436,12 @@ export default function HomePage() {
                 Get Free AI Plan
               </Button>
             </Link>
-            <Button size="xl" variant="outline" className="text-white border-white hover:bg-white/10">
-              <Phone className="w-6 h-6 mr-2" />
-              Call {BRAND.phone}
-            </Button>
+            <a href={`tel:${BRAND.phone}`}>
+              <Button size="xl" variant="outline" className="text-white border-white hover:bg-white/10">
+                <Phone className="w-6 h-6 mr-2" />
+                Call {BRAND.phone}
+              </Button>
+            </a>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-8 text-white/80">

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import Link from 'next/link';
 import { BRAND } from '@/config/branding';
 import { ArrowRight, Play, Zap } from 'lucide-react';
 
@@ -97,14 +98,18 @@ export default function Hero() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
-            <button className="border border-gray-700 hover:border-gray-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center">
-              <Play className="w-5 h-5 mr-2" />
-              Watch Demo
-            </button>
+            <Link href="/contact">
+              <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center w-full sm:w-auto">
+                Start Free Trial
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+            </Link>
+            <Link href="/roi-calculator">
+              <button className="border border-gray-700 hover:border-gray-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center w-full sm:w-auto">
+                <Play className="w-5 h-5 mr-2" />
+                See ROI Calculator
+              </button>
+            </Link>
           </motion.div>
 
           {/* Popular Tools Section */}
