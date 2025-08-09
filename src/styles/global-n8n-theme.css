@@ -337,14 +337,24 @@ html.n8n-theme .w-10.h-10[class*="bg-gradient"]:not(header *) {
 
 /* VAPI RULE: Large sections should be DARK, only buttons should be GREEN */
 
-/* All large sections/headers should be dark - Override ALL hardcoded green */
-html.n8n-theme section:not([class*="text"]):not([class*="flex"]),
+/* FORCE all large sections to be dark - Override ANY green backgrounds */
+html.n8n-theme section,
 html.n8n-theme .hero-section,
 html.n8n-theme header,
 html.n8n-theme nav,
 html.n8n-theme main > section,
-html.n8n-theme .pt-32 {
+html.n8n-theme [class*="pt-32"],
+html.n8n-theme [class*="py-"],
+html.n8n-theme [class*="pb-16"] {
   background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Override ANY hardcoded green backgrounds on sections */
+html.n8n-theme section[style*="#10B981"],
+html.n8n-theme section[class*="bg-[#10B981]"] {
+  background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
 }
 
 /* ONLY buttons and small elements should be green */
