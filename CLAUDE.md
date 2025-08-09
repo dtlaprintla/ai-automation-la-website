@@ -34,6 +34,12 @@ This is the AI Automation LA website - a Done-For-You AI automation agency servi
 - **ADD** any new discovered tasks to "REMAINING TASKS"
 - **UPDATE** the "Last Updated" timestamp at the bottom
 
+### 5. Content Rules
+- **NEVER** include text like "Generated with Claude", "Written by Claude", or any Claude references on the website
+- **NEVER** add Claude signatures or attributions to website content
+- **NEVER** mention AI authorship in website copy or code comments
+- **KEEP** git commit signatures for tracking purposes only
+
 ## 📚 Project Documentation
 
 All strategic docs are in `/docs/` folder:

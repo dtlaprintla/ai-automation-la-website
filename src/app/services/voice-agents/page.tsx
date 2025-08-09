@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
+import Link from 'next/link';
 import { BRAND } from '@/config/branding';
 import { 
   Phone, 
@@ -328,13 +329,15 @@ export default function VoiceAgentsPage() {
             </div>
 
             <div className="text-center">
-              <Button 
-                size="xl"
-                className="bg-brand-primary hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-2xl px-16 py-8 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-4"
-              >
-                <Zap className="w-8 h-8 mr-3" />
-                START CAPTURING EVERY CALL
-              </Button>
+              <Link href="/contact">
+                <Button 
+                  size="xl"
+                  className="bg-brand-primary hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-2xl px-16 py-8 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-4"
+                >
+                  <Zap className="w-8 h-8 mr-3" />
+                  START CAPTURING EVERY CALL
+                </Button>
+              </Link>
               <p className="text-n8n-text-secondary/80">Setup completed in 48 hours or less</p>
             </div>
           </div>
@@ -352,21 +355,25 @@ export default function VoiceAgentsPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="xl"
-              className="bg-brand-primary hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              <ArrowRight className="w-6 h-6 mr-2" />
-              CLAIM YOUR AI AGENT NOW
-            </Button>
-            <Button 
-              size="xl" 
-              variant="outline" 
-              className="border-2 border-n8n-border text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-[#1A1B26] hover:text-white"
-            >
-              <Phone className="w-6 h-6 mr-2" />
-              CALL {BRAND.phone}
-            </Button>
+            <Link href="/contact">
+              <Button 
+                size="xl"
+                className="bg-brand-primary hover:from-[#EE4F27]/80 hover:to-[#6B21EF]/80 text-white font-black text-xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                <ArrowRight className="w-6 h-6 mr-2" />
+                CLAIM YOUR AI AGENT NOW
+              </Button>
+            </Link>
+            <a href={`tel:${BRAND.phone}`}>
+              <Button 
+                size="xl" 
+                variant="outline" 
+                className="border-2 border-n8n-border text-white font-bold text-xl px-12 py-6 rounded-full hover:bg-[#1A1B26] hover:text-white"
+              >
+                <Phone className="w-6 h-6 mr-2" />
+                CALL {BRAND.phone}
+              </Button>
+            </a>
           </div>
           
           <div className="mt-8 text-n8n-text-secondary/60">

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Link from 'next/link';
 import { BRAND } from '@/config/branding';
 import { 
   Calculator, 
@@ -439,21 +440,25 @@ export default function ROICalculatorPage() {
                       See exactly how we'll achieve these results for your {inputs.industry} business
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Button 
-                        size="sm"
-                        className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90"
-                      >
-                        <Mail className="w-4 h-4 mr-2" />
-                        Get Free Plan
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
-                      >
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call {BRAND.phone}
-                      </Button>
+                      <Link href="/contact">
+                        <Button 
+                          size="sm"
+                          className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90"
+                        >
+                          <Mail className="w-4 h-4 mr-2" />
+                          Get Free Plan
+                        </Button>
+                      </Link>
+                      <a href={`tel:${BRAND.phone}`}>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
+                        >
+                          <Phone className="w-4 h-4 mr-2" />
+                          Call {BRAND.phone}
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>

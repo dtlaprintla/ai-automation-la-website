@@ -224,9 +224,11 @@ export default function ServicesPage() {
                 Get Free Consultation
               </Button>
             </Link>
-            <Button size="lg" className="bg-white/10 backdrop-blur text-white border border-white/20 hover:bg-white/20">
-              Call {BRAND.phone}
-            </Button>
+            <a href={`tel:${BRAND.phone}`}>
+              <Button size="lg" className="bg-white/10 backdrop-blur text-white border border-white/20 hover:bg-white/20">
+                Call {BRAND.phone}
+              </Button>
+            </a>
           </div>
         </div>
       </section>
