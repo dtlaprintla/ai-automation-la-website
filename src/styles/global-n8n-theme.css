@@ -260,19 +260,15 @@ html.n8n-theme a:hover {
 
 /* ===== VAPI COMPREHENSIVE STYLING - SITE WIDE ===== */
 
-/* Apply Vapi colors to ALL gradient classes */
-html.n8n-theme .bg-gradient-primary,
-html.n8n-theme .bg-gradient-to-r,
-html.n8n-theme .bg-gradient-to-br,
-html.n8n-theme .bg-gradient-chatgpt,
-html.n8n-theme .bg-gradient-n8n-primary {
-  background: var(--vapi-green) !important;
-}
+/* REMOVE - DO NOT apply green to all backgrounds */
+/* Only apply green to specific CTA buttons, not header sections */
+/* Large background areas should stay dark */
 
-/* Primary buttons - Vapi green */
-html.n8n-theme .btn-primary,
-html.n8n-theme button[class*="bg-gradient"],
-html.n8n-theme .vapi-green-button {
+/* ONLY CTA buttons get Vapi green - NOT headers or large sections */
+html.n8n-theme button.btn-primary,
+html.n8n-theme .vapi-green-button,
+html.n8n-theme button[type="submit"]:not(section *),
+html.n8n-theme a > button {
   background: var(--vapi-green) !important;
   color: white !important;
   border: none !important;
@@ -324,12 +320,8 @@ html.n8n-theme .vapi-card:hover {
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
 }
 
-/* Force all hardcoded colors to use Vapi palette */
-html.n8n-theme [class*="from-brand-primary"],
-html.n8n-theme [class*="to-brand-accent"],
-html.n8n-theme [class*="via-brand-secondary"] {
-  background: var(--vapi-green) !important;
-}
+/* REMOVE - Do not force ALL gradients to green */
+/* Header sections and large backgrounds should be dark, not green */
 
 /* Stats sections and highlighted areas */
 html.n8n-theme .vapi-stats-section {
@@ -338,14 +330,39 @@ html.n8n-theme .vapi-stats-section {
   padding: 3rem 0;
 }
 
-/* Ensure all logos and icons use proper contrast */
-html.n8n-theme .w-10.h-10[class*="bg-gradient"] {
+/* Small logo icons can be green, but not large header sections */
+html.n8n-theme .w-10.h-10[class*="bg-gradient"]:not(header *) {
   background: var(--vapi-green) !important;
 }
 
-/* CTA sections */
-html.n8n-theme section[class*="bg-gradient"] {
+/* VAPI RULE: Large sections should be DARK, only buttons should be GREEN */
+
+/* All large sections/headers should be dark - Override ALL hardcoded green */
+html.n8n-theme section:not([class*="text"]):not([class*="flex"]),
+html.n8n-theme .hero-section,
+html.n8n-theme header,
+html.n8n-theme nav,
+html.n8n-theme main > section,
+html.n8n-theme .pt-32 {
+  background: var(--bg-primary) !important;
+}
+
+/* ONLY buttons and small elements should be green */
+html.n8n-theme button,
+html.n8n-theme .btn-primary,
+html.n8n-theme a > button,
+html.n8n-theme input[type="submit"],
+html.n8n-theme .vapi-green-button,
+html.n8n-theme .w-10.h-10 {
   background: var(--vapi-green) !important;
+  color: white !important;
+}
+
+html.n8n-theme button:hover,
+html.n8n-theme .btn-primary:hover,
+html.n8n-theme a > button:hover,
+html.n8n-theme input[type="submit"]:hover {
+  background: var(--vapi-green-hover) !important;
 }
 
 /* Form styling */
