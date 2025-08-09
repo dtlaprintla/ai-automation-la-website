@@ -40,6 +40,41 @@ This is the AI Automation LA website - a Done-For-You AI automation agency servi
 - **NEVER** mention AI authorship in website copy or code comments
 - **KEEP** git commit signatures for tracking purposes only
 
+### 6. CRITICAL: Content Protection Rules (SEO Protection)
+**🚨 NEVER CHANGE CONTENT DURING STYLING TASKS 🚨**
+
+#### CSS-Only Changes Rules:
+- **STYLING REQUESTS**: Only modify CSS files, never change HTML content, headings, or copy
+- **PROTECT SEO CONTENT**: Never alter meta titles, descriptions, headings (h1, h2, h3), or body text
+- **GLOBAL CSS ONLY**: Use `src/styles/global-n8n-theme.css` for all visual changes
+- **NO CONTENT EDITS**: When asked for "styling" or "design" changes, ONLY touch CSS files
+
+#### What You CAN Change (Styling Only):
+- ✅ Colors, backgrounds, borders in CSS files
+- ✅ Fonts, spacing, margins, padding in CSS
+- ✅ Button styles, hover effects, animations
+- ✅ Layout positioning (flexbox, grid) in CSS
+- ✅ CSS variables and utility classes
+
+#### What You CANNOT Change (Content Protection):
+- ❌ Any text content, headlines, or copy
+- ❌ Meta tags, titles, descriptions
+- ❌ Alt text, button labels, navigation text
+- ❌ Service descriptions, pricing, or business info
+- ❌ Form labels, placeholder text, or CTAs
+- ❌ Blog content, case studies, or testimonials
+
+#### If Content Changes Are Needed:
+- **ASK EXPLICITLY**: "This requires content changes, not just CSS. Should I proceed?"
+- **GET APPROVAL**: Wait for explicit approval before changing any text
+- **SEPARATE TASKS**: Treat content changes as completely separate from styling
+
+#### SEO Protection Rationale:
+- Google has indexed current content and meta tags
+- Changing content can hurt search rankings
+- CSS changes don't affect SEO, content changes do
+- Maintain content consistency for user experience
+
 ## 📚 Project Documentation
 
 All strategic docs are in `/docs/` folder:
