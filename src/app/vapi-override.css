@@ -161,10 +161,27 @@ header {
   padding: 0.5rem 2rem !important;
 }
 
-/* Remove any mega menu padding */
+/* Remove any mega menu padding and fix header styling */
 header nav,
 header .header,
 [class*="header"] {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+/* Fix header container spacing */
+header > div {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Make header more compact */
+header .py-4 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+header .py-2 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
