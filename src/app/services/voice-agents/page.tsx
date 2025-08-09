@@ -104,7 +104,7 @@ export default function VoiceAgentsPage() {
       </section>
 
       {/* Problem Agitation */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-n8n-bg-secondary to-n8n-bg-primary">
+      <section className="relative z-10 py-24 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-8">
@@ -122,7 +122,7 @@ export default function VoiceAgentsPage() {
               { icon: TrendingUp, stat: "$50k+", problem: "Average revenue lost per year from missed calls" },
               { icon: Phone, stat: "30 sec", problem: "How long customers wait before hanging up" }
             ].map((item, index) => (
-              <div key={index} className="bg-gradient-to-br from-n8n-bg-secondary to-n8n-bg-primary backdrop-blur-md border border-n8n-border rounded-xl p-6 text-center">
+              <div key={index} className="bg-n8n-bg-secondary backdrop-blur-md border border-n8n-border rounded-xl p-6 text-center">
                 <item.icon className="w-12 h-12 text-brand-primary mx-auto mb-4" />
                 <div className="text-3xl font-black text-brand-primary mb-2">
                   {item.stat}
@@ -196,7 +196,7 @@ export default function VoiceAgentsPage() {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-n8n-bg-secondary to-n8n-bg-primary backdrop-blur-md border border-n8n-border rounded-3xl p-8">
+              <div className="bg-n8n-bg-secondary backdrop-blur-md border border-n8n-border rounded-3xl p-8">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-brand-primary rounded-full animate-pulse"></div>
@@ -225,7 +225,7 @@ export default function VoiceAgentsPage() {
       </section>
 
       {/* Results Section */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-n8n-bg-secondary to-n8n-bg-primary">
+      <section className="relative z-10 py-24 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-8">
@@ -254,7 +254,7 @@ export default function VoiceAgentsPage() {
                 timeframe: "3 months"
               }
             ].map((story, index) => (
-              <div key={index} className="bg-gradient-to-br from-n8n-bg-secondary to-n8n-bg-primary backdrop-blur-md border border-n8n-border rounded-2xl p-8">
+              <div key={index} className="bg-n8n-bg-secondary backdrop-blur-md border border-n8n-border rounded-2xl p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-4">{story.business}</h3>
                   <div className="text-4xl font-black text-brand-primary mb-4">
@@ -281,7 +281,7 @@ export default function VoiceAgentsPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-n8n-bg-secondary to-n8n-bg-primary backdrop-blur-md border-2 border-n8n-border rounded-3xl p-12">
+          <div className="bg-n8n-bg-secondary backdrop-blur-md border-2 border-n8n-border rounded-3xl p-12">
             <div className="text-center mb-8">
               <div className="text-6xl font-black text-brand-primary mb-4">
                 $2,997
@@ -314,7 +314,7 @@ export default function VoiceAgentsPage() {
                 <h4 className="text-2xl font-bold text-brand-accent">
                   ROI Guarantee:
                 </h4>
-                <div className="bg-gradient-to-r from-n8n-bg-secondary to-n8n-bg-primary backdrop-blur-md border border-n8n-border rounded-xl p-6">
+                <div className="bg-n8n-bg-secondary backdrop-blur-md border border-n8n-border rounded-xl p-6">
                   <p className="text-n8n-text-secondary text-lg leading-relaxed">
                     If your AI agent doesn't capture at least <strong className="text-brand-primary">10 additional appointments</strong> in the first 60 days, we'll refund your entire setup fee.
                   </p>
@@ -345,7 +345,7 @@ export default function VoiceAgentsPage() {
       </section>
 
       {/* Urgent CTA */}
-      <section className="relative z-10 py-24 bg-gradient-to-r from-n8n-bg-secondary to-n8n-bg-primary">
+      <section className="relative z-10 py-24 bg-n8n-bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-8">
             STOP LOSING CUSTOMERS TO COMPETITORS

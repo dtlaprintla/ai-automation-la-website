@@ -84,7 +84,7 @@ export default function HomeServicesIndustryPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-green-900 via-teal-800 to-green-900">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="absolute inset-0 animated-bg opacity-30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -95,7 +95,7 @@ export default function HomeServicesIndustryPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Never Miss Emergency Calls
-              <span className="block gradient-text mt-2">AI Dispatch 24/7</span>
+              <span className="block text-white mt-2">AI Dispatch 24/7</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
@@ -105,7 +105,7 @@ export default function HomeServicesIndustryPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="xl" className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700">
+              <Button size="xl" className="bg-white text-[#10B981] hover:bg-gray-100 transition-colors">
                 <Wrench className="w-6 h-6 mr-2" />
                 Get Free Home Services Demo
               </Button>
@@ -337,7 +337,7 @@ export default function HomeServicesIndustryPage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-teal-50">
+      <section className="py-16 bg-[#10B981]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -389,13 +389,13 @@ export default function HomeServicesIndustryPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-black text-white">
+      <section className="py-16 bg-[#0E0E13] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Home Services Automation Pricing
           </h2>
           
-          <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-8 mb-8">
+          <div className="bg-[#10B981] rounded-2xl p-8 mb-8">
             <div className="text-5xl font-black mb-4">$2,997</div>
             <p className="text-xl mb-2">Complete Setup + First Month</p>
             <p className="text-lg opacity-90 mb-6">Then $497/month (Cancel anytime)</p>
@@ -439,7 +439,7 @@ export default function HomeServicesIndustryPage() {
           <div className="space-y-4">
             <Button 
               size="xl"
-              className="bg-gradient-to-r from-yellow-500 to-green-600 hover:from-yellow-600 hover:to-green-700 text-xl px-12 py-4"
+              className="bg-[#10B981] hover:bg-[#059669] transition-colors text-xl px-12 py-4"
             >
               <Zap className="w-6 h-6 mr-2" />
               Get Your Home Services AI Assistant
@@ -489,7 +489,7 @@ export default function HomeServicesIndustryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-900 via-teal-800 to-green-900 text-white text-center">
+      <section className="py-20 bg-[#10B981] text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Never Miss Another Emergency?
@@ -502,7 +502,7 @@ export default function HomeServicesIndustryPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="xl"
-              className="bg-gradient-to-r from-yellow-500 to-green-600 hover:from-yellow-600 hover:to-green-700 text-xl px-12 py-4"
+              className="bg-[#10B981] hover:bg-[#059669] transition-colors text-xl px-12 py-4"
             >
               <Wrench className="w-6 h-6 mr-2" />
               Get Home Services Demo

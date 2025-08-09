@@ -56,18 +56,8 @@ const config: Config = {
           900: "#111827"
         }
       },
-      backgroundImage: {
-        "gradient-primary": "linear-gradient(to right, rgba(180, 55, 55, 0.8), rgba(160, 45, 80, 0.7), rgba(70, 100, 180, 0.6))",
-        "gradient-primary-reverse": "linear-gradient(to right, rgba(70, 100, 180, 0.6), rgba(160, 45, 80, 0.7), rgba(180, 55, 55, 0.8))",
-        "gradient-chatgpt": "linear-gradient(135deg, rgba(180, 55, 55, 0.8) 0%, rgba(160, 45, 80, 0.7) 50%, rgba(70, 100, 180, 0.6) 100%)",
-        // N8N-inspired gradients - subtle and elegant
-        "gradient-n8n-primary": "linear-gradient(135deg, rgba(180, 55, 55, 0.8) 0%, rgba(70, 100, 180, 0.6) 100%)",
-        "gradient-n8n-secondary": "linear-gradient(135deg, rgba(160, 45, 80, 0.7) 0%, rgba(70, 100, 180, 0.5) 100%)",
-        "gradient-n8n-card": "linear-gradient(135deg, rgba(26, 27, 38, 0.8) 0%, rgba(36, 37, 48, 0.6) 100%)",
-        "gradient-n8n-hero": "radial-gradient(ellipse at top, rgba(70, 100, 180, 0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom, rgba(180, 55, 55, 0.15) 0%, transparent 60%), #0E0918",
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+      // Removed all gradient definitions - using solid Vapi colors only
+      backgroundImage: {},
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
       },

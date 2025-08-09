@@ -50,10 +50,10 @@ const Button = memo(function Button({
     const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed gpu-accelerated';
     
     const variants = {
-      primary: 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white hover:scale-105 hover:shadow-glow-lg focus:ring-brand-primary',
-      secondary: 'bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-105 focus:ring-white',
+      primary: 'bg-[#10B981] hover:bg-[#059669] text-white focus:ring-[#10B981]',
+      secondary: 'bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 focus:ring-white',
       ghost: 'text-gray-700 hover:bg-gray-50 hover:text-gray-900 focus:ring-gray-500',
-      outline: 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white hover:scale-105 focus:ring-brand-primary',
+      outline: 'border-2 border-[#10B981] text-[#10B981] hover:bg-[#10B981] hover:text-white focus:ring-[#10B981]',
     };
 
     const sizes = {

@@ -125,7 +125,7 @@ export default function IntegrationCard({ integration, onViewDetails, viewMode =
         </div>
 
         {/* Business Benefit */}
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 mb-4">
+        <div className="bg-[#10B981]/10 rounded-lg p-3 mb-4">
           <div className="flex items-start space-x-2">
             <Zap className="w-4 h-4 text-brand-primary mt-0.5 flex-shrink-0" />
             <p className="text-sm text-gray-800 font-medium">

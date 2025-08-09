@@ -108,7 +108,7 @@ export default function IntegrationsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="pt-32 pb-20 bg-[#0E0E13]">
         <div className="absolute inset-0 animated-bg opacity-30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 text-white mb-8">
@@ -118,7 +118,7 @@ export default function IntegrationsPage() {
           
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             We Connect All Your
-            <span className="block gradient-text">Favorite Business Apps</span>
+            <span className="block text-[#10B981]">Favorite Business Apps</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -222,7 +222,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -257,7 +257,7 @@ export default function IntegrationsPage() {
               }
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+                <div className="w-16 h-16 bg-[#10B981] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
@@ -284,7 +284,7 @@ export default function IntegrationsPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
+          <div className="bg-[#10B981]/10 rounded-xl p-8 border border-[#10B981]/20">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               When a Customer Fills Out Your Website Form:
             </h3>
@@ -299,7 +299,7 @@ export default function IntegrationsPage() {
                 "Lead information added to your Google Sheet for tracking"
               ].map((step, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">
+                  <div className="w-8 h-8 bg-[#10B981] rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">
                     {index + 1}
                   </div>
                   <div className="flex-1">
@@ -322,7 +322,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="py-20 bg-[#10B981]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Connect Your Apps?

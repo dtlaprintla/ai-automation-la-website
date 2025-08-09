@@ -64,7 +64,7 @@ export default function ContactPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
@@ -74,7 +74,7 @@ export default function ContactPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Get Your Custom
-              <span className="block gradient-text">AI Automation Plan</span>
+              <span className="block text-[#10B981]">AI Automation Plan</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
@@ -257,7 +257,7 @@ export default function ContactPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white text-center">
+      <section className="py-20 bg-[#10B981] text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Automate Your Business?

@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#10B981] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">AI</span>
               </div>
               <div>
@@ -133,7 +133,7 @@ export default function Footer() {
 
         {/* CTA Section */}
         <div className="mt-12 pt-8 border-t border-n8n-border">
-          <div className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent rounded-lg p-8 text-center">
+          <div className="bg-[#10B981] rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Automate Your Business?
             </h3>

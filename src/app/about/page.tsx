@@ -73,7 +73,7 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
@@ -83,7 +83,7 @@ export default function AboutPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Meet Your
-              <span className="block gradient-text-white">AI Automation Team</span>
+              <span className="block text-white">AI Automation Team</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
@@ -301,7 +301,7 @@ export default function AboutPage() {
           </div>
           
           <div className="text-center">
-            <Button size="xl" className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-bold">
+            <Button size="xl" className="bg-[#10B981] text-white font-bold hover:bg-[#059669] transition-colors">
               <ArrowRight className="w-6 h-6 mr-2" />
               Get Your Free AI Plan
             </Button>

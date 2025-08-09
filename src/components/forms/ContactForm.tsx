@@ -545,7 +545,7 @@ export default function ContactForm() {
           type="submit"
           size="xl"
           disabled={isSubmitting}
-          className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-bold text-xl px-16 py-4 disabled:opacity-50"
+          className="bg-[#10B981] text-white font-bold text-xl px-16 py-4 disabled:opacity-50 hover:bg-[#059669] transition-colors"
         >
           {isSubmitting ? (
             <>

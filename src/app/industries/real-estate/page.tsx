@@ -83,7 +83,7 @@ export default function RealEstateIndustryPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-blue-900 via-indigo-800 to-blue-900">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="absolute inset-0 animated-bg opacity-30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -94,7 +94,7 @@ export default function RealEstateIndustryPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Capture Every Lead
-              <span className="block gradient-text mt-2">Respond in 30 Seconds</span>
+              <span className="block text-white mt-2">Respond in 30 Seconds</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
@@ -104,7 +104,7 @@ export default function RealEstateIndustryPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="xl" className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700">
+              <Button size="xl" className="bg-white text-[#10B981] hover:bg-gray-100 transition-colors">
                 <Home className="w-6 h-6 mr-2" />
                 Get Free Real Estate Demo
               </Button>
@@ -267,7 +267,7 @@ export default function RealEstateIndustryPage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <section className="py-16 bg-[#10B981]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -382,13 +382,13 @@ export default function RealEstateIndustryPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-black text-white">
+      <section className="py-16 bg-[#0E0E13] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Real Estate Automation Pricing
           </h2>
           
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 mb-8">
+          <div className="bg-[#10B981] rounded-2xl p-8 mb-8">
             <div className="text-5xl font-black mb-4">$2,997</div>
             <p className="text-xl mb-2">Complete Setup + First Month</p>
             <p className="text-lg opacity-90 mb-6">Then $497/month (Cancel anytime)</p>
@@ -432,7 +432,7 @@ export default function RealEstateIndustryPage() {
           <div className="space-y-4">
             <Button 
               size="xl"
-              className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-xl px-12 py-4"
+              className="bg-[#10B981] hover:bg-[#059669] transition-colors text-xl px-12 py-4"
             >
               <Zap className="w-6 h-6 mr-2" />
               Get Your Real Estate AI Assistant
@@ -482,7 +482,7 @@ export default function RealEstateIndustryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-indigo-800 to-blue-900 text-white text-center">
+      <section className="py-20 bg-[#10B981] text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Capture Every Lead?
@@ -495,7 +495,7 @@ export default function RealEstateIndustryPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="xl"
-              className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-xl px-12 py-4"
+              className="bg-[#10B981] hover:bg-[#059669] transition-colors text-xl px-12 py-4"
             >
               <Home className="w-6 h-6 mr-2" />
               Get Real Estate Demo

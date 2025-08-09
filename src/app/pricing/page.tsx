@@ -111,7 +111,7 @@ export default function PricingPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
@@ -121,7 +121,7 @@ export default function PricingPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Simple, Clear
-              <span className="block gradient-text-white">Automation Pricing</span>
+              <span className="block text-white">Automation Pricing</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
@@ -145,7 +145,7 @@ export default function PricingPage() {
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-6 py-2 rounded-full text-sm font-bold">
+                    <div className="bg-[#10B981] text-white px-6 py-2 rounded-full text-sm font-bold">
                       Most Popular
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export default function PricingPage() {
                     fullWidth 
                     size="lg"
                     variant={pkg.popular ? "primary" : "outline"}
-                    className={pkg.popular ? "bg-gradient-to-r from-brand-primary to-brand-accent" : ""}
+                    className={pkg.popular ? "bg-[#10B981]" : ""}
                   >
                     Get Started
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -201,7 +201,7 @@ export default function PricingPage() {
       {/* ROI Guarantee */}
       <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-12 text-center">
+          <div className="bg-[#10B981]/10 rounded-2xl p-12 text-center">
             <div className="flex justify-center mb-6">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-8 h-8 text-yellow-400 fill-current" />
@@ -306,7 +306,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="py-20 bg-[#10B981]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Get Started?

@@ -76,12 +76,12 @@ export default function CaseStudiesPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-8 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="pt-32 pb-8 bg-[#10B981]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Proven Results from
-              <span className="block gradient-text-white">Real LA Businesses</span>
+              <span className="block text-white">Real LA Businesses</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">

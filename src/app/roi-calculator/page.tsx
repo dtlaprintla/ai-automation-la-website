@@ -172,7 +172,7 @@ export default function ROICalculatorPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent">
+      <section className="pt-32 pb-16 bg-[#10B981]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
@@ -182,7 +182,7 @@ export default function ROICalculatorPage() {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Calculate Your AI
-              <span className="block gradient-text-white">Automation ROI</span>
+              <span className="block text-white">Automation ROI</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
@@ -340,7 +340,7 @@ export default function ROICalculatorPage() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 border border-brand-primary/20 rounded-lg p-4 text-center">
+                <div className="bg-[#10B981]/10 border border-[#10B981]/20 rounded-lg p-4 text-center">
                   <div className="flex items-center justify-center text-brand-primary mb-2">
                     <Zap className="w-5 h-5 mr-2" />
                     <span className="font-semibold">Real-Time Calculation</span>
@@ -394,7 +394,7 @@ export default function ROICalculatorPage() {
                         <span className="text-n8n-text-secondary">Efficiency Gains</span>
                         <span className="font-bold text-green-500">+{formatCurrency(results.automationBenefits.efficiencyGains)}</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-500/30 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-green-500/20 border border-green-500/30 rounded-lg">
                         <span className="font-semibold text-n8n-text-primary">Total Annual Savings</span>
                         <span className="font-bold text-xl text-green-500">{formatCurrency(results.automationBenefits.totalAnnualSavings)}</span>
                       </div>
@@ -421,7 +421,7 @@ export default function ROICalculatorPage() {
                   </div>
 
                   {/* Net Benefit */}
-                  <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-lg p-6 text-center">
+                  <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-6 text-center">
                     <div className="text-3xl font-bold text-green-500 mb-2">
                       {formatCurrency(results.roi.netBenefit)}
                     </div>
@@ -432,7 +432,7 @@ export default function ROICalculatorPage() {
                   </div>
 
                   {/* CTA */}
-                  <div className="bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 border border-brand-primary/30 rounded-lg p-6 text-center">
+                  <div className="bg-[#10B981]/20 border border-[#10B981]/30 rounded-lg p-6 text-center">
                     <h4 className="text-lg font-bold text-n8n-text-primary mb-3">
                       Get Your Custom Automation Plan
                     </h4>
@@ -443,7 +443,7 @@ export default function ROICalculatorPage() {
                       <Link href="/contact">
                         <Button 
                           size="sm"
-                          className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90"
+                          className="bg-[#10B981] hover:bg-[#059669] transition-colors"
                         >
                           <Mail className="w-4 h-4 mr-2" />
                           Get Free Plan

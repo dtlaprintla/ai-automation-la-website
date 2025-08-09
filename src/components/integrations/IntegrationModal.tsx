@@ -60,7 +60,7 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
             className="fixed inset-4 md:inset-8 lg:inset-16 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-gray-50 to-white px-6 py-4 border-b border-gray-200 flex items-center justify-between flex-shrink-0">
+            <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center space-x-4">
                 <IntegrationLogo integration={integration} size="lg" />
                 
@@ -103,9 +103,9 @@ export default function IntegrationModal({ integration, isOpen, onClose }: Integ
                 </div>
 
                 {/* Business Benefit */}
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border border-green-100">
+                <div className="bg-[#10B981]/10 rounded-xl p-6 border border-[#10B981]/20">
                   <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-gradient-chatgpt rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-[#10B981] rounded-lg flex items-center justify-center flex-shrink-0">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <div>

@@ -224,7 +224,7 @@ export default function CaseStudies() {
           
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Success Stories That 
-            <span className="block gradient-text">Speak for Themselves</span>
+            <span className="block text-[#10B981]">Speak for Themselves</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -254,7 +254,7 @@ export default function CaseStudies() {
         {/* Case Study Details */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent p-8 text-white">
+          <div className="bg-[#10B981] p-8 text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="flex items-center mb-4">
@@ -383,7 +383,7 @@ export default function CaseStudies() {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent rounded-2xl p-8 text-white">
+          <div className="bg-[#10B981] rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Ready for Similar Results?
             </h3>
