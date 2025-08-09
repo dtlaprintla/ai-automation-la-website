@@ -268,3 +268,42 @@
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
+
+/* ===== EMERGENCY OVERRIDE: KILL ALL GREEN BACKGROUNDS ===== */
+/* This will override ANY green background on sections */
+
+section,
+.pt-32,
+.py-20,
+.py-16,
+.pb-16,
+div[class*="bg-emerald"],
+div[class*="bg-green"] {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
+}
+
+/* Kill specific Tailwind green classes */
+.bg-emerald-500,
+.bg-green-500,
+*[style*="rgb(16, 185, 129)"],
+*[style*="#10B981"],
+*[class*="emerald-500"] {
+  background: #0E0E13 !important;
+  background-color: #0E0E13 !important;
+}
+
+/* But keep buttons green */
+button,
+.btn,
+.btn-primary,
+a > button,
+input[type="submit"],
+*[role="button"] {
+  background-color: #10B981 !important;
+}
+
+/* Emergency nuclear option - override everything */
+* {
+  --tw-bg-opacity: 1 !important;
+}
