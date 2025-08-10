@@ -1,0 +1,20 @@
+[
+  {
+    "_type": "page",
+    "_id": "home",
+    "title": "Home",
+    "slug": {"current": "home", "_type": "slug"},
+    "heroHeadline": "Done-For-You AI Automation for Los Angeles Businesses",
+    "heroDescription": "We build and manage AI phone agents, chatbots, and workflow automation.",
+    "content": "Transform your business with AI automation"
+  },
+  {
+    "_type": "page", 
+    "_id": "services",
+    "title": "Services",
+    "slug": {"current": "services", "_type": "slug"},
+    "heroHeadline": "AI Automation Services",
+    "heroDescription": "We handle everything - from building your AI systems to managing them daily.",
+    "content": "AI PHONE AGENTS - 24/7 call answering and booking"
+  }
+  ]

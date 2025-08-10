@@ -1,7 +1,7 @@
 import { defineConfig } from '@sanity/cli'
 
 export default defineConfig({
-  projectId: 'your-project-id', // You'll get this when creating Sanity project
+  projectId: '94v3467t', // Your Sanity project ID
   dataset: 'production',
   
   plugins: [
