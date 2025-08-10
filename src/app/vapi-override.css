@@ -174,59 +174,60 @@ header [style*="#10B981"] {
   display: none !important;
 }
 
-/* Make the entire header compact */
+/* Make the entire header compact but readable */
 header {
-  height: 25px !important;
-  max-height: 25px !important;
-  min-height: 25px !important;
+  height: auto !important;
+  min-height: 60px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* Main navigation container - the second div */
+/* Main navigation container */
 header > div.max-w-7xl {
-  height: 25px !important;
-  padding: 0.25rem 0 !important;
+  height: auto !important;
+  padding: 0.75rem 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
 }
 
-/* Logo area - ultra compact */
-header h1 {
-  font-size: 0.5rem !important;
-  line-height: 1 !important;
+/* Logo area - keep text on single line */
+header h1,
+header span.text-white {
+  font-size: 1.125rem !important;
+  line-height: 1.2 !important;
   margin: 0 !important;
   padding: 0 !important;
+  white-space: nowrap !important;
 }
 
 header p {
   display: none !important;
 }
 
-/* Logo container - 25% smaller than tiny */
-header .w-10 {
-  width: 12px !important;
-  height: 12px !important;
+/* Logo container */
+header .w-8 {
+  width: 2rem !important;
+  height: 2rem !important;
 }
 
-/* Navigation items - ultra compact */
+/* Navigation items - readable size */
 nav {
   padding: 0 !important;
   margin: 0 !important;
 }
 
 nav a {
-  padding: 0.125rem 0.25rem !important;
-  font-size: 0.6rem !important;
-  margin: 0 0.125rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  margin: 0 0.25rem !important;
 }
 
-/* Header buttons - tiny */
+/* Header buttons - normal size */
 header button {
-  padding: 0.125rem 0.25rem !important;
-  font-size: 0.6rem !important;
-  height: 18px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 0.875rem !important;
+  height: auto !important;
 }
 
 /* Fix content positioning - no padding needed since header is not fixed */
