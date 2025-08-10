@@ -206,26 +206,26 @@ export default function IntegrationsPage() {
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {category.apps.map((app, appIndex) => (
-                    <div key={appIndex} className="bg-[#2A2D3A] border border-[#3A3F4B] rounded-xl p-6 hover:bg-[#2F3441] transition-all duration-300 cursor-pointer group">
+                    <div key={appIndex} className="bg-[#2A2D3A] border border-[#3A3F4B] rounded-xl p-5 hover:bg-[#2F3441] transition-all duration-300 cursor-pointer group">
                       {/* Logo Container */}
-                      <div className="w-16 h-16 bg-[#3A3F4B] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#4A4F5B] transition-colors">
+                      <div className="w-12 h-12 bg-[#3A3F4B] rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#4A4F5B] transition-colors">
                         {app.logo ? (
                           <Image
                             src={`/logos/${app.logo}`}
                             alt={`${app.name} logo`}
-                            width={32}
-                            height={32}
-                            className="w-8 h-8 object-contain"
+                            width={24}
+                            height={24}
+                            className="w-6 h-6 object-contain"
                           />
                         ) : (
-                          <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                          <div className="w-6 h-6 bg-gray-500 rounded flex items-center justify-center">
                             <span className="text-white text-xs font-bold">{app.name.charAt(0)}</span>
                           </div>
                         )}
                       </div>
                       
                       {/* App Name */}
-                      <h4 className="text-white font-semibold text-lg mb-2">
+                      <h4 className="text-white font-medium text-base mb-2">
                         {app.name}
                       </h4>
                       
