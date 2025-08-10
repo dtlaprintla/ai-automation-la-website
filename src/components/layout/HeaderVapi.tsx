@@ -17,9 +17,7 @@ export default function HeaderVapi() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-[#0E0E13]/80 backdrop-blur-md border-b border-gray-800' : 'bg-transparent'
-    }`}>
+    <header className="relative bg-[#0E0E13] border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-12">
           {/* Logo */}
@@ -68,21 +66,6 @@ export default function HeaderVapi() {
         </div>
       </div>
 
-      {/* Newsletter Banner */}
-      {!isScrolled && (
-        <div className="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center items-center py-2 text-sm">
-              <span className="text-gray-300">
-                🚀 Transform your business with AI automation. Book a free consultation to see how we can help.
-              </span>
-              <button className="ml-2 text-[#10B981] hover:text-[#059669] font-medium">
-                →
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

@@ -247,10 +247,9 @@ section[class*="pt-32"] {
   padding-bottom: 2rem !important;
 }
 
-/* Make sure fixed header doesn't break */
-header.fixed {
-  top: 0 !important;
-  z-index: 50 !important;
+/* Header should not be fixed/sticky */
+header {
+  position: relative !important;
 }
 
 nav ul {
