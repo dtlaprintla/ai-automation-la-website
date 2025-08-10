@@ -30,7 +30,7 @@ const integrations = [
 
 export default function HomePageVapi() {
   return (
-    <div className="min-h-screen bg-[#0E0E13] text-white">
+    <div className="min-h-screen bg-[#0B0C0F] text-[#F3F1E8]">
       <HeaderVapi />
       <HeroVapi />
       

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, AlignCenter, Loader } from 'lucide-react';
 
 export default function HeroVapi() {
   // Client logos
@@ -15,122 +15,125 @@ export default function HeroVapi() {
     { name: 'Luma', logo: 'luma' }
   ];
 
+  // Equalizer colors from the spec
+  const eqColors = [
+    '#FFE66D', '#FFD166', '#FFAF87', '#F5A6C7', 
+    '#D7B6FF', '#B1E0FF', '#7ED7E5', '#5BD6C7', 
+    '#91E677', '#FFFFFF'
+  ];
+
   return (
-    <section className="min-h-screen bg-[#0E0E13] relative overflow-hidden">
+    <section className="min-h-screen bg-[#0B0C0F] relative overflow-hidden">
+      {/* Dotted Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #17181F 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      />
+
       {/* Main Content */}
-      <div className="relative z-10 pt-32 pb-20">
+      <div className="relative z-10 pt-20 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Text */}
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-8 tracking-tight">
-              AI automation agents
+          {/* Hero Text - Three Lines */}
+          <div className="text-center mb-16">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#F3F1E8] mb-12 tracking-tight leading-none" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
+              Voice AI agents
               <br />
-              for businesses
+              for developers
             </h1>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link href="/contact">
-                <button className="bg-[#10B981] hover:bg-[#059669] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center">
+                <button className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-8 py-3 rounded-full font-bold transition-colors duration-200 flex items-center uppercase tracking-wide">
                   SIGN UP
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
               </Link>
               <Link href="/docs">
-                <button className="border border-gray-700 hover:border-gray-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+                <button className="border border-[#2A2B31] bg-[#0E0F12] hover:border-[#52EDBC] text-[#F3F1E8] px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center uppercase tracking-wide">
                   READ THE DOCS
+                  <div className="flex items-center gap-1 ml-2">
+                    <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse"></div>
+                    <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  </div>
                 </button>
               </Link>
             </div>
-          </div>
 
-          {/* Voice Visualizer */}
-          <div className="flex justify-center items-center mb-20">
-            <div className="relative">
-              {/* Voice bars animation */}
-              <div className="flex items-end justify-center gap-1 h-32">
-                {Array.from({ length: 50 }, (_, i) => {
-                  const colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#14B8A6'];
-                  const color = colors[Math.floor(Math.random() * colors.length)];
-                  const height = Math.random() * 100 + 20;
-                  const delay = i * 0.05;
-                  
-                  return (
-                    <motion.div
-                      key={i}
-                      className="w-1 rounded-full"
-                      style={{ 
-                        backgroundColor: color,
-                        height: '4px'
-                      }}
-                      animate={{
-                        height: [4, height, 4],
-                        opacity: [0.3, 1, 0.3]
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: delay,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  );
-                })}
-              </div>
-              
-              {/* Talk to AI button - cream colored like Vapi */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <button className="vapi-cream-button text-lg flex items-center gap-3 px-8 py-4">
-                  TALK TO AI AUTOMATION LA
-                  <span className="text-2xl">🎙️</span>
-                </button>
-              </div>
+            {/* Large Cream CTA Capsule */}
+            <div className="flex justify-center mb-16">
+              <button 
+                className="bg-[#F2ECDC] hover:bg-[#EFEADB] text-[#0E0F12] px-12 py-6 rounded-full text-lg font-bold transition-all duration-300 flex items-center gap-3 shadow-lg border-2 border-[#0E0F12] hover:transform hover:scale-105"
+                style={{ 
+                  boxShadow: 'inset 0 2px 4px rgba(14, 15, 18, 0.1), 0 8px 16px rgba(14, 15, 18, 0.2)' 
+                }}
+              >
+                TALK TO AI AUTOMATION LA
+                <div className="flex items-center gap-[1px]">
+                  <div className="w-[2px] h-4 bg-[#0E0F12] rounded-full"></div>
+                  <div className="w-[2px] h-6 bg-[#0E0F12] rounded-full"></div>
+                  <div className="w-[2px] h-3 bg-[#0E0F12] rounded-full"></div>
+                  <div className="w-[2px] h-5 bg-[#0E0F12] rounded-full"></div>
+                </div>
+              </button>
             </div>
           </div>
 
-          {/* Client Logos */}
-          <div className="flex justify-center items-center gap-12 flex-wrap opacity-50">
-            {clientLogos.map((client, index) => (
-              <div key={index} className="text-white text-sm font-medium tracking-wider">
-                {client.logo}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="bg-[#0E0E13] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-gray-400 text-lg mb-4">
-              Teams at trail-blazing startups to Fortune
-              <br />
-              500 companies deploy voice agents on the
-              <br />
-              Vapi platform.
-            </p>
-            <p className="text-gray-400 text-lg">
-              The most configurable API to build leading
-              <br />
-              voice AI products and scale phone
-              <br />
-              operations.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div>
-              <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">CALLS</p>
-              <p className="text-6xl md:text-7xl font-light text-white">62M+</p>
+          {/* Animated Equalizer Visualization */}
+          <div className="flex justify-center items-end mb-20 h-48">
+            <div className="flex items-end gap-2 w-full max-w-4xl">
+              {Array.from({ length: 80 }, (_, i) => {
+                const color = eqColors[i % eqColors.length];
+                const baseHeight = 8 + (Math.sin(i * 0.1) * 4);
+                const maxHeight = 120 + (Math.sin(i * 0.05) * 40);
+                const animationDelay = i * 0.02;
+                
+                return (
+                  <motion.div
+                    key={i}
+                    className="rounded-full min-w-[3px] w-1"
+                    style={{ 
+                      backgroundColor: color,
+                      height: `${baseHeight}px`,
+                      filter: 'drop-shadow(0 0 4px rgba(82, 237, 188, 0.3))'
+                    }}
+                    animate={{
+                      height: [
+                        `${baseHeight}px`, 
+                        `${maxHeight}px`, 
+                        `${baseHeight + 20}px`, 
+                        `${maxHeight * 0.7}px`,
+                        `${baseHeight}px`
+                      ]
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      delay: animationDelay,
+                      ease: "easeInOut",
+                      repeatType: "reverse"
+                    }}
+                  />
+                );
+              })}
             </div>
-            <div>
-              <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">ASSISTANTS LAUNCHED</p>
-              <p className="text-6xl md:text-7xl font-light text-white">1M+</p>
-            </div>
-            <div>
-              <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">DEVELOPERS</p>
-              <p className="text-6xl md:text-7xl font-light text-white">250K+</p>
+          </div>
+
+          {/* Partner Logo Strip */}
+          <div className="bg-[#0E0F12] border border-[#17181F] rounded-lg py-8">
+            <div className="flex justify-center items-center gap-16 flex-wrap">
+              {clientLogos.map((client, index) => (
+                <div 
+                  key={index} 
+                  className="text-[#A3A09A] text-sm font-medium tracking-wider opacity-60 hover:opacity-100 transition-opacity"
+                >
+                  {client.logo}
+                </div>
+              ))}
             </div>
           </div>
         </div>
