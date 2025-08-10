@@ -6,72 +6,9 @@ export { IMAGES, getImage, ALT_TEXT, getHeroImage, getServiceImage, getTestimoni
 export { SEO_CONTENT, STRUCTURED_DATA, getPageSEO, getIndustrySEO } from './seo';
 export { BRAND } from '@/config/branding';
 
-// Content Management Utilities
-export class ContentManager {
-  // Get all content for a specific page
-  static getPageContent(page: string) {
-    switch(page) {
-      case 'home':
-        return {
-          content: PAGE_CONTENT.home,
-          seo: SEO_CONTENT.pages.home,
-          images: {
-            hero: IMAGES.heroes.home,
-            services: [IMAGES.services.phoneAgent, IMAGES.services.chatbot, IMAGES.services.workflow]
-          }
-        };
-      case 'services':
-        return {
-          content: PAGE_CONTENT.services.main,
-          seo: SEO_CONTENT.pages.services,
-          images: {
-            hero: IMAGES.heroes.services,
-            services: IMAGES.services
-          }
-        };
-      case 'pricing':
-        return {
-          content: PAGE_CONTENT.pricing,
-          seo: SEO_CONTENT.pages.pricing,
-          images: {
-            hero: IMAGES.heroes.pricing
-          }
-        };
-      case 'contact':
-        return {
-          content: PAGE_CONTENT.contact,
-          seo: SEO_CONTENT.pages.contact,
-          images: {
-            hero: IMAGES.heroes.contact
-          }
-        };
-      default:
-        return null;
-    }
-  }
+// Content Management Utilities will be added later when needed
 
-  // Get content with fallbacks
-  static getSafeContent(contentPath: string[], fallback: string = '') {
-    try {
-      // This would traverse the content object safely
-      return fallback; // Simplified for now
-    } catch {
-      return fallback;
-    }
-  }
-
-  // Update content (for future CMS integration)
-  static async updateContent(page: string, field: string, value: any) {
-    // This will be implemented when we add Sanity CMS
-    console.log(`Updating ${page}.${field} to:`, value);
-    return true;
-  }
-}
-
-// Type definitions for better IDE support
-export type PageContent = typeof PAGE_CONTENT;
-export type ImageAssets = typeof IMAGES;
-export type SEOData = typeof SEO_CONTENT;
+// Type definitions will be added when the imports are properly resolved
 
 // Export commonly used content
 export const COMMON_CONTENT = {
