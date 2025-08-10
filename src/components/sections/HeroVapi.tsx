@@ -181,8 +181,8 @@ export default function HeroVapi() {
                           className="rounded-full flex-shrink-0 transition-all duration-150 ease-out"
                           style={{ 
                             backgroundColor: color,
-                            width: '6px',
-                            height: '12px',
+                            width: '12px',
+                            height: '6px',
                             opacity: isActive ? 1 : 0.12,
                             transform: isActive ? 'scale(1)' : 'scale(0.9)',
                             boxShadow: isActive ? `0 0 8px ${color}` : 'none',
@@ -198,17 +198,27 @@ export default function HeroVapi() {
           </div>
 
           {/* Partner Logo Strip */}
-          <div className="bg-[#0E0F12] border border-[#17181F] rounded-lg py-8">
-            <div className="flex justify-center items-center gap-16 flex-wrap">
+          <div className="bg-[#0E0F12] border border-[#17181F] rounded-lg py-12 px-8">
+            <div className="flex justify-center items-center gap-20 flex-wrap">
               {clientLogos.map((client, index) => (
                 <div 
                   key={index} 
-                  className="text-[#A3A09A] text-sm font-medium tracking-wider opacity-60 hover:opacity-100 transition-opacity"
+                  className="text-[#A3A09A] text-lg font-semibold tracking-wide opacity-70 hover:opacity-100 transition-opacity"
+                  style={{ fontSize: '20px' }}
                 >
                   {client.logo}
                 </div>
               ))}
             </div>
+          </div>
+          
+          {/* New H2 Section */}
+          <div className="text-center mt-24 mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-[#F3F1E8] mb-4">
+              Teams at trail-blazing startups to Fortune
+              <br />
+              500 companies build with AI Automation LA.
+            </h2>
           </div>
         </div>
       </div>

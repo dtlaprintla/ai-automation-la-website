@@ -39,7 +39,7 @@ export default function HeaderVapi() {
       )}
 
       {/* Main Header */}
-      <header className="relative bg-[#0B0C0F] border-b border-[#17181F]">
+      <header className={`sticky top-0 z-50 bg-[#0B0C0F] border-b border-[#17181F] transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-opacity-90' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -54,17 +54,17 @@ export default function HeaderVapi() {
 
             {/* Centered Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link href="/workflows" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
+              <Link href="/services/workflows" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
                 WORKFLOWS
               </Link>
-              <Link href="/use-cases" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
+              <Link href="/case-studies" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
                 USE CASES
               </Link>
               <Link href="/pricing" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
                 PRICING
               </Link>
-              <Link href="/docs" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
-                DOCS
+              <Link href="/integrations" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
+                INTEGRATIONS
               </Link>
               <div className="relative group">
                 <button className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors flex items-center">
@@ -72,16 +72,16 @@ export default function HeaderVapi() {
                   <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
               </div>
-              <Link href="/careers" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
-                CAREERS
+              <Link href="/contact" className="text-[#A3A09A] hover:text-[#F3F1E8] text-sm font-medium transition-colors">
+                CONTACT
               </Link>
             </nav>
 
             {/* CTA Button */}
             <div>
-              <Link href="/dashboard">
+              <Link href="/contact">
                 <button className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-6 py-2 rounded-full text-sm font-bold transition-colors duration-200 uppercase tracking-wide">
-                  OPEN DASHBOARD
+                  GET STARTED
                 </button>
               </Link>
             </div>

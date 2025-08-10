@@ -310,3 +310,18 @@ input[type="submit"],
 
 /* Remove the problematic CSS that was hiding important elements */
 /* Keep the site clean without breaking the equalizer animation */
+
+/* Hide the binary pattern background specifically */
+body > div:has(> div > div > span:contains("0")) {
+  display: none !important;
+}
+
+/* Target the specific binary matrix overlay without affecting other elements */
+.fixed.inset-0:has(span) {
+  display: none !important;
+}
+
+/* Hide any large grid patterns that might be the binary matrix */
+div:has(> div:nth-child(50) > div > span) {
+  display: none !important;
+}
