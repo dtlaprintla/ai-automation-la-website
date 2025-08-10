@@ -234,13 +234,16 @@ main {
   padding-top: 0 !important;
 }
 
-/* Fix hero sections - no padding needed since header is not fixed */
-.pt-32 {
+/* Fix hero sections - consistent padding across all pages */
+.pt-32,
+section.pt-32 {
   padding-top: 2rem !important;
 }
 
-section.pt-32 {
+/* Force consistent hero section height */
+section[class*="pt-32"] {
   padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 /* Make sure fixed header doesn't break */
