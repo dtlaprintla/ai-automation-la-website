@@ -177,53 +177,60 @@ export default function IntegrationsPage() {
       </section>
 
       {/* App Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#1E1E2E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Apps We Connect For You
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               We work with 500+ business apps. Here are the most popular categories:
             </p>
-            <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-lg px-6 py-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-              <span className="text-green-800 font-medium">Don't see your app? We can probably connect it - just ask!</span>
+            <div className="inline-flex items-center bg-green-500/10 border border-green-500/20 rounded-lg px-6 py-3">
+              <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
+              <span className="text-green-300 font-medium">Don't see your app? We can probably connect it - just ask!</span>
             </div>
           </div>
 
           <div className="space-y-16">
             {categories.map((category, index) => (
-              <div key={index} className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0">
+              <div key={index} className="border-b border-gray-700 pb-16 last:border-b-0 last:pb-0">
                 <div className="text-center mb-12">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                     {category.name}
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  <p className="text-lg text-gray-300 max-w-3xl mx-auto">
                     {category.description}
                   </p>
                 </div>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {category.apps.map((app, appIndex) => (
-                    <div key={appIndex} className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-                      <div className="flex items-center mb-4">
-                        {app.logo && (
-                          <div className="w-8 h-8 mr-3 flex-shrink-0">
-                            <Image
-                              src={`/logos/${app.logo}`}
-                              alt={`${app.name} logo`}
-                              width={32}
-                              height={32}
-                              className="w-full h-full object-contain"
-                            />
+                    <div key={appIndex} className="bg-[#2A2D3A] border border-[#3A3F4B] rounded-xl p-6 hover:bg-[#2F3441] transition-all duration-300 cursor-pointer group">
+                      {/* Logo Container */}
+                      <div className="w-16 h-16 bg-[#3A3F4B] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#4A4F5B] transition-colors">
+                        {app.logo ? (
+                          <Image
+                            src={`/logos/${app.logo}`}
+                            alt={`${app.name} logo`}
+                            width={32}
+                            height={32}
+                            className="w-8 h-8 object-contain"
+                          />
+                        ) : (
+                          <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">{app.name.charAt(0)}</span>
                           </div>
                         )}
-                        <h4 className="text-lg font-semibold text-gray-900">
-                          {app.name}
-                        </h4>
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      
+                      {/* App Name */}
+                      <h4 className="text-white font-semibold text-lg mb-2">
+                        {app.name}
+                      </h4>
+                      
+                      {/* Description */}
+                      <p className="text-gray-400 text-sm leading-relaxed">
                         {app.description}
                       </p>
                     </div>
