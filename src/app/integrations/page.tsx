@@ -213,13 +213,13 @@ export default function IntegrationsPage() {
                           <Image
                             src={`/logos/${app.logo}`}
                             alt={`${app.name} logo`}
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
+                            width={70}
+                            height={70}
+                            className="w-[2.75rem] h-[2.75rem] object-contain"
                           />
                         ) : (
-                          <div className="w-10 h-10 bg-gray-500 rounded-lg flex items-center justify-center">
-                            <span className="text-white text-lg font-bold">{app.name.charAt(0)}</span>
+                          <div className="w-[2.75rem] h-[2.75rem] bg-gray-500 rounded-lg flex items-center justify-center">
+                            <span className="text-white text-xl font-bold">{app.name.charAt(0)}</span>
                           </div>
                         )}
                       </div>
