@@ -283,33 +283,5 @@ footer {
   margin-top: 4rem !important;
 }
 
-/* Hide binary/matrix pattern sections - emergency fix */
-/* Target any section that looks like it has binary patterns */
-section > div > div > div:has(> span:first-child) {
-  visibility: hidden !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
-
-/* Hide grid patterns with many child elements */
-div:has(> div:nth-child(50)) {
-  display: none !important;
-}
-
-/* Target matrix/grid patterns specifically */
-.matrix-pattern,
-[class*="binary"],
-[class*="matrix"],
-[class*="grid-pattern"] {
-  display: none !important;
-}
-
-/* Hide any pattern that looks like zeros in a grid */
-div:has(> div > span:first-child):has(> div:nth-child(10)) {
-  display: none !important;
-}
-
-/* Nuclear option - hide any container with too many direct children that might be a pattern */
-div:has(> :nth-child(100)) {
-  display: none !important;
-}
+/* Keep the Vapi override styles clean */
+/* Only hide actual problematic elements, not the equalizer */

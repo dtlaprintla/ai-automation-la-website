@@ -115,20 +115,20 @@ export default function HeroVapi() {
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#F3F1E8] mb-12 tracking-tight leading-none" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
               Voice AI agents
               <br />
-              for developers
+              for LA businesses
             </h1>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link href="/contact">
                 <button className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-8 py-3 rounded-full font-bold transition-colors duration-200 flex items-center uppercase tracking-wide">
-                  SIGN UP
+                  GET STARTED
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
               </Link>
-              <Link href="/docs">
+              <Link href="/pricing">
                 <button className="border border-[#2A2B31] bg-[#0E0F12] hover:border-[#52EDBC] text-[#F3F1E8] px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center uppercase tracking-wide">
-                  READ THE DOCS
+                  VIEW PRICING
                   <div className="flex items-center gap-1 ml-2">
                     <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse"></div>
                     <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse" style={{ animationDelay: '0.1s' }}></div>
