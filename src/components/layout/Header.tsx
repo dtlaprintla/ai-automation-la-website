@@ -65,7 +65,7 @@ export default function Header() {
 
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
@@ -73,11 +73,11 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 bg-[#10B981] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AI</span>
+              <div className="w-8 h-8 bg-[#10B981] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">AI</span>
               </div>
               <div>
-                <h1 className={`text-xl font-bold ${
+                <h1 className={`text-lg font-bold whitespace-nowrap ${
                   isScrolled ? 'text-gray-900' : 'text-white'
                 }`}>
                   {BRAND.nameShort}

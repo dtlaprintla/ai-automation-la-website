@@ -21,10 +21,15 @@ export default function HeaderVapi() {
       isScrolled ? 'bg-[#0E0E13]/80 backdrop-blur-md border-b border-gray-800' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-12">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-white text-2xl font-bold tracking-tight">AI AUTOMATION LA</span>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-[#10B981] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">AI</span>
+              </div>
+              <span className="text-white text-lg font-bold tracking-tight whitespace-nowrap">AI AUTOMATION LA</span>
+            </div>
           </Link>
 
           {/* Navigation */}
