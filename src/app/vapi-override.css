@@ -151,39 +151,47 @@ select {
   padding: 1rem !important;
 }
 
-/* Navigation spacing - minimal padding */
-nav {
-  padding: 0.5rem 2rem !important;
-}
-
-/* Header specific - minimal padding */
+/* HEADER HEIGHT FIX - Make header much smaller */
 header {
-  padding: 0.5rem 2rem !important;
+  height: auto !important;
+  min-height: auto !important;
+  padding: 0 !important;
 }
 
-/* Remove any mega menu padding and fix header styling */
-header nav,
-header .header,
-[class*="header"] {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+/* Top contact bar - make smaller */
+header > div:first-child {
+  padding: 0.25rem 0 !important;
 }
 
-/* Fix header container spacing */
-header > div {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+/* Main navigation - make smaller */
+header > div:last-child {
+  padding: 0.5rem 0 !important;
 }
 
-/* Make header more compact */
+/* Navigation items - reduce spacing */
+nav {
+  padding: 0 !important;
+}
+
+/* Remove all excessive padding */
 header .py-4 {
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 header .py-2 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
+}
+
+/* Make sure content isn't hidden behind header */
+main {
+  padding-top: 80px !important; /* Reduced from default */
+}
+
+/* Fix sections that have pt-32 class */
+.pt-32 {
+  padding-top: 100px !important; /* Much smaller than default pt-32 */
 }
 
 nav ul {
