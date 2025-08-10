@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, AlignCenter, Loader } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function HeroVapi() {
   // Client logos
@@ -15,12 +16,85 @@ export default function HeroVapi() {
     { name: 'Luma', logo: 'luma' }
   ];
 
-  // Equalizer colors from the spec
-  const eqColors = [
-    '#FFE66D', '#FFD166', '#FFAF87', '#F5A6C7', 
-    '#D7B6FF', '#B1E0FF', '#7ED7E5', '#5BD6C7', 
-    '#91E677', '#FFFFFF'
+  // Equalizer configuration
+  const C = 30; // columns
+  const S = 14; // segments per column
+  const minS = 3;
+  const maxS = 12;
+  const palette = [
+    '#FFE66D', '#FFD166', '#FFAF87', '#F5A6C7', '#D7B6FF',
+    '#B1E0FF', '#7ED7E5', '#5BD6C7', '#91E677', '#FFFFFF'
   ];
+
+  // State for column heights
+  const [columnHeights, setColumnHeights] = useState(() => 
+    Array.from({ length: C }, (_, i) => {
+      const seed = i * 1234 + 5678;
+      return minS + ((seed * 9301 + 49297) % 233280) % (maxS - minS + 1);
+    })
+  );
+
+  // Seeded random function
+  const seededRandom = (seed) => {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  };
+
+  // Animation logic for each column
+  useEffect(() => {
+    const animateColumns = () => {
+      columnHeights.forEach((currentHeight, columnIndex) => {
+        const seed = columnIndex * 1234 + Date.now();
+        const delay = columnIndex * 50; // Stagger each column
+        
+        setTimeout(() => {
+          const target = minS + Math.floor(seededRandom(seed) * (maxS - minS + 1));
+          
+          if (target !== currentHeight) {
+            const step = target > currentHeight ? 1 : -1;
+            let current = currentHeight;
+            
+            const tick = () => {
+              if (current === target) {
+                // Hold for random duration
+                const holdTime = 150 + seededRandom(seed + 1000) * 300;
+                setTimeout(() => animateColumns(), holdTime);
+                return;
+              }
+              
+              current += step;
+              setColumnHeights(prev => {
+                const newHeights = [...prev];
+                newHeights[columnIndex] = current;
+                return newHeights;
+              });
+              
+              // Next step
+              setTimeout(tick, 60 + seededRandom(seed + current) * 30);
+            };
+            
+            tick();
+          }
+        }, delay);
+      });
+    };
+
+    const interval = setInterval(animateColumns, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Check for reduced motion preference
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+    
+    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   return (
     <section className="min-h-screen bg-[#0B0C0F] relative overflow-hidden">
@@ -83,53 +157,36 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Equalizer Visualization - Stacked Pills */}
-          <div className="flex justify-center mb-20 py-12">
-            <div className="flex items-end justify-center gap-1 h-48 w-full max-w-6xl">
-              {Array.from({ length: 100 }, (_, columnIndex) => {
-                // Ultra-bright neon colors
-                const colors = [
-                  '#FFFF00', // pure yellow
-                  '#FF6600', // bright orange
-                  '#FF3366', // hot pink
-                  '#FF0099', // magenta
-                  '#9933FF', // electric purple
-                  '#3366FF', // electric blue
-                  '#00FFFF', // pure cyan
-                  '#00FF66', // bright green
-                  '#66FF00', // lime green
-                  '#FFFFFF'  // pure white
-                ];
-                
-                const baseHeight = 2;
-                const maxPills = 8 + Math.floor(Math.random() * 12); // 2-20 pills per column
-                const animationDelay = columnIndex * 0.03;
+          {/* Animated Equalizer Visualization - Proper Stacked Pills */}
+          <div className="flex justify-center mb-16">
+            <div 
+              className="flex items-end justify-center gap-[3px] pb-8"
+              style={{
+                filter: 'drop-shadow(0 4px 12px rgba(255, 230, 109, 0.1))',
+                paddingBottom: '2rem'
+              }}
+            >
+              {Array.from({ length: C }, (_, columnIndex) => {
+                const activeCount = prefersReducedMotion ? columnHeights[0] : columnHeights[columnIndex];
                 
                 return (
-                  <div key={columnIndex} className="flex flex-col-reverse gap-[2px] flex-shrink-0">
-                    {Array.from({ length: maxPills }, (_, pillIndex) => {
-                      const color = colors[(columnIndex + pillIndex) % colors.length];
+                  <div key={columnIndex} className="flex flex-col-reverse gap-[3px] flex-shrink-0">
+                    {Array.from({ length: S }, (_, segmentIndex) => {
+                      const color = palette[segmentIndex % palette.length];
+                      const isActive = segmentIndex < activeCount;
                       
                       return (
-                        <motion.div
-                          key={pillIndex}
-                          className="rounded-full flex-shrink-0"
+                        <div
+                          key={segmentIndex}
+                          className="rounded-full flex-shrink-0 transition-all duration-150 ease-out"
                           style={{ 
                             backgroundColor: color,
-                            width: '8px',
-                            height: '8px',
-                            boxShadow: `0 0 8px ${color}80`,
-                            filter: `brightness(1.3) saturate(1.8)`
-                          }}
-                          animate={{
-                            opacity: [0.3, 1, 0.7, 1, 0.3],
-                            scale: [0.8, 1.1, 0.9, 1.2, 0.8]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: animationDelay + (pillIndex * 0.1),
-                            ease: "easeInOut"
+                            width: '6px',
+                            height: '12px',
+                            opacity: isActive ? 1 : 0.12,
+                            transform: isActive ? 'scale(1)' : 'scale(0.9)',
+                            boxShadow: isActive ? `0 0 8px ${color}` : 'none',
+                            willChange: 'transform, opacity'
                           }}
                         />
                       );
