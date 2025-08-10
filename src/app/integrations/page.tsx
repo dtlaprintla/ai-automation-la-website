@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/branding';
@@ -17,72 +18,72 @@ const categories = [
     name: "Customer Management (CRM)",
     description: "We connect your customer data so AI can provide personalized service",
     apps: [
-      { name: "Salesforce", description: "Automatically update leads and opportunities" },
-      { name: "HubSpot", description: "Sync contacts and track interactions" }, 
-      { name: "Pipedrive", description: "Manage your sales pipeline automatically" },
-      { name: "Zoho CRM", description: "Keep customer data always up-to-date" },
-      { name: "Microsoft Dynamics", description: "Enterprise customer management" },
-      { name: "Copper", description: "Simple CRM that works with Google" }
+      { name: "Salesforce", description: "Automatically update leads and opportunities", logo: "salesforce.svg" },
+      { name: "HubSpot", description: "Sync contacts and track interactions", logo: "hubspot.svg" }, 
+      { name: "Pipedrive", description: "Manage your sales pipeline automatically", logo: "pipedrive.svg" },
+      { name: "Zoho CRM", description: "Keep customer data always up-to-date", logo: "zoho.svg" },
+      { name: "Microsoft Dynamics", description: "Enterprise customer management", logo: "microsoft.svg" },
+      { name: "Copper", description: "Simple CRM that works with Google", logo: "copper.svg" }
     ]
   },
   {
     name: "Communication Tools", 
     description: "Connect your phone, email, and chat tools for seamless customer communication",
     apps: [
-      { name: "Gmail", description: "Smart email automation and responses" },
-      { name: "Outlook", description: "Microsoft email integration" },
-      { name: "Slack", description: "Team notifications and updates" },
-      { name: "Microsoft Teams", description: "Enterprise communication" },
-      { name: "Zoom", description: "Automatic meeting scheduling" },
-      { name: "Calendly", description: "Smart appointment booking" }
+      { name: "Gmail", description: "Smart email automation and responses", logo: "gmail.svg" },
+      { name: "Outlook", description: "Microsoft email integration", logo: "outlook.svg" },
+      { name: "Slack", description: "Team notifications and updates", logo: "slack.svg" },
+      { name: "Microsoft Teams", description: "Enterprise communication", logo: "teams.svg" },
+      { name: "Zoom", description: "Automatic meeting scheduling", logo: "zoom.svg" },
+      { name: "Calendly", description: "Smart appointment booking", logo: "calendly.svg" }
     ]
   },
   {
     name: "Accounting & Finance",
     description: "Automate your money management and financial reporting", 
     apps: [
-      { name: "QuickBooks", description: "Automatic invoice and payment tracking" },
-      { name: "Xero", description: "Cloud accounting automation" },
-      { name: "FreshBooks", description: "Time tracking and billing automation" },
-      { name: "Wave", description: "Free accounting with AI enhancements" },
-      { name: "Stripe", description: "Payment processing automation" },
-      { name: "PayPal", description: "Transaction tracking and reporting" }
+      { name: "QuickBooks", description: "Automatic invoice and payment tracking", logo: "quickbooks.svg" },
+      { name: "Xero", description: "Cloud accounting automation", logo: "xero.svg" },
+      { name: "FreshBooks", description: "Time tracking and billing automation", logo: "freshbooks.svg" },
+      { name: "Wave", description: "Free accounting with AI enhancements", logo: "wave.svg" },
+      { name: "Stripe", description: "Payment processing automation", logo: "stripe.svg" },
+      { name: "PayPal", description: "Transaction tracking and reporting", logo: "paypal.svg" }
     ]
   },
   {
     name: "E-commerce & Sales",
     description: "Connect your online store for automated order processing and customer service",
     apps: [
-      { name: "Shopify", description: "Complete e-commerce automation" },
-      { name: "WooCommerce", description: "WordPress store integration" }, 
-      { name: "Square", description: "Point-of-sale and inventory management" },
-      { name: "BigCommerce", description: "Enterprise e-commerce platform" },
-      { name: "Etsy", description: "Handmade and vintage marketplace" },
-      { name: "Amazon", description: "Marketplace management automation" }
+      { name: "Shopify", description: "Complete e-commerce automation", logo: "shopify.svg" },
+      { name: "WooCommerce", description: "WordPress store integration", logo: "woocommerce.svg" }, 
+      { name: "Square", description: "Point-of-sale and inventory management", logo: "square.svg" },
+      { name: "BigCommerce", description: "Enterprise e-commerce platform", logo: "bigcommerce.svg" },
+      { name: "Etsy", description: "Handmade and vintage marketplace", logo: "etsy.svg" },
+      { name: "Amazon", description: "Marketplace management automation", logo: "amazon.svg" }
     ]
   },
   {
     name: "Marketing & Social Media",
     description: "Automate your marketing campaigns and social media presence",
     apps: [
-      { name: "Mailchimp", description: "Email marketing automation" },
-      { name: "Constant Contact", description: "Email and social media marketing" },
-      { name: "Facebook", description: "Social media management and ads" },
-      { name: "Instagram", description: "Content posting and engagement" },
-      { name: "LinkedIn", description: "Professional networking automation" },
-      { name: "Google Ads", description: "Automated advertising optimization" }
+      { name: "Mailchimp", description: "Email marketing automation", logo: "mailchimp.svg" },
+      { name: "Constant Contact", description: "Email and social media marketing", logo: "constant-contact.svg" },
+      { name: "Facebook", description: "Social media management and ads", logo: "facebook.svg" },
+      { name: "Instagram", description: "Content posting and engagement", logo: "instagram.svg" },
+      { name: "LinkedIn", description: "Professional networking automation", logo: "linkedin.svg" },
+      { name: "Google Ads", description: "Automated advertising optimization", logo: "google-ads.svg" }
     ]
   },
   {
     name: "Project Management",
     description: "Keep your team organized with automated task and project tracking",
     apps: [
-      { name: "Asana", description: "Task management and team collaboration" },
-      { name: "Trello", description: "Simple project boards with AI updates" },
-      { name: "Monday.com", description: "Work management platform" },
-      { name: "ClickUp", description: "All-in-one productivity suite" },
-      { name: "Notion", description: "Notes, docs, and project management" },
-      { name: "Airtable", description: "Database and project tracking" }
+      { name: "Asana", description: "Task management and team collaboration", logo: "asana.svg" },
+      { name: "Trello", description: "Simple project boards with AI updates", logo: "trello.svg" },
+      { name: "Monday.com", description: "Work management platform", logo: "monday.svg" },
+      { name: "ClickUp", description: "All-in-one productivity suite", logo: "clickup.svg" },
+      { name: "Notion", description: "Notes, docs, and project management", logo: "notion.svg" },
+      { name: "Airtable", description: "Database and project tracking", logo: "airtable.svg" }
     ]
   }
 ];
@@ -206,9 +207,22 @@ export default function IntegrationsPage() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.apps.map((app, appIndex) => (
                     <div key={appIndex} className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                        {app.name}
-                      </h4>
+                      <div className="flex items-center mb-4">
+                        {app.logo && (
+                          <div className="w-8 h-8 mr-3 flex-shrink-0">
+                            <Image
+                              src={`/logos/${app.logo}`}
+                              alt={`${app.name} logo`}
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                        )}
+                        <h4 className="text-lg font-semibold text-gray-900">
+                          {app.name}
+                        </h4>
+                      </div>
                       <p className="text-gray-600 text-sm">
                         {app.description}
                       </p>
