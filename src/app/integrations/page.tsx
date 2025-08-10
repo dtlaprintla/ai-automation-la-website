@@ -215,10 +215,10 @@ export default function IntegrationsPage() {
                             alt={`${app.name} logo`}
                             width={88}
                             height={88}
-                            className="w-8 h-8 lg:w-12 lg:h-12 object-contain"
+                            className="w-14 h-14 lg:w-[84px] lg:h-[84px] object-contain"
                           />
                         ) : (
-                          <div className="w-8 h-8 lg:w-12 lg:h-12 bg-gray-500 rounded-lg flex items-center justify-center">
+                          <div className="w-14 h-14 lg:w-[84px] lg:h-[84px] bg-gray-500 rounded-lg flex items-center justify-center">
                             <span className="text-white text-xl font-bold">{app.name.charAt(0)}</span>
                           </div>
                         )}
