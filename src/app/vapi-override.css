@@ -218,18 +218,18 @@ header button {
   height: 18px !important;
 }
 
-/* Fix content positioning */
+/* Fix content positioning - no padding needed since header is not fixed */
 main {
-  padding-top: 25px !important;
+  padding-top: 0 !important;
 }
 
-/* Fix hero sections */
+/* Fix hero sections - no padding needed since header is not fixed */
 .pt-32 {
-  padding-top: 25px !important;
+  padding-top: 2rem !important;
 }
 
 section.pt-32 {
-  padding-top: 25px !important;
+  padding-top: 2rem !important;
 }
 
 /* Make sure fixed header doesn't break */
