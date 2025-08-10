@@ -84,39 +84,51 @@ export default function HeroVapi() {
           </div>
 
           {/* Animated Equalizer Visualization */}
-          <div className="flex justify-center mb-20">
-            <div className="flex items-end justify-center gap-1 h-48 max-w-6xl mx-auto px-8">
-              {Array.from({ length: 120 }, (_, i) => {
-                const color = eqColors[i % eqColors.length];
-                const baseHeight = 12;
-                const maxHeight = 80 + (Math.random() * 120);
-                const animationDelay = i * 0.03;
+          <div className="flex justify-center mb-20 bg-[#0B0C0F] py-8">
+            <div className="flex items-end justify-center gap-2 h-40 w-full max-w-5xl overflow-hidden">
+              {Array.from({ length: 100 }, (_, i) => {
+                // Cycle through bright colors
+                const colors = [
+                  '#FFE66D', // yellow
+                  '#FFD166', // orange-yellow  
+                  '#FFAF87', // peach
+                  '#F5A6C7', // pink
+                  '#D7B6FF', // purple
+                  '#B1E0FF', // light blue
+                  '#7ED7E5', // cyan
+                  '#5BD6C7', // teal
+                  '#91E677', // green
+                  '#FFFFFF'  // white
+                ];
+                const color = colors[i % colors.length];
+                const baseHeight = 8;
+                const maxHeight = 60 + (Math.sin(i * 0.1) * 80);
+                const animationDelay = i * 0.05;
                 
                 return (
                   <motion.div
                     key={i}
-                    className="rounded-full flex-shrink-0"
+                    className="rounded-lg flex-shrink-0"
                     style={{ 
                       backgroundColor: color,
-                      width: '6px',
+                      width: '8px',
                       height: `${baseHeight}px`,
-                      filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.1))'
+                      boxShadow: `0 0 12px ${color}40`
                     }}
                     animate={{
                       height: [
                         `${baseHeight}px`, 
                         `${maxHeight}px`, 
-                        `${baseHeight + 30}px`, 
-                        `${maxHeight * 0.6}px`,
+                        `${baseHeight + 20}px`, 
+                        `${maxHeight * 0.7}px`,
                         `${baseHeight}px`
                       ]
                     }}
                     transition={{
-                      duration: 3,
+                      duration: 2,
                       repeat: Infinity,
                       delay: animationDelay,
-                      ease: "easeInOut",
-                      repeatType: "reverse"
+                      ease: "easeInOut"
                     }}
                   />
                 );
