@@ -1,10 +1,12 @@
 // Unified Content Management System
 // Single import point for all content management
 
+import { BRAND } from '@/config/branding';
+
 export { PAGE_CONTENT, getHomeContent, getServiceContent, getPricingContent, getContactContent } from './pages';
 export { IMAGES, getImage, ALT_TEXT, getHeroImage, getServiceImage, getTestimonialImage, getIntegrationLogo } from './images';
 export { SEO_CONTENT, STRUCTURED_DATA, getPageSEO, getIndustrySEO } from './seo';
-export { BRAND } from '@/config/branding';
+export { BRAND };
 
 // Content Management Utilities will be added later when needed
 
