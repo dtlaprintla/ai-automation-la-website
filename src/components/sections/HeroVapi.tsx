@@ -84,34 +84,35 @@ export default function HeroVapi() {
           </div>
 
           {/* Animated Equalizer Visualization */}
-          <div className="flex justify-center items-end mb-20 h-48">
-            <div className="flex items-end gap-2 w-full max-w-4xl">
-              {Array.from({ length: 80 }, (_, i) => {
+          <div className="flex justify-center mb-20">
+            <div className="flex items-end justify-center gap-1 h-48 max-w-6xl mx-auto px-8">
+              {Array.from({ length: 120 }, (_, i) => {
                 const color = eqColors[i % eqColors.length];
-                const baseHeight = 8 + (Math.sin(i * 0.1) * 4);
-                const maxHeight = 120 + (Math.sin(i * 0.05) * 40);
-                const animationDelay = i * 0.02;
+                const baseHeight = 12;
+                const maxHeight = 80 + (Math.random() * 120);
+                const animationDelay = i * 0.03;
                 
                 return (
                   <motion.div
                     key={i}
-                    className="rounded-full min-w-[3px] w-1"
+                    className="rounded-full flex-shrink-0"
                     style={{ 
                       backgroundColor: color,
+                      width: '6px',
                       height: `${baseHeight}px`,
-                      filter: 'drop-shadow(0 0 4px rgba(82, 237, 188, 0.3))'
+                      filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.1))'
                     }}
                     animate={{
                       height: [
                         `${baseHeight}px`, 
                         `${maxHeight}px`, 
-                        `${baseHeight + 20}px`, 
-                        `${maxHeight * 0.7}px`,
+                        `${baseHeight + 30}px`, 
+                        `${maxHeight * 0.6}px`,
                         `${baseHeight}px`
                       ]
                     }}
                     transition={{
-                      duration: 2.5,
+                      duration: 3,
                       repeat: Infinity,
                       delay: animationDelay,
                       ease: "easeInOut",
