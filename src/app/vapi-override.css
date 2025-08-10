@@ -153,13 +153,24 @@ select {
 
 /* COMPLETE HEADER FIX - Target exact structure */
 
-/* Hide the green contact bar completely */
-header > div.bg-\[#10B981\] {
+/* Hide the green contact bar completely - multiple approaches */
+header > div:first-child {
   display: none !important;
 }
 
-/* Also hide any green background divs in header */
-header div[class*="bg-[#10B981]"] {
+header div[style*="background"] {
+  display: none !important;
+}
+
+header [class*="bg-green"] {
+  display: none !important;
+}
+
+header [style*="rgb(16, 185, 129)"] {
+  display: none !important;
+}
+
+header [style*="#10B981"] {
   display: none !important;
 }
 

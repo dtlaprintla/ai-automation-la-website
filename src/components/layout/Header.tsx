@@ -62,26 +62,6 @@ export default function Header() {
 
   return (
     <header className="relative bg-transparent">
-      {/* Top bar with contact info */}
-      <div className="bg-[#10B981]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-2 text-sm text-white">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-                <Phone className="w-3 h-3 mr-1" />
-                <span>{BRAND.phone}</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-3 h-3 mr-1" />
-                <span>Vernon & Los Angeles, CA</span>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <span className="font-medium">🚀 Done-For-You AI Automation</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
