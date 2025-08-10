@@ -16,50 +16,50 @@ export function useContent(pageSlug: string, options: ContentHookOptions = {}) {
 
   const { fallbackToStatic = true, enableCaching = true } = options
 
-  useEffect(() => {
-    async function fetchContent() {
-      try {
-        setLoading(true)
-        setError(null)
+  const fetchContent = async () => {
+    try {
+      setLoading(true)
+      setError(null)
 
-        // Try to fetch from Sanity CMS first
-        const sanityContent = await getPageContent(pageSlug)
-        
-        if (sanityContent) {
-          setContent(sanityContent)
-        } else if (fallbackToStatic) {
-          // Fallback to static content
-          const staticContent = getStaticContent(pageSlug)
-          if (staticContent) {
-            setContent(staticContent)
-          } else {
-            setError(`No content found for page: ${pageSlug}`)
-          }
+      // Try to fetch from Sanity CMS first
+      const sanityContent = await getPageContent(pageSlug)
+      
+      if (sanityContent) {
+        setContent(sanityContent)
+      } else if (fallbackToStatic) {
+        // Fallback to static content
+        const staticContent = getStaticContent(pageSlug)
+        if (staticContent) {
+          setContent(staticContent)
         } else {
           setError(`No content found for page: ${pageSlug}`)
         }
-      } catch (err) {
-        console.error('Content fetch error:', err)
-        
-        if (fallbackToStatic) {
-          const staticContent = getStaticContent(pageSlug)
-          if (staticContent) {
-            setContent(staticContent)
-          } else {
-            setError('Failed to load content')
-          }
+      } else {
+        setError(`No content found for page: ${pageSlug}`)
+      }
+    } catch (err) {
+      console.error('Content fetch error:', err)
+      
+      if (fallbackToStatic) {
+        const staticContent = getStaticContent(pageSlug)
+        if (staticContent) {
+          setContent(staticContent)
         } else {
           setError('Failed to load content')
         }
-      } finally {
-        setLoading(false)
+      } else {
+        setError('Failed to load content')
       }
+    } finally {
+      setLoading(false)
     }
+  }
 
+  useEffect(() => {
     fetchContent()
   }, [pageSlug, fallbackToStatic])
 
-  return { content, loading, error, refetch: () => fetchContent() }
+  return { content, loading, error, refetch: fetchContent }
 }
 
 // Helper to get static content as fallback
