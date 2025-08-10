@@ -174,28 +174,30 @@ header [style*="#10B981"] {
   display: none !important;
 }
 
-/* Make the entire header compact but readable */
+/* Make the entire header ultra-compact - 20px total */
 header {
-  height: auto !important;
-  min-height: 60px !important;
+  height: 20px !important;
+  max-height: 20px !important;
+  min-height: 20px !important;
   padding: 0 !important;
   margin: 0 !important;
+  overflow: hidden !important;
 }
 
-/* Main navigation container */
+/* Main navigation container - fit in 20px */
 header > div.max-w-7xl {
-  height: auto !important;
-  padding: 0.75rem 0 !important;
+  height: 20px !important;
+  padding: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
 }
 
-/* Logo area - keep text on single line */
+/* Logo area - ultra small to fit 20px */
 header h1,
 header span.text-white {
-  font-size: 1.125rem !important;
-  line-height: 1.2 !important;
+  font-size: 0.625rem !important; /* 10px */
+  line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
   white-space: nowrap !important;
@@ -205,29 +207,35 @@ header p {
   display: none !important;
 }
 
-/* Logo container */
+/* Logo container - tiny */
 header .w-8 {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 14px !important;
+  height: 14px !important;
 }
 
-/* Navigation items - readable size */
+/* Logo icon text */
+header .w-8 span {
+  font-size: 0.5rem !important; /* 8px */
+}
+
+/* Navigation items - ultra compact */
 nav {
   padding: 0 !important;
   margin: 0 !important;
 }
 
 nav a {
-  padding: 0.5rem 0.75rem !important;
-  font-size: 0.875rem !important;
-  margin: 0 0.25rem !important;
+  padding: 0 0.25rem !important;
+  font-size: 0.5rem !important; /* 8px */
+  margin: 0 !important;
 }
 
-/* Header buttons - normal size */
+/* Header buttons - fit in 20px */
 header button {
-  padding: 0.5rem 1.5rem !important;
-  font-size: 0.875rem !important;
-  height: auto !important;
+  padding: 0 0.5rem !important;
+  font-size: 0.5rem !important; /* 8px */
+  height: 16px !important;
+  line-height: 1 !important;
 }
 
 /* Fix content positioning - no padding needed since header is not fixed */
