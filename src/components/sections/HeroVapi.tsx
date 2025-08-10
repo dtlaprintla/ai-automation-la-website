@@ -35,7 +35,7 @@ export default function HeroVapi() {
   );
 
   // Seeded random function
-  const seededRandom = (seed) => {
+  const seededRandom = (seed: number): number => {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
   };
