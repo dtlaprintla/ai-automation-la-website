@@ -151,98 +151,83 @@ select {
   padding: 1rem !important;
 }
 
-/* NUCLEAR HEADER HEIGHT FIX - Force small header */
-header,
-header *,
-[class*="header"],
-.header {
-  height: auto !important;
-  min-height: auto !important;
-  max-height: 60px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
+/* COMPLETE HEADER REWRITE - Fix the doubled header mess */
 
-/* Force all header sections to be tiny */
-header > div,
-header section,
-header .py-2,
-header .py-4,
-header .py-8,
-header .py-16,
-header .py-20 {
-  padding: 0.25rem 1rem !important;
-  margin: 0 !important;
-  height: auto !important;
-  max-height: 30px !important;
-}
-
-/* Top green contact bar - make tiny */
+/* Hide the green contact bar completely */
 header > div:first-child {
-  padding: 0.125rem 0 !important;
-  height: 25px !important;
-  font-size: 0.75rem !important;
+  display: none !important;
 }
 
-/* Main navigation - make tiny */
+/* Make the main header section compact */
+header {
+  height: 60px !important;
+  max-height: 60px !important;
+  min-height: 60px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Main navigation container */
 header > div:last-child {
-  padding: 0.25rem 0 !important;
-  height: 35px !important;
+  height: 60px !important;
+  padding: 0.75rem 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
-/* Navigation items - minimal spacing */
-nav,
-nav *,
-.nav,
-.navigation {
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 1 !important;
-}
-
-/* Navigation links - smaller */
-nav a,
-header a {
-  padding: 0.25rem 0.5rem !important;
-  font-size: 0.875rem !important;
-}
-
-/* Logo area - smaller */
+/* Logo area - make compact */
 header h1 {
-  font-size: 1rem !important;
+  font-size: 1.25rem !important;
   line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Buttons in header - smaller */
-header button,
-header .btn {
-  padding: 0.25rem 1rem !important;
-  font-size: 0.75rem !important;
-  height: 28px !important;
+/* Navigation items */
+nav {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Make sure content shows up properly */
-main,
-.main,
-section {
-  padding-top: 70px !important; /* Account for fixed header */
+nav a {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.9rem !important;
+  margin: 0 0.25rem !important;
 }
 
-/* Fix hero sections specifically */
-.pt-32,
-[class*="pt-32"],
-.hero-section,
-[class*="hero"] {
-  padding-top: 70px !important;
+/* Header buttons */
+header button {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  height: 36px !important;
 }
 
-/* Override any large spacing classes */
-.py-32 { padding-top: 70px !important; padding-bottom: 2rem !important; }
-.py-20 { padding-top: 70px !important; padding-bottom: 2rem !important; }
-.py-16 { padding-top: 70px !important; padding-bottom: 2rem !important; }
+/* Fix content positioning */
+main {
+  padding-top: 60px !important;
+}
+
+/* Fix hero sections */
+.pt-32 {
+  padding-top: 60px !important;
+}
+
+section.pt-32 {
+  padding-top: 60px !important;
+}
+
+/* Remove the annoying marketing bar */
+header div[class*="bg-"] {
+  display: none !important;
+}
+
+/* Make sure fixed header doesn't break */
+header.fixed {
+  top: 0 !important;
+  z-index: 50 !important;
+}
 
 nav ul {
   gap: 2rem !important;
