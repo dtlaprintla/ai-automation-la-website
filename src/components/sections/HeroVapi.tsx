@@ -84,48 +84,49 @@ export default function HeroVapi() {
           </div>
 
           {/* Animated Equalizer Visualization */}
-          <div className="flex justify-center mb-20 bg-[#0B0C0F] py-8">
-            <div className="flex items-end justify-center gap-2 h-40 w-full max-w-5xl overflow-hidden">
-              {Array.from({ length: 100 }, (_, i) => {
-                // Cycle through bright colors
+          <div className="flex justify-center mb-20 py-12">
+            <div className="flex items-end justify-center gap-[2px] h-48 w-full max-w-6xl">
+              {Array.from({ length: 120 }, (_, i) => {
+                // Ultra-bright neon colors
                 const colors = [
-                  '#FFE66D', // yellow
-                  '#FFD166', // orange-yellow  
-                  '#FFAF87', // peach
-                  '#F5A6C7', // pink
-                  '#D7B6FF', // purple
-                  '#B1E0FF', // light blue
-                  '#7ED7E5', // cyan
-                  '#5BD6C7', // teal
-                  '#91E677', // green
-                  '#FFFFFF'  // white
+                  '#FFFF00', // pure yellow
+                  '#FF6600', // bright orange
+                  '#FF3366', // hot pink
+                  '#FF0099', // magenta
+                  '#9933FF', // electric purple
+                  '#3366FF', // electric blue
+                  '#00FFFF', // pure cyan
+                  '#00FF66', // bright green
+                  '#66FF00', // lime green
+                  '#FFFFFF'  // pure white
                 ];
                 const color = colors[i % colors.length];
-                const baseHeight = 8;
-                const maxHeight = 60 + (Math.sin(i * 0.1) * 80);
-                const animationDelay = i * 0.05;
+                const baseHeight = 12;
+                const maxHeight = 80 + (Math.random() * 120);
+                const animationDelay = i * 0.02;
                 
                 return (
                   <motion.div
                     key={i}
-                    className="rounded-lg flex-shrink-0"
+                    className="rounded-full flex-shrink-0"
                     style={{ 
                       backgroundColor: color,
-                      width: '8px',
+                      width: '6px',
                       height: `${baseHeight}px`,
-                      boxShadow: `0 0 12px ${color}40`
+                      boxShadow: `0 0 20px ${color}, 0 0 40px ${color}80, 0 0 60px ${color}40`,
+                      filter: `brightness(1.2) saturate(1.5)`
                     }}
                     animate={{
                       height: [
                         `${baseHeight}px`, 
                         `${maxHeight}px`, 
-                        `${baseHeight + 20}px`, 
-                        `${maxHeight * 0.7}px`,
+                        `${baseHeight + 30}px`, 
+                        `${maxHeight * 0.8}px`,
                         `${baseHeight}px`
                       ]
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 2.5,
                       repeat: Infinity,
                       delay: animationDelay,
                       ease: "easeInOut"
