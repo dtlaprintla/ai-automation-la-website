@@ -153,6 +153,12 @@ button[type="submit"]:hover {
 .bg-gray-100 { background: var(--bg-secondary) !important; }
 .bg-gray-200 { background: var(--bg-tertiary) !important; }
 
+/* Custom background classes for integration cards */
+.bg-shades-dark-navy { 
+  background: var(--bg-secondary) !important;
+  background-color: var(--bg-secondary) !important;
+}
+
 /* Integration page specific - NO GRADIENTS */
 .integration-grid .integration-card {
   background: var(--bg-secondary);
