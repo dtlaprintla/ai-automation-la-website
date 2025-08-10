@@ -26,7 +26,7 @@ export default function HeaderVapi() {
               <div className="w-8 h-8 bg-[#10B981] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AI</span>
               </div>
-              <span className="text-white text-lg font-bold tracking-tight whitespace-nowrap">AI AUTOMATION LA</span>
+              <span className="text-white text-lg font-bold tracking-tight whitespace-nowrap">AUTOM8 LA</span>
             </div>
           </Link>
 
