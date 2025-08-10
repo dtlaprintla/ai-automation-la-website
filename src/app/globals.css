@@ -307,3 +307,38 @@ input[type="submit"],
 * {
   --tw-bg-opacity: 1 !important;
 }
+
+/* Hide binary matrix pattern fix - AGGRESSIVE */
+/* Hide ALL fixed position elements that might be overlays */
+.fixed {
+  display: none !important;
+}
+
+/* Hide elements with high z-index (likely overlays) */
+[style*="z-index"]:not(header):not(nav):not(footer) {
+  display: none !important;
+}
+
+/* Hide pointer-events-none elements (often overlays) */
+.pointer-events-none {
+  display: none !important;
+}
+
+/* Hide any element that looks like a matrix pattern */
+div.fixed + div,
+div[class*="fixed"] + div {
+  display: none !important;
+}
+
+/* Emergency: Hide any element with lots of child divs containing text "0" */
+body > div:last-of-type:has(> div:nth-child(10)) {
+  display: none !important;
+}
+
+/* Hide overlay-like structures */
+body > div[class*="fixed"],
+body > div[class*="absolute"],
+body > div[style*="position: fixed"],
+body > div[style*="position: absolute"] {
+  display: none !important;
+}
