@@ -165,72 +165,71 @@ header div[class*="bg-[#10B981]"] {
 
 /* Make the entire header compact */
 header {
-  height: 70px !important;
-  max-height: 70px !important;
-  min-height: 70px !important;
+  height: 25px !important;
+  max-height: 25px !important;
+  min-height: 25px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
 /* Main navigation container - the second div */
 header > div.max-w-7xl {
-  height: 70px !important;
-  padding: 1rem 0 !important;
+  height: 25px !important;
+  padding: 0.25rem 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
 }
 
-/* Logo area - make compact */
+/* Logo area - ultra compact */
 header h1 {
-  font-size: 1.1rem !important;
-  line-height: 1.2 !important;
+  font-size: 0.5rem !important;
+  line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 header p {
-  font-size: 0.75rem !important;
-  line-height: 1 !important;
+  display: none !important;
 }
 
-/* Logo container */
+/* Logo container - 25% smaller than tiny */
 header .w-10 {
-  width: 32px !important;
-  height: 32px !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
-/* Navigation items */
+/* Navigation items - ultra compact */
 nav {
   padding: 0 !important;
   margin: 0 !important;
 }
 
 nav a {
-  padding: 0.5rem 0.75rem !important;
-  font-size: 0.85rem !important;
-  margin: 0 0.25rem !important;
+  padding: 0.125rem 0.25rem !important;
+  font-size: 0.6rem !important;
+  margin: 0 0.125rem !important;
 }
 
-/* Header buttons */
+/* Header buttons - tiny */
 header button {
-  padding: 0.5rem 1rem !important;
-  font-size: 0.8rem !important;
-  height: 32px !important;
+  padding: 0.125rem 0.25rem !important;
+  font-size: 0.6rem !important;
+  height: 18px !important;
 }
 
 /* Fix content positioning */
 main {
-  padding-top: 70px !important;
+  padding-top: 25px !important;
 }
 
 /* Fix hero sections */
 .pt-32 {
-  padding-top: 70px !important;
+  padding-top: 25px !important;
 }
 
 section.pt-32 {
-  padding-top: 70px !important;
+  padding-top: 25px !important;
 }
 
 /* Make sure fixed header doesn't break */
