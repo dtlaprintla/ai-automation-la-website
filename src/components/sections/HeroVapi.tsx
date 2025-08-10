@@ -83,10 +83,10 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Equalizer Visualization */}
+          {/* Animated Equalizer Visualization - Stacked Pills */}
           <div className="flex justify-center mb-20 py-12">
-            <div className="flex items-end justify-center gap-[2px] h-48 w-full max-w-6xl">
-              {Array.from({ length: 120 }, (_, i) => {
+            <div className="flex items-end justify-center gap-1 h-48 w-full max-w-6xl">
+              {Array.from({ length: 100 }, (_, columnIndex) => {
                 // Ultra-bright neon colors
                 const colors = [
                   '#FFFF00', // pure yellow
@@ -100,38 +100,41 @@ export default function HeroVapi() {
                   '#66FF00', // lime green
                   '#FFFFFF'  // pure white
                 ];
-                const color = colors[i % colors.length];
-                const baseHeight = 12;
-                const maxHeight = 80 + (Math.random() * 120);
-                const animationDelay = i * 0.02;
+                
+                const baseHeight = 2;
+                const maxPills = 8 + Math.floor(Math.random() * 12); // 2-20 pills per column
+                const animationDelay = columnIndex * 0.03;
                 
                 return (
-                  <motion.div
-                    key={i}
-                    className="rounded-full flex-shrink-0"
-                    style={{ 
-                      backgroundColor: color,
-                      width: '6px',
-                      height: `${baseHeight}px`,
-                      boxShadow: `0 0 20px ${color}, 0 0 40px ${color}80, 0 0 60px ${color}40`,
-                      filter: `brightness(1.2) saturate(1.5)`
-                    }}
-                    animate={{
-                      height: [
-                        `${baseHeight}px`, 
-                        `${maxHeight}px`, 
-                        `${baseHeight + 30}px`, 
-                        `${maxHeight * 0.8}px`,
-                        `${baseHeight}px`
-                      ]
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: animationDelay,
-                      ease: "easeInOut"
-                    }}
-                  />
+                  <div key={columnIndex} className="flex flex-col-reverse gap-[2px] flex-shrink-0">
+                    {Array.from({ length: maxPills }, (_, pillIndex) => {
+                      const color = colors[(columnIndex + pillIndex) % colors.length];
+                      
+                      return (
+                        <motion.div
+                          key={pillIndex}
+                          className="rounded-full flex-shrink-0"
+                          style={{ 
+                            backgroundColor: color,
+                            width: '8px',
+                            height: '8px',
+                            boxShadow: `0 0 8px ${color}80`,
+                            filter: `brightness(1.3) saturate(1.8)`
+                          }}
+                          animate={{
+                            opacity: [0.3, 1, 0.7, 1, 0.3],
+                            scale: [0.8, 1.1, 0.9, 1.2, 0.8]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: animationDelay + (pillIndex * 0.1),
+                            ease: "easeInOut"
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
                 );
               })}
             </div>
