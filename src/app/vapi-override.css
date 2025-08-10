@@ -151,48 +151,98 @@ select {
   padding: 1rem !important;
 }
 
-/* HEADER HEIGHT FIX - Make header much smaller */
-header {
+/* NUCLEAR HEADER HEIGHT FIX - Force small header */
+header,
+header *,
+[class*="header"],
+.header {
   height: auto !important;
   min-height: auto !important;
+  max-height: 60px !important;
   padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
 }
 
-/* Top contact bar - make smaller */
+/* Force all header sections to be tiny */
+header > div,
+header section,
+header .py-2,
+header .py-4,
+header .py-8,
+header .py-16,
+header .py-20 {
+  padding: 0.25rem 1rem !important;
+  margin: 0 !important;
+  height: auto !important;
+  max-height: 30px !important;
+}
+
+/* Top green contact bar - make tiny */
 header > div:first-child {
-  padding: 0.25rem 0 !important;
+  padding: 0.125rem 0 !important;
+  height: 25px !important;
+  font-size: 0.75rem !important;
 }
 
-/* Main navigation - make smaller */
+/* Main navigation - make tiny */
 header > div:last-child {
-  padding: 0.5rem 0 !important;
+  padding: 0.25rem 0 !important;
+  height: 35px !important;
 }
 
-/* Navigation items - reduce spacing */
-nav {
+/* Navigation items - minimal spacing */
+nav,
+nav *,
+.nav,
+.navigation {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Navigation links - smaller */
+nav a,
+header a {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Logo area - smaller */
+header h1 {
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Remove all excessive padding */
-header .py-4 {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+/* Buttons in header - smaller */
+header button,
+header .btn {
+  padding: 0.25rem 1rem !important;
+  font-size: 0.75rem !important;
+  height: 28px !important;
 }
 
-header .py-2 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+/* Make sure content shows up properly */
+main,
+.main,
+section {
+  padding-top: 70px !important; /* Account for fixed header */
 }
 
-/* Make sure content isn't hidden behind header */
-main {
-  padding-top: 80px !important; /* Reduced from default */
+/* Fix hero sections specifically */
+.pt-32,
+[class*="pt-32"],
+.hero-section,
+[class*="hero"] {
+  padding-top: 70px !important;
 }
 
-/* Fix sections that have pt-32 class */
-.pt-32 {
-  padding-top: 100px !important; /* Much smaller than default pt-32 */
-}
+/* Override any large spacing classes */
+.py-32 { padding-top: 70px !important; padding-bottom: 2rem !important; }
+.py-20 { padding-top: 70px !important; padding-bottom: 2rem !important; }
+.py-16 { padding-top: 70px !important; padding-bottom: 2rem !important; }
 
 nav ul {
   gap: 2rem !important;
