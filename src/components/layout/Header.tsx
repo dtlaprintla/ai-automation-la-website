@@ -80,7 +80,7 @@ export default function Header() {
                 <h1 className={`text-lg font-bold whitespace-nowrap ${
                   isScrolled ? 'text-gray-900' : 'text-white'
                 }`}>
-                  AUTOM8 LA
+                  AI AUTOMATION LA
                 </h1>
                 <p className={`text-xs ${
                   isScrolled ? 'text-gray-600' : 'text-white/80'

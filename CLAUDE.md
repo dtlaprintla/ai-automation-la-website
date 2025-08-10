@@ -96,8 +96,17 @@ All strategic docs are in `/docs/` folder:
 ## 🛠️ Technical Stack
 - **Framework**: Next.js 15.4.6 with TypeScript
 - **Styling**: Tailwind CSS + N8N Dark Theme
+- **CMS**: Sanity CMS (project ID: 94v3467t)
 - **Deployment**: Vercel (auto-deploys from GitHub)
 - **Integrations**: 100+ business tool integrations
+
+### 📝 Content Management (Sanity CMS)
+- **Sanity Studio**: Located in `/sanity_cms/` folder
+- **Project ID**: `94v3467t`
+- **Dataset**: `production`
+- **Local Studio**: Run `cd sanity_cms && npm run dev` to start studio locally
+- **Content Hooks**: Use `useContent` hook from `/src/hooks/useContent.ts` for fetching
+- **Static Fallbacks**: All content has static fallbacks in `/src/content/` folder
 
 ## 📋 Common Commands
 ```bash
@@ -108,11 +117,34 @@ npm run dev          # Start dev server
 npm run build        # Verify build works
 npm run lint         # Check for linting errors
 
+# Sanity CMS
+cd sanity_cms && npm run dev  # Start Sanity Studio locally
+
 # Git workflow
 git add -A
 git commit -m "Your message here"
 git push origin main
 ```
+
+## 🚨 Build Troubleshooting
+If Vercel deployments are failing:
+
+1. **Check TypeScript errors** - Most common issues:
+   - Missing imports or incorrect import paths
+   - Undefined variables being used before declaration
+   - Scope issues (functions defined in wrong scope)
+
+2. **Sanity CMS issues**:
+   - Ensure no `sanity.config.ts` in root directory (should only be in `/sanity_cms/`)
+   - Check that Sanity imports use correct package names
+
+3. **Content Management**:
+   - Static content fallbacks should exist in `/src/content/` for all pages
+   - `useContent` hook should handle errors gracefully
+
+4. **CSS Override conflicts**:
+   - Check `/src/app/vapi-override.css` for conflicting rules
+   - Ensure proper CSS specificity with `!important` when needed
 
 ## 🎨 Design System
 - **Theme**: N8N-inspired dark theme (already activated globally)
