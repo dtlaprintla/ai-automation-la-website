@@ -1,6 +1,6 @@
-import { defineConfig } from '@sanity/cli'
+import { defineCliConfig } from '@sanity/cli'
 
-export default defineConfig({
+export default defineCliConfig({
   projectId: '94v3467t', // Your Sanity project ID
   dataset: 'production',
   
