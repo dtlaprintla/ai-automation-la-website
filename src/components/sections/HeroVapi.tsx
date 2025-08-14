@@ -78,10 +78,16 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Dancing Pills - Isolated Component */}
-          <div className="mb-16">
-            <DancingPills />
           </div>
+        </div>
+      </div>
+
+      {/* Animated Dancing Pills - Full Width */}
+      <DancingPills />
+
+      {/* Resume container for remaining content */}
+      <div className="relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Partner Logo Strip */}
           <div className="bg-[#0E0F12] border border-[#17181F] rounded-lg py-12 px-8">

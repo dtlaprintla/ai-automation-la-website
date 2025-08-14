@@ -1,67 +1,104 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function DancingPills() {
-  const columns = 30;
-  const maxHeight = 12;
-  const minHeight = 3;
-  
-  // Vibrant colors like Vapi
+  // Match Vapi's exact configuration
   const colors = [
-    '#00E5FF', '#00FF88', '#FFE500', '#FF6B00', '#FF00FF',
-    '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366',
-    '#00BFFF', '#FFD700', '#FF69B4', '#1EFF00', '#FF4500'
+    '#FFEB3B', '#8BC34A', '#00BCD4', '#FF5722', '#E91E63',
+    '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#009688',
+    '#FFC107', '#FF9800', '#795548', '#607D8B', '#F44336'
   ];
 
-  const [heights, setHeights] = useState(
-    Array(columns).fill(0).map(() => Math.floor(Math.random() * (maxHeight - minHeight) + minHeight))
+  // Calculate columns based on screen width
+  const [columns, setColumns] = useState(50);
+  const maxBars = 20;
+  const minBars = 4;
+  
+  // Initialize with random heights
+  const [bars, setBars] = useState(() => 
+    Array(columns).fill(0).map(() => 
+      Math.floor(Math.random() * (maxBars - minBars + 1) + minBars)
+    )
   );
 
+  // Update columns on resize
   useEffect(() => {
-    const interval = setInterval(() => {
-      setHeights(prevHeights => 
-        prevHeights.map(() => Math.floor(Math.random() * (maxHeight - minHeight) + minHeight))
-      );
-    }, 500);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      const barWidth = 12; // width of each bar
+      const gap = 2; // gap between bars
+      const newColumns = Math.floor(width / (barWidth + gap));
+      setColumns(newColumns);
+    };
 
-    return () => clearInterval(interval);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Animate bars
+  useEffect(() => {
+    const animateBars = () => {
+      setBars(prevBars => 
+        prevBars.map((_, index) => {
+          // Create wave effect
+          const time = Date.now() / 1000;
+          const waveHeight = Math.sin(time + index * 0.1) * 3;
+          const randomHeight = Math.random() * 8;
+          const newHeight = Math.floor(minBars + waveHeight + randomHeight);
+          return Math.max(minBars, Math.min(maxBars, newHeight));
+        })
+      );
+    };
+
+    const interval = setInterval(animateBars, 100);
+    return () => clearInterval(interval);
+  }, [columns]);
 
   return (
     <div style={{ 
-      width: '100%', 
-      height: '200px', 
-      display: 'flex', 
-      justifyContent: 'center', 
+      width: '100vw',
+      height: '150px',
+      position: 'relative',
+      left: '50%',
+      right: '50%',
+      marginLeft: '-50vw',
+      marginRight: '-50vw',
+      display: 'flex',
       alignItems: 'flex-end',
-      padding: '20px 0',
+      justifyContent: 'center',
+      overflow: 'hidden',
       backgroundColor: 'transparent'
     }}>
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'flex-end', 
-        gap: '3px',
-        height: '100%'
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-end',
+        gap: '2px',
+        height: '100%',
+        paddingBottom: '20px'
       }}>
-        {heights.map((height, colIndex) => (
-          <div key={colIndex} style={{ 
-            display: 'flex', 
-            flexDirection: 'column-reverse', 
-            gap: '3px',
-            alignItems: 'center'
-          }}>
-            {Array.from({ length: height }, (_, pillIndex) => (
+        {bars.map((height, colIndex) => (
+          <div 
+            key={colIndex} 
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2px',
+              alignItems: 'center',
+              justifyContent: 'flex-end'
+            }}
+          >
+            {Array.from({ length: height }, (_, barIndex) => (
               <div
-                key={pillIndex}
+                key={barIndex}
                 style={{
-                  width: '20px',
-                  height: '6px',
-                  backgroundColor: colors[(colIndex + pillIndex) % colors.length],
-                  borderRadius: '3px',
-                  transition: 'all 0.3s ease-out',
-                  boxShadow: `0 0 10px ${colors[(colIndex + pillIndex) % colors.length]}`,
-                  opacity: 1
+                  width: '12px',
+                  height: '4px',
+                  backgroundColor: colors[(colIndex + barIndex * 2) % colors.length],
+                  borderRadius: '2px',
+                  opacity: 1,
+                  transition: 'all 0.15s ease-out'
                 }}
               />
             ))}
