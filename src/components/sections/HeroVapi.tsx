@@ -80,7 +80,7 @@ export default function HeroVapi() {
       });
     };
 
-    const interval = setInterval(animateColumns, 2000);
+    const interval = setInterval(animateColumns, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -158,35 +158,28 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Equalizer Visualization - Vapi Style */}
-          <div className="flex justify-center mb-16">
-            <div 
-              className="flex items-end justify-center gap-[2px]"
-              style={{
-                height: '120px'
-              }}
-            >
+          {/* Animated Equalizer Visualization - Fixed Vapi Style */}
+          <div className="flex justify-center mb-16" style={{ height: '150px' }}>
+            <div className="flex items-end justify-center gap-1">
               {Array.from({ length: C }, (_, columnIndex) => {
-                const activeCount = prefersReducedMotion ? columnHeights[0] : columnHeights[columnIndex];
+                const currentHeight = columnHeights[columnIndex];
                 
                 return (
-                  <div key={columnIndex} className="flex flex-col-reverse gap-[2px] items-center">
-                    {Array.from({ length: activeCount }, (_, segmentIndex) => {
-                      // Assign colors in a pattern that creates visual harmony
-                      const colorIndex = (columnIndex + segmentIndex * 3) % palette.length;
-                      const color = palette[colorIndex];
+                  <div key={columnIndex} className="flex flex-col-reverse gap-1">
+                    {Array.from({ length: S }, (_, segmentIndex) => {
+                      const isVisible = segmentIndex < currentHeight;
+                      const colorIndex = (columnIndex + segmentIndex) % palette.length;
                       
                       return (
                         <div
                           key={segmentIndex}
-                          className="rounded-full transition-all duration-200 ease-out"
                           style={{ 
-                            backgroundColor: color,
-                            width: '16px',
+                            backgroundColor: isVisible ? palette[colorIndex] : 'transparent',
+                            width: '20px',
                             height: '4px',
-                            opacity: 1,
-                            transform: 'scale(1)',
-                            willChange: 'transform'
+                            borderRadius: '2px',
+                            transition: 'all 0.3s ease',
+                            opacity: isVisible ? 1 : 0
                           }}
                         />
                       );
