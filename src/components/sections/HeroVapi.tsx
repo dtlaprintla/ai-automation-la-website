@@ -180,12 +180,12 @@ export default function HeroVapi() {
                           key={segmentIndex}
                           className="rounded-full flex-shrink-0 transition-all duration-150 ease-out"
                           style={{ 
-                            backgroundColor: color,
-                            width: '12px',
+                            backgroundColor: isActive ? color : '#1a1a1a',
+                            width: '18px',
                             height: '6px',
-                            opacity: isActive ? 1 : 0.12,
+                            opacity: isActive ? 1 : 0.3,
                             transform: isActive ? 'scale(1)' : 'scale(0.9)',
-                            boxShadow: isActive ? `0 0 8px ${color}` : 'none',
+                            boxShadow: isActive ? `0 0 12px ${color}` : 'none',
                             willChange: 'transform, opacity'
                           }}
                         />
