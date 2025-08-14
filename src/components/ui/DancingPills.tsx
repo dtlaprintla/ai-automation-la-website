@@ -17,7 +17,7 @@ export default function DancingPills() {
   
   // Initialize with random heights
   const [bars, setBars] = useState(() => 
-    Array(columns).fill(0).map(() => 
+    Array(50).fill(0).map(() => 
       Math.floor(Math.random() * (maxBars - minBars + 1) + minBars)
     )
   );
@@ -30,6 +30,10 @@ export default function DancingPills() {
       const gap = 2; // gap between bars
       const newColumns = Math.floor(width / (barWidth + gap));
       setColumns(newColumns);
+      // Update bars array when columns change
+      setBars(Array(newColumns).fill(0).map(() => 
+        Math.floor(Math.random() * (maxBars - minBars + 1) + minBars)
+      ));
     };
 
     handleResize();
@@ -59,7 +63,7 @@ export default function DancingPills() {
   return (
     <div style={{ 
       width: '100vw',
-      height: '150px',
+      height: '180px',
       position: 'relative',
       left: '50%',
       right: '50%',
@@ -69,7 +73,9 @@ export default function DancingPills() {
       alignItems: 'flex-end',
       justifyContent: 'center',
       overflow: 'hidden',
-      backgroundColor: 'transparent'
+      backgroundColor: '#0B0C0F',
+      marginTop: '40px',
+      marginBottom: '40px'
     }}>
       <div style={{
         display: 'flex',
