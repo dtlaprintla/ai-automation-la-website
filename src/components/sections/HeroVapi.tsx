@@ -22,8 +22,9 @@ export default function HeroVapi() {
   const minS = 3;
   const maxS = 12;
   const palette = [
-    '#FFE66D', '#FFD166', '#FFAF87', '#F5A6C7', '#D7B6FF',
-    '#B1E0FF', '#7ED7E5', '#5BD6C7', '#91E677', '#FFFFFF'
+    '#00E5FF', '#00FF88', '#FFE500', '#FF6B00', '#FF00FF',
+    '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366',
+    '#00BFFF', '#FFD700', '#FF69B4', '#1EFF00', '#FF4500'
   ];
 
   // State for column heights
@@ -157,36 +158,35 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Equalizer Visualization - Proper Stacked Pills */}
+          {/* Animated Equalizer Visualization - Vapi Style */}
           <div className="flex justify-center mb-16">
             <div 
-              className="flex items-end justify-center gap-[3px] pb-8"
+              className="flex items-end justify-center gap-[2px]"
               style={{
-                filter: 'drop-shadow(0 4px 12px rgba(255, 230, 109, 0.1))',
-                paddingBottom: '2rem'
+                height: '120px'
               }}
             >
               {Array.from({ length: C }, (_, columnIndex) => {
                 const activeCount = prefersReducedMotion ? columnHeights[0] : columnHeights[columnIndex];
                 
                 return (
-                  <div key={columnIndex} className="flex flex-col-reverse gap-[3px] flex-shrink-0">
-                    {Array.from({ length: S }, (_, segmentIndex) => {
-                      const color = palette[segmentIndex % palette.length];
-                      const isActive = segmentIndex < activeCount;
+                  <div key={columnIndex} className="flex flex-col-reverse gap-[2px] items-center">
+                    {Array.from({ length: activeCount }, (_, segmentIndex) => {
+                      // Assign colors in a pattern that creates visual harmony
+                      const colorIndex = (columnIndex + segmentIndex * 3) % palette.length;
+                      const color = palette[colorIndex];
                       
                       return (
                         <div
                           key={segmentIndex}
-                          className="rounded-full flex-shrink-0 transition-all duration-150 ease-out"
+                          className="rounded-full transition-all duration-200 ease-out"
                           style={{ 
-                            backgroundColor: isActive ? color : '#1a1a1a',
-                            width: '18px',
-                            height: '6px',
-                            opacity: isActive ? 1 : 0.3,
-                            transform: isActive ? 'scale(1)' : 'scale(0.9)',
-                            boxShadow: isActive ? `0 0 12px ${color}` : 'none',
-                            willChange: 'transform, opacity'
+                            backgroundColor: color,
+                            width: '16px',
+                            height: '4px',
+                            opacity: 1,
+                            transform: 'scale(1)',
+                            willChange: 'transform'
                           }}
                         />
                       );
