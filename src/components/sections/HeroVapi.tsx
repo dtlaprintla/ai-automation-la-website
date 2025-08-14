@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, AlignCenter, Loader } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import DancingPills from '@/components/ui/DancingPills';
 
 export default function HeroVapi() {
   // Client logos
@@ -15,87 +16,6 @@ export default function HeroVapi() {
     { name: 'Housecall Pro', logo: 'Housecall Pro' },
     { name: 'Luma', logo: 'luma' }
   ];
-
-  // Equalizer configuration
-  const C = 30; // columns
-  const S = 14; // segments per column
-  const minS = 3;
-  const maxS = 12;
-  const palette = [
-    '#00E5FF', '#00FF88', '#FFE500', '#FF6B00', '#FF00FF',
-    '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366',
-    '#00BFFF', '#FFD700', '#FF69B4', '#1EFF00', '#FF4500'
-  ];
-
-  // State for column heights
-  const [columnHeights, setColumnHeights] = useState(() => 
-    Array.from({ length: C }, (_, i) => {
-      const seed = i * 1234 + 5678;
-      return minS + ((seed * 9301 + 49297) % 233280) % (maxS - minS + 1);
-    })
-  );
-
-  // Seeded random function
-  const seededRandom = (seed: number): number => {
-    const x = Math.sin(seed) * 10000;
-    return x - Math.floor(x);
-  };
-
-  // Animation logic for each column
-  useEffect(() => {
-    const animateColumns = () => {
-      columnHeights.forEach((currentHeight, columnIndex) => {
-        const seed = columnIndex * 1234 + Date.now();
-        const delay = columnIndex * 50; // Stagger each column
-        
-        setTimeout(() => {
-          const target = minS + Math.floor(seededRandom(seed) * (maxS - minS + 1));
-          
-          if (target !== currentHeight) {
-            const step = target > currentHeight ? 1 : -1;
-            let current = currentHeight;
-            
-            const tick = () => {
-              if (current === target) {
-                // Hold for random duration
-                const holdTime = 150 + seededRandom(seed + 1000) * 300;
-                setTimeout(() => animateColumns(), holdTime);
-                return;
-              }
-              
-              current += step;
-              setColumnHeights(prev => {
-                const newHeights = [...prev];
-                newHeights[columnIndex] = current;
-                return newHeights;
-              });
-              
-              // Next step
-              setTimeout(tick, 60 + seededRandom(seed + current) * 30);
-            };
-            
-            tick();
-          }
-        }, delay);
-      });
-    };
-
-    const interval = setInterval(animateColumns, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Check for reduced motion preference
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-    
-    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
 
   return (
     <section className="min-h-screen bg-[#0B0C0F] relative overflow-hidden">
@@ -158,36 +78,9 @@ export default function HeroVapi() {
             </div>
           </div>
 
-          {/* Animated Equalizer Visualization - Fixed Vapi Style */}
-          <div className="flex justify-center mb-16" style={{ height: '150px' }}>
-            <div className="flex items-end justify-center gap-1">
-              {Array.from({ length: C }, (_, columnIndex) => {
-                const currentHeight = columnHeights[columnIndex];
-                
-                return (
-                  <div key={columnIndex} className="flex flex-col-reverse gap-1">
-                    {Array.from({ length: S }, (_, segmentIndex) => {
-                      const isVisible = segmentIndex < currentHeight;
-                      const colorIndex = (columnIndex + segmentIndex) % palette.length;
-                      
-                      return (
-                        <div
-                          key={segmentIndex}
-                          style={{ 
-                            backgroundColor: isVisible ? palette[colorIndex] : 'transparent',
-                            width: '20px',
-                            height: '4px',
-                            borderRadius: '2px',
-                            transition: 'all 0.3s ease',
-                            opacity: isVisible ? 1 : 0
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                );
-              })}
-            </div>
+          {/* Animated Dancing Pills - Isolated Component */}
+          <div className="mb-16">
+            <DancingPills />
           </div>
 
           {/* Partner Logo Strip */}
