@@ -29,20 +29,39 @@ export default function DancingPills() {
   }, []);
 
   return (
-    <div className="w-full flex justify-center items-end" style={{ height: '200px', position: 'relative' }}>
-      <div className="flex items-end gap-[2px]">
+    <div style={{ 
+      width: '100%', 
+      height: '200px', 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'flex-end',
+      padding: '20px 0',
+      backgroundColor: 'transparent'
+    }}>
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'flex-end', 
+        gap: '3px',
+        height: '100%'
+      }}>
         {heights.map((height, colIndex) => (
-          <div key={colIndex} className="flex flex-col-reverse gap-[2px]">
+          <div key={colIndex} style={{ 
+            display: 'flex', 
+            flexDirection: 'column-reverse', 
+            gap: '3px',
+            alignItems: 'center'
+          }}>
             {Array.from({ length: height }, (_, pillIndex) => (
               <div
                 key={pillIndex}
-                className="pill"
                 style={{
-                  width: '16px',
-                  height: '4px',
+                  width: '20px',
+                  height: '6px',
                   backgroundColor: colors[(colIndex + pillIndex) % colors.length],
-                  borderRadius: '2px',
-                  transition: 'all 0.3s ease-out'
+                  borderRadius: '3px',
+                  transition: 'all 0.3s ease-out',
+                  boxShadow: `0 0 10px ${colors[(colIndex + pillIndex) % colors.length]}`,
+                  opacity: 1
                 }}
               />
             ))}
