@@ -81,7 +81,17 @@ export default function HeroVapi() {
       </div>
 
       {/* Animated Dancing Pills - Full Width */}
-      <DancingPills />
+      <div style={{ backgroundColor: '#1a1a1a', padding: '40px', width: '100%' }}>
+        <p style={{ color: 'white', textAlign: 'center', marginBottom: '20px' }}>Dancing Pills Area (Debug)</p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '3px' }}>
+          {/* Simple static pills for debugging */}
+          <div style={{ width: '20px', height: '40px', backgroundColor: '#00E5FF', borderRadius: '10px' }}></div>
+          <div style={{ width: '20px', height: '60px', backgroundColor: '#00FF88', borderRadius: '10px' }}></div>
+          <div style={{ width: '20px', height: '30px', backgroundColor: '#FFE500', borderRadius: '10px' }}></div>
+          <div style={{ width: '20px', height: '50px', backgroundColor: '#FF6B00', borderRadius: '10px' }}></div>
+          <div style={{ width: '20px', height: '45px', backgroundColor: '#FF00FF', borderRadius: '10px' }}></div>
+        </div>
+      </div>
 
       {/* Resume container for remaining content */}
       <div className="relative z-10">
