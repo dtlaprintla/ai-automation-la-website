@@ -141,6 +141,19 @@ export default function TestIsolatedPage() {
           {/* Dancing Pills Animation Test */}
           <div style={{ marginTop: '60px' }}>
             <p style={{ color: 'white' }}>Dancing Pills Animation:</p>
+            <p style={{ color: 'yellow' }}>Debug: columnHeights length = {columnHeights.length}, first few values: {columnHeights.slice(0, 5).join(', ')}</p>
+            
+            {/* Simple static test first */}
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ color: 'white' }}>Static pills test:</p>
+              <div style={{ display: 'flex', gap: '3px' }}>
+                <div style={{ width: '16px', height: '4px', backgroundColor: '#00E5FF' }}></div>
+                <div style={{ width: '16px', height: '4px', backgroundColor: '#00FF88' }}></div>
+                <div style={{ width: '16px', height: '4px', backgroundColor: '#FFE500' }}></div>
+              </div>
+            </div>
+
+            {/* Animated version */}
             <div style={{
               width: '100%',
               height: '120px',
@@ -165,10 +178,11 @@ export default function TestIsolatedPage() {
                     style={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '3px',
+                      gap: '2px',
                       alignItems: 'center',
                       height: '100%',
-                      justifyContent: 'flex-end'
+                      justifyContent: 'flex-end',
+                      backgroundColor: columnIndex < 3 ? 'rgba(255,255,255,0.1)' : 'transparent' // Debug: highlight first 3 columns
                     }}
                   >
                     {Array.from({ length: height }, (_, pillIndex) => (
@@ -176,10 +190,10 @@ export default function TestIsolatedPage() {
                         key={pillIndex}
                         style={{
                           width: '16px',
-                          height: '4px',
-                          backgroundColor: colors[(columnIndex + pillIndex * 2) % colors.length],
-                          borderRadius: '2px',
-                          transition: 'all 0.3s ease-out',
+                          height: '6px',
+                          backgroundColor: colors[(columnIndex + pillIndex) % colors.length],
+                          borderRadius: '3px',
+                          border: '1px solid white',
                           opacity: 1
                         }}
                       />
@@ -188,6 +202,7 @@ export default function TestIsolatedPage() {
                 ))}
               </div>
             </div>
+            <p style={{ color: 'yellow' }}>If you see highlighted columns but no pills, the Array.from is the issue</p>
           </div>
         </div>
       </div>
