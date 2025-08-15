@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raw HTML Test</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            padding: 40px;
+            margin: 0;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .pill {
+            width: 30px;
+            height: 8px;
+            display: inline-block;
+            margin: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Raw HTML Test (No React/Next.js)</h1>
+    
+    <p>If you can see colored boxes below, the issue is with React/Next.js:</p>
+    
+    <div>
+        <div class="box" style="background: red;"></div>
+        <div class="box" style="background: green;"></div>
+        <div class="box" style="background: blue;"></div>
+    </div>
+    
+    <p>Dancing pills mockup:</p>
+    <div>
+        <div class="pill" style="background: #00E5FF;"></div>
+        <div class="pill" style="background: #00FF88;"></div>
+        <div class="pill" style="background: #FFE500;"></div>
+        <div class="pill" style="background: #FF6B00;"></div>
+        <div class="pill" style="background: #FF00FF;"></div>
+    </div>
+    
+    <p>Using inline CSS:</p>
+    <div style="width: 100px; height: 50px; background: linear-gradient(to right, red, yellow, green); margin: 10px 0;"></div>
+    
+    <p>Using SVG:</p>
+    <svg width="150" height="50">
+        <rect x="0" y="0" width="50" height="50" fill="#FF0000" />
+        <rect x="50" y="0" width="50" height="50" fill="#00FF00" />
+        <rect x="100" y="0" width="50" height="50" fill="#0000FF" />
+    </svg>
+</body>
+</html>
