@@ -3,34 +3,19 @@
 import { useState, useEffect } from 'react';
 
 export default function DancingPills() {
-  // Vapi-inspired bright colors
-  const colors = [
-    '#00E5FF', '#00FF88', '#FFE500', '#FF6B00', '#FF00FF',
-    '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366',
-    '#00BFFF', '#FFD700', '#FF69B4', '#1EFF00', '#FF4500',
-    '#8BC34A', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5'
-  ];
-
-  const totalColumns = 60;
-  const maxPills = 15;
-  const minPills = 3;
-
-  const [columnHeights, setColumnHeights] = useState(() =>
-    Array(totalColumns).fill(0).map(() => 
-      Math.floor(Math.random() * (maxPills - minPills + 1) + minPills)
-    )
-  );
+  // Vapi's exact approach: 50 bars with SVG
+  const totalBars = 50;
+  const [bars, setBars] = useState(() => Array(totalBars).fill(5));
 
   useEffect(() => {
-    const animateColumns = () => {
-      setColumnHeights(prevHeights =>
-        prevHeights.map(() => {
-          return Math.floor(Math.random() * (maxPills - minPills + 1) + minPills);
-        })
-      );
+    const updateBars = () => {
+      // Vapi's exact formula: Math.random() * volume * 150
+      // We'll simulate volume as a random value between 0.3-1
+      const simulatedVolume = 0.3 + Math.random() * 0.7;
+      setBars(bars.map(() => Math.random() * simulatedVolume * 150));
     };
 
-    const interval = setInterval(animateColumns, 400);
+    const interval = setInterval(updateBars, 150); // Fast updates like Vapi
     return () => clearInterval(interval);
   }, []);
 
@@ -44,47 +29,40 @@ export default function DancingPills() {
       marginLeft: '-50vw',
       marginRight: '-50vw',
       display: 'flex',
-      alignItems: 'flex-end',
+      alignItems: 'center',
       justifyContent: 'center',
       overflow: 'hidden',
       backgroundColor: '#0B0C0F',
       paddingTop: '20px',
       paddingBottom: '20px'
     }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'flex-end',
-        gap: '3px',
-        height: '100%'
-      }}>
-        {columnHeights.map((height, columnIndex) => (
-          <div
-            key={columnIndex}
+      {/* SVG-based animation like Vapi */}
+      <svg 
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 300 100"
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth: '800px'
+        }}
+      >
+        {bars.map((height, index) => (
+          <rect
+            key={index}
+            x={index * 6}
+            y={50 - height/2}
+            width={4}
+            height={Math.max(height, 2)} // Minimum height of 2
+            fill={`hsl(${(index * 7) % 360}, 70%, 60%)`} // Dynamic rainbow colors
+            rx={2} // Rounded corners
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '3px',
-              alignItems: 'center',
-              height: '100%',
-              justifyContent: 'flex-end'
+              animationDelay: `${index * 50}ms`,
+              opacity: 0.9,
+              transition: 'height 0.1s ease-out, y 0.1s ease-out'
             }}
-          >
-            {Array.from({ length: height }, (_, pillIndex) => (
-              <div
-                key={pillIndex}
-                style={{
-                  width: '18px',
-                  height: '5px',
-                  backgroundColor: colors[(columnIndex + pillIndex * 3) % colors.length],
-                  borderRadius: '2.5px',
-                  transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  opacity: 1
-                }}
-              />
-            ))}
-          </div>
+          />
         ))}
-      </div>
+      </svg>
     </div>
   );
 }
