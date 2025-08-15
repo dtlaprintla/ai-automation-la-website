@@ -1,13 +1,6 @@
 export default function TestIsolatedPage() {
   return (
-    <>
-      <style jsx global>{`
-        /* Reset any global styles for this page only */
-        body { margin: 0 !important; padding: 0 !important; }
-        * { box-sizing: border-box !important; }
-      `}</style>
-      
-      <div style={{ 
+    <div style={{ 
         padding: '40px', 
         backgroundColor: 'black !important', 
         minHeight: '100vh',
@@ -113,6 +106,5 @@ export default function TestIsolatedPage() {
           </div>
         </div>
       </div>
-    </>
   );
 }
