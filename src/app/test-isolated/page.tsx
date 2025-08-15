@@ -1,4 +1,37 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function TestIsolatedPage() {
+  // Dancing pills component inline
+  const colors = [
+    '#00E5FF', '#00FF88', '#FFE500', '#FF6B00', '#FF00FF',
+    '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366'
+  ];
+
+  const totalColumns = 30;
+  const maxPills = 10;
+  const minPills = 2;
+
+  const [columnHeights, setColumnHeights] = useState(() =>
+    Array(totalColumns).fill(0).map(() => 
+      Math.floor(Math.random() * (maxPills - minPills + 1) + minPills)
+    )
+  );
+
+  useEffect(() => {
+    const animateColumns = () => {
+      setColumnHeights(prevHeights =>
+        prevHeights.map(() => {
+          return Math.floor(Math.random() * (maxPills - minPills + 1) + minPills);
+        })
+      );
+    };
+
+    const interval = setInterval(animateColumns, 500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div style={{ 
         padding: '40px', 
@@ -102,6 +135,58 @@ export default function TestIsolatedPage() {
                 borderRadius: '5px',
                 border: '1px solid #0000FF'
               }}>&nbsp;</span>
+            </div>
+          </div>
+
+          {/* Dancing Pills Animation Test */}
+          <div style={{ marginTop: '60px' }}>
+            <p style={{ color: 'white' }}>Dancing Pills Animation:</p>
+            <div style={{
+              width: '100%',
+              height: '120px',
+              backgroundColor: '#111',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              padding: '20px',
+              marginTop: '20px',
+              border: '2px solid #333'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                gap: '4px',
+                height: '100%'
+              }}>
+                {columnHeights.map((height, columnIndex) => (
+                  <div
+                    key={columnIndex}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '3px',
+                      alignItems: 'center',
+                      height: '100%',
+                      justifyContent: 'flex-end'
+                    }}
+                  >
+                    {Array.from({ length: height }, (_, pillIndex) => (
+                      <div
+                        key={pillIndex}
+                        style={{
+                          width: '16px',
+                          height: '4px',
+                          backgroundColor: colors[(columnIndex + pillIndex * 2) % colors.length],
+                          borderRadius: '2px',
+                          transition: 'all 0.3s ease-out',
+                          opacity: 1
+                        }}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
