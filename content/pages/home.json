@@ -1,0 +1,147 @@
+{
+  "hero": {
+    "title": "AI That Works While You Sleep",
+    "subtitle": "Done-For-You AI Automation for Los Angeles Businesses",
+    "description": "We build custom AI agents, voice assistants, and workflow automation that work 24/7 so you don't have to.",
+    "cta": {
+      "primary": {
+        "text": "Get Your Free AI Strategy Call",
+        "link": "/contact"
+      },
+      "secondary": {
+        "text": "See How It Works",
+        "link": "#how-it-works"
+      }
+    },
+    "stats": [
+      { "value": "650%", "label": "Average ROI" },
+      { "value": "2-3 Weeks", "label": "Implementation Time" },
+      { "value": "24/7", "label": "AI Working Hours" },
+      { "value": "100+", "label": "Integrations" }
+    ]
+  },
+  "services": {
+    "title": "AI Solutions That Transform Your Business",
+    "subtitle": "From voice agents to workflow automation, we build what you need",
+    "items": [
+      {
+        "id": "voice-agents",
+        "title": "AI Voice Agents",
+        "description": "24/7 phone answering, appointment booking, and customer support in perfect English and Spanish",
+        "icon": "phone",
+        "features": [
+          "Answers in 2 seconds",
+          "Books appointments directly",
+          "Handles FAQs automatically",
+          "Bilingual support"
+        ]
+      },
+      {
+        "id": "chatbots",
+        "title": "Smart Chatbots",
+        "description": "Website and SMS chatbots that convert visitors into customers",
+        "icon": "message-square",
+        "features": [
+          "Lead qualification",
+          "Instant responses",
+          "CRM integration",
+          "Multi-channel support"
+        ]
+      },
+      {
+        "id": "workflow-automation",
+        "title": "Workflow Automation",
+        "description": "Connect all your tools and automate repetitive tasks",
+        "icon": "workflow",
+        "features": [
+          "100+ app integrations",
+          "Custom workflows",
+          "Data synchronization",
+          "Process optimization"
+        ]
+      },
+      {
+        "id": "customer-support",
+        "title": "AI Customer Support",
+        "description": "Intelligent support that learns from every interaction",
+        "icon": "headphones",
+        "features": [
+          "Ticket automation",
+          "Knowledge base AI",
+          "Sentiment analysis",
+          "Multi-language support"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why LA Businesses Choose Us",
+    "items": [
+      {
+        "title": "Local LA Focus",
+        "description": "We understand Vernon manufacturers, DTLA startups, and Beverly Hills service businesses"
+      },
+      {
+        "title": "Done-For-You Service",
+        "description": "We handle everything - setup, training, optimization, and ongoing support"
+      },
+      {
+        "title": "Fast Implementation",
+        "description": "Most systems are live in 2-3 weeks, not months"
+      },
+      {
+        "title": "Proven ROI",
+        "description": "Our clients see average 650% ROI in the first year"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Real Results from Real LA Businesses",
+    "items": [
+      {
+        "id": "dental-office",
+        "name": "Dr. Sarah Chen",
+        "role": "Beverly Hills Dental",
+        "content": "The AI voice agent books 40+ appointments daily and handles all our Spanish-speaking patients perfectly. It's like having 3 extra receptionists.",
+        "metrics": {
+          "improvement": "85% less missed calls",
+          "timeframe": "First month"
+        }
+      },
+      {
+        "id": "restaurant",
+        "name": "Miguel Rodriguez",
+        "role": "DTLA Restaurant Group",
+        "content": "Between reservations, takeout orders, and customer questions, the AI handles everything. Our staff can focus on service instead of the phone.",
+        "metrics": {
+          "improvement": "3x more reservations",
+          "timeframe": "90 days"
+        }
+      },
+      {
+        "id": "manufacturer",
+        "name": "James Park",
+        "role": "Vernon Manufacturing",
+        "content": "The workflow automation connected our inventory, orders, and shipping. What took 4 hours daily now happens automatically.",
+        "metrics": {
+          "improvement": "32 hours/week saved",
+          "timeframe": "Immediate"
+        }
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Put AI to Work?",
+    "subtitle": "Get your custom AI automation roadmap in 30 minutes",
+    "button": {
+      "text": "Schedule Your Free Strategy Call",
+      "link": "/contact"
+    },
+    "features": [
+      "No technical knowledge needed",
+      "See real examples for your industry",
+      "Get honest pricing upfront",
+      "100% free, no obligations"
+    ]
+  }
+}

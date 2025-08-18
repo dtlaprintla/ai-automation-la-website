@@ -96,17 +96,23 @@ All strategic docs are in `/docs/` folder:
 ## 🛠️ Technical Stack
 - **Framework**: Next.js 15.4.6 with TypeScript
 - **Styling**: Tailwind CSS + N8N Dark Theme
-- **CMS**: Sanity CMS (project ID: 94v3467t)
+- **Content Management**: JSON/Markdown files in `/content/` directory
 - **Deployment**: Vercel (auto-deploys from GitHub)
 - **Integrations**: 100+ business tool integrations
 
-### 📝 Content Management (Sanity CMS)
-- **Sanity Studio**: Located in `/sanity_cms/` folder
-- **Project ID**: `94v3467t`
-- **Dataset**: `production`
-- **Local Studio**: Run `cd sanity_cms && npm run dev` to start studio locally
+### 📝 Content Management (JSON/Markdown)
+- **Content Directory**: All content stored in `/content/` folder
+- **Structure**: 
+  - `/content/pages/` - Page-specific content (home.json, about.json, etc.)
+  - `/content/components/` - Reusable component content
+  - `/content/blog/` - Blog posts in markdown
+  - `/content/services/` - Service descriptions
+  - `/content/testimonials/` - Customer testimonials
+  - `/content/integrations/` - Integration details
+  - `/content/site-config.json` - Global site configuration
 - **Content Hooks**: Use `useContent` hook from `/src/hooks/useContent.ts` for fetching
-- **Static Fallbacks**: All content has static fallbacks in `/src/content/` folder
+- **API Routes**: Content served via `/api/content` endpoints
+- **Type Safety**: Use `ContentType` from `/src/lib/content.ts`
 
 ## 📋 Common Commands
 ```bash
@@ -117,8 +123,8 @@ npm run dev          # Start dev server
 npm run build        # Verify build works
 npm run lint         # Check for linting errors
 
-# Sanity CMS
-cd sanity_cms && npm run dev  # Start Sanity Studio locally
+# Content Management
+# All content is now managed via JSON/Markdown files in /content/
 
 # Git workflow
 git add -A
@@ -134,13 +140,11 @@ If Vercel deployments are failing:
    - Undefined variables being used before declaration
    - Scope issues (functions defined in wrong scope)
 
-2. **Sanity CMS issues**:
-   - Ensure no `sanity.config.ts` in root directory (should only be in `/sanity_cms/`)
-   - Check that Sanity imports use correct package names
-
-3. **Content Management**:
-   - Static content fallbacks should exist in `/src/content/` for all pages
-   - `useContent` hook should handle errors gracefully
+2. **Content Management issues**:
+   - Ensure all required JSON files exist in `/content/` directory
+   - Check that content API routes are working correctly
+   - Verify `useContent` hook handles errors gracefully
+   - Content files must be valid JSON format
 
 4. **CSS Override conflicts**:
    - Check `/src/app/vapi-override.css` for conflicting rules
@@ -173,5 +177,21 @@ If Vercel deployments are failing:
 4. **Update**: Update PROJECT_STATUS.md with progress
 5. **Commit**: Git add, commit with message, and push
 6. **End**: Verify all changes are pushed to GitHub
+
+## 🤖 Specialized Subagents
+
+### Design Agent (`/agents/DESIGN-AGENT.md`)
+- Handles all styling and visual design tasks
+- Enforces N8N dark theme consistency
+- Manages animations and interactions
+- Ensures mobile responsiveness
+
+### Content Agent (`/agents/CONTENT-AGENT.md`)
+- Manages JSON/Markdown content files
+- Handles SEO optimization
+- Maintains content voice and tone
+- Manages multilingual content
+
+Use these agents by referencing their documentation when working on specific tasks.
 
 Remember: This is a production website for a real business. Always maintain professional quality and follow the established design system.

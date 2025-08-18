@@ -1,0 +1,22 @@
+{
+  "siteName": "AI Automation LA",
+  "tagline": "Done-For-You AI Automation for Los Angeles Businesses",
+  "description": "We build custom AI agents, voice assistants, and workflow automation that work 24/7 so you don't have to. Serving Vernon, DTLA, Beverly Hills, and all of LA.",
+  "contact": {
+    "phone": "(323) 283-8164",
+    "email": "info@aiautomationla.com",
+    "address": "Los Angeles, CA"
+  },
+  "social": {
+    "twitter": "@aiautomationla",
+    "linkedin": "aiautomationla",
+    "facebook": "aiautomationla"
+  },
+  "branding": {
+    "primaryColor": "#EE4F27",
+    "secondaryColor": "#6B21EF",
+    "accentColor": "#4A9EFF",
+    "darkBackground": "#0E0918",
+    "lightText": "#E8D5FF"
+  }
+}
