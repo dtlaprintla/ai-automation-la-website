@@ -7,7 +7,7 @@ import { Loader2 } from 'lucide-react';
 
 export default function ExampleCMSPage() {
   // This hook fetches content from Sanity CMS
-  const { content, loading, error } = useContent('home');
+  const { data: content, loading, error } = useContent('pages', 'home');
 
   if (loading) {
     return (

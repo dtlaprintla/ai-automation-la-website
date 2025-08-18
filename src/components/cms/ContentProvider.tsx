@@ -1,7 +1,6 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getPageBySlug } from '@/lib/sanity-queries';
 import { PAGE_CONTENT } from '@/content/pages';
 
 interface ContentContextType {
@@ -29,31 +28,8 @@ export function ContentProvider({ children, pageSlug, fallbackContent }: Content
       setLoading(true);
       setError(null);
       
-      // Try to fetch from Sanity first
-      const sanityContent = await getPageBySlug(pageSlug);
-      
-      if (sanityContent) {
-        // Transform Sanity content to match our expected format
-        const transformedContent = {
-          title: sanityContent.title,
-          hero: {
-            title: sanityContent.heroHeadline || sanityContent.title,
-            description: sanityContent.heroDescription,
-            image: sanityContent.heroImage
-          },
-          content: sanityContent.content,
-          seo: {
-            title: sanityContent.metaTitle || sanityContent.title,
-            description: sanityContent.metaDescription
-          },
-          lastUpdated: sanityContent._updatedAt
-        };
-        
-        setContent(transformedContent);
-      } else {
-        // Fallback to static content
-        setContent(fallbackContent || getStaticFallback(pageSlug));
-      }
+      // Use static content directly
+      setContent(fallbackContent || getStaticFallback(pageSlug));
     } catch (err) {
       console.error('Failed to fetch content:', err);
       setError('Failed to load content');
