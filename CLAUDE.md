@@ -13,6 +13,7 @@ This is the AI Automation LA website - a Done-For-You AI automation agency servi
 - **THIRD**: Review relevant docs in `/docs/` folder based on the task
 
 ### 2. Global Styling Rules
+- **ALWAYS** use shadcn/ui components - NEVER create UI elements from scratch
 - **ALWAYS** use the N8N dark theme CSS variables from `src/styles/global-n8n-theme.css`
 - **NEVER** use hardcoded colors like `#0E0918` or `bg-gray-50`
 - **USE THESE** CSS variables instead:
@@ -95,6 +96,7 @@ All strategic docs are in `/docs/` folder:
 
 ## 🛠️ Technical Stack
 - **Framework**: Next.js 15.4.6 with TypeScript
+- **UI Components**: shadcn/ui (customized for dark theme)
 - **Styling**: Tailwind CSS + N8N Dark Theme
 - **Content Management**: JSON/Markdown files in `/content/` directory
 - **Deployment**: Vercel (auto-deploys from GitHub)
