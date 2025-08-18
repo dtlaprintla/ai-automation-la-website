@@ -9,9 +9,9 @@ export default function TestIsolatedPage() {
     '#7B61FF', '#00FFF0', '#FF0055', '#00FF00', '#FF3366'
   ];
 
-  const totalColumns = 30;
-  const maxPills = 10;
-  const minPills = 2;
+  const totalColumns = 60;
+  const maxPills = 20;
+  const minPills = 3;
 
   const [columnHeights, setColumnHeights] = useState(() =>
     Array(totalColumns).fill(0).map(() => 
@@ -153,23 +153,23 @@ export default function TestIsolatedPage() {
               </div>
             </div>
 
-            {/* Animated version */}
+            {/* Animated version - Full Section */}
             <div style={{
               width: '100%',
-              height: '120px',
-              backgroundColor: '#111',
-              borderRadius: '8px',
+              height: '400px',
+              backgroundColor: '#0B0C0F',
+              borderRadius: '12px',
               display: 'flex',
               alignItems: 'flex-end',
               justifyContent: 'center',
-              padding: '20px',
+              padding: '40px',
               marginTop: '20px',
-              border: '2px solid #333'
+              border: '2px solid #1a1a1a'
             }}>
               <div style={{
                 display: 'flex',
                 alignItems: 'flex-end',
-                gap: '4px',
+                gap: '6px',
                 height: '100%'
               }}>
                 {columnHeights.map((height, columnIndex) => (
@@ -178,21 +178,20 @@ export default function TestIsolatedPage() {
                     style={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '2px',
+                      gap: '3px',
                       alignItems: 'center',
                       height: '100%',
                       justifyContent: 'flex-end',
-                      backgroundColor: columnIndex < 3 ? 'rgba(255,255,255,0.1)' : 'transparent' // Debug: highlight first 3 columns
                     }}
                   >
                     {Array.from({ length: height }, (_, pillIndex) => (
                       <div
                         key={pillIndex}
                         style={{
-                          width: '16px',
-                          height: '6px',
+                          width: '24px',
+                          height: '8px',
                           backgroundColor: colors[(columnIndex + pillIndex) % colors.length],
-                          borderRadius: '3px',
+                          borderRadius: '4px',
                           opacity: 1,
                           display: 'block'
                         }}
