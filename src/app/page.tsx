@@ -2,7 +2,7 @@
 
 import { useContent } from '@/hooks/useContent';
 import Header from '@/components/layout/Header';
-import HeroVapi from '@/components/sections/HeroVapi';
+import DancingPills from '@/components/ui/DancingPills';
 import Link from 'next/link';
 import { ArrowRight, Loader2 } from 'lucide-react';
 
@@ -45,32 +45,139 @@ export default function HomePageVapi() {
   return (
     <div className="min-h-screen bg-[#0B0C0F] text-[#F3F1E8]">
       <Header />
-      <HeroVapi />
+      
+      {/* Hero Section with JSON Content */}
+      <section className="min-h-screen bg-[#0B0C0F] relative overflow-hidden">
+        {/* Dotted Grid Background */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #17181F 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }}
+        />
+
+        {/* Main Content */}
+        <div className="relative z-10 pt-20 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Hero Text - Using JSON Content */}
+            <div className="text-center mb-16">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#F3F1E8] mb-12 tracking-tight leading-none" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
+                {content?.hero?.title || 'Voice AI agents'}
+                <br />
+                {content?.hero?.subtitle || 'for LA businesses'}
+              </h1>
+              
+              {/* Description */}
+              {content?.hero?.description && (
+                <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto">
+                  {content.hero.description}
+                </p>
+              )}
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                <Link href={content?.hero?.cta?.primary?.link || '/contact'}>
+                  <button className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-8 py-3 rounded-full font-bold transition-colors duration-200 flex items-center uppercase tracking-wide">
+                    {content?.hero?.cta?.primary?.text || 'GET STARTED'}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                </Link>
+                <Link href={content?.hero?.cta?.secondary?.link || '/pricing'}>
+                  <button className="border border-[#2A2B31] bg-[#0E0F12] hover:border-[#52EDBC] text-[#F3F1E8] px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center uppercase tracking-wide">
+                    {content?.hero?.cta?.secondary?.text || 'VIEW PRICING'}
+                    <div className="flex items-center gap-1 ml-2">
+                      <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse"></div>
+                      <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-1 h-1 bg-[#F3F1E8] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </button>
+                </Link>
+              </div>
+
+              {/* Stats from JSON */}
+              {content?.hero?.stats && (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
+                  {content.hero.stats.map((stat: any, index: number) => (
+                    <div key={index} className="text-center">
+                      <div className="text-3xl md:text-4xl font-bold text-[#52EDBC] mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Dancing Pills Animation */}
+            <div className="flex justify-center items-center">
+              <DancingPills />
+            </div>
+            
+            {/* Client Logos */}
+            <div className="mt-20">
+              <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">TRUSTED BY</p>
+              <div className="flex justify-center items-center gap-8 flex-wrap opacity-60">
+                {['ELLIPSIS', 'NYT', 'intuit', 'Delphi', 'Housecall Pro', 'luma'].map((logo, index) => (
+                  <div key={index} className="text-gray-400 font-medium text-sm">
+                    {logo}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* API Section - Keep original design, optionally use JSON content for text */}
       <section className="py-20 bg-[#0E0E13]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-2">
-            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">AUTOMATION</p>
+            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">SERVICES</p>
             <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
-              {content?.services?.title || 'Making business automation'}
-              <br />
-              {content?.services?.title ? '' : 'simple and accessible.'}
+              {content?.services?.title || 'AI Solutions That Transform Your Business'}
             </h2>
             
-            {/* Cream highlight sections like Vapi */}
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
-              <div className="vapi-cream-text">
-                {content?.benefits?.items?.[1]?.description || 'Teams at LA startups to Fortune 500 companies deploy automation workflows on the AI Automation LA platform.'}
-              </div>
-            </div>
-            
+            {/* Service subtitle */}
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
               <div className="vapi-cream-text">
-                {content?.services?.subtitle || 'The most configurable API to build leading automation products and scale business operations.'}
+                {content?.services?.subtitle || 'From voice agents to workflow automation, we build what you need'}
               </div>
             </div>
           </div>
+
+          {/* Services Grid */}
+          {content?.services?.items && (
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {content.services.items.slice(0, 4).map((service: any) => (
+                <div key={service.id} className="bg-[#111827] rounded-lg p-8 border border-gray-800 hover:border-gray-700 transition-all duration-200">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#52EDBC]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl">
+                        {service.icon === 'phone' ? '📞' : 
+                         service.icon === 'message-square' ? '💬' : 
+                         service.icon === 'workflow' ? '⚡' : 
+                         service.icon === 'headphones' ? '🎧' : '🤖'}
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-medium text-white mb-3">{service.title}</h3>
+                      <p className="text-gray-400 mb-4">{service.description}</p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature: string, idx: number) => (
+                          <li key={idx} className="flex items-center text-gray-300">
+                            <span className="text-[#52EDBC] mr-2">✓</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Security Badges */}
           <div className="flex justify-center items-center gap-6 mb-16">
@@ -224,6 +331,55 @@ async function startCall() {
           </div>
         </div>
       </section>
+
+      {/* Benefits Section */}
+      {content?.benefits && (
+        <section className="py-20 bg-[#0B0C0F]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-light text-white text-center mb-16">
+              {content.benefits.title}
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              {content.benefits.items.map((benefit: any, index: number) => (
+                <div key={index} className="text-center">
+                  <h3 className="text-2xl font-medium text-white mb-4">{benefit.title}</h3>
+                  <p className="text-gray-400 text-lg">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Testimonials Section */}
+      {content?.testimonials && (
+        <section className="py-20 bg-[#0E0E13]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-light text-white text-center mb-16">
+              {content.testimonials.title}
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {content.testimonials.items.map((testimonial: any) => (
+                <div key={testimonial.id} className="bg-[#111827] rounded-lg p-8 border border-gray-800">
+                  <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-white font-medium">{testimonial.name}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[#52EDBC] font-bold">{testimonial.metrics.improvement}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.metrics.timeframe}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Integrations Section */}
       <section className="py-20 bg-[#0E0E13]">
