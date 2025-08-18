@@ -193,8 +193,8 @@ export default function TestIsolatedPage() {
                           height: '6px',
                           backgroundColor: colors[(columnIndex + pillIndex) % colors.length],
                           borderRadius: '3px',
-                          border: '1px solid white',
-                          opacity: 1
+                          opacity: 1,
+                          display: 'block'
                         }}
                       />
                     ))}
@@ -203,6 +203,22 @@ export default function TestIsolatedPage() {
               </div>
             </div>
             <p style={{ color: 'yellow' }}>If you see highlighted columns but no pills, the Array.from is the issue</p>
+            
+            {/* Debug: Show the exact colors being used */}
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ color: 'white' }}>Colors being used:</p>
+              <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap' }}>
+                {colors.map((color, i) => (
+                  <div key={i} style={{
+                    width: '30px',
+                    height: '30px',
+                    backgroundColor: color,
+                    border: '1px solid white',
+                    borderRadius: '4px'
+                  }} title={color}></div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
