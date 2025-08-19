@@ -112,12 +112,12 @@ export default function Header() {
                 
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#10B981] transition-colors"
+                        className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#10B981] transition-colors"
                       >
                         {dropdownItem.name}
                       </Link>
