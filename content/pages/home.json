@@ -19,6 +19,38 @@
       { "value": "2-3 Weeks", "label": "Implementation Time" },
       { "value": "24/7", "label": "AI Working Hours" },
       { "value": "100+", "label": "Integrations" }
+    ],
+    "clientLogos": [
+      { 
+        "name": "ELLIPSIS HEALTH", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=ELLIPSIS",
+        "url": "https://ellipsishealth.com"
+      },
+      { 
+        "name": "New York Times", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=NYT",
+        "url": "https://nytimes.com"
+      },
+      { 
+        "name": "Intuit", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=intuit",
+        "url": "https://intuit.com"
+      },
+      { 
+        "name": "Delphi", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=Delphi",
+        "url": "https://delphi.com"
+      },
+      { 
+        "name": "Housecall Pro", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=Housecall+Pro",
+        "url": "https://housecallpro.com"
+      },
+      { 
+        "name": "Luma", 
+        "logo": "https://via.placeholder.com/150x50/1a1a1a/666666?text=luma",
+        "url": "https://lu.ma"
+      }
     ]
   },
   "services": {
@@ -135,6 +167,64 @@
           "improvement": "32 hours/week saved",
           "timeframe": "Immediate"
         }
+      }
+    ]
+  },
+  "automationSection": {
+    "label": "SERVICES",
+    "title": "AI Solutions That Transform Your Business",
+    "subtitle": "From voice agents to workflow automation, we build what you need",
+    "securityBadges": [
+      { "name": "TypeScript", "icon": "🔷" },
+      { "name": "Python", "icon": "🐍" },
+      { "name": "cURL", "icon": "🌊" },
+      { "name": "React (web SDK)", "icon": "⚛️" }
+    ],
+    "codeExample": {
+      "language": "javascript",
+      "filename": "voice-automation.js",
+      "code": "# npm install @vapi-ai/server-sdk\nimport { VapiClient } from '@vapi-ai/server-sdk';\n\nconst vapi = new VapiClient({\n    token: 'YOUR_PRIVATE_API_KEY' // Get your private api key from the dashboard\n});\n\nasync function startCall() {\n    const call = await vapi.calls.create({\n        phoneNumber: '+1234567890', // Create a free phone number in the dashboard\n        customer: { number: '+0987654321' }, // Your customer's phone number\n        assistant: {\n            model: {\n                provider: 'openai',\n                model: 'gpt-3.5-turbo',\n                messages: [\n                    {\n                        role: 'system',\n                        content: 'You are a helpful AI assistant. Keep your responses concise and friendly.'\n                    }\n                ]\n            }\n        }\n    });\n}"
+    }
+  },
+  "integrations": {
+    "label": "INTEGRATIONS", 
+    "title": "Integrate with more",
+    "subtitle": "than 100+ apps in a snap.",
+    "logos": [
+      { "name": "Eleven Labs", "icon": "🎙️", "url": "https://elevenlabs.io" },
+      { "name": "Assembly AI", "icon": "🤖", "url": "https://assemblyai.com" },
+      { "name": "Play.ht", "icon": "🎵", "url": "https://play.ht" },
+      { "name": "Anthropic", "icon": "🧠", "url": "https://anthropic.com" },
+      { "name": "OpenAI", "icon": "🤖", "url": "https://openai.com" },
+      { "name": "Groq", "icon": "⚡", "url": "https://groq.com" },
+      { "name": "Together AI", "icon": "🤝", "url": "https://together.ai" },
+      { "name": "Deepgram", "icon": "🎧", "url": "https://deepgram.com" },
+      { "name": "Google Cloud", "icon": "☁️", "url": "https://cloud.google.com" },
+      { "name": "Microsoft", "icon": "🪟", "url": "https://microsoft.com" },
+      { "name": "AWS", "icon": "☁️", "url": "https://aws.amazon.com" },
+      { "name": "Notion", "icon": "📝", "url": "https://notion.so" },
+      { "name": "Zapier", "icon": "⚡", "url": "https://zapier.com" }
+    ]
+  },
+  "howItWorks": {
+    "label": "HOW IT WORKS",
+    "title": "Try in minutes.",
+    "subtitle": "Deploy in days.",
+    "steps": [
+      {
+        "number": "001",
+        "title": "Analyze Process",
+        "description": "We identify bottlenecks and repetitive tasks in your workflow"
+      },
+      {
+        "number": "002", 
+        "title": "Build Automation",
+        "description": "Create custom workflows with your existing tools and systems"
+      },
+      {
+        "number": "003",
+        "title": "Deploy & Optimize",
+        "description": "Launch automations and continuously improve performance with data"
       }
     ]
   },

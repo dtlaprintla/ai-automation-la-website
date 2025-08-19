@@ -6,31 +6,6 @@ import DancingPills from '@/components/ui/DancingPills';
 import Link from 'next/link';
 import { ArrowRight, Loader2 } from 'lucide-react';
 
-// Security badges
-const securityBadges = [
-  { name: 'TypeScript', icon: '🔷' },
-  { name: 'Python', icon: '🐍' },
-  { name: 'cURL', icon: '🌊' },
-  { name: 'React (web SDK)', icon: '⚛️' }
-];
-
-// Integration logos
-const integrations = [
-  { name: 'Eleven Labs', icon: '🎙️' },
-  { name: 'Assembly AI', icon: '🤖' },
-  { name: 'Play.ht', icon: '🎵' },
-  { name: 'Anthropic', icon: '🧠' },
-  { name: 'OpenAI', icon: '🤖' },
-  { name: 'Groq', icon: '⚡' },
-  { name: 'Together AI', icon: '🤝' },
-  { name: 'Deepgram', icon: '🎧' },
-  { name: 'Google Cloud', icon: '☁️' },
-  { name: 'Microsoft', icon: '🪟' },
-  { name: 'AWS', icon: '☁️' },
-  { name: 'Notion', icon: '📝' },
-  { name: 'Zapier', icon: '⚡' }
-];
-
 export default function HomePageVapi() {
   const { data: content, loading, error } = useContent('pages', 'home');
 
@@ -62,11 +37,12 @@ export default function HomePageVapi() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero Text - Using JSON Content */}
             <div className="text-center mb-16">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#F3F1E8] mb-12 tracking-tight leading-none" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#F3F1E8] mb-6 tracking-tight leading-none" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
                 {content?.hero?.title || 'Voice AI agents'}
-                <br />
-                {content?.hero?.subtitle || 'for LA businesses'}
               </h1>
+              <p className="text-4xl md:text-5xl lg:text-5xl font-light text-[#F3F1E8] mb-12 tracking-tight" style={{ fontFamily: 'ui-rounded, system-ui, sans-serif' }}>
+                {content?.hero?.subtitle || 'for LA businesses'}
+              </p>
               
               {/* Description */}
               {content?.hero?.description && (
@@ -118,12 +94,30 @@ export default function HomePageVapi() {
             {/* Client Logos */}
             <div className="mt-20">
               <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">TRUSTED BY</p>
-              <div className="flex justify-center items-center gap-8 flex-wrap opacity-60">
-                {['ELLIPSIS', 'NYT', 'intuit', 'Delphi', 'Housecall Pro', 'luma'].map((logo, index) => (
-                  <div key={index} className="text-gray-400 font-medium text-sm">
-                    {logo}
-                  </div>
-                ))}
+              <div className="flex justify-center items-center gap-8 flex-wrap">
+                {content?.hero?.clientLogos ? (
+                  content.hero.clientLogos.map((client: any, index: number) => (
+                    <a
+                      key={index}
+                      href={client.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-60 hover:opacity-100 transition-opacity duration-200"
+                    >
+                      <img 
+                        src={client.logo} 
+                        alt={client.name}
+                        className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-200"
+                      />
+                    </a>
+                  ))
+                ) : (
+                  ['ELLIPSIS', 'NYT', 'intuit', 'Delphi', 'Housecall Pro', 'luma'].map((logo, index) => (
+                    <div key={index} className="text-gray-400 font-medium text-sm">
+                      {logo}
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
@@ -192,17 +186,19 @@ export default function HomePageVapi() {
           )}
 
           {/* Security Badges */}
-          <div className="flex justify-center items-center gap-6 mb-16">
-            {securityBadges.map((badge, index) => (
-              <button
-                key={index}
-                className="bg-gray-800/50 hover:bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 flex items-center gap-2 transition-all duration-200"
-              >
-                <span>{badge.icon}</span>
-                {badge.name}
-              </button>
-            ))}
-          </div>
+          {content?.automationSection?.securityBadges && (
+            <div className="flex justify-center items-center gap-6 mb-16">
+              {content.automationSection.securityBadges.map((badge: any, index: number) => (
+                <button
+                  key={index}
+                  className="bg-gray-800/50 hover:bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 flex items-center gap-2 transition-all duration-200"
+                >
+                  <span>{badge.icon}</span>
+                  {badge.name}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Code Example */}
           <div className="max-w-4xl mx-auto">
@@ -222,29 +218,17 @@ export default function HomePageVapi() {
                 </div>
               </div>
               <pre className="p-6 text-sm text-gray-300 overflow-x-auto">
-                <code>{`# npm install @vapi-ai/server-sdk
+                <code>{content?.automationSection?.codeExample?.code || `# npm install @vapi-ai/server-sdk
 import { VapiClient } from '@vapi-ai/server-sdk';
 
 const vapi = new VapiClient({
-    token: 'YOUR_PRIVATE_API_KEY' // Get your private api key from the dashboard
+    token: 'YOUR_PRIVATE_API_KEY'
 });
 
 async function startCall() {
     const call = await vapi.calls.create({
-        phoneNumber: '+1234567890', // Create a free phone number in the dashboard
-        customer: { number: '+0987654321' }, // Your customer's phone number
-        assistant: {
-            model: {
-                provider: 'openai',
-                model: 'gpt-3.5-turbo',
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are a helpful AI assistant. Keep your responses concise and friendly.'
-                    }
-                ]
-            }
-        }
+        phoneNumber: '+1234567890',
+        customer: { number: '+0987654321' }
     });
 }`}</code>
               </pre>
@@ -403,84 +387,67 @@ async function startCall() {
       )}
 
       {/* Integrations Section */}
-      <section className="py-20 bg-[#0E0E13]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">INTEGRATIONS</p>
-            <h2 className="text-4xl md:text-5xl font-light text-white">
-              Integrate with more
-              <br />
-              than {content?.hero?.stats?.[3]?.value || '40+'}+ apps in a snap.
-            </h2>
-          </div>
+      {content?.integrations && (
+        <section className="py-20 bg-[#0E0E13]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">{content.integrations.label}</p>
+              <h2 className="text-4xl md:text-5xl font-light text-white">
+                {content.integrations.title}
+                <br />
+                {content.integrations.subtitle}
+              </h2>
+            </div>
 
-          {/* Integration Logos Grid */}
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
-              {integrations.map((integration, index) => (
-                <div
-                  key={index}
-                  className="w-16 h-16 bg-gray-900/50 rounded-lg flex items-center justify-center hover:bg-gray-800/50 transition-all duration-200 cursor-pointer"
-                >
-                  <span className="text-2xl">{integration.icon}</span>
+            {/* Integration Logos Grid */}
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
+                {content.integrations.logos.map((integration: any, index: number) => (
+                  <a
+                    key={index}
+                    href={integration.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 bg-gray-900/50 rounded-lg flex items-center justify-center hover:bg-gray-800/50 transition-all duration-200 cursor-pointer"
+                  >
+                    <span className="text-2xl">{integration.icon}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* How It Works Section */}
+      {content?.howItWorks && (
+        <section className="py-20 bg-[#0E0E13] border-t border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">{content.howItWorks.label}</p>
+              <h2 className="text-4xl md:text-5xl font-light text-white">
+                {content.howItWorks.title}
+                <br />
+                {content.howItWorks.subtitle}
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              {content.howItWorks.steps.map((step: any, index: number) => (
+                <div key={index}>
+                  <div className="w-16 h-16 bg-gray-800 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-white text-xl font-light">{step.number}</span>
+                  </div>
+                  <h3 className="text-xl text-white mb-4">{step.title}</h3>
+                  <p className="text-gray-400">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-20 bg-[#0E0E13] border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-gray-500 text-sm uppercase tracking-wider mb-6">HOW IT WORKS</p>
-            <h2 className="text-4xl md:text-5xl font-light text-white">
-              Try in minutes.
-              <br />
-              Deploy in {content?.hero?.stats?.[1]?.value || 'days'}.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 text-center">
-            <div>
-              <div className="w-16 h-16 bg-gray-800 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-xl font-light">001</span>
-              </div>
-              <h3 className="text-xl text-white mb-4">Analyze Process</h3>
-              <p className="text-gray-400">
-                We identify bottlenecks and
-                <br />
-                repetitive tasks in your workflow
-              </p>
-            </div>
-            
-            <div>
-              <div className="w-16 h-16 bg-gray-800 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-xl font-light">002</span>
-              </div>
-              <h3 className="text-xl text-white mb-4">Build Automation</h3>
-              <p className="text-gray-400">
-                Create custom workflows with
-                <br />
-                your existing tools and systems
-              </p>
-            </div>
-            
-            <div>
-              <div className="w-16 h-16 bg-gray-800 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-xl font-light">003</span>
-              </div>
-              <h3 className="text-xl text-white mb-4">Deploy & Optimize</h3>
-              <p className="text-gray-400">
-                Launch automations and continuously
-                <br />
-                improve performance with data
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA Section - Use JSON CTA content */}
       <section className="py-20 bg-[#0E0E13] border-t border-gray-800">
