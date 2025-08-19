@@ -21,18 +21,13 @@ export default function DancingPills() {
 
   return (
     <div style={{
-      width: '100vw',
+      width: '100%',
       height: '160px',
-      position: 'relative',
-      left: '50%',
-      right: '50%',
-      marginLeft: '-50vw',
-      marginRight: '-50vw',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       overflow: 'hidden',
-      backgroundColor: '#0B0C0F',
+      backgroundColor: 'transparent',
       paddingTop: '20px',
       paddingBottom: '20px'
     }}>

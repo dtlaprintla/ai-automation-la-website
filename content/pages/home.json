@@ -3,6 +3,7 @@
     "title": "Empower AI Into Your Business",
     "subtitle": "Fully Done-For-You & Managed AI Automations for Los Angeles Businesses",
     "description": "We bring AI agents, voice assistants, and workflow automation that work 24/7 so you don't have to.",
+    "backgroundImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
     "cta": {
       "primary": {
         "text": "Don't Get Left Behind",
@@ -29,6 +30,7 @@
         "title": "AI Voice Agents",
         "description": "24/7 phone answering, appointment booking, and customer support in perfect English and Spanish",
         "icon": "phone",
+        "image": "https://images.unsplash.com/photo-1608003615516-329640d00739?q=80&w=800&auto=format&fit=crop",
         "features": [
           "Answers in 2 seconds",
           "Books appointments directly",
@@ -41,6 +43,7 @@
         "title": "Smart Chatbots",
         "description": "Website and SMS chatbots that convert visitors into customers",
         "icon": "message-square",
+        "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=800&auto=format&fit=crop",
         "features": [
           "Lead qualification",
           "Instant responses",
@@ -53,6 +56,7 @@
         "title": "Workflow Automation",
         "description": "Connect all your tools and automate repetitive tasks",
         "icon": "workflow",
+        "image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop",
         "features": [
           "100+ app integrations",
           "Custom workflows",
@@ -65,6 +69,7 @@
         "title": "AI Customer Support",
         "description": "Intelligent support that learns from every interaction",
         "icon": "headphones",
+        "image": "https://images.unsplash.com/photo-1553775282-20af80779df7?q=80&w=800&auto=format&fit=crop",
         "features": [
           "Ticket automation",
           "Knowledge base AI",
@@ -102,6 +107,7 @@
         "id": "dental-office",
         "name": "Dr. Sarah Chen",
         "role": "Beverly Hills Dental",
+        "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=150&auto=format&fit=crop&ixlib=rb-4.0.3",
         "content": "The AI voice agent books 40+ appointments daily and handles all our Spanish-speaking patients perfectly. It's like having 3 extra receptionists.",
         "metrics": {
           "improvement": "85% less missed calls",
@@ -111,7 +117,8 @@
       {
         "id": "restaurant",
         "name": "Miguel Rodriguez",
-        "role": "DTLA Restaurant Group",
+        "role": "DTLA Restaurant Group", 
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop&ixlib=rb-4.0.3",
         "content": "Between reservations, takeout orders, and customer questions, the AI handles everything. Our staff can focus on service instead of the phone.",
         "metrics": {
           "improvement": "3x more reservations",
@@ -122,6 +129,7 @@
         "id": "manufacturer",
         "name": "James Park",
         "role": "Vernon Manufacturing",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop&ixlib=rb-4.0.3",
         "content": "The workflow automation connected our inventory, orders, and shipping. What took 4 hours daily now happens automatically.",
         "metrics": {
           "improvement": "32 hours/week saved",

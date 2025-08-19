@@ -151,27 +151,39 @@ export default function HomePageVapi() {
           {content?.services?.items && (
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               {content.services.items.slice(0, 4).map((service: any) => (
-                <div key={service.id} className="bg-[#111827] rounded-lg p-8 border border-gray-800 hover:border-gray-700 transition-all duration-200">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#52EDBC]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">
-                        {service.icon === 'phone' ? '📞' : 
-                         service.icon === 'message-square' ? '💬' : 
-                         service.icon === 'workflow' ? '⚡' : 
-                         service.icon === 'headphones' ? '🎧' : '🤖'}
-                      </span>
+                <div key={service.id} className="bg-[#111827] rounded-lg overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-200">
+                  {/* Service Image */}
+                  {service.image && (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-medium text-white mb-3">{service.title}</h3>
-                      <p className="text-gray-400 mb-4">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature: string, idx: number) => (
-                          <li key={idx} className="flex items-center text-gray-300">
-                            <span className="text-[#52EDBC] mr-2">✓</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+                  )}
+                  <div className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-[#52EDBC]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">
+                          {service.icon === 'phone' ? '📞' : 
+                           service.icon === 'message-square' ? '💬' : 
+                           service.icon === 'workflow' ? '⚡' : 
+                           service.icon === 'headphones' ? '🎧' : '🤖'}
+                        </span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-medium text-white mb-3">{service.title}</h3>
+                        <p className="text-gray-400 mb-4">{service.description}</p>
+                        <ul className="space-y-2">
+                          {service.features.map((feature: string, idx: number) => (
+                            <li key={idx} className="flex items-center text-gray-300">
+                              <span className="text-[#52EDBC] mr-2">✓</span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -365,9 +377,18 @@ async function startCall() {
                 <div key={testimonial.id} className="bg-[#111827] rounded-lg p-8 border border-gray-800">
                   <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
                   <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-white font-medium">{testimonial.name}</p>
-                      <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                    <div className="flex items-center gap-3">
+                      {testimonial.avatar && (
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name}
+                          className="w-12 h-12 rounded-full object-cover"
+                        />
+                      )}
+                      <div>
+                        <p className="text-white font-medium">{testimonial.name}</p>
+                        <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                      </div>
                     </div>
                     <div className="text-right">
                       <p className="text-[#52EDBC] font-bold">{testimonial.metrics.improvement}</p>
