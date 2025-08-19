@@ -1,3 +1,6 @@
+'use client';
+
+import { useContent } from '@/hooks/useContent';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -11,245 +14,248 @@ import {
   CheckCircle,
   Zap,
   Star,
-  ArrowRight
+  ArrowRight,
+  Loader2
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: `Contact Us | Get Your Free AI Automation Plan | ${BRAND.name}`,
-  description: "Get a free AI automation consultation for your Los Angeles business. We'll analyze your current processes and create a custom automation roadmap within 24 hours.",
-  keywords: [
-    "AI automation consultation Los Angeles",
-    "free AI business analysis LA",  
-    "automation consultation Vernon CA",
-    "AI implementation planning Los Angeles",
-    "business automation assessment LA",
-    "done for you automation consultation"
-  ].join(", "),
-  alternates: {
-    canonical: `https://${BRAND.domain}/contact`,
-  },
-};
-
-// JSON-LD for Contact Page
-const contactJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "@id": `https://${BRAND.domain}/contact#page`,
-  "name": "Contact AI Automation LA",
-  "description": "Get a free AI automation consultation for your Los Angeles business",
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": BRAND.name,
-    "telephone": BRAND.phone,
-    "email": BRAND.email,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": BRAND.address.street,
-      "addressLocality": BRAND.address.city,
-      "addressRegion": BRAND.address.state,
-      "postalCode": BRAND.address.zip
-    }
-  }
-};
-
 export default function ContactPage() {
+  const { data: content, loading, error } = useContent('pages', 'contact');
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-n8n-bg-primary flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-brand-primary" />
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="min-h-screen bg-n8n-bg-primary">
+        <Header />
+        <div className="pt-32 pb-20 text-center">
+          <h1 className="text-2xl text-red-500">Content Loading Error</h1>
+          <p className="text-n8n-text-secondary mt-2">Please refresh the page</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-n8n-bg-primary">
+    <div className="min-h-screen bg-n8n-bg-primary">
       <Header />
-      
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
-      />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-[#10B981]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
-              <Zap className="w-5 h-5 mr-2" />
-              Free AI Automation Consultation
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Get Your Custom
-              <span className="block text-[#10B981]">AI Automation Plan</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
-              Tell us about your business and we'll create a <strong>free custom automation roadmap</strong> 
-              showing exactly how AI can grow your LA business within <strong>24 hours</strong>.
-            </p>
-            
-            {/* Value Props */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
-                <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-3" />
-                <div className="text-lg font-semibold mb-2">Free 24-Hour Response</div>
-                <p className="text-white/80">Custom automation plan delivered within 24 hours</p>
-              </div>
-              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
-                <Star className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-                <div className="text-lg font-semibold mb-2">LA Business Focus</div>
-                <p className="text-white/80">Specialists in LA market with on-site visits available</p>
-              </div>
-              <div className="bg-n8n-bg-secondary/10 backdrop-blur-md border border-white/20 rounded-lg p-6">
-                <Zap className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                <div className="text-lg font-semibold mb-2">Done-For-You Service</div>
-                <p className="text-white/80">We handle everything - no technical knowledge required</p>
-              </div>
-            </div>
+      <section className="pt-32 pb-20 bg-n8n-bg-primary relative overflow-hidden">
+        {content.hero.backgroundImage && (
+          <div className="absolute inset-0">
+            <img 
+              src={content.hero.backgroundImage} 
+              alt={content.hero.title}
+              className="w-full h-full object-cover opacity-10"
+            />
           </div>
+        )}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-light text-n8n-text-primary mb-6 tracking-tight">
+            {content.hero.title}
+          </h1>
+          <p className="text-2xl md:text-3xl text-brand-primary mb-8 font-light">
+            {content.hero.subtitle}
+          </p>
+          <p className="text-xl text-n8n-text-secondary mb-12 max-w-4xl mx-auto">
+            {content.hero.description}
+          </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-n8n-bg-secondary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-4">
-              Start Your Automation Journey
+            <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-6">
+              {content.form.title}
             </h2>
-            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
-              Complete the form below and we'll analyze your business to identify the highest-impact 
-              automation opportunities for immediate ROI.
+            <p className="text-xl text-n8n-text-secondary">
+              {content.form.subtitle}
             </p>
           </div>
           
-          <ContactForm />
+          <div className="bg-n8n-bg-primary rounded-lg p-8 border border-n8n-border">
+            <form className="space-y-6">
+              {content.form.fields.map((field: any, index: number) => (
+                <div key={field.name}>
+                  <label className="block text-sm font-medium text-n8n-text-primary mb-2">
+                    {field.label}
+                    {field.required && <span className="text-brand-primary ml-1">*</span>}
+                  </label>
+                  
+                  {field.type === 'textarea' ? (
+                    <textarea
+                      name={field.name}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-n8n-bg-secondary border border-n8n-border rounded-lg text-n8n-text-primary placeholder-n8n-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                    />
+                  ) : field.type === 'select' ? (
+                    <select
+                      name={field.name}
+                      required={field.required}
+                      className="w-full px-4 py-3 bg-n8n-bg-secondary border border-n8n-border rounded-lg text-n8n-text-primary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                    >
+                      <option value="">Select {field.label}</option>
+                      {field.options?.map((option: string, idx: number) => (
+                        <option key={idx} value={option}>{option}</option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type={field.type}
+                      name={field.name}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      className="w-full px-4 py-3 bg-n8n-bg-secondary border border-n8n-border rounded-lg text-n8n-text-primary placeholder-n8n-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                    />
+                  )}
+                </div>
+              ))}
+              
+              <button
+                type="submit"
+                className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-medium py-4 px-6 rounded-lg transition-colors duration-200"
+              >
+                {content.form.submitText}
+              </button>
+              
+              <p className="text-sm text-n8n-text-secondary text-center">
+                {content.form.privacyNote}
+              </p>
+            </form>
+          </div>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-n8n-bg-secondary">
+      <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
-              Get In Touch Directly
-            </h2>
-            <p className="text-xl text-n8n-text-secondary">
-              Prefer to speak with us directly? We're here to help.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-white" />
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Contact Details */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-8">
+                Get In Touch
+              </h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-brand-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium text-n8n-text-primary mb-1">Phone</h3>
+                    <a href={`tel:${content.contactInfo.phone.number}`} className="text-brand-primary hover:text-brand-primary/80 font-medium">
+                      {content.contactInfo.phone.number}
+                    </a>
+                    <p className="text-n8n-text-secondary text-sm">{content.contactInfo.phone.hours}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-brand-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium text-n8n-text-primary mb-1">Email</h3>
+                    <a href={`mailto:${content.contactInfo.email}`} className="text-brand-primary hover:text-brand-primary/80 font-medium">
+                      {content.contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-brand-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium text-n8n-text-primary mb-1">Address</h3>
+                    <p className="text-n8n-text-secondary">
+                      {content.contactInfo.address.street}<br/>
+                      {content.contactInfo.address.city}, {content.contactInfo.address.state} {content.contactInfo.address.zip}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Phone</h3>
-              <a 
-                href={`tel:${BRAND.phone}`}
-                className="text-brand-primary hover:text-brand-secondary font-medium text-lg"
-              >
-                {BRAND.phone}
-              </a>
-              <p className="text-n8n-text-secondary text-sm mt-1">Mon-Fri 9am-6pm PST</p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
+            {/* Service Areas */}
+            <div>
+              <h3 className="text-2xl font-medium text-n8n-text-primary mb-6">Service Areas</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {content.contactInfo.serviceAreas.map((area: string, index: number) => (
+                  <div key={index} className="bg-n8n-bg-secondary rounded-lg p-3 border border-n8n-border">
+                    <p className="text-n8n-text-primary text-sm font-medium">{area}</p>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Email</h3>
-              <a 
-                href={`mailto:${BRAND.email}`}
-                className="text-brand-primary hover:text-brand-secondary font-medium"
-              >
-                {BRAND.email}
-              </a>
-              <p className="text-n8n-text-secondary text-sm mt-1">24-hour response</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Location</h3>
-              <p className="text-n8n-text-primary font-medium">Vernon, CA</p>
-              <p className="text-n8n-text-secondary text-sm mt-1">Serving all LA County</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Response Time</h3>
-              <p className="text-green-600 font-semibold">Within 24 Hours</p>
-              <p className="text-n8n-text-secondary text-sm mt-1">Usually same day</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 bg-n8n-bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-n8n-text-primary mb-8">
-            Proudly Serving Los Angeles Businesses
-          </h2>
+      {/* Consultation Process */}
+      <section className="py-20 bg-n8n-bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-4">
+              {content.consultationProcess.title}
+            </h2>
+            <p className="text-xl text-n8n-text-secondary">
+              {content.consultationProcess.subtitle}
+            </p>
+          </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {BRAND.serviceAreas.map((area, index) => (
-              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-4 shadow-sm">
-                <p className="text-n8n-text-primary font-medium">{area}</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {content.consultationProcess.steps.map((step: any, index: number) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-brand-primary/20 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-brand-primary text-xl font-bold">{step.number}</span>
+                </div>
+                <h3 className="text-xl font-medium text-n8n-text-primary mb-3">{step.title}</h3>
+                <p className="text-n8n-text-secondary mb-2">{step.description}</p>
+                <p className="text-sm text-brand-primary font-medium">{step.duration}</p>
               </div>
             ))}
           </div>
-          
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-n8n-text-primary mb-4">
-              On-Site Visits Available
-            </h3>
-            <p className="text-n8n-text-secondary max-w-3xl mx-auto">
-              We offer on-site consultations throughout Los Angeles County. 
-              Our team understands the unique challenges facing LA businesses and can 
-              provide personalized automation solutions at your location.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-n8n-bg-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
-              Frequently Asked Questions
+      {/* Testimonials */}
+      <section className="py-20 bg-n8n-bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-4">
+              {content.testimonials.title}
             </h2>
           </div>
           
-          <div className="space-y-8">
-            {[
-              {
-                question: "How quickly will you respond to my inquiry?",
-                answer: "We respond to all inquiries within 24 hours, usually the same day. For urgent requests, call us directly at " + BRAND.phone + "."
-              },
-              {
-                question: "Is the initial consultation really free?",
-                answer: "Yes! We provide a completely free analysis of your business processes and create a custom automation roadmap at no cost. No hidden fees or obligations."
-              },
-              {
-                question: "Do you work with businesses outside of Los Angeles?",
-                answer: "While we specialize in LA businesses and offer on-site visits throughout LA County, we can work with businesses anywhere remotely."
-              },
-              {
-                question: "What if I'm not tech-savvy?",
-                answer: "Perfect! Our 'done-for-you' service means we handle all the technical work. You don't need any technical knowledge - just tell us your business challenges."
-              },
-              {
-                question: "How long does implementation typically take?",
-                answer: "Most automation projects start showing results within 2-3 weeks. Complex integrations may take 4-8 weeks, but we always start with quick wins first."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-n8n-bg-primary rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-n8n-text-primary mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-n8n-text-secondary">
-                  {faq.answer}
+          <div className="grid md:grid-cols-2 gap-8">
+            {content.testimonials.items.map((testimonial: any, index: number) => (
+              <div key={index} className="bg-n8n-bg-secondary rounded-lg p-8 border border-n8n-border">
+                <p className="text-n8n-text-secondary mb-6 leading-relaxed">
+                  "{testimonial.content}"
                 </p>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-n8n-text-primary font-medium">{testimonial.name}</p>
+                    <p className="text-n8n-text-secondary text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -257,27 +263,35 @@ export default function ContactPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-[#10B981] text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to Automate Your Business?
+      <section className="py-20 bg-n8n-bg-secondary border-t border-n8n-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-8">
+            {content.cta.title}
           </h2>
-          <p className="text-xl mb-12 opacity-90">
-            Join 100+ LA businesses already using our automation solutions. 
-            Get your free plan today and start saving time tomorrow.
+          <p className="text-xl text-n8n-text-secondary mb-12">
+            {content.cta.subtitle}
           </p>
+          
+          <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
+            {content.cta.features.map((feature: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-n8n-text-secondary">
+                <CheckCircle className="w-5 h-5 text-brand-primary flex-shrink-0" />
+                <span>{feature}</span>
+              </div>
+            ))}
+          </div>
           
           <a 
             href="#contact-form"
-            className="inline-flex items-center bg-white text-brand-primary font-bold text-lg px-12 py-4 rounded-full hover:bg-gray-100 transition-colors"
+            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg inline-flex items-center gap-2"
           >
-            <ArrowRight className="w-6 h-6 mr-2" />
-            Get My Free AI Plan
+            <ArrowRight className="w-5 h-5" />
+            Get My Free Consultation
           </a>
         </div>
       </section>
       
       <Footer />
-    </main>
+    </div>
   );
 }

@@ -1,7 +1,10 @@
+'use client';
+
+import { useContent } from '@/hooks/useContent';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { BRAND } from '@/config/branding';
+import Link from 'next/link';
 import { 
   Users, 
   MapPin, 
@@ -13,306 +16,156 @@ import {
   Clock,
   Target,
   Zap,
-  ArrowRight
+  ArrowRight,
+  Loader2
 } from 'lucide-react';
-import Button from '@/components/ui/Button';
-
-export const metadata: Metadata = {
-  title: `About Us | Meet the LA AI Automation Team | ${BRAND.name}`,
-  description: "Meet the AI automation experts serving Los Angeles businesses. Local team in Vernon, CA with deep LA market knowledge and proven track record of business transformation.",
-  keywords: [
-    "AI automation team Los Angeles",
-    "LA business automation experts",
-    "Vernon CA AI consultants",
-    "Los Angeles automation company",
-    "AI experts near me",
-    "business automation consultants LA",
-    "local AI automation team"
-  ].join(", "),
-  alternates: {
-    canonical: `https://${BRAND.domain}/about`,
-  },
-};
-
-// JSON-LD for About Page
-const aboutJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": `https://${BRAND.domain}/about#page`,
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": BRAND.name,
-    "description": "AI automation experts serving Los Angeles businesses with done-for-you automation solutions",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": BRAND.address.street,
-      "addressLocality": BRAND.address.city,
-      "addressRegion": BRAND.address.state,
-      "postalCode": BRAND.address.zip
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "AI Automation LA Team",
-      "jobTitle": "AI Automation Specialists"
-    },
-    "foundingDate": "2024",
-    "numberOfEmployees": "5-10",
-    "areaServed": "Los Angeles County, California"
-  }
-};
 
 export default function AboutPage() {
+  const { data: content, loading, error } = useContent('pages', 'about');
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-n8n-bg-primary flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-brand-primary" />
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="min-h-screen bg-n8n-bg-primary">
+        <Header />
+        <div className="pt-32 pb-20 text-center">
+          <h1 className="text-2xl text-red-500">Content Loading Error</h1>
+          <p className="text-n8n-text-secondary mt-2">Please refresh the page</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-n8n-bg-primary">
+    <div className="min-h-screen bg-n8n-bg-primary">
       <Header />
       
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
-      />
-
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-[#10B981]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3 mb-8">
-              <Users className="w-5 h-5 mr-2" />
-              Your Local LA AI Automation Experts
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Meet Your
-              <span className="block text-white">AI Automation Team</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
-              We're a dedicated team of AI automation specialists based in Vernon, CA, 
-              serving Los Angeles businesses with <strong>done-for-you automation solutions</strong> 
-              that actually work.
-            </p>
+      <section className="pt-32 pb-20 bg-n8n-bg-primary relative overflow-hidden">
+        {content.hero.backgroundImage && (
+          <div className="absolute inset-0">
+            <img 
+              src={content.hero.backgroundImage} 
+              alt={content.hero.title}
+              className="w-full h-full object-cover opacity-10"
+            />
           </div>
+        )}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-light text-n8n-text-primary mb-6 tracking-tight">
+            {content.hero.title}
+          </h1>
+          <p className="text-2xl md:text-3xl text-brand-primary mb-8 font-light">
+            {content.hero.subtitle}
+          </p>
+          <p className="text-xl text-n8n-text-secondary mb-12 max-w-4xl mx-auto">
+            {content.hero.description}
+          </p>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Story Section */}
       <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
-                Why We Started AI Automation LA
+              <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-8">
+                {content.story.title}
               </h2>
-              <div className="space-y-6 text-n8n-text-secondary text-lg">
-                <p>
-                  We saw too many LA business owners drowning in busywork—missing calls, 
-                  juggling manual processes, and losing potential customers to competitors 
-                  who were faster to respond.
-                </p>
-                <p>
-                  The AI revolution was happening, but small businesses were being left behind. 
-                  Complex setups, expensive consultants, and technical jargon created barriers 
-                  that seemed impossible to overcome.
-                </p>
-                <p>
-                  <strong>So we decided to change that.</strong> We created a completely 
-                  done-for-you service where business owners get all the benefits of AI 
-                  automation without any of the headaches.
-                </p>
+              <p className="text-lg text-n8n-text-secondary mb-8 leading-relaxed">
+                {content.story.content}
+              </p>
+              <div className="space-y-6">
+                <div className="bg-n8n-bg-primary p-6 rounded-lg border border-n8n-border">
+                  <h3 className="text-xl font-medium text-n8n-text-primary mb-3">Our Mission</h3>
+                  <p className="text-n8n-text-secondary">{content.story.mission}</p>
+                </div>
+                <div className="bg-n8n-bg-primary p-6 rounded-lg border border-n8n-border">
+                  <h3 className="text-xl font-medium text-n8n-text-primary mb-3">Our Vision</h3>
+                  <p className="text-n8n-text-secondary">{content.story.vision}</p>
+                </div>
               </div>
             </div>
-            
-            <div className="bg-n8n-bg-primary rounded-lg p-8 border border-n8n-border">
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <Award className="w-8 h-8 text-brand-primary mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-n8n-text-primary">100+ Businesses Automated</h3>
-                    <p className="text-n8n-text-secondary">Across every major LA industry</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <Star className="w-8 h-8 text-yellow-500 mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-n8n-text-primary">5.0 Star Rating</h3>
-                    <p className="text-n8n-text-secondary">From satisfied LA business owners</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-8 h-8 text-green-500 mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-n8n-text-primary">2-3 Week Implementation</h3>
-                    <p className="text-n8n-text-secondary">From consultation to live automation</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                alt="Team collaboration"
+                className="w-full h-[600px] object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Approach */}
+      {/* Team Section */}
       <section className="py-20 bg-n8n-bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
-              Our Done-For-You Approach
-            </h2>
-            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
-              We don't just consult—we build, deploy, and manage your entire automation system 
-              so you can focus on growing your business.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
-              <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mb-6">
-                <Target className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Listen First</h3>
-              <p className="text-n8n-text-secondary">
-                Every LA business is unique. We spend time understanding your specific 
-                challenges, workflows, and goals before building anything.
-              </p>
-            </div>
-            
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
-              <div className="w-12 h-12 bg-brand-secondary rounded-lg flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Build Everything</h3>
-              <p className="text-n8n-text-secondary">
-                Our team handles all the technical work. AI training, system integrations, 
-                testing—you don't lift a finger during implementation.
-              </p>
-            </div>
-            
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 shadow-lg">
-              <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-n8n-text-primary mb-4">We Manage It All</h3>
-              <p className="text-n8n-text-secondary">
-                Ongoing monitoring, updates, and improvements. Your automation keeps 
-                getting better while you focus on serving customers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Local LA Focus */}
-      <section className="py-20 bg-n8n-bg-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-n8n-text-primary mb-6">
-              Deep Los Angeles Market Knowledge
-            </h2>
-            <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
-              We understand the unique challenges of running a business in LA—from bilingual 
-              customer bases to industry-specific regulations.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Bilingual Support",
-                description: "AI that speaks English and Spanish fluently for LA's diverse market",
-                icon: <Users className="w-8 h-8" />
-              },
-              {
-                title: "Industry Expertise", 
-                description: "Deep knowledge of dental, real estate, home services, and more",
-                icon: <Award className="w-8 h-8" />
-              },
-              {
-                title: "Local Compliance",
-                description: "Understanding of California business regulations and requirements",
-                icon: <CheckCircle className="w-8 h-8" />
-              },
-              {
-                title: "On-Site Visits",
-                description: "Available for in-person meetings throughout LA County",
-                icon: <MapPin className="w-8 h-8" />
-              }
-            ].map((feature, index) => (
+          <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary text-center mb-16">
+            {content.team.title}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {content.team.members.map((member: any, index: number) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
-                  {feature.icon}
+                <div className="relative mb-6">
+                  <img 
+                    src={member.avatar} 
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full mx-auto object-cover"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">{feature.title}</h3>
-                <p className="text-n8n-text-secondary">{feature.description}</p>
+                <h3 className="text-2xl font-medium text-n8n-text-primary mb-2">{member.name}</h3>
+                <p className="text-brand-primary font-medium mb-4">{member.role}</p>
+                <p className="text-n8n-text-secondary">{member.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-20 bg-n8n-bg-primary">
+      {/* Values Section */}
+      <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-n8n-text-primary mb-4">
-              Ready to Work Together?
-            </h2>
-            <p className="text-xl text-n8n-text-secondary">
-              Let's discuss how AI automation can transform your LA business.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-white" />
+          <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary text-center mb-16">
+            {content.values.title}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {content.values.items.map((value: any, index: number) => (
+              <div key={index} className="bg-n8n-bg-primary p-8 rounded-lg border border-n8n-border text-center">
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-medium text-n8n-text-primary mb-4">{value.title}</h3>
+                <p className="text-n8n-text-secondary">{value.description}</p>
               </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Call Us</h3>
-              <a 
-                href={`tel:${BRAND.phone}`}
-                className="text-brand-primary hover:text-brand-secondary font-medium text-lg"
-              >
-                {BRAND.phone}
-              </a>
-              <p className="text-n8n-text-secondary text-sm mt-1">Mon-Fri 9am-6pm PST</p>
-            </div>
-            
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Email Us</h3>
-              <a 
-                href={`mailto:${BRAND.email}`}
-                className="text-brand-primary hover:text-brand-secondary font-medium"
-              >
-                {BRAND.email}
-              </a>
-              <p className="text-n8n-text-secondary text-sm mt-1">24-hour response</p>
-            </div>
-            
-            <div className="bg-n8n-bg-secondary rounded-lg p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-n8n-text-primary mb-2">Visit Us</h3>
-              <p className="text-n8n-text-primary font-medium">Vernon, CA</p>
-              <p className="text-n8n-text-secondary text-sm mt-1">Serving all LA County</p>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Button size="xl" className="bg-[#10B981] text-white font-bold hover:bg-[#059669] transition-colors">
-              <ArrowRight className="w-6 h-6 mr-2" />
-              Get Your Free AI Plan
-            </Button>
-            <p className="text-n8n-text-secondary text-sm mt-4">
-              Free consultation • Custom automation roadmap • No obligation
-            </p>
+            ))}
           </div>
         </div>
       </section>
-      
+
+      {/* CTA Section */}
+      <section className="py-20 bg-n8n-bg-primary border-t border-n8n-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-light text-n8n-text-primary mb-8">
+            {content.cta.title}
+          </h2>
+          <p className="text-xl text-n8n-text-secondary mb-12">
+            {content.cta.subtitle}
+          </p>
+          <Link href={content.cta.button.link}>
+            <button className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg">
+              {content.cta.button.text}
+            </button>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
-    </main>
+    </div>
   );
 }
