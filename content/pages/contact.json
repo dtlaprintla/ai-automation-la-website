@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "title": "Let's Build Your AI Solution",
+    "subtitle": "Free Consultation & Custom Roadmap",
+    "description": "Get a personalized AI automation strategy for your Los Angeles business. No sales pressure, just honest advice.",
+    "backgroundImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop"
+  },
+  "contactInfo": {
+    "phone": {
+      "number": "(323) 555-0123",
+      "hours": "Mon-Fri 9AM-6PM PST"
+    },
+    "email": "hello@aiautomationla.com",
+    "address": {
+      "street": "123 Innovation Blvd",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90028"
+    },
+    "serviceAreas": [
+      "Downtown LA",
+      "Hollywood",
+      "Beverly Hills", 
+      "Santa Monica",
+      "Culver City",
+      "Vernon",
+      "West Hollywood",
+      "Pasadena"
+    ]
+  },
+  "consultationProcess": {
+    "title": "What to Expect",
+    "subtitle": "Your free 30-minute strategy session",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Current State Analysis",
+        "description": "We'll review your current processes and identify automation opportunities",
+        "duration": "10 minutes"
+      },
+      {
+        "number": "02",
+        "title": "Solution Design",
+        "description": "We'll design a custom AI solution tailored to your specific needs",
+        "duration": "15 minutes"
+      },
+      {
+        "number": "03",
+        "title": "ROI Projection",
+        "description": "We'll show you exactly how much time and money you'll save",
+        "duration": "5 minutes"
+      }
+    ]
+  },
+  "form": {
+    "title": "Schedule Your Free Consultation",
+    "subtitle": "Tell us about your business and we'll reach out within 24 hours",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Full Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Your name"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "placeholder": "your@email.com"
+      },
+      {
+        "name": "phone",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": true,
+        "placeholder": "(323) 555-0123"
+      },
+      {
+        "name": "company",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Your business name"
+      },
+      {
+        "name": "industry",
+        "label": "Industry",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Dental/Medical",
+          "Real Estate",
+          "Home Services",
+          "Restaurant/Food Service",
+          "Professional Services",
+          "E-commerce/Retail",
+          "Manufacturing",
+          "Other"
+        ]
+      },
+      {
+        "name": "employees",
+        "label": "Company Size",
+        "type": "select",
+        "required": false,
+        "options": [
+          "1-10 employees",
+          "11-50 employees",
+          "51-200 employees",
+          "200+ employees"
+        ]
+      },
+      {
+        "name": "services",
+        "label": "Services Interested In",
+        "type": "multiselect",
+        "required": false,
+        "options": [
+          "AI Voice Agents",
+          "Website Chatbots",
+          "Workflow Automation",
+          "Customer Support AI",
+          "Not sure - need consultation"
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Tell us about your biggest time-consuming task",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "What repetitive task takes up most of your time? What calls do you miss? What processes could be automated?"
+      }
+    ],
+    "submitText": "Schedule Free Consultation",
+    "privacyNote": "We respect your privacy. Your information will never be shared with third parties."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "name": "Dr. Maria Santos",
+        "role": "Beverly Hills Dental Practice",
+        "content": "The consultation was incredibly valuable. They identified 3 processes we could automate that would save us 20 hours per week.",
+        "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=150&auto=format&fit=crop"
+      },
+      {
+        "name": "David Chen",
+        "role": "DTLA Property Management", 
+        "content": "Professional, knowledgeable, and honest. They didn't try to oversell - just gave us practical solutions that actually work.",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Automate Your Business?",
+    "subtitle": "Join 100+ LA businesses that have automated their operations",
+    "features": [
+      "Free 30-minute consultation",
+      "Custom automation roadmap",
+      "ROI projections for your business",
+      "No obligation or sales pressure"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "hero": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "No Hidden Fees. No Long-Term Contracts.",
+    "description": "Choose the AI automation package that fits your business. All plans include setup, training, and ongoing support.",
+    "backgroundImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2000&auto=format&fit=crop"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "price": "$297",
+      "period": "per month",
+      "description": "Perfect for small businesses getting started with AI",
+      "popular": false,
+      "features": [
+        "1 AI Voice Agent OR 1 Chatbot",
+        "Up to 500 interactions/month",
+        "Basic integrations (3 apps)",
+        "Email support",
+        "Monthly performance reports",
+        "Free setup and training"
+      ],
+      "cta": {
+        "text": "Start Free Trial",
+        "link": "/contact?plan=starter"
+      }
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "price": "$697",
+      "period": "per month",
+      "description": "Most popular for growing LA businesses",
+      "popular": true,
+      "features": [
+        "Voice Agent + Chatbot + 3 Workflows",
+        "Up to 2,000 interactions/month",
+        "Advanced integrations (10+ apps)",
+        "Priority support (4-hour response)",
+        "Weekly optimization calls",
+        "Advanced analytics dashboard",
+        "Bilingual support (English/Spanish)",
+        "Free setup and training"
+      ],
+      "cta": {
+        "text": "Most Popular",
+        "link": "/contact?plan=professional"
+      }
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "price": "Custom",
+      "period": "pricing",
+      "description": "For established businesses with complex needs",
+      "popular": false,
+      "features": [
+        "Unlimited AI agents and workflows",
+        "Unlimited interactions",
+        "Custom integrations and development",
+        "Dedicated success manager",
+        "24/7 priority support",
+        "Custom reporting and analytics",
+        "Multi-location support",
+        "Service level agreements (SLAs)"
+      ],
+      "cta": {
+        "text": "Contact Sales",
+        "link": "/contact?plan=enterprise"
+      }
+    }
+  ],
+  "addOns": {
+    "title": "Add-On Services",
+    "subtitle": "Enhance any plan with additional features",
+    "items": [
+      {
+        "name": "Additional Voice Agent",
+        "price": "$197/month",
+        "description": "Extra phone number and voice agent for multiple departments"
+      },
+      {
+        "name": "Custom Integration",
+        "price": "$497 one-time",
+        "description": "Connect to any app or system not in our standard library"
+      },
+      {
+        "name": "Advanced Analytics",
+        "price": "$97/month",
+        "description": "Detailed performance insights and custom reporting"
+      },
+      {
+        "name": "Priority Support",
+        "price": "$197/month",
+        "description": "1-hour response time and dedicated support line"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Feature Comparison",
+    "features": [
+      {
+        "name": "AI Voice Agents",
+        "starter": "1",
+        "professional": "2",
+        "enterprise": "Unlimited"
+      },
+      {
+        "name": "Chatbots",
+        "starter": "1",
+        "professional": "2", 
+        "enterprise": "Unlimited"
+      },
+      {
+        "name": "Workflow Automations",
+        "starter": "0",
+        "professional": "3",
+        "enterprise": "Unlimited"
+      },
+      {
+        "name": "Monthly Interactions",
+        "starter": "500",
+        "professional": "2,000",
+        "enterprise": "Unlimited"
+      },
+      {
+        "name": "App Integrations",
+        "starter": "3",
+        "professional": "10+",
+        "enterprise": "Custom"
+      },
+      {
+        "name": "Support Response",
+        "starter": "24 hours",
+        "professional": "4 hours",
+        "enterprise": "1 hour"
+      },
+      {
+        "name": "Setup Fee",
+        "starter": "Free",
+        "professional": "Free",
+        "enterprise": "Free"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Is there a setup fee?",
+        "answer": "No! Setup, training, and deployment are included free with all plans."
+      },
+      {
+        "question": "Can I cancel anytime?",
+        "answer": "Yes, all plans are month-to-month with no long-term contracts. Cancel with 30 days notice."
+      },
+      {
+        "question": "What happens if I exceed my interaction limit?",
+        "answer": "We'll notify you before you reach your limit. Additional interactions are $0.10 each, or you can upgrade your plan."
+      },
+      {
+        "question": "Do you offer custom solutions?",
+        "answer": "Absolutely! Our Enterprise plan includes custom development for unique business requirements."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Most implementations are complete within 2-3 weeks, depending on complexity and integration requirements."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Start with a free consultation to find the perfect plan",
+    "button": {
+      "text": "Schedule Free Consultation",
+      "link": "/contact"
+    },
+    "guarantee": "30-day money-back guarantee on all plans"
+  }
+}

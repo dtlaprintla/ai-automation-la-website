@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "title": "AI Automation Services",
+    "subtitle": "Done-For-You Solutions That Work 24/7",
+    "description": "From voice agents to workflow automation, we build custom AI solutions that transform how your LA business operates.",
+    "backgroundImage": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2000&auto=format&fit=crop"
+  },
+  "services": [
+    {
+      "id": "voice-agents",
+      "title": "AI Voice Agents",
+      "shortDescription": "24/7 phone answering and appointment booking",
+      "description": "Never miss a call again. Our AI voice agents handle customer inquiries, book appointments, and qualify leads in perfect English and Spanish.",
+      "image": "https://images.unsplash.com/photo-1608003615516-329640d00739?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Answers calls in 2 seconds",
+        "Books appointments directly to your calendar", 
+        "Handles FAQs automatically",
+        "Perfect bilingual support (English/Spanish)",
+        "Integrates with your existing phone system",
+        "Detailed call logs and analytics"
+      ],
+      "pricing": {
+        "starting": "$297/month",
+        "includes": "Setup, training, and first 500 minutes"
+      },
+      "cta": {
+        "text": "Get Voice Agent",
+        "link": "/services/voice-agents"
+      }
+    },
+    {
+      "id": "chatbots",
+      "title": "Smart Chatbots",
+      "shortDescription": "Website and SMS bots that convert visitors",
+      "description": "Convert more website visitors into customers with intelligent chatbots that qualify leads and answer questions instantly.",
+      "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Instant lead qualification",
+        "24/7 customer support",
+        "Multi-channel deployment (website, SMS, WhatsApp)",
+        "CRM integration",
+        "Custom conversation flows",
+        "Real-time analytics and reporting"
+      ],
+      "pricing": {
+        "starting": "$197/month",
+        "includes": "Setup, custom training, and hosting"
+      },
+      "cta": {
+        "text": "Get Chatbot",
+        "link": "/services/chatbots"
+      }
+    },
+    {
+      "id": "workflow-automation",
+      "title": "Workflow Automation",
+      "shortDescription": "Connect your tools and automate tasks",
+      "description": "Eliminate repetitive tasks by connecting all your business tools. From data entry to follow-ups, we automate what matters.",
+      "image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "100+ app integrations",
+        "Custom workflow design",
+        "Automated data synchronization",
+        "Process optimization consulting",
+        "Error handling and monitoring",
+        "Detailed performance reports"
+      ],
+      "pricing": {
+        "starting": "$497/month",
+        "includes": "Setup, 5 workflows, and ongoing optimization"
+      },
+      "cta": {
+        "text": "Automate Workflows",
+        "link": "/services/workflows"
+      }
+    },
+    {
+      "id": "customer-support",
+      "title": "AI Customer Support",
+      "shortDescription": "Intelligent support that learns and improves",
+      "description": "Provide exceptional customer support at scale with AI that learns from every interaction and gets smarter over time.",
+      "image": "https://images.unsplash.com/photo-1553775282-20af80779df7?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Automated ticket routing",
+        "Intelligent knowledge base",
+        "Sentiment analysis",
+        "Multi-language support",
+        "Human handoff when needed",
+        "Continuous learning and improvement"
+      ],
+      "pricing": {
+        "starting": "$397/month",
+        "includes": "Setup, training, and 1000 tickets/month"
+      },
+      "cta": {
+        "text": "Upgrade Support",
+        "link": "/services/customer-support"
+      }
+    }
+  ],
+  "process": {
+    "title": "Our Process",
+    "subtitle": "From consultation to deployment in 2-3 weeks",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery Call",
+        "description": "We analyze your current processes and identify automation opportunities",
+        "duration": "30 minutes"
+      },
+      {
+        "number": "02", 
+        "title": "Custom Solution Design",
+        "description": "We design a tailored AI solution specific to your business needs",
+        "duration": "1 week"
+      },
+      {
+        "number": "03",
+        "title": "Development & Training",
+        "description": "We build and train your AI systems using your business data",
+        "duration": "1-2 weeks"
+      },
+      {
+        "number": "04",
+        "title": "Launch & Optimization",
+        "description": "We deploy your solution and continuously optimize performance",
+        "duration": "Ongoing"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Get a custom AI automation roadmap for your business",
+    "button": {
+      "text": "Get Free Consultation",
+      "link": "/contact"
+    },
+    "features": [
+      "Free 30-minute strategy session",
+      "Custom automation roadmap",
+      "ROI projections for your business",
+      "No obligation required"
+    ]
+  }
+}

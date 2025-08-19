@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "title": "About AI Automation LA",
+    "subtitle": "Your Local AI Automation Partner",
+    "description": "We're a Los Angeles-based team of AI automation experts helping local businesses implement cutting-edge technology solutions that work 24/7.",
+    "backgroundImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
+  },
+  "story": {
+    "title": "Our Story",
+    "content": "Founded in 2023, AI Automation LA was born from seeing countless LA businesses struggle with repetitive tasks, missed calls, and manual processes. We saw an opportunity to bridge the gap between cutting-edge AI technology and practical business solutions.",
+    "mission": "Our mission is simple: make AI automation accessible, affordable, and effective for every Los Angeles business.",
+    "vision": "We envision a future where every LA business can compete with enterprise-level automation, regardless of size or budget."
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "members": [
+      {
+        "name": "Alex Rodriguez",
+        "role": "Founder & CEO",
+        "bio": "10+ years in AI and automation, former tech lead at Google",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop"
+      },
+      {
+        "name": "Sarah Kim",
+        "role": "Head of Automation",
+        "bio": "Expert in workflow optimization and business process automation",
+        "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=150&auto=format&fit=crop"
+      },
+      {
+        "name": "Marcus Chen",
+        "role": "Lead Developer",
+        "bio": "Full-stack developer specializing in AI integration and voice technology",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Values",
+    "items": [
+      {
+        "title": "Local First",
+        "description": "We understand LA businesses because we ARE an LA business",
+        "icon": "🏙️"
+      },
+      {
+        "title": "Results Driven",
+        "description": "Every solution we build must deliver measurable ROI",
+        "icon": "📈"
+      },
+      {
+        "title": "Human-Centered",
+        "description": "AI should enhance human work, not replace human connection",
+        "icon": "🤝"
+      },
+      {
+        "title": "Continuous Innovation",
+        "description": "We stay ahead of AI trends to keep your business competitive",
+        "icon": "🚀"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Automate Your Business?",
+    "subtitle": "Let's discuss how AI can transform your operations",
+    "button": {
+      "text": "Schedule Free Consultation",
+      "link": "/contact"
+    }
+  }
+}
