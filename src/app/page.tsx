@@ -1,6 +1,7 @@
 'use client';
 
 import { useContent } from '@/hooks/useContent';
+import { useContactPopup } from '@/contexts/ContactPopupContext';
 import Header from '@/components/layout/Header';
 import DancingPills from '@/components/ui/DancingPills';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { ArrowRight, Loader2 } from 'lucide-react';
 
 export default function HomePageVapi() {
   const { data: content, loading, error } = useContent('pages', 'home');
+  const { openPopup } = useContactPopup();
 
   if (loading) {
     return (
@@ -53,12 +55,13 @@ export default function HomePageVapi() {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                <Link href={content?.hero?.cta?.primary?.link || '/contact'}>
-                  <button className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-8 py-3 rounded-full font-bold transition-colors duration-200 flex items-center uppercase tracking-wide">
-                    {content?.hero?.cta?.primary?.text || 'GET STARTED'}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
-                </Link>
+                <button 
+                  onClick={openPopup}
+                  className="bg-[#52EDBC] hover:bg-[#3EE5B3] text-black px-8 py-3 rounded-full font-bold transition-colors duration-200 flex items-center uppercase tracking-wide"
+                >
+                  {content?.hero?.cta?.primary?.text || 'GET STARTED'}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
                 <Link href={content?.hero?.cta?.secondary?.link || '/pricing'}>
                   <button className="border border-[#2A2B31] bg-[#0E0F12] hover:border-[#52EDBC] text-[#F3F1E8] px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center uppercase tracking-wide">
                     {content?.hero?.cta?.secondary?.text || 'VIEW PRICING'}

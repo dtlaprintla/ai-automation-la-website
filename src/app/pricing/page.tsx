@@ -1,6 +1,7 @@
 'use client';
 
 import { useContent } from '@/hooks/useContent';
+import { useContactPopup } from '@/contexts/ContactPopupContext';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -11,6 +12,7 @@ import Link from 'next/link';
 
 export default function PricingPage() {
   const { data: content, loading, error } = useContent('pages', 'pricing');
+  const { openPopup } = useContactPopup();
 
   if (loading) {
     return (
@@ -101,15 +103,16 @@ export default function PricingPage() {
                   ))}
                 </ul>
                 
-                <Link href={plan.cta.link}>
-                  <button className={`w-full py-3 px-6 rounded-lg font-medium transition-colors duration-200 ${
+                <button 
+                  onClick={openPopup}
+                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors duration-200 ${
                     plan.popular 
                       ? 'bg-brand-primary hover:bg-brand-primary/90 text-white' 
                       : 'bg-n8n-bg-secondary hover:bg-n8n-bg-secondary/80 text-n8n-text-primary border border-n8n-border'
-                  }`}>
-                    {plan.cta.text}
-                  </button>
-                </Link>
+                  }`}
+                >
+                  {plan.cta.text}
+                </button>
               </div>
             ))}
           </div>
@@ -212,11 +215,12 @@ export default function PricingPage() {
             {content.cta.subtitle}
           </p>
           
-          <Link href={content.cta.button.link}>
-            <button className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg">
-              {content.cta.button.text}
-            </button>
-          </Link>
+          <button 
+            onClick={openPopup}
+            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+          >
+            {content.cta.button.text}
+          </button>
           
           {content.cta.guarantee && (
             <p className="text-sm text-n8n-text-secondary mt-6">

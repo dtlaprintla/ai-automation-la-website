@@ -1,6 +1,7 @@
 'use client';
 
 import { useContent } from '@/hooks/useContent';
+import { useContactPopup } from '@/contexts/ContactPopupContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { ArrowRight, Bot, Phone, Workflow, MessageCircle, CheckCircle, Loader2 }
 
 export default function ServicesPage() {
   const { data: content, loading, error } = useContent('pages', 'services');
+  const { openPopup } = useContactPopup();
 
   if (loading) {
     return (
@@ -182,11 +184,12 @@ export default function ServicesPage() {
             ))}
           </div>
           
-          <Link href={content.cta.button.link}>
-            <button className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg">
-              {content.cta.button.text}
-            </button>
-          </Link>
+          <button 
+            onClick={openPopup}
+            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+          >
+            {content.cta.button.text}
+          </button>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useContent } from '@/hooks/useContent';
+import { useContactPopup } from '@/contexts/ContactPopupContext';
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -22,6 +23,7 @@ import {
 
 export default function AboutPage() {
   const { data: content, loading, error } = useContent('pages', 'about');
+  const { openPopup } = useContactPopup();
 
   if (loading) {
     return (
@@ -157,11 +159,12 @@ export default function AboutPage() {
           <p className="text-xl text-n8n-text-secondary mb-12">
             {content.cta.subtitle}
           </p>
-          <Link href={content.cta.button.link}>
-            <button className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg">
-              {content.cta.button.text}
-            </button>
-          </Link>
+          <button 
+            onClick={openPopup}
+            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+          >
+            {content.cta.button.text}
+          </button>
         </div>
       </section>
 

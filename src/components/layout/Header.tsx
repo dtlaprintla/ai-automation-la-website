@@ -5,12 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { BRAND } from '@/config/branding';
 import Button from '@/components/ui/Button';
+import { useContactPopup } from '@/contexts/ContactPopupContext';
 import { Menu, X, Phone, MapPin, ChevronDown } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { openPopup } = useContactPopup();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,6 +134,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center">
             <Button 
               size="md" 
+              onClick={openPopup}
               className="bg-[#10B981] hover:bg-[#059669] text-white border-0 px-6 py-2"
             >
               GET STARTED
@@ -201,7 +204,15 @@ export default function Header() {
                 transition={{ delay: 0.4 }}
                 className="pt-4"
               >
-                <Button fullWidth size="lg" className="bg-[#10B981] hover:bg-[#059669] text-white">
+                <Button 
+                  fullWidth 
+                  size="lg" 
+                  onClick={() => {
+                    openPopup();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="bg-[#10B981] hover:bg-[#059669] text-white"
+                >
                   GET STARTED
                 </Button>
               </motion.div>

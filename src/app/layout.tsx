@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./vapi-override.css"; // Nuclear option - loads last
 import { BRAND } from "@/config/branding";
+import ClientProviders from "@/components/providers/ClientProviders";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -260,7 +261,9 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body className={`${inter.className} n8n-dark`}>
-        {children}
+        <ClientProviders>
+          {children}
+        </ClientProviders>
         
         {/* Optimized Analytics Scripts - Non-blocking */}
         {process.env.NODE_ENV === 'production' && (
