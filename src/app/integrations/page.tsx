@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function IntegrationsPage() {
   const { data: content, loading, error } = useContent('integrations', 'integrations');
@@ -75,38 +76,53 @@ export default function IntegrationsPage() {
         </div>
       </section>
 
-      {/* Integration Categories */}
+      {/* Integration Categories with Cards */}
       <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {content.categories.map((category: any) => (
-              <div key={category.id} className="bg-n8n-bg-primary rounded-lg p-8 border border-n8n-border hover:shadow-xl transition-all duration-300">
-                <div className="text-3xl mb-4">{category.icon}</div>
-                <h3 className="text-2xl font-medium text-n8n-text-primary mb-3">{category.name}</h3>
-                <p className="text-n8n-text-secondary mb-6">{category.description}</p>
-                
-                <div className="space-y-2 mb-6">
-                  {category.integrations.slice(0, 4).map((app: string, idx: number) => (
-                    <div key={idx} className="flex items-center gap-2 text-n8n-text-secondary">
-                      <CheckCircle className="w-4 h-4 text-brand-primary flex-shrink-0" />
-                      <span className="text-sm">{app}</span>
-                    </div>
-                  ))}
-                  {category.integrations.length > 4 && (
-                    <p className="text-sm text-brand-primary font-medium">
-                      + {category.integrations.length - 4} more
-                    </p>
-                  )}
-                </div>
-                
-                <Link href="/integrations/advanced">
-                  <button className="w-full bg-n8n-bg-secondary hover:bg-n8n-bg-secondary/80 text-n8n-text-primary border border-n8n-border py-2 px-4 rounded-lg text-sm font-medium transition-colors duration-200">
-                    View All {category.name}
-                  </button>
-                </Link>
+          {content.categories.map((category: any, categoryIndex: number) => (
+            <div key={category.id} className="mb-20 last:mb-0">
+              <div className="text-center mb-12">
+                <div className="text-4xl mb-4">{category.icon}</div>
+                <h2 className="text-3xl md:text-4xl font-light text-n8n-text-primary mb-4">
+                  {category.name}
+                </h2>
+                <p className="text-xl text-n8n-text-secondary max-w-3xl mx-auto">
+                  {category.description}
+                </p>
               </div>
-            ))}
-          </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.integrations.map((app: any, appIndex: number) => (
+                  <Card key={appIndex} className="bg-n8n-bg-primary border-n8n-border hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <CardHeader className="text-center">
+                      <div className="h-20 mb-4 flex items-center justify-center">
+                        <img 
+                          src={app.logo} 
+                          alt={app.name}
+                          className="h-full w-auto object-contain max-w-[160px]"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                          }}
+                        />
+                        <div className="hidden w-20 h-20 bg-brand-primary/20 rounded-lg flex items-center justify-center">
+                          <span className="text-2xl font-bold text-brand-primary">
+                            {app.name.charAt(0)}
+                          </span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-n8n-text-primary">{app.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <CardDescription className="text-n8n-text-secondary">
+                        {app.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -133,32 +149,34 @@ export default function IntegrationsPage() {
       {/* Custom Integration Section */}
       <section className="py-20 bg-n8n-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-n8n-bg-primary rounded-lg p-12 border border-n8n-border">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-medium text-n8n-text-primary mb-6">
-                {content.customIntegration.title}
-              </h2>
-              <p className="text-xl text-n8n-text-secondary mb-8">
-                {content.customIntegration.description}
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-4 mb-8">
-                {content.customIntegration.features.map((feature: string, index: number) => (
-                  <div key={index} className="flex items-center gap-2 text-n8n-text-secondary">
-                    <CheckCircle className="w-5 h-5 text-brand-primary flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
+          <Card className="bg-n8n-bg-primary border-n8n-border">
+            <CardContent className="p-12">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-medium text-n8n-text-primary mb-6">
+                  {content.customIntegration.title}
+                </h2>
+                <p className="text-xl text-n8n-text-secondary mb-8">
+                  {content.customIntegration.description}
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  {content.customIntegration.features.map((feature: string, index: number) => (
+                    <div key={index} className="flex items-center gap-2 text-n8n-text-secondary">
+                      <CheckCircle className="w-5 h-5 text-brand-primary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <button 
+                  onClick={openPopup}
+                  className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200"
+                >
+                  {content.customIntegration.cta.text}
+                </button>
               </div>
-              
-              <button 
-                onClick={openPopup}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200"
-              >
-                {content.customIntegration.cta.text}
-              </button>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

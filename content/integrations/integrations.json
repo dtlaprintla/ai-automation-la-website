@@ -12,12 +12,36 @@
       "description": "Customer relationship management and sales tools",
       "icon": "👥",
       "integrations": [
-        "Salesforce",
-        "HubSpot", 
-        "Pipedrive",
-        "Zoho CRM",
-        "Monday.com",
-        "Airtable"
+        {
+          "name": "Salesforce",
+          "description": "Automatically update leads and opportunities",
+          "logo": "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg"
+        },
+        {
+          "name": "HubSpot",
+          "description": "Sync contacts and track interactions",
+          "logo": "https://cdn.worldvectorlogo.com/logos/hubspot.svg"
+        },
+        {
+          "name": "Pipedrive",
+          "description": "Manage your sales pipeline automatically",
+          "logo": "https://cdn.worldvectorlogo.com/logos/pipedrive.svg"
+        },
+        {
+          "name": "Zoho CRM",
+          "description": "Keep customer data always up-to-date",
+          "logo": "https://logos-world.net/wp-content/uploads/2022/02/Zoho-CRM-Logo.png"
+        },
+        {
+          "name": "Monday.com",
+          "description": "Work management and CRM integration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/monday-1.svg"
+        },
+        {
+          "name": "Airtable",
+          "description": "Database-driven customer management",
+          "logo": "https://cdn.worldvectorlogo.com/logos/airtable.svg"
+        }
       ]
     },
     {
@@ -26,12 +50,36 @@
       "description": "Email, phone, and messaging platforms",
       "icon": "💬",
       "integrations": [
-        "Gmail",
-        "Outlook",
-        "Slack",
-        "Microsoft Teams",
-        "Zoom",
-        "Calendly"
+        {
+          "name": "Gmail",
+          "description": "Smart email automation and responses",
+          "logo": "https://cdn.worldvectorlogo.com/logos/gmail-icon-2.svg"
+        },
+        {
+          "name": "Outlook",
+          "description": "Microsoft email integration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/outlook-1.svg"
+        },
+        {
+          "name": "Slack",
+          "description": "Team notifications and updates",
+          "logo": "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg"
+        },
+        {
+          "name": "Microsoft Teams",
+          "description": "Enterprise communication hub",
+          "logo": "https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg"
+        },
+        {
+          "name": "Zoom",
+          "description": "Automatic meeting scheduling",
+          "logo": "https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg"
+        },
+        {
+          "name": "Calendly",
+          "description": "Smart appointment booking",
+          "logo": "https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_040e7dff90971a12e96e233fb7db1e17/calendly.png"
+        }
       ]
     },
     {
@@ -40,12 +88,36 @@
       "description": "Financial management and accounting tools",
       "icon": "💰",
       "integrations": [
-        "QuickBooks",
-        "Xero",
-        "FreshBooks",
-        "Stripe",
-        "PayPal",
-        "Square"
+        {
+          "name": "QuickBooks",
+          "description": "Automatic invoice and payment tracking",
+          "logo": "https://cdn.worldvectorlogo.com/logos/quickbooks-1.svg"
+        },
+        {
+          "name": "Xero",
+          "description": "Cloud accounting automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/xero-1.svg"
+        },
+        {
+          "name": "FreshBooks",
+          "description": "Time tracking and billing automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/freshbooks-logo.svg"
+        },
+        {
+          "name": "Stripe",
+          "description": "Payment processing automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/stripe-4.svg"
+        },
+        {
+          "name": "PayPal",
+          "description": "Transaction tracking and reporting",
+          "logo": "https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
+        },
+        {
+          "name": "Square",
+          "description": "Point-of-sale and payment integration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/square-2.svg"
+        }
       ]
     },
     {
@@ -54,12 +126,36 @@
       "description": "Marketing automation and analytics platforms",
       "icon": "📈",
       "integrations": [
-        "Google Analytics",
-        "Facebook Ads",
-        "Mailchimp",
-        "Constant Contact",
-        "Hootsuite",
-        "Buffer"
+        {
+          "name": "Google Analytics",
+          "description": "Website traffic and conversion tracking",
+          "logo": "https://cdn.worldvectorlogo.com/logos/google-analytics-3.svg"
+        },
+        {
+          "name": "Facebook Ads",
+          "description": "Social media advertising automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/facebook-5.svg"
+        },
+        {
+          "name": "Mailchimp",
+          "description": "Email marketing campaigns",
+          "logo": "https://cdn.worldvectorlogo.com/logos/mailchimp.svg"
+        },
+        {
+          "name": "Constant Contact",
+          "description": "Email and social marketing",
+          "logo": "https://logos-world.net/wp-content/uploads/2020/11/Constant-Contact-Logo.png"
+        },
+        {
+          "name": "Hootsuite",
+          "description": "Social media management",
+          "logo": "https://cdn.worldvectorlogo.com/logos/hootsuite.svg"
+        },
+        {
+          "name": "Buffer",
+          "description": "Social media scheduling",
+          "logo": "https://cdn.worldvectorlogo.com/logos/buffer-3.svg"
+        }
       ]
     },
     {
@@ -68,12 +164,36 @@
       "description": "Task management and productivity tools",
       "icon": "⚡",
       "integrations": [
-        "Asana",
-        "Trello",
-        "Notion",
-        "Google Workspace",
-        "Microsoft 365",
-        "Dropbox"
+        {
+          "name": "Asana",
+          "description": "Task management and collaboration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/asana-logo.svg"
+        },
+        {
+          "name": "Trello",
+          "description": "Visual project boards",
+          "logo": "https://cdn.worldvectorlogo.com/logos/trello.svg"
+        },
+        {
+          "name": "Notion",
+          "description": "All-in-one workspace",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
+        },
+        {
+          "name": "Google Workspace",
+          "description": "Complete productivity suite",
+          "logo": "https://cdn.worldvectorlogo.com/logos/google-1-1.svg"
+        },
+        {
+          "name": "Microsoft 365",
+          "description": "Office productivity tools",
+          "logo": "https://cdn.worldvectorlogo.com/logos/office-2.svg"
+        },
+        {
+          "name": "Dropbox",
+          "description": "File storage and sharing",
+          "logo": "https://cdn.worldvectorlogo.com/logos/dropbox-1.svg"
+        }
       ]
     },
     {
@@ -82,12 +202,36 @@
       "description": "Online store and e-commerce platforms",
       "icon": "🛒",
       "integrations": [
-        "Shopify",
-        "WooCommerce",
-        "Magento",
-        "BigCommerce",
-        "Etsy",
-        "Amazon"
+        {
+          "name": "Shopify",
+          "description": "Complete e-commerce automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/shopify.svg"
+        },
+        {
+          "name": "WooCommerce",
+          "description": "WordPress store integration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/woocommerce.svg"
+        },
+        {
+          "name": "Magento",
+          "description": "Enterprise e-commerce platform",
+          "logo": "https://cdn.worldvectorlogo.com/logos/magento.svg"
+        },
+        {
+          "name": "BigCommerce",
+          "description": "Scalable online store platform",
+          "logo": "https://cdn.worldvectorlogo.com/logos/bigcommerce-icon.svg"
+        },
+        {
+          "name": "Etsy",
+          "description": "Marketplace integration",
+          "logo": "https://cdn.worldvectorlogo.com/logos/etsy-1.svg"
+        },
+        {
+          "name": "Amazon",
+          "description": "Amazon seller automation",
+          "logo": "https://cdn.worldvectorlogo.com/logos/amazon-icon-1.svg"
+        }
       ]
     }
   ],
