@@ -46,9 +46,9 @@ html.n8n-theme,
   --shadow: 0 8px 32px rgba(14, 9, 24, 0.4);
   --shadow-card: 0 4px 16px rgba(14, 9, 24, 0.3);
   
-  /* Vapi Specific Variables - NO GRADIENTS */
-  --vapi-green: #10B981;          /* Primary green */
-  --vapi-green-hover: #059669;    /* Green hover state */
+  /* Vapi Specific Variables - CHANGED TO ORANGE */
+  --vapi-green: #EE4F27;          /* Orange (was green) */
+  --vapi-green-hover: #D63C1A;    /* Orange hover state */
   --vapi-cream: #F5F3F0;          /* Cream highlight sections */
   --vapi-cream-dark: #E8E5E0;     /* Cream hover state */
   --vapi-black: #0E0E13;          /* Exact background */ 
@@ -484,4 +484,33 @@ header *[style*="rgb(16, 185, 129)"],
 header *[class*="text-green"],
 header *[class*="hover:text-green"] {
   color: #EE4F27 !important;
+}
+
+/* NUCLEAR OPTION - Kill all green backgrounds in header */
+header *[style*="background-color: #10B981"],
+header *[style*="background: #10B981"],
+header *[style*="background-color: rgb(16, 185, 129)"],
+header *[style*="background: rgb(16, 185, 129)"],
+header *[class*="bg-green"],
+header *.bg-green-500,
+header *.bg-emerald-500 {
+  background: #EE4F27 !important;
+  background-color: #EE4F27 !important;
+}
+
+/* Target the specific dropdown trigger buttons */
+header button[data-state],
+header button[aria-expanded],
+header [role="button"],
+header .radix-dropdown-trigger {
+  background-color: #EE4F27 !important;
+  background: #EE4F27 !important;
+}
+
+header button[data-state]:hover,
+header button[aria-expanded]:hover,
+header [role="button"]:hover,
+header .radix-dropdown-trigger:hover {
+  background-color: #D63C1A !important;
+  background: #D63C1A !important;
 }
