@@ -97,7 +97,7 @@ export default function Header() {
               item.dropdown ? (
                 <DropdownMenu.Root key={item.name}>
                   <DropdownMenu.Trigger asChild>
-                    <button className="flex items-center text-sm font-medium transition-colors duration-200 hover:text-[#10B981] text-white focus:outline-none focus:text-[#10B981] data-[state=open]:text-[#10B981]">
+                    <button className="flex items-center text-sm font-medium transition-colors duration-200 hover:text-brand-primary text-white focus:outline-none focus:text-brand-primary data-[state=open]:text-brand-primary">
                       {item.name}
                       <ChevronDown className="w-4 h-4 ml-1 transition-transform data-[state=open]:rotate-180" />
                     </button>
@@ -105,14 +105,14 @@ export default function Header() {
                   
                   <DropdownMenu.Portal>
                     <DropdownMenu.Content
-                      className="min-w-[180px] bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50 will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+                      className="min-w-[180px] bg-white rounded-md shadow-lg border border-gray-200 py-0.5 z-50 will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
                       sideOffset={8}
                     >
                       {item.dropdown.map((dropdownItem) => (
                         <DropdownMenu.Item key={dropdownItem.name} asChild>
                           <Link
                             href={dropdownItem.href}
-                            className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#10B981] focus:bg-gray-50 focus:text-[#10B981] focus:outline-none transition-colors cursor-pointer"
+                            className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-primary focus:bg-gray-50 focus:text-brand-primary focus:outline-none transition-colors cursor-pointer"
                           >
                             {dropdownItem.name}
                           </Link>
@@ -125,7 +125,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium transition-colors duration-200 hover:text-[#10B981] text-white"
+                  className="text-sm font-medium transition-colors duration-200 hover:text-brand-primary text-white"
                 >
                   {item.name}
                 </Link>
@@ -191,7 +191,7 @@ export default function Header() {
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block text-gray-600 text-sm py-1 hover:text-[#10B981]"
+                          className="block text-gray-600 text-sm py-1 hover:text-brand-primary"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {dropdownItem.name}
