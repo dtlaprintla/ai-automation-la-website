@@ -456,3 +456,32 @@ header * {
 header *:hover {
   color: #EE4F27 !important;
 }
+
+/* OVERRIDE VAPI-OVERRIDE.CSS - Force header elements to use orange */
+header button,
+header button:hover,
+header button:focus,
+header a:hover,
+header a:focus,
+header [data-radix-dropdown-trigger]:hover,
+header [data-radix-dropdown-trigger]:focus,
+header [data-radix-dropdown-trigger][data-state=open] {
+  color: #EE4F27 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Dropdown content - override vapi colors */
+[data-radix-dropdown-content] a:hover,
+[data-radix-dropdown-content] a:focus {
+  color: #EE4F27 !important;
+  background-color: #f8fafc !important;
+}
+
+/* Kill ANY green that might sneak in */
+header *[style*="#10B981"],
+header *[style*="rgb(16, 185, 129)"],
+header *[class*="text-green"],
+header *[class*="hover:text-green"] {
+  color: #EE4F27 !important;
+}

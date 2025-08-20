@@ -12,13 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          primary: "#B43737", // Muted red
-          secondary: "#A02D50", // Muted deep red  
-          accent: "#4664B4", // Muted blue accent
+          primary: "#EE4F27", // N8N Orange
+          secondary: "#D63C1A", // Orange hover state
+          accent: "#4A9EFF", // Blue accent
           gradient: {
-            from: "rgba(180, 55, 55, 0.8)", // Subtle red start
-            via: "rgba(160, 45, 80, 0.7)", // Subtle red middle
-            to: "rgba(70, 100, 180, 0.6)"   // Subtle blue end
+            from: "rgba(238, 79, 39, 0.8)", // Orange start
+            via: "rgba(214, 60, 26, 0.7)", // Orange middle
+            to: "rgba(74, 158, 255, 0.6)"   // Blue end
           }
         },
         // N8N-inspired dark theme colors
