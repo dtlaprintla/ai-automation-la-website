@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "AI Automation Insights",
+    "subtitle": "Latest Tips & Strategies for LA Businesses",
+    "description": "Stay ahead with the latest AI automation trends, case studies, and actionable tips for Los Angeles businesses."
+  },
+  "featured": {
+    "slug": "roi-guide-ai-automation-la-businesses",
+    "title": "Complete ROI Guide: AI Automation for LA Businesses",
+    "excerpt": "Discover how Los Angeles businesses are achieving 650% ROI with AI automation. Real numbers, real results.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    "category": "Case Study",
+    "readTime": "8 min read",
+    "publishedAt": "2024-01-15"
+  },
+  "categories": [
+    {
+      "name": "Case Studies",
+      "slug": "case-studies",
+      "count": 12
+    },
+    {
+      "name": "AI Phone Agents",
+      "slug": "phone-agents",
+      "count": 8
+    },
+    {
+      "name": "Industry Insights",
+      "slug": "industry",
+      "count": 15
+    },
+    {
+      "name": "Getting Started",
+      "slug": "getting-started",
+      "count": 6
+    }
+  ],
+  "posts": [
+    {
+      "slug": "roi-guide-ai-automation-la-businesses",
+      "title": "Complete ROI Guide: AI Automation for LA Businesses",
+      "excerpt": "Discover how Los Angeles businesses are achieving 650% ROI with AI automation. Real numbers, real results.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      "category": "Case Study",
+      "readTime": "8 min read",
+      "publishedAt": "2024-01-15",
+      "featured": true
+    },
+    {
+      "slug": "ai-phone-agents-dental-practices",
+      "title": "How AI Phone Agents Transformed This LA Dental Practice",
+      "excerpt": "Beverly Hills dental practice reduces missed appointments by 85% with AI phone agents. See the complete transformation.",
+      "image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800&auto=format&fit=crop",
+      "category": "Case Study",
+      "readTime": "5 min read",
+      "publishedAt": "2024-01-10"
+    },
+    {
+      "slug": "real-estate-automation-workflow",
+      "title": "Real Estate Automation: From Lead to Closing in LA",
+      "excerpt": "DTLA real estate team automates entire lead nurturing process, closes 40% more deals with AI workflows.",
+      "image": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=800&auto=format&fit=crop",
+      "category": "Industry Insights",
+      "readTime": "6 min read",
+      "publishedAt": "2024-01-05"
+    },
+    {
+      "slug": "getting-started-ai-automation-2024",
+      "title": "Getting Started with AI Automation in 2024",
+      "excerpt": "Complete beginner's guide to AI automation for small businesses. Step-by-step implementation plan included.",
+      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
+      "category": "Getting Started",
+      "readTime": "10 min read",
+      "publishedAt": "2024-01-01"
+    }
+  ]
+}

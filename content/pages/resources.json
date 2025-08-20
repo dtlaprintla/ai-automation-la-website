@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "title": "Resources & Tools",
+    "subtitle": "Everything You Need for AI Automation Success",
+    "description": "Explore our comprehensive collection of tools, guides, and resources to help your Los Angeles business succeed with AI automation.",
+    "backgroundImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2000&auto=format&fit=crop"
+  },
+  "sections": [
+    {
+      "id": "integrations",
+      "title": "App Integrations",
+      "description": "Connect your favorite business tools",
+      "icon": "🔗",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=600&auto=format&fit=crop",
+      "features": [
+        "100+ pre-built integrations",
+        "Custom API connections",
+        "Real-time data sync",
+        "Enterprise security"
+      ],
+      "cta": {
+        "text": "View All Integrations",
+        "link": "/integrations"
+      }
+    },
+    {
+      "id": "calculator",
+      "title": "ROI Calculator",
+      "description": "Calculate your automation savings",
+      "icon": "📊",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+      "features": [
+        "Instant ROI projections",
+        "Industry-specific calculations",
+        "Time savings estimates",
+        "Custom business metrics"
+      ],
+      "cta": {
+        "text": "Calculate Your ROI",
+        "link": "/roi-calculator"
+      }
+    },
+    {
+      "id": "blog",
+      "title": "Blog & Insights",
+      "description": "Latest AI automation strategies",
+      "icon": "📝",
+      "image": "https://images.unsplash.com/photo-1486312338219-ce68e2c6ad19?q=80&w=600&auto=format&fit=crop",
+      "features": [
+        "Weekly industry insights",
+        "Case studies & success stories",
+        "Implementation guides",
+        "LA business focus"
+      ],
+      "cta": {
+        "text": "Read Latest Posts",
+        "link": "/blog"
+      }
+    },
+    {
+      "id": "case-studies",
+      "title": "Case Studies",
+      "description": "Real results from LA businesses",
+      "icon": "📈",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
+      "features": [
+        "Real customer success stories",
+        "Detailed ROI breakdowns",
+        "Before & after comparisons",
+        "Industry-specific results"
+      ],
+      "cta": {
+        "text": "View Case Studies",
+        "link": "/case-studies"
+      }
+    }
+  ],
+  "quickStart": {
+    "title": "Quick Start Guide",
+    "subtitle": "Get started with AI automation in 4 simple steps",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Free Consultation",
+        "description": "Schedule a 30-minute strategy session to assess your needs"
+      },
+      {
+        "number": "02", 
+        "title": "Custom Plan",
+        "description": "Receive a tailored automation roadmap for your business"
+      },
+      {
+        "number": "03",
+        "title": "Implementation",
+        "description": "Our team builds and deploys your AI solutions in 2-3 weeks"
+      },
+      {
+        "number": "04",
+        "title": "Optimization",
+        "description": "Ongoing monitoring and optimization for maximum ROI"
+      }
+    ]
+  },
+  "downloads": {
+    "title": "Free Resources",
+    "subtitle": "Download our guides and templates",
+    "items": [
+      {
+        "title": "AI Automation Checklist",
+        "description": "Complete checklist for implementing AI in your business",
+        "type": "PDF",
+        "downloadUrl": "#"
+      },
+      {
+        "title": "ROI Calculation Template",
+        "description": "Excel template for calculating automation ROI",
+        "type": "XLSX", 
+        "downloadUrl": "#"
+      },
+      {
+        "title": "Implementation Timeline",
+        "description": "Step-by-step timeline for AI automation projects",
+        "type": "PDF",
+        "downloadUrl": "#"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Let's build your custom AI automation solution",
+    "button": {
+      "text": "Schedule Free Consultation",
+      "link": "/contact"
+    },
+    "features": [
+      "Free 30-minute strategy session",
+      "Custom automation roadmap",
+      "ROI projections for your business",
+      "No obligation required"
+    ]
+  }
+}

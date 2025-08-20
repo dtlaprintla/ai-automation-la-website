@@ -7,11 +7,11 @@ import { BRAND } from '@/config/branding';
 import Button from '@/components/ui/Button';
 import { useContactPopup } from '@/contexts/ContactPopupContext';
 import { Menu, X, Phone, MapPin, ChevronDown } from 'lucide-react';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { openPopup } = useContactPopup();
 
   useEffect(() => {
@@ -94,39 +94,42 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
-              <div 
-                key={item.name} 
-                className="relative group"
-                onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              item.dropdown ? (
+                <DropdownMenu.Root key={item.name}>
+                  <DropdownMenu.Trigger asChild>
+                    <button className="flex items-center text-sm font-medium transition-colors duration-200 hover:text-[#10B981] text-white focus:outline-none focus:text-[#10B981] data-[state=open]:text-[#10B981]">
+                      {item.name}
+                      <ChevronDown className="w-4 h-4 ml-1 transition-transform data-[state=open]:rotate-180" />
+                    </button>
+                  </DropdownMenu.Trigger>
+                  
+                  <DropdownMenu.Portal>
+                    <DropdownMenu.Content
+                      className="min-w-[180px] bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50 will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+                      sideOffset={8}
+                    >
+                      {item.dropdown.map((dropdownItem) => (
+                        <DropdownMenu.Item key={dropdownItem.name} asChild>
+                          <Link
+                            href={dropdownItem.href}
+                            className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#10B981] focus:bg-gray-50 focus:text-[#10B981] focus:outline-none transition-colors cursor-pointer"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        </DropdownMenu.Item>
+                      ))}
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Root>
+              ) : (
                 <Link
+                  key={item.name}
                   href={item.href}
-                  className="flex items-center text-sm font-medium transition-colors duration-200 hover:text-[#10B981] text-white"
+                  className="text-sm font-medium transition-colors duration-200 hover:text-[#10B981] text-white"
                 >
                   {item.name}
-                  {item.dropdown && (
-                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
-                  )}
                 </Link>
-                
-                {/* Dropdown Menu */}
-                {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
-                    {item.dropdown.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.name}
-                        href={dropdownItem.href}
-                        className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#10B981] transition-colors"
-                      >
-                        {dropdownItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )
             ))}
           </nav>
 

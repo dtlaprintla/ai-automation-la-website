@@ -1,0 +1,81 @@
+{
+  "navigation": {
+    "primary": [
+      {
+        "name": "SERVICES",
+        "href": "/services",
+        "dropdown": [
+          { "name": "AI Phone Agents", "href": "/services/voice-agents" },
+          { "name": "AI Chatbots", "href": "/services/chatbots" },
+          { "name": "Workflow Automation", "href": "/services/workflows" },
+          { "name": "Customer Support AI", "href": "/services/customer-support" }
+        ]
+      },
+      {
+        "name": "INDUSTRIES",
+        "href": "/industries",
+        "dropdown": [
+          { "name": "Dental Practices", "href": "/industries/dental" },
+          { "name": "Real Estate", "href": "/industries/real-estate" },
+          { "name": "Home Services", "href": "/industries/home-services" },
+          { "name": "Restaurants", "href": "/industries/restaurants" }
+        ]
+      },
+      { "name": "PRICING", "href": "/pricing" },
+      { "name": "CASE STUDIES", "href": "/case-studies" },
+      {
+        "name": "RESOURCES",
+        "href": "/resources",
+        "dropdown": [
+          { "name": "Integrations", "href": "/integrations" },
+          { "name": "ROI Calculator", "href": "/roi-calculator" },
+          { "name": "Blog", "href": "/blog" },
+          { "name": "About", "href": "/about" }
+        ]
+      },
+      { "name": "CONTACT", "href": "/contact" }
+    ]
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Services",
+        "links": [
+          { "name": "AI Phone Agents", "href": "/services/voice-agents" },
+          { "name": "AI Chatbots", "href": "/services/chatbots" },
+          { "name": "Workflow Automation", "href": "/services/workflows" },
+          { "name": "Customer Support AI", "href": "/services/customer-support" }
+        ]
+      },
+      {
+        "title": "Industries",
+        "links": [
+          { "name": "Dental Practices", "href": "/industries/dental" },
+          { "name": "Real Estate", "href": "/industries/real-estate" },
+          { "name": "Home Services", "href": "/industries/home-services" },
+          { "name": "Restaurants", "href": "/industries/restaurants" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "name": "Integrations", "href": "/integrations" },
+          { "name": "ROI Calculator", "href": "/roi-calculator" },
+          { "name": "Blog", "href": "/blog" },
+          { "name": "Case Studies", "href": "/case-studies" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "name": "About", "href": "/about" },
+          { "name": "Contact", "href": "/contact" },
+          { "name": "Privacy Policy", "href": "/privacy" },
+          { "name": "Terms of Service", "href": "/terms" }
+        ]
+      }
+    ],
+    "copyright": "© 2024 AI Automation LA. All rights reserved.",
+    "tagline": "Automating Los Angeles, one business at a time."
+  }
+}

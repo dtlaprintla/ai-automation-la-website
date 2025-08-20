@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "title": "100+ Business Integrations",
+    "subtitle": "Connect Your Favorite Apps & Tools",
+    "description": "Seamlessly connect your existing business tools with our AI automation platform. From CRM to accounting, we integrate with the apps you already use.",
+    "backgroundImage": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000&auto=format&fit=crop"
+  },
+  "categories": [
+    {
+      "id": "crm",
+      "name": "CRM & Sales",
+      "description": "Customer relationship management and sales tools",
+      "icon": "👥",
+      "integrations": [
+        "Salesforce",
+        "HubSpot", 
+        "Pipedrive",
+        "Zoho CRM",
+        "Monday.com",
+        "Airtable"
+      ]
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Email, phone, and messaging platforms",
+      "icon": "💬",
+      "integrations": [
+        "Gmail",
+        "Outlook",
+        "Slack",
+        "Microsoft Teams",
+        "Zoom",
+        "Calendly"
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting & Finance",
+      "description": "Financial management and accounting tools",
+      "icon": "💰",
+      "integrations": [
+        "QuickBooks",
+        "Xero",
+        "FreshBooks",
+        "Stripe",
+        "PayPal",
+        "Square"
+      ]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing & Analytics",
+      "description": "Marketing automation and analytics platforms",
+      "icon": "📈",
+      "integrations": [
+        "Google Analytics",
+        "Facebook Ads",
+        "Mailchimp",
+        "Constant Contact",
+        "Hootsuite",
+        "Buffer"
+      ]
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Task management and productivity tools",
+      "icon": "⚡",
+      "integrations": [
+        "Asana",
+        "Trello",
+        "Notion",
+        "Google Workspace",
+        "Microsoft 365",
+        "Dropbox"
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce",
+      "description": "Online store and e-commerce platforms",
+      "icon": "🛒",
+      "integrations": [
+        "Shopify",
+        "WooCommerce",
+        "Magento",
+        "BigCommerce",
+        "Etsy",
+        "Amazon"
+      ]
+    }
+  ],
+  "stats": {
+    "title": "Integration Statistics",
+    "items": [
+      {
+        "number": "100+",
+        "label": "App Integrations"
+      },
+      {
+        "number": "24hrs",
+        "label": "Setup Time"
+      },
+      {
+        "number": "99.9%",
+        "label": "Uptime"
+      },
+      {
+        "number": "24/7",
+        "label": "Support"
+      }
+    ]
+  },
+  "customIntegration": {
+    "title": "Need a Custom Integration?",
+    "description": "Don't see your app listed? We can build custom integrations for any system with an API or database connection.",
+    "features": [
+      "Custom API connections",
+      "Database integrations", 
+      "Legacy system support",
+      "Real-time sync",
+      "Secure data transfer"
+    ],
+    "cta": {
+      "text": "Request Custom Integration",
+      "link": "/contact"
+    }
+  },
+  "cta": {
+    "title": "Ready to Connect Your Apps?",
+    "subtitle": "Let's automate your workflows with seamless integrations",
+    "button": {
+      "text": "Get Free Integration Plan",
+      "link": "/contact"
+    }
+  }
+}
