@@ -37,8 +37,8 @@ html.n8n-theme,
   --text-muted: #6B7280;          /* Muted text */
   --text-disabled: #4B5563;       /* Disabled states */
   
-  --accent-primary: #10B981;      /* Vapi exact green */
-  --accent-secondary: #059669;    /* Vapi green hover */
+  --accent-primary: #EE4F27;      /* Orange brand primary */
+  --accent-secondary: #D63C1A;    /* Orange hover state */
   --accent-tertiary: #F5F3F0;     /* Vapi cream color */
   
   --border-color: rgba(196, 187, 211, 0.1);
@@ -422,4 +422,37 @@ html.n8n-theme .badge.high-priority {
   background: rgba(238, 79, 39, 0.2);
   color: #FF8A6B;
   border-color: rgba(238, 79, 39, 0.3);
+}
+
+/* HEADER SPECIFIC OVERRIDES - Remove ALL green */
+header button:hover,
+header button:focus,
+header button[data-state=open],
+header a:hover,
+header [data-radix-dropdown-trigger]:hover {
+  color: #EE4F27 !important;
+}
+
+/* DROPDOWN CONTENT OVERRIDES */
+[data-radix-dropdown-content] {
+  padding: 2px 0 !important;
+}
+
+[data-radix-dropdown-content] a {
+  padding: 4px 12px !important;
+}
+
+[data-radix-dropdown-content] a:hover,
+[data-radix-dropdown-content] a:focus {
+  color: #EE4F27 !important;
+}
+
+/* FORCE REMOVE GREEN FROM ALL HEADER ELEMENTS */
+header * {
+  --accent-primary: #EE4F27 !important;
+  --vapi-green: #EE4F27 !important;
+}
+
+header *:hover {
+  color: #EE4F27 !important;
 }
