@@ -424,93 +424,96 @@ html.n8n-theme .badge.high-priority {
   border-color: rgba(238, 79, 39, 0.3);
 }
 
-/* HEADER SPECIFIC OVERRIDES - Remove ALL green */
-header button:hover,
-header button:focus,
-header button[data-state=open],
-header a:hover,
-header [data-radix-dropdown-trigger]:hover {
-  color: #EE4F27 !important;
+/* ===== CLEAN NEUTRAL HEADER DESIGN ===== */
+
+/* Header background and basic styling */
+header {
+  background: rgba(14, 14, 19, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(55, 65, 81, 0.5);
 }
 
-/* DROPDOWN CONTENT OVERRIDES */
-[data-radix-dropdown-content] {
-  padding: 2px 0 !important;
+/* Navigation links - neutral white text with subtle hover */
+header nav a {
+  color: #FFFFFF !important;
+  transition: color 0.2s ease;
 }
 
-[data-radix-dropdown-content] a {
-  padding: 4px 12px !important;
+header nav a:hover {
+  color: #D1D5DB !important; /* Light gray hover */
 }
 
-[data-radix-dropdown-content] a:hover,
-[data-radix-dropdown-content] a:focus {
-  color: #EE4F27 !important;
+/* Dropdown trigger buttons - neutral styling */
+header button[data-radix-dropdown-trigger],
+header button[aria-expanded] {
+  color: #FFFFFF !important;
+  background: transparent !important;
+  border: none !important;
+  transition: color 0.2s ease;
 }
 
-/* FORCE REMOVE GREEN FROM ALL HEADER ELEMENTS */
-header * {
-  --accent-primary: #EE4F27 !important;
-  --vapi-green: #EE4F27 !important;
-}
-
-header *:hover {
-  color: #EE4F27 !important;
-}
-
-/* OVERRIDE VAPI-OVERRIDE.CSS - Force header elements to use orange */
-header button,
-header button:hover,
-header button:focus,
-header a:hover,
-header a:focus,
-header [data-radix-dropdown-trigger]:hover,
-header [data-radix-dropdown-trigger]:focus,
-header [data-radix-dropdown-trigger][data-state=open] {
-  color: #EE4F27 !important;
-  background-color: transparent !important;
+header button[data-radix-dropdown-trigger]:hover,
+header button[aria-expanded]:hover,
+header button[data-state=open] {
+  color: #D1D5DB !important;
   background: transparent !important;
 }
 
-/* Dropdown content - override vapi colors */
+/* Dropdown content - clean white background with reduced padding */
+[data-radix-dropdown-content] {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  padding: 0.125rem 0 !important; /* Further reduced vertical padding */
+  min-width: 160px !important;
+}
+
+/* Dropdown items - reduced padding and neutral hover */
+[data-radix-dropdown-content] a {
+  display: block !important;
+  padding: 0.25rem 0.75rem !important; /* Further reduced vertical padding */
+  color: #374151 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
 [data-radix-dropdown-content] a:hover,
 [data-radix-dropdown-content] a:focus {
-  color: #EE4F27 !important;
-  background-color: #f8fafc !important;
+  background-color: #F3F4F6 !important;
+  color: #111827 !important;
+  outline: none !important;
 }
 
-/* Kill ANY green that might sneak in */
+/* Remove any forced green/orange colors from header elements */
 header *[style*="#10B981"],
 header *[style*="rgb(16, 185, 129)"],
+header *[style*="#EE4F27"],
 header *[class*="text-green"],
-header *[class*="hover:text-green"] {
-  color: #EE4F27 !important;
-}
-
-/* NUCLEAR OPTION - Kill all green backgrounds in header */
-header *[style*="background-color: #10B981"],
-header *[style*="background: #10B981"],
-header *[style*="background-color: rgb(16, 185, 129)"],
-header *[style*="background: rgb(16, 185, 129)"],
+header *[class*="text-orange"],
 header *[class*="bg-green"],
-header *.bg-green-500,
-header *.bg-emerald-500 {
-  background: #EE4F27 !important;
-  background-color: #EE4F27 !important;
+header *[class*="bg-orange"] {
+  color: #FFFFFF !important;
+  background: transparent !important;
 }
 
-/* Target the specific dropdown trigger buttons */
-header button[data-state],
-header button[aria-expanded],
-header [role="button"],
-header .radix-dropdown-trigger {
+/* Ensure CTA button keeps its orange color */
+header .bg-brand-primary,
+header button.bg-brand-primary {
   background-color: #EE4F27 !important;
-  background: #EE4F27 !important;
+  color: white !important;
 }
 
-header button[data-state]:hover,
-header button[aria-expanded]:hover,
-header [role="button"]:hover,
-header .radix-dropdown-trigger:hover {
+header .bg-brand-primary:hover,
+header button.bg-brand-primary:hover {
   background-color: #D63C1A !important;
-  background: #D63C1A !important;
+}
+
+/* Remove any background colors from dropdown triggers */
+header button:not(.bg-brand-primary) {
+  background: transparent !important;
+  background-color: transparent !important;
 }

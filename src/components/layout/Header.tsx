@@ -97,7 +97,7 @@ export default function Header() {
               item.dropdown ? (
                 <DropdownMenu.Root key={item.name}>
                   <DropdownMenu.Trigger asChild>
-                    <button className="flex items-center text-sm font-medium transition-colors duration-200 hover:text-brand-primary text-white focus:outline-none focus:text-brand-primary data-[state=open]:text-brand-primary">
+                    <button className="flex items-center text-sm font-medium text-white transition-colors duration-200 hover:text-gray-300 focus:outline-none focus:text-gray-300 data-[state=open]:text-gray-300">
                       {item.name}
                       <ChevronDown className="w-4 h-4 ml-1 transition-transform data-[state=open]:rotate-180" />
                     </button>
@@ -112,7 +112,7 @@ export default function Header() {
                         <DropdownMenu.Item key={dropdownItem.name} asChild>
                           <Link
                             href={dropdownItem.href}
-                            className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-primary focus:bg-gray-50 focus:text-brand-primary focus:outline-none transition-colors cursor-pointer"
+                            className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-50 focus:text-gray-900 focus:outline-none transition-colors cursor-pointer"
                           >
                             {dropdownItem.name}
                           </Link>
@@ -125,7 +125,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium transition-colors duration-200 hover:text-brand-primary text-white"
+                  className="text-sm font-medium text-white transition-colors duration-200 hover:text-gray-300"
                 >
                   {item.name}
                 </Link>
